@@ -119,15 +119,27 @@ of transcription elongation have been published
 incorporate the terms from \eqref{eq:rnap_energy_balance} (in the case of
 Tadigotla et. al the free energy from nascent RNA secondary structures close
 to the RNA exit channel is used as well). When compared with measurement data,
-however, these models leave much to be desired, showing that there are more to
+however, these models leave much to be desired, showing that there is more to
 RNAP processivity than the parameters in \eqref{eq:rnap_energy_balance}.
 
 \subsubsection{A computational model of transcription initiation}
 The difference between transcription initiation and transcription elongation is
-i) that during initiation the RNA-DNA hybrid lacks its full length until +9,
+i) that during initiation the RNA-DNA hybrid lacks its full length until +8/9,
 ii) that the DNA-DNA bubble is scrunched and pulled into RNAP, and iii) that
-RNAP is bound to $\sigma$ which again is bound to the promoter. Another
-difference is that there is one more possible reaction pathway for RNAP during
-initiation: transcript abortion. Based on equation
-\eqref{eq:rnap_energy_balance} and the listed differences, a model for
-transcription initiation was previously published \cite{xue_kinetic_2008}.
+RNAP is bound to $\sigma$ which again is bound to the promoter. The consequence
+of these difference is that the TIC has a reaction pathway that doesn't exist
+during elongation: abortive initiation.
+
+Based on equation \eqref{eq:rnap_energy_balance} and the above differences, a
+model for transcription initiation was previously published
+\cite{xue_kinetic_2008}. This model attempts to cover explicitly both the
+abortive process and the actual promoter escape event. Although these authors
+manage to reproduce well the maximum size of abortive transcript and the
+abortive to productive ration of the N25 promoter, they do not explain well the
+abortive probabilities. This study investigates only the N25, N25anti and T7A1
+promoters, even though it was published after a larger dataset was available
+\cite{hsu_initial_2006}. Further, the T7A1 promoter varies not only in the ITS
+sequence with the other two, but also in the core promoter sequence. Variation
+in the core promoter has been shown to affect rates of abortive initiation
+\cite{vo_vitro_2003-1}, yet these authors have not taken this variation into
+account.
