@@ -1,17 +1,19 @@
 %\bibliographystyle{plain}
 %\bibliography{/home/jorgsk/phdproject/bibtex/jorgsk}
-Transcription can be divided into the stages of transcription initiation,
-transciption elongation, and transcrition termination.
+The molecular engine of transcription is the RNA polymerase (RNAP), which uses
+nucleotide triphosphates (NTP) to synthesise an RNA molecule complementary to a
+DNA template. Transcription can be divided into the stages of transcription
+initiation, transciption elongation, and transcrition termination. 
 
 \subsubsection{Transcription initiation}
-The executor of transcription, the RNA polymerase (RNAP), is by itself unable
-to initiate transcrioption without being coupled to a $\sigma$ factor. The
-$\sigma$-RNAP complex is called the holoenzyme and is capable recognizing sites
-along the bacterial DNA called promoters in a $\sigma$-specific way. In
-\textit{E. coli} there are X sigma factors, and each sigma factor controls the
-regulation of a particular gene family. For example $\sigma^{70}$ recognizes
-promoters for housekeeping genes, while $\sigma^{32}$ recognizes promoters for
-genes that are activated in case of heat shock.
+RNA polymerase (RNAP) is by itself unable to initiate transcription without
+being coupled to a $\sigma$ factor. The $\sigma$-RNAP complex is called the
+holoenzyme and is capable recognizing sites along the bacterial DNA called
+promoters in a $\sigma$-specific way. In \textit{E. coli} there are X sigma
+factors, and each sigma factor controls the regulation of a particular gene
+family. For example $\sigma^{70}$ recognizes promoters for housekeeping genes,
+while $\sigma^{32}$ recognizes promoters for genes that are activated in case
+of heat shock.
 
 The promoter that is recognized by the holoenzyme is in general defined to be
 the region from -80 to +20 relative to the transcription start site. This
@@ -37,9 +39,9 @@ the scrunching process eventually leads to the dissociation of sigma from the
 promoter and allows RNAP to escape to the elongation phase of transcription.
 
 \subsubsection{Transcription elongation}
-Afer having achieved promoter escape, RNAP keeps incorporates incoming
+After having achieved promoter escape, RNAP keeps incorporates incoming
 nucleotides to the 5' end of the RNA molecule, thereby elongating it. The
-location in RNAP where the incoming nucleotide is joined to the the RNA is
+location in RNAP where the incoming nucleotide is joined to the RNA is
 called RNAP's active site. After a nucleotide has been incorporated, RNAP must
 move one basepair downstream the DNA template to free up a space for the next
 incoming substrate; this specific movement is called translocation. As RNAP
@@ -48,11 +50,11 @@ roughly from -12 to +2 relative to the RNAP active site.
 
 \subsubsection{Transcription termination}
 Eventually, RNAP falls of DNA and releases its RNA product. Two distinct
-mechanisms have been identified for the release of RNA from RNAP. In one, the
-Rho protein binds a ribosome-free unstructured region of at least 97 nuceltodes
-of RNA and moves along RNA in the direction of the RNAP until they meet at RNAP
+mechanisms have been identified for the release of RNA from RNAP. In one, the Rho
+protein binds a ribosome-free unstructured region of at least 97 nucleotides of
+RNA and moves along RNA in the direction of the RNAP until they meet at RNAP
 pause sites, and their interaction causes the release of both RNA and RNAP from
-the DNA template \cite{ciampi_rho-dependent_2006} Italian 2006. The
+the DNA template \cite{ciampi_rho-dependent_2006}. The
 Rho-independent, or intrinsic, mechanism of termination is through a strong
 (GC-rich) RNA hairpin followed by a U-rich sequence on RNA. After the strong
 hairpin has formed, RNAP is proceeds to transcribe the U-rich sequence.
@@ -64,18 +66,68 @@ In both cases, once RNA has been released, the affinity of RNAP to DNA is
 greatly reduced and RNAP falls off. It is then free to associate with a
 $\sigma$ factor and begin transcription again.
 
-\subsubsection{Mechanism of RNAP movement}
-Several models were originally put forth for the movement of RNAP on DNA, but
-recent single-molecule studies indicate that RNAP most likely moves by a
-thermal ratchet mechanism, as opposed to a power-stroke mechanism, see X for a
-review.
+\subsubsection{Nucleotide incorporation and translocation}
+Nucleotide incorporation happens in the post-translocated state of RNAP, where
+the active site, or i+1, is free for basepairing with the incoming nucleoside
+triphosphate (NTP). When the appropriate NTP has arrived through the secondary
+channel and bound the DNA template in the active site, RNAP joins the incoming
+substrate to the 3' end of the RNA with a phosphodiester bond, which releases
+PPi. This puts RNAP in the pre-translocated state again, and RNAP must now
+translocate once more to free up the active site for nucleotide synthesis. This
+cycle of substrate binding, phosphodiester bond formation, and translocation,
+constitute the forward motion of RNAP on DNA.
 
-The prevailing model is that \ldots
+\subsubsection{Conceptual model for RNAP movement on DNA}
+The movement of RNAP on DNA is thought to occur by a so called Brownian ratchet
+movement. In this model, the backward movement of RNAP is structurally
+prevented by the RNAP F bridge \cite{_ratchet_2005}, while the forward motion
+is free to happen by brownian motion and as recently shown a translocation bias
+\cite{hein_rna_2011}.
 
-\subsubsection{Nucleotide incorporation}
-Focus on this part here, so you don't have to mention it here and there in the
-other sections. Also, this will provide some background for the models.
+Even though the backward motion is prevented, it can occasionally happen,
+leading to backtracked elongation complex. When this occurs, the 3' end of the
+RNA product ends up in the RNAP secondary channel, blocking the active site
+from binding incoming substrate. To rescue backtracked complexes, the GreA and
+GreB transcription factors can bind in the secondary channel and stimulate the
+intrinsic RNA cleavage activity of RNAP at the active site. When RNAP cleaves
+the RNA, the backtracked RNA is end is released and a new 3' end is formed at
+the active site, making RNAP again translocation-competent
+\cite{toulme_grea_2000}.
 
-\subsubsection{Transcription pausing}
+The cause for the backward motion and other types of RNAP pausing during
+transcription has been laid on the free energy balance between the RNA-DNA
+hybrid, the DNA-DNA bubble, and an unknown stabilizing effect by
+RNAP\cite{greive_thinking_2005}. By assuming the reaction steps that involve
+each of these free energy values are in equilibrium
+\cite{greive_thinking_2005}, the total free energy of the elongation complex
+can be written as 
+\begin{equation}
+	\Delta G_{\text{Total}} = \Delta G_{\text{RNA-DNA}} + \Delta
+	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}}
+	\label{eq:rnap_energy_balance}
+\end{equation}
+Depending on this energy term, it is proposed that RNAP will either move
+forward, backtrack, pause, or even terminate.
 
-\subsubsection{Transcription backtracking}
+\subsubsection{Computational models of transcription}
+Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
+calculated from published energy tables \cite{wu_temperature_2002}
+\cite{santalucia_thermodynamics_2004}, several kinetic and thermodynamic models
+of transcription elongation have been published
+\cite{tadigotla_thermodynamic_2006-1} \cite{bai_sequence-dependent_2004}
+\cite{guajardo_model_1997}. What they have in common is that in some form they
+incorporate the terms from \eqref{eq:rnap_energy_balance} (in the case of
+Tadigotla et. al the free energy from nascent RNA secondary structures close
+to the RNA exit channel is used as well). When compared with measurement data,
+however, these models leave much to be desired, showing that there are more to
+RNAP processivity than the parameters in \eqref{eq:rnap_energy_balance}.
+
+\subsubsection{A computational model of transcription initiation}
+The difference between transcription initiation and transcription elongation is
+i) that during initiation the RNA-DNA hybrid lacks its full length until +9,
+ii) that the DNA-DNA bubble is scrunched and pulled into RNAP, and iii) that
+RNAP is bound to $\sigma$ which again is bound to the promoter. Another
+difference is that there is one more possible reaction pathway for RNAP during
+initiation: transcript abortion. Based on equation
+\eqref{eq:rnap_energy_balance} and the listed differences, a model for
+transcription initiation was previously published \cite{xue_kinetic_2008}.
