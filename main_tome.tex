@@ -1,8 +1,15 @@
 \documentclass[b5paper]{report}
 
-% Support for Norwegian letters
-\usepackage[latin1]{inputenc}
+% A new package for bibliography
+% Use biber for bibtex and pdflatex instead of latex
+\usepackage[backend=biber]{biblatex}
+% new from biblatex
+\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+
+% Support for unicode
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
 
@@ -49,7 +56,7 @@ the 5` untranslated region}
 
 \subsection{Biochemical background and computational models}
 
-\input{subsections/transcription_background.tex}
+%\input{subsections/transcription_background.tex}
 
 \section{Translation}
 
@@ -94,13 +101,6 @@ Attach the paper; explain your bit, which is a lot of explanation.
 polyadenylation}
 
 \chapter{Contibution to ENCODE paper}
-
-%XXX You have to reproduce some of the figures you've produced before.
-% You have some figures now, but the problem is that you'll need the number in
-% the Nature paper to coincide with the number in your paper. Should you just
-% present what you have.
-\bibliographystyle{plain}
-\bibliography{/home/jorgsk/phdproject/bibtex/jorgsk}
 
 \end{document}
 
