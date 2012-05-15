@@ -52,18 +52,43 @@ translocate again to make space for the +3 nucleotide. At each translocation
 step, one basepair of the downstream DNA bubble must open, and the nascent RNA
 is moved toward the RNA exit channel in RNAP.
 
-This cycle of translocation and nucleotide incorporation is goes on although
-sigma is still bound to the promoter. This has the consequence that instead of
-moving downstream with each translocation step, RNAP must pull DNA into itself
-in what has been labeled 'scrunching'. It has been suggested that that buildup
-of stress from the scrunching process eventually leads to the dissociation of
+This cycle of translocation and nucleotide incorporation goes on although sigma
+is still bound to the promoter. This has the consequence that instead of moving
+downstream with each translocation step, RNAP must pull DNA into itself in what
+has been labeled 'scrunching'. It has been suggested that that buildup of
+stress from the scrunching process eventually leads to the dissociation of
 sigma from the promoter and allows RNAP to escape the promoter to the
-elongation phase of transcription \cite{revyakin_abortive_2006}. However,
-promoter escape is only one possible pathway for the initially transcribing
-RNAP. Another pathway is abortive initiation, where RNAP releases the scrunched
-DNA and nascent RNA and falls back to the open complex formation.
+elongation phase of transcription \cite{revyakin_abortive_2006}.
 
 \subsubsection{Abortive initiation}
+Promoter escape is only one out of two possible outcomes for a transcription
+initiation attempt. If the promoter-$\sigma$ contacts are not broken by around
+the +16 position, most initiation complexes will have aborted the escape
+attempt and released the nascent RNA into solution
+\cite{lilian_m_promoter_2002}. The aborted transcripts are generally no longer
+than 15 nucleotides, but lenghts up to 20 have been observed
+\cite{chander_alternate_2007}. In \textit{In vitro} experiments, abortive
+initiation is the rule rather than the exception, with some promoter variants
+having a ratio of aborted to successful transcription initiation attempts of
+over 300 \cite{hsu_initial_2006}. This indicates that RNAP may on average spend
+considerable time in abortive cycling at the promoter before achieving promoter
+escape.
+
+For a while it could be speculated that abortive initiation was an \textit{in
+vitro} phenomenon, but recently small abortive RNAs were also found \textit{in
+vivo} \cite{goldman_direct_2009}. It was also for a long time not know if the
+short abortive transcripts had any cellular function or if they were merely
+artefacts of the transcription intiation process. Yet in the last two years two
+studes have shown two different uses of these transcripts. In one, aborted
+transcripts from the $\phi$10 promoter were found to deactivate the T$\phi$
+transcriptional terminator hairpin \cite{lee_tiny_2010}. In the other, short
+abortive products 2 to 4 nucleotides in length were found to act as primers for
+the RNA polymerase; previously, it was not known if RNAP, unlike the DNA
+polymerase, used primers \textit{in vivo}.
+
+When comparing abortive initiation at different promoters, it became clear that
+both the length of the abortive transcripts and the duration of abortive cyc
+START Here hsu 2003 then hsu 2006 then move on.
 
 \subsubsection{Transcription elongation}
 After having achieved promoter escape, RNAP keeps incorporates incoming
@@ -137,37 +162,3 @@ can be written as
 Depending on this energy term, it is proposed that RNAP will either move
 forward, backtrack, pause, or even terminate.
 
-\subsubsection{Computational models of transcription}
-Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
-calculated from published energy tables \cite{wu_temperature_2002}
-\cite{santalucia_thermodynamics_2004}, several kinetic and thermodynamic models
-of transcription elongation have been published
-\cite{tadigotla_thermodynamic_2006-1} \cite{bai_sequence-dependent_2004}
-\cite{guajardo_model_1997}. What they have in common is that in some form they
-incorporate the terms from \eqref{eq:rnap_energy_balance} (in the case of
-Tadigotla et. al the free energy from nascent RNA secondary structures close
-to the RNA exit channel is used as well). When compared with measurement data,
-however, these models leave much to be desired, showing that there is more to
-RNAP processivity than the parameters in \eqref{eq:rnap_energy_balance}.
-
-\subsubsection{A computational model of transcription initiation}
-The difference between transcription initiation and transcription elongation is
-i) that during initiation the RNA-DNA hybrid lacks its full length until +8/9,
-ii) that the DNA-DNA bubble is scrunched and pulled into RNAP, and iii) that
-RNAP is bound to $\sigma$ which again is bound to the promoter. The consequence
-of these difference is that the TIC has a reaction pathway that doesn't exist
-during elongation: abortive initiation.
-
-Based on equation \eqref{eq:rnap_energy_balance} and the above differences, a
-model for transcription initiation was previously published
-\cite{xue_kinetic_2008}. This model attempts to cover explicitly both the
-abortive process and the actual promoter escape event. Although these authors
-manage to reproduce well the maximum size of abortive transcript and the
-abortive to productive ration of the N25 promoter, they do not explain well the
-abortive probabilities. This study investigates only the N25, N25anti and T7A1
-promoters, even though it was published after a larger dataset was available
-\cite{hsu_initial_2006}. Further, the T7A1 promoter varies not only in the ITS
-sequence with the other two, but also in the core promoter sequence. Variation
-in the core promoter has been shown to affect rates of abortive initiation
-\cite{vo_vitro_2003-1}, yet these authors have not taken this variation into
-account.
