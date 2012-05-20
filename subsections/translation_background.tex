@@ -23,7 +23,7 @@ been formed, the ribosome manages to initiate translation efficiently. In this
 thesis, chapters X and Y deal with how translation initiation is affected by
 the folding of RNA in the ribosome binding site (RBS). Here, we review those
 aspects of translation initiation that are relevant for these chapters. We also
-briefly mention translation elongation and termination.
+go into the role of codon bias in determining the rate of translation.
 
 \subsubsection{Translation initiation}
 
@@ -48,14 +48,14 @@ is part of the S30 subunit. The sequence in the 3' end of this RNA is highly
 conserved across bacteria and archea \cite{nakagawa_dynamic_2010}. It was shown
 by Shine and Dalgarno in 1974 that the last nine bases of the 16S RNA in 
 \textit{E. coli} are ACCUCCUUA \cite{shine_3-terminal_1974}. They suggested
-that this sequence could bind to a complementary motif in messenger RNAs 5' UTR
-regions. This mRNA motif later came to be known as the Shine-Dalgarno sequence.
-The Shine-Dalgarno sequence is often given as GGAGGA, but the core motif is
-GGAG. It is found in most bacterial mRNA usually at a distance of 3 to 10
-bases from the start codon \cite{chen_determination_1994-1} and is in these
-mRNA necessary for translation initiation to occurr. The area around the
-Shine-Dalgaro site is called the ribosome binding site (RBS) and occupies
-roughly 30 nucleotides.
+that this sequence could bind to a conserved complementary motif in messenger
+RNAs 5' UTR regions; this mRNA motif later came to be known as the
+Shine-Dalgarno sequence. The Shine-Dalgarno sequence is often given as GGAGGA,
+but the core motif is GGAG. It is found in most bacterial mRNA usually at a
+distance of 3 to 10 bases from the start codon \cite{chen_determination_1994-1}
+and is in these mRNA necessary for translation initiation to occurr. The area
+around the Shine-Dalgaro site is called the ribosome binding site (RBS) and
+occupies roughly 30 nucleotides.
 
 The binding of 16S RNA of the 30S ribosomal subunit during translation
 initiation achieves two things. The first is that he S30 subunit becomes
@@ -113,7 +113,22 @@ surprising that lack of strong secondary structures is a hallmark of ribosome
 binding sites in \textit{E coli} \cite{gu_universal_2010} genome wide. The
 folding energy of the RBS can even be used to distinguish between active genes
 and pseudogenes \cite{keller_reduced_2012}, presumably because pseudogenes are
-no longer under the selection pressure to keep the RBS structure-free.
+no longer under the selection pressure to keep the RBS weakly structured.
+
+It should be noted that weak structures do not imply the absence of structures.
+In general, it can be expected that the ribosome must deal with structured
+binding sites. To account for this, it was initially suggested that ribosomes
+would bind only as the structues in the RBS spontaneously unfolded
+\cite{de_smit_translational_1994}. However, it was later apprecated that the
+time scale for RNA folding and unfolding are orders of magnitude faster than
+the time scale for free ribosome binding. This led to the suggestion that
+ribosomes could bind so called ribosome standby site close to the RBS where
+they could slide into place once the secondary structure opened
+\cite{de_smit_translational_2003-1}. This was subsequently supported by a study
+that showed that that the ribosome together with translation initiation factors
+(IF) can unwind secondary structures at the RBS presumably from ribosome
+standby sites \cite{studer_unfolding_2006}. The exact mechanism or the actor of
+RNA unfolding is however not clear.
 
 \subsubsection{Modifying RBS secondary structures to increase gene expression}
 Given that secondary structures in the RBS have such a marked impact on
@@ -143,29 +158,37 @@ degradation is the final way to stop protein production, making it a way for
 the cell to swiftly control protein production. For these reasons, RNA
 stability is carefully regulated in the cell.
 
-There are two clear ways in which RNA secondary structures affect RNA stability.
-The first way is by hairpin structures at the 5' and 3' ends. This hairpin at
-the 5' end protects the triphosphate of the 5' nucleotide against attack from
-the protein RppH which converts 5' triphosphates to 5' monophosphates
-\cite{deana_bacterial_2008}. In turn, RNAs with a 5' monophosphate are targets
-for RNAse E, an endonuclease which can initiate RNA degradation
-\cite{mackie_ribonuclease_1998}. In this way, a 5' hairpin indirectly protects
-the mRNA against endonucleolytic attack. On the other hand, the 3' hairpin
-protects directly against degradation from 3' exonucleases, which need
-unstructured RNA to instigate degradation \cite{rauhut_mrna_1999}.
+There are two well-known ways in which RNA secondary structures affect RNA
+stability. The first is by hairpin structures at the 5' and 3' ends. The
+hairpin at the 5' end protects the triphosphate of the 5' nucleotide against
+attack from the protein RppH which converts 5' triphosphates to 5'
+monophosphates \cite{deana_bacterial_2008}. In turn, RNAs with a 5'
+monophosphate are targets for RNAse E, an endonuclease which can initiate RNA
+degradation \cite{mackie_ribonuclease_1998}. In this way, a 5' hairpin
+indirectly protects the mRNA against endonucleolytic attack. On the other hand,
+the 3' hairpin protects directly against degradation from 3' exonucleases,
+which need RNA with an unstructured 3' end for their activity
+\cite{rauhut_mrna_1999}.
 
-The second way RNA structures affect RNA stability is indirect. As mentioned,
-secondary structures at the RBS affects the rate of translation initiation. The
-rate of translation again affects the spacing between translating ribosomes on
-the transcript. This has resulted in the idea that reduced spacing between
-translating ribosomes protects against endonucleolytic cleavage by steric
-blocking. It has however been shown that ribosome binding, but not translation,
-confer transcript stability \cite{wagner_efficient_1994}
-\cite{hambraeus_5_2002}, indicating that narrow spacing between translating
-ribosomes is not necessary for increased stability. Still, the precise
-mechanism for how ribosome binding prevents degradation is not clear
-\cite{deana_lost_2005}.
+The second way RNA structures affect RNA stability is more indirect. As
+mentioned, secondary structures at the RBS affects the rate of translation
+initiation. The rate of translation again affects the spacing between
+translating ribosomes on the transcript. Since it was early observed that
+translated RNA is protected from degradation, the idea was put forth that
+reduced spacing between translating ribosomes protects against endonucleolytic
+cleavage by steric blocking. It has however been shown in at least two cases
+that ribosome binding, but not translation, confer transcript stability
+\cite{wagner_efficient_1994} \cite{hambraeus_5_2002}, indicating that narrow
+spacing between translating ribosomes is not necessary for increased stability.
+Still, the precise mechanism for how ribosome binding prevents degradation is
+not clear \cite{deana_lost_2005}.
 
-# What's next? translation elongation and termination?
-\subsubsection{}<++>
-
+%# What's next? translation elongation and termination?
+\subsubsection{Codon bias during translation elongation}
+During translation elongation the ribosome matches incoming amino acids on
+transfer RNAs (tRNA) to codons on the mRNA. Due to the redundancy in the number
+of codons (64) to the number of amino acids (20), there multiple tRNA carrying
+the same amino acid. In practice, there is not a one-to-one relationship
+between the number of codons and the number of tRNA. In a study of 102
+bacterial genomes, the average number of tRNA genes was 37
+\cite{rocha_codon_2004}.
