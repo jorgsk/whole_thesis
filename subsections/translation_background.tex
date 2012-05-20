@@ -41,17 +41,21 @@ activity of the ribosome (amino acid bond formation) is actually carried out by
 the molecule's RNA fraction \cite{steitz_rna_2003}, the ribosome is not so much
 a protein enzyme as an RNA enzyme, a ribozyme.
 
+\subsubsection{Binding of S30 to the Shine-Dalgarno sequence}
+
 A central ribosomal RNA (rRNA) in translation initiation is the 16S RNA which
 is part of the S30 subunit. The sequence in the 3' end of this RNA is highly
 conserved across bacteria and archea \cite{nakagawa_dynamic_2010}. It was shown
 by Shine and Dalgarno in 1974 that the last nine bases of the 16S RNA in 
 \textit{E. coli} are ACCUCCUUA \cite{shine_3-terminal_1974}. They suggested
 that this sequence could bind to a complementary motif in messenger RNAs 5' UTR
-regions. This motif later came to be known as the Shine-Dalgarno sequence. The
-Shine-Dalgarno sequence is often given as GGAGGA, but the core motif is GGAG.
-It is found in most bacterial mRNA usually at a distance of 3 to 10 bases from
-the start codon \cite{chen_determination_1994-1} and is in these mRNA necessary
-for translation initiation to occurr.
+regions. This mRNA motif later came to be known as the Shine-Dalgarno sequence.
+The Shine-Dalgarno sequence is often given as GGAGGA, but the core motif is
+GGAG. It is found in most bacterial mRNA usually at a distance of 3 to 10
+bases from the start codon \cite{chen_determination_1994-1} and is in these
+mRNA necessary for translation initiation to occurr. The area around the
+Shine-Dalgaro site is called the ribosome binding site (RBS) and occupies
+roughly 30 nucleotides.
 
 The binding of 16S RNA of the 30S ribosomal subunit during translation
 initiation achieves two things. The first is that he S30 subunit becomes
@@ -69,5 +73,99 @@ which are SD-complementary RNA on the transcript itself. Here, we focus on how
 \textit{cis}-mediated sequestering of the SD site.
 
 \subsubsection{RNA folding}
+The basis for RNA folding is that RNA, as DNA, can basepair with itself; C
+pairs with G and A pairs with U. As the nascent RNA emerges from the RNA exit
+channel of the polymerase it is immediately free to fold into an energetically
+favorable confirmation.
 
-TODO read up on this part.
+A key question in co-transcriptional RNA folding has been how comparable the
+time scales for RNA folding and RNA synthesis are
+\cite{de_smit_translational_2003-1}. Whether or not RNA folds
+co-transcriptionally depends on the timescale for folding being shorter than
+that of transcript production. For bacteria, nucleotides are incorporated at a
+rate of between 20 and 80 ms per nucleotide, while formation and dissociation
+of semi-stable helices occur on the 10 to 100 $\mu$s timescale
+\cite{isambert_jerky_2009}. In other words, for each nucleotide produced, there
+is on average time for 1000 refolding events. It should be noted, the time
+needed for the spontaneous refolding of an RNA structure depends on the binding
+strength of that structure. The cell has evolved mechanisms to either ensure or
+prevent certain transient secondary structures during the folding pathway. The
+purpose of this is to ensure that a desired final secondary (and in the case of
+some RNA, tertiary) state is reached \cite{pan_rna_2006-1}.
+
+\subsubsection{RNA secondary structures in the ribosome binding site}
+It was early on showed that translation rates were stronly affected by
+secondary structures at the RBS; changes to the secondary structures were found
+to affect translation rates by a factor of over 500
+\cite{de_smit_secondary_1990}. In particular, a non-linear relationship between
+the folding energy of structures in the RBS and the translation initiation
+rate was found: below a certain limit, the translation initiation rate is almost
+invariant with respect to the strength of the secondary structure; above that
+limit, the relationship is exponential:
+\begin{equation*}
+	\text{Translation rate} \approx exp^{\Delta G_{\text{RBS}}}
+\end{equation*}
+
+Not only the Shine-Dalgarno sequence but the entire RBS sequence, including
+sequences downstream the start codon \cite{seo_quantitative_2009} must in
+general be unstructured for translation initiaton to occur. It is therefore not
+surprising that lack of strong secondary structures is a hallmark of ribosome
+binding sites in \textit{E coli} \cite{gu_universal_2010} genome wide. The
+folding energy of the RBS can even be used to distinguish between active genes
+and pseudogenes \cite{keller_reduced_2012}, presumably because pseudogenes are
+no longer under the selection pressure to keep the RBS structure-free.
+
+\subsubsection{Modifying RBS secondary structures to increase gene expression}
+Given that secondary structures in the RBS have such a marked impact on
+translation rates, many studies have varied the RBS-sequence for the purpose of
+tuning gene expression \cite{cebe_rapid_2006} \cite{park_design_2007}
+\cite{berg_expression_2009}. For example, it is often necessary to modify the
+RBS sequence of eukaryotic genes when trying to express them in a prokaryotic
+host \cite{care_translation_2007}.
+
+In practise when seeking to optimize the expression of a given gene, labs turn
+to commercial providers of gene optimization, such as DNA 2.0 or GenScript.
+However, there are published alternatives. The most prominent of these is the
+RBS calculator \cite{salis_automated_2009}. This software takes into account
+the match of the 16S RNA to the SD sequence, the distance from the SD sequence
+to the start codon, the folding energy of any RBS structures, the start codon,
+and the folding energy of the ribosome standby site. Of these variables, the
+one that correlatest most strongly with gene expression is the folding energy
+of the RBS structures, see \cite{salis_automated_2009} in the supplementary
+materials. By considering these variables, the rate of translation initiation
+should be tunable to a factor of 100.000 fold.
+
+\subsubsection{RNA secondary structures affect RNA stability}
+RNA stability means how long it takes before an RNA is degraded. The more
+stable a transcript is, the more time ribosomes have to translate it to produce
+protein, meaning that more stable transcripts lead to more protein. Also, RNA
+degradation is the final way to stop protein production, making it a way for
+the cell to swiftly control protein production. For these reasons, RNA
+stability is carefully regulated in the cell.
+
+There are two clear ways in which RNA secondary structures affect RNA stability.
+The first way is by hairpin structures at the 5' and 3' ends. This hairpin at
+the 5' end protects the triphosphate of the 5' nucleotide against attack from
+the protein RppH which converts 5' triphosphates to 5' monophosphates
+\cite{deana_bacterial_2008}. In turn, RNAs with a 5' monophosphate are targets
+for RNAse E, an endonuclease which can initiate RNA degradation
+\cite{mackie_ribonuclease_1998}. In this way, a 5' hairpin indirectly protects
+the mRNA against endonucleolytic attack. On the other hand, the 3' hairpin
+protects directly against degradation from 3' exonucleases, which need
+unstructured RNA to instigate degradation \cite{rauhut_mrna_1999}.
+
+The second way RNA structures affect RNA stability is indirect. As mentioned,
+secondary structures at the RBS affects the rate of translation initiation. The
+rate of translation again affects the spacing between translating ribosomes on
+the transcript. This has resulted in the idea that reduced spacing between
+translating ribosomes protects against endonucleolytic cleavage by steric
+blocking. It has however been shown that ribosome binding, but not translation,
+confer transcript stability \cite{wagner_efficient_1994}
+\cite{hambraeus_5_2002}, indicating that narrow spacing between translating
+ribosomes is not necessary for increased stability. Still, the precise
+mechanism for how ribosome binding prevents degradation is not clear
+\cite{deana_lost_2005}.
+
+# What's next? translation elongation and termination?
+\subsubsection{}<++>
+
