@@ -147,16 +147,17 @@ to the start codon, the folding energy of any RBS structures, the start codon,
 and the folding energy of the ribosome standby site. Of these variables, the
 one that correlatest most strongly with gene expression is the folding energy
 of the RBS structures, see \cite{salis_automated_2009} in the supplementary
-materials. By considering these variables, the rate of translation initiation
-should be tunable to a factor of 100.000 fold.
+materials. By considering these variables, the software will suggest
+modifications to a given gene sequence to set gene expression to a specified
+level.
 
 \subsubsection{RNA secondary structures affect RNA stability}
-RNA stability means how long it takes before an RNA is degraded. The more
-stable a transcript is, the more time ribosomes have to translate it to produce
-protein, meaning that more stable transcripts lead to more protein. Also, RNA
-degradation is the final way to stop protein production, making it a way for
-the cell to swiftly control protein production. For these reasons, RNA
-stability is carefully regulated in the cell.
+RNA stability means how long it takes from an RNA is produced until it is
+degraded. The more stable a transcript is, the more time ribosomes have to
+translate it to produce protein, meaning that more stable transcripts lead to
+more protein. Also, RNA degradation is the final way to stop protein
+production, making it a way for the cell to swiftly control protein production.
+For these reasons, RNA stability is carefully regulated in the cell.
 
 There are two well-known ways in which RNA secondary structures affect RNA
 stability. The first is by hairpin structures at the 5' and 3' ends. The
@@ -190,5 +191,17 @@ transfer RNAs (tRNA) to codons on the mRNA. Due to the redundancy in the number
 of codons (64) to the number of amino acids (20), there multiple tRNA carrying
 the same amino acid. In practice, there is not a one-to-one relationship
 between the number of codons and the number of tRNA. In a study of 102
-bacterial genomes, the average number of tRNA genes was 37
-\cite{rocha_codon_2004}.
+bacterial genomes, the average number of tRNA genes was 55.6
+\cite{rocha_codon_2004}. However, many of these are duplicates of the same
+tRNA; the average number of unique tRNA was 37. This number is less than the
+amount of codons found in the genome, but this is explained by that one tRNA
+recognizes more than one codon in an effect termed ``wobble'' which was
+pronounced by Crick in 1966 \cite{crick_codon--anticodon_1966}.
+
+When different codons code for the same amino acid, some of those codons are
+usually more frequent in the genome than others. For example, codons CUA and
+CUG both code for leucine, but only 3\% of leucine codons in \textit{E. coli}
+are CUA while 55\% are CUF. The preference for some codons for the same amino
+acid has been termed codon bias.
+
+Mention the CAI index. Mention critisism. Mention Ramp hypothesis.
