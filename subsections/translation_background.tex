@@ -1,29 +1,33 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-Translation of an RNA transcript into protein happens in different ways between
-eukaryotes and prokaryotes. In eukaryotes, a transcript destined for
-translation must be co-transcriptionally modified in several ways before it can
-be transported out of the nucleus to the waiting ribosomes in the cytoplasm.
-More about this in the next chapter. For now we focus on translation in
-bacteria.
+Chapters X and Y deal with how gene expression in bacteria is regulated by RNA
+secondary structures in the ribosome binding site (RBS), mRNA stability, and
+codon usage bias. Here, we review each of those topcis. We begin with a brief
+account of translation initiation and then talk about how this process is
+regulated by RNA secondary structures, and how this again affects RNA
+stability. We then proceed to translation elongation and how this process is
+affected by condon usage bias.
 
-Since bacteria do not have a nucleus the ribosome has access to the
-transcript immediately after its 5' end leaves the RNA exit channel. It has
-been shown that the initially translating ribosome follows closely and even
-pushes the transcribing polymerase, causing them to have the same speed
+\subsubsection{Brief overview of translation initiation}
+
+Here you briefly mention these things; then you go into detail.
+
+Since bacteria do not have a nucleus the ribosome has access to the transcript
+immediately after its 5' end leaves the RNA exit channel. It has been shown
+that the initially translating ribosome follows closely and even pushes the
+transcribing polymerase, causing them to have the same speed
 \cite{proshkin_cooperation_2010}. This ribosome pushing can prevent RNAP
 backtracking, which while helful to gene expression seems also to prevent
 errors in chromosome replication by reducing collisions between the DNA and RNA
-polymerases \cite{dutta_linking_2011}. This shows shows a new way in which
-gene expression is linked to genome duplication, hinting that we are still only
+polymerases \cite{dutta_linking_2011}. This shows shows a new way in which gene
+expression is linked to genome duplication, hinting that we are still only
 scratching the surface of the complexity of cell biology.
 
-In order for the ribosome and the polymerase to carry out gene expression in
-a coordinated fashion, it is vital that, once a transcript has
-been formed, the ribosome manages to initiate translation efficiently. In this
-thesis, chapters X and Y deal with how translation initiation is affected by
-the folding of RNA in the ribosome binding site (RBS). Here, we review those
-aspects of translation initiation that are relevant for these chapters. We also
-go into the role of codon bias in determining the rate of translation.
+In order for the ribosome and the polymerase to carry out gene expression in a
+coordinated fashion, it is vital that, once a transcript has been formed, the
+ribosome manages to initiate translation efficiently.
+
+XXX what are you trying to achieve here? It doesn't seem like this is one
+story.
 
 \subsubsection{Translation initiation}
 
@@ -186,24 +190,33 @@ not clear \cite{deana_lost_2005}.
 
 \subsubsection{Codon bias during translation elongation}
 During translation elongation the ribosome matches incoming amino acids on
-transfer RNAs (tRNA) to codons on the mRNA. Due to the redundancy in the number
-of codons (64) to the number of amino acids (20), multiple tRNA may carry
-the same amino acid. In practice, there is not a one-to-one relationship
-between the number of codons and the number of tRNA. In a study of 102
-bacterial genomes, the average number of tRNA genes was 55.6
-\cite{rocha_codon_2004}. However, many of these are duplicates of the same
-tRNA; the average number of unique tRNA was 37. This number is less than the
-amount of codons found in the genome, but this is explained by that one tRNA
-recognizes more than one codon in an effect termed ``wobble'' which was
-pronounced by Crick in 1966 \cite{crick_codon--anticodon_1966}.
+transfer RNAs (tRNA) to codons (nucleotide triplets; eg, ATG) on the mRNA. Each
+codon corresponds to an amino acid, and in this way the RNA sequence is being
+translated into a protein sequence. Since there are 61 codons that bind tRNA
+($4^3$ minus three stop codons) but only 20 amino acids, it is inevitable that
+several codons code for the same amino acid; this fact has been called the
+redundancy of the genetic code. This redundancy and the fact that some
+iso-coding codons were preferred to others puzzled early workers on the
+genetic code, and still today these observations remain partially unanswered
+(see a great review on the topic by Plotkin and Kudla \cite{plotkin_synonymous_2011}).
 
-When different codons code for the same amino acid, some of those codons are
-usually more frequent in the genome than others. For example, codons CUA and
-CUG both code for leucine, but only 3\% of leucine codons in \textit{E. coli}
-are CUA while 55\% are CUF. The preference for some codons for the same amino
-acid has been termed codon bias.
+Codons that code for the same amino acid are called synonoymous codons, and the
+preference of one synonymous codon over another is called codon usage bias.
+Codon usage bias is found throughout the kingdom of life
+\cite{sharp_codon_1988}, and it has been found in several species that codon
+bias is especially strong in highly expressed genes, leading to the idea that
+some tRNA are more ``efficient'' than others and that their usage leads to more
+efficient translation \cite{moriyama_gene_1998}. Indeed, when expressing for
+example a human gene in a bacterial host, it is often necessary to change the
+codons in the gene to the preference of the bacteria (called codon
+optimization) to achieve high expression levels \cite{gustafsson_codon_2004},
+because the preferred codons between humans and bacteria are different.
 
-Mention the CAI index. Mention critisism. Mention Ramp hypothesis. Critizise
-it. Print the whole thing for review.
+Two recent publications have shed light on the role of codon bias in the rate
+of translation. In the first, Kudla et al. selected synomymous codons at random
+in the green fluorecent protein (GFP) gene to generate a library of 141 GFP
+genes with on average 100 different codons each
+\cite{kudla_coding-sequence_2009}.
 
-Read up. Again.
+
+Kudla + Ramp.
