@@ -2,13 +2,14 @@
 
 % A new package for bibliography
 % Use biber for bibtex and pdflatex instead of latex
-\usepackage[backend=biber]{biblatex}
+%\usepackage[backend=biber, url=true]{biblatex}
+\usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false, url=false]{biblatex}
 % new from biblatex
 \addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
 % Support for unicode. Should be unnecessary.
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
@@ -103,6 +104,8 @@
 %polyadenylation}
 
 %\chapter{Contibution to ENCODE paper}
+
+\printbibliography
 
 \end{document}
 
