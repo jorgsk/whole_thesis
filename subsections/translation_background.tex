@@ -1,90 +1,84 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-Chapters X and Y deal with how gene expression in bacteria is regulated by RNA
-secondary structures in the ribosome binding site (RBS), mRNA stability, and
-codon usage bias. Here, we review each of those topcis. We begin with a brief
-account of translation initiation and then talk about how this process is
-regulated by RNA secondary structures, and how this again affects RNA
-stability. We then proceed to translation elongation and how this process is
-affected by condon usage bias.
+Chapters X and Y deal with how gene expression systems in bacteria and how
+these systems are regulated by RNA secondary structures in the ribosome binding
+site (RBS), mRNA stability, and codon usage bias. Here, we review each of those
+topcis. We begin with a brief account of translation initiation and then talk
+about how this process is regulated by RNA secondary structures, and how this
+again affects RNA stability. We then proceed to translation elongation and how
+this process is affected by condon usage bias.
 
-\subsubsection{Brief overview of translation initiation}
+\subsubsection{Brief overview of translation}
+Translation is the conversion of the genetic code on an mRNA into an amino acid
+sequence. The molecule responsible for this conversion is the ribosome, a
+macromolecular complex of protein and ribosomal RNA. The ribosome consist of
+two subunits, S30 and S50, which bind sequentially at the 5' region of an mRNA.
+Together, they read the genetic code in the form of nucleotide triplets called
+codons. Each codon is matched with an amino acid and the amino acids are joined
+to each other to form the primary protein.
 
-Here you briefly mention these things; then you go into detail.
+Since bacteria have no nucleus, the ribosome can bind the 5' end mRNA as it is
+being synthesized by the RNA polymerase, leading to co-transcriptional
+translation. The first ribosome that initiates
+translation on an mRNA follows the transcribing RNA polymerase closely and even
+pushes it, causing both of them to follow the same speed 
+\cite{proshkin_cooperation_2010}. In this way, the ribosome can prevent RNAP
+from backtracking, which can increase the speed of transcription by reducing
+RNAP pausing. Fascinatingly, it was recently shown that by preventing RNAP
+backtracking, the ribosomes reduce collisions between RNAP and DNA polymerases
+performing chromosome duplication, and that reducing these collisions leads to
+fewer errors during genome duplication \cite{dutta_linking_2011}.
 
-Since bacteria do not have a nucleus the ribosome has access to the transcript
-immediately after its 5' end leaves the RNA exit channel. It has been shown
-that the initially translating ribosome follows closely and even pushes the
-transcribing polymerase, causing them to have the same speed
-\cite{proshkin_cooperation_2010}. This ribosome pushing can prevent RNAP
-backtracking, which while helful to gene expression seems also to prevent
-errors in chromosome replication by reducing collisions between the DNA and RNA
-polymerases \cite{dutta_linking_2011}. This shows shows a new way in which gene
-expression is linked to genome duplication, hinting that we are still only
-scratching the surface of the complexity of cell biology.
-
-In order for the ribosome and the polymerase to carry out gene expression in a
-coordinated fashion, it is vital that, once a transcript has been formed, the
-ribosome manages to initiate translation efficiently.
-
-XXX what are you trying to achieve here? It doesn't seem like this is one
-story.
-
-\subsubsection{Translation initiation}
-
-We have previously covered transcription initiation, which involved the
-5-protein complex RNA polymerase and the $\sigma$ unit. Translation initiation
-is more complex than transcription initiation. Partly this is because the
-ribosome is a much larger molecule than RNAP. The ribosome consist of two
-subunits called S50 and S30, which when together are called the S70 complex.
-The S symbolizes the svedberg unit, a nonlinear measure of the rate of
-sedimentation of these molecules. All in all, the ribosome is made up from over
-50 proteins, ten times a many as RNAp. In addition, it consists of over 4500
-nucleotides of ribosomal RNA \cite{laursen_initiation_2005}, which in
-\textit{E. coli} amounts to two thirds of the ribosome. Since the catalytic
-activity of the ribosome (amino acid bond formation) is actually carried out by
-the molecule's RNA fraction \cite{steitz_rna_2003}, the ribosome is not so much
-a protein enzyme as an RNA enzyme, a ribozyme.
-
-\subsubsection{Binding of S30 to the Shine-Dalgarno sequence}
-
+\subsubsection{Translation initiation: binding of the 16S RNA to the Shine-Dalgarno sequence}
 A central ribosomal RNA (rRNA) in translation initiation is the 16S RNA which
-is part of the S30 subunit. The sequence in the 3' end of this RNA is highly
-conserved across bacteria and archea \cite{nakagawa_dynamic_2010}. It was shown
-by Shine and Dalgarno in 1974 that the last nine bases of the 16S RNA in 
-\textit{E. coli} are ACCUCCUUA \cite{shine_3-terminal_1974}. They suggested
-that this sequence could bind to a conserved complementary motif in messenger
-RNAs 5' UTR regions; this mRNA motif later came to be known as the
-Shine-Dalgarno sequence. The Shine-Dalgarno sequence is often given as GGAGGA,
-but the core motif is GGAG. It is found in most bacterial mRNA usually at a
-distance of 3 to 10 bases from the start codon \cite{chen_determination_1994-1}
-and is in these mRNA necessary for translation initiation to occurr. The area
-around the Shine-Dalgaro site is called the ribosome binding site (RBS) and
-occupies roughly 30 nucleotides.
+is part of the S30 subunit. It was shown by Shine and Dalgarno in 1974 that the
+last nine bases of the 16S RNA in \textit{E. coli} are ACCUCCUUA
+\cite{shine_3-terminal_1974}. They suggested that this sequence could bind to a
+previously discovered conserved complementary motif in messenger RNAs 5' UTR
+regions to initiate translation \cite{shine_3-terminal_1974}. This has later
+been confirmed and is now considered the canonical way in which translation
+initiation occurs in prokaryotes \cite{nakagawa_dynamic_2010}, although there
+are rare instances of SD-indpendent translation initiation
+\cite{skorski_highly_2006, boni_non-canonical_2001}. The
+complementary motif on mRNA later came to be known as the Shine-Dalgarno
+sequence, and the complementary bases on 16S RNA became known as the anti
+Shine-Dalgarno sequence. The Shine-Dalgarno (SD) sequence is often given as
+GGAGGA although the core motif can be reduced to GGAG; this sequence is
+conserved across bacteria and archea with very little variation
+\cite{nakagawa_dynamic_2010}. The SD sequence is found usually in the mRNA 5'
+region at a distance of 3 to 10 bases from the start codon
+\cite{chen_determination_1994-1}. The area around the Shine-Dalgaro site is
+called the ribosome binding site (RBS) and occupies roughly 30 nucleotides.
+This whole area is vital for translation initiation and by mutating the area
+the rate of translation initiation can be varied
+\cite{shultzaberger_anatomy_2001}.
 
-The binding of 16S RNA of the 30S ribosomal subunit during translation
-initiation achieves two things. The first is that he S30 subunit becomes
-anchored to the transcript, and the second is that the start codon (often AUG)
-becomes aligned to the peptidyl (P) site on S30 from where peptide synthesis
-occurs. In the last sense, the Shine-Dalgarno (SD) sequence acts for the
-ribosome like the promoter for the RNA Polymerase; both direct these
-macromolecules to the site of \textit{de novo} synthesis.
+When the 16S RNA binds the SD site during translation initiation, two things
+are achieved. The first is that he S30 subunit becomes physically anchored to
+the transcript through the RNA-RNA bond between the SD and the anti-SD
+sequence. The second is that the start codon (often AUG) becomes aligned to the
+peptidyl site on S30 at which peptide bond formation occurs. Since the SD
+sequence aligns the ribosome to the start codon, the SD sequence is to the
+ribosome much like the promoter is to RNAP: both sequence regions direct these
+macromolecules to the site of \textit{de novo} synthesis. Following this
+analogy, in same the way that transcription factors can block transcription
+initiation by binding to promoter regions, other RNA than 16S can bind the SD
+region to hinder translation initiation. This mechanism makes it possible for
+the cell to control translation initiation. Two types of SD-binding non-16S RNA
+exist. One type are small RNAs that bind to the RBS to occlude ribosome biding
+\cite{storz_controlling_2004}. The type other are RNA bases from the mRNA
+itself which have base paired with the SD sequence in a secondary structure
+through RNA folding.
 
-It is in the nature of the 16S-SD RNA-DNA bond that the Shine Dalgarno
-sequence must be unsequestered for the 16S to be able to base pair. Two possible
-ways of sequestering the SD sequence is by protein binding and by RNA-RNA bonds
-either from \textit{trans} elements like microRNA or from \textit{cis} elements
-which are SD-complementary RNA on the transcript itself. Here, we focus on how
-\textit{cis}-mediated sequestering of the SD site.
-
+%XXX start here with more review
 \subsubsection{RNA folding}
-The basis for RNA folding is that RNA, as DNA, can basepair with itself; C
-pairs with G and A pairs with U. As the nascent RNA emerges from the RNA exit
-channel of the polymerase it is immediately free to fold into an energetically
-favorable confirmation.
-
-A key question in co-transcriptional RNA folding has been how comparable the
-time scales for RNA folding and RNA synthesis are
-\cite{de_smit_translational_2003-1}. Whether or not RNA folds
+To understand on RNA folding affects the SD-site, it is necessary to understand
+how RNA folding happens. The basis for RNA folding is that RNA, as DNA, can
+basepair with itself; C pairs with G and A pairs with U. As the nascent RNA
+emerges from the RNA exit channel of RNAP it is immediately free to fold into
+an energetically favorable confirmation. The folding of the mRNA as it emerges
+is called co-transcriptional folding. A key question in co-transcriptional RNA
+folding has been how comparable the time scales for RNA folding and RNA
+synthesis are \cite{de_smit_translational_2003-1}. Whether or not RNA folds
 co-transcriptionally depends on the timescale for folding being shorter than
 that of transcript production. For bacteria, nucleotides are incorporated at a
 rate of between 20 and 80 ms per nucleotide, while formation and dissociation
