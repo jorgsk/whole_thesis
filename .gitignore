@@ -4,4 +4,8 @@
 *.lot
 *.pdf
 *.swp
+*.bbl
+*.bcf
+*.blg
+*.xml
 

@@ -182,35 +182,77 @@ spacing between translating ribosomes is not necessary for increased stability.
 Still, the precise mechanism for how ribosome binding prevents degradation is
 not clear \cite{deana_lost_2005}.
 
-\subsubsection{Codon bias during translation elongation}
+\subsubsection{The role of codon bias in gene expression and cellular fitness}
 During translation elongation the ribosome matches incoming amino acids on
 transfer RNAs (tRNA) to codons (nucleotide triplets; eg, ATG) on the mRNA. Each
 codon corresponds to an amino acid, and in this way the RNA sequence is being
 translated into a protein sequence. Since there are 61 codons that bind tRNA
 ($4^3$ minus three stop codons) but only 20 amino acids, it is inevitable that
-several codons code for the same amino acid; this fact has been called the
-redundancy of the genetic code. This redundancy and the fact that some
-iso-coding codons were preferred to others puzzled early workers on the
-genetic code, and still today these observations remain partially unanswered
-(see a great review on the topic by Plotkin and Kudla \cite{plotkin_synonymous_2011}).
+several codons are associated with the same amino acid; this fact has been
+called the redundancy of the genetic code. This redundancy and the observation
+that some iso-coding codons were preferred over others puzzled early workers on
+the genetic code, and still today these observations remain partially
+unanswered (see a great review on the topic by Plotkin and Kudla
+\cite{plotkin_synonymous_2011}).
 
 Codons that code for the same amino acid are called synonoymous codons, and the
 preference of one synonymous codon over another is called codon usage bias.
-Codon usage bias is found throughout the kingdom of life
-\cite{sharp_codon_1988}, and it has been found in several species that codon
-bias is especially strong in highly expressed genes, leading to the idea that
-some tRNA are more ``efficient'' than others and that their usage leads to more
-efficient translation \cite{moriyama_gene_1998}. Indeed, when expressing for
-example a human gene in a bacterial host, it is often necessary to change the
-codons in the gene to the preference of the bacteria (called codon
-optimization) to achieve high expression levels \cite{gustafsson_codon_2004},
-because the preferred codons between humans and bacteria are different.
+Codon usage bias is a universal phenomenon as it is found throughout the
+kingdom of life \cite{sharp_codon_1988}. In many species, codon bias is
+especially strong in highly expressed genes, which has lead to the suggestion
+that some codons are more ``efficient'' than others and that genes biased in the
+direction of efficient codons are translated more efficiently
+\cite{moriyama_gene_1998}. It was eventually shown that efficient codons are
+those with the highest copy number of tRNA genes, giving an explanation to the
+enigma \cite{reis_solving_2004, elf_selective_2003}. A commonly used measure
+for codon bias is the codon adaptation index (CAI), which measures how similar
+a gene's codon content is compared to the codons in highly expressed genes in
+the same organism \cite{sharp_codon_1987}. A practical consequence of codon
+bias is that when expressing for example a human gene in a bacterial host, it
+is often necessary to change the codons in the gene to the preference of the
+bacteria (called codon optimization) to achieve high expression levels
+\cite{gustafsson_codon_2004}, because the preferred codons between humans and
+bacteria are different.
 
-Two recent publications have shed light on the role of codon bias in the rate
-of translation. In the first, Kudla et al. selected synomymous codons at random
-in the green fluorecent protein (GFP) gene to generate a library of 141 GFP
-genes with on average 100 different codons each
-\cite{kudla_coding-sequence_2009}.
+Two recent publications have shed light on the effect that codon bias has on
+the rate of translation. In the first, Kudla et al. made random synomymous
+codons changes in the green fluorecent protein (GFP) gene to generate a
+library of 154 GFP genes with on average 114 different codons each
+\cite{kudla_coding-sequence_2009}. They found no correlation between CAI and
+the expression level of the GFP variants, contrary to what is found in many
+naturally occuring genes. On the other hand, CAI was highly correlated with
+cell growth rates. What did correlate with expression levels was the RNA
+folding free energy around the start codon; however, RNA folding energy did not
+correlate with growth rates. The authors conclude from this that codon bias
+exists in highly expressed genes not to optimize translation rates, but to
+optimize overall cellular fitness, presumably by freeing up ribosomes which
+would otherwise be pausing on highly expressed but codon-inefficient genes due
+to lack of incoming charged tRNA \cite{kudla_coding-sequence_2009}.
 
+In the second paper, Tuller et al. \cite{tuller_evolutionarily_2010} examined
+the codon bias of 27 organisms from all three domains of life by using the tRNA
+adaptation index (tAI). This measure ranks each codon with the copy number of
+the associated tRNA in the genome. They found a species-wide trend that genes
+tended to have inefficient codons in the early coding region (first 30-70 codons),
+but efficient codons in mid and late coding regions. The early inefficient
+codons were labeled a ramp. They attribute this to that reduced speed in early
+translating ribosomes reduce collisions later on, therby increasing overall
+translation efficiceny in the cell.
 
-Kudla + Ramp.
+A possible criticism for the authors of the Tuller et al. paper is that the
+selection for unstructured mRNA around the RBS reduces the evolutionary freedom
+of the early coding region compared to later regions
+\cite{plotkin_synonymous_2011}, which could partially explain the ramp effect.
+
+Finally, there are other sources of codon bias. One is the specific order that
+codons appear in \cite{cannarozzi_role_2010}. Another is the avoidance of
+message-bearing motifs like the Shine-Dalgarno element. It was shown in
+\textit{E. coli} that when Gly-Gly amino acid pairs are coded for in a gene,
+the most common codon pair is GGC-GGC, which has the lowest possible affinity for
+the anti-Shine Dalgarno sequence, while the least common pair was GGA-GGU,
+which is an exact match to the Shine-Dalgarno sequence
+\cite{li_anti-shine-dalgarno_2012}. In the same study it was shown that
+Shine-Dalgarno sequences inside coding regions could cause rebinding of the
+16SRNA during translation elongation and thereby cause translation pausing.
+Curiously, this rebinding behavior is the same as found for the sigma factor
+during transcription elongation by RNA polymerase.
