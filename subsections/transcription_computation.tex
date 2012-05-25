@@ -25,7 +25,7 @@ where $\Delta G_{\text{RNAP}}$ is the non-specific energy state of the RNAP at
 a given position on DNA \cite{greive_thinking_2005}.
 
 This conceptual model seems orderly, but one should consider whether
-historically the RNA-DNA and DNA-DNA parameters have been included because they
+historically the RNA-DNA and DNA-DNA variables have been included because they
 fit the data or because they simply have been easy to measure compared to the
 other interactions involved in transcription.
 
@@ -34,34 +34,35 @@ Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
 calculated from published energy tables \cite{wu_temperature_2002, 
 santalucia_thermodynamics_2004}, several kinetic and thermodynamic models
 of transcription elongation have been published
-\cite{tadigotla_thermodynamic_2006-1} \cite{bai_sequence-dependent_2004}
-\cite{guajardo_model_1997}. What they have in common is that in some form they
+\cite{tadigotla_thermodynamic_2006-1, bai_sequence-dependent_2004,
+guajardo_model_1997}. What they have in common is that in some form they
 incorporate the terms from \eqref{eq:rnap_energy_balance}. In the case of
 Tadigotla et al. \cite{tadigotla_thermodynamic_2006-1} the free energy from the
-nascent RNA secondary structure close to the RNA exit channel is used as
-well. This is to aid the prediction of pause sites where a strong hairpin will
+nascent RNA secondary structure close to the RNA exit channel is used as well.
+This is to aid the prediction of pause sites where a strong hairpin will
 prevent backtracking while RNAP is paused.
 
 These models have had partial predictive power, but more work needs to be done
-before a truly descriptive model of transcription is at hand. The
-descriptiveness of the current models make it clear that is more to to RNAP
-processivity than the parameters in \eqref{eq:rnap_energy_balance}.  Indeed, it
-was recently published that the 3' dinucleotide of the nascent RNA has a strong
-effect on translocation rates \cite{hein_rna_2011}, showing that there are
-other factors at play than have been previously suspected.
+before a truly descriptive model of transcription is at hand. The state of the
+current models make it clear that is more to to RNAP processivity than the
+thermodynamic variables in equation \eqref{eq:rnap_energy_balance} on which
+these models are based. Indeed, it was recently published that the 3\p
+dinucleotide of the nascent RNA has a strong effect on translocation rates
+\cite{hein_rna_2011}, showing that there are other factors at play than have
+been previously suspected.
 
 \subsubsection{A computational model of transcription initiation}
-The difference between transcription initiation and transcription elongation is
-i) that during initiation the RNA-DNA hybrid lacks its full length until +8/9,
-ii) that the DNA-DNA bubble is scrunched and pulled into RNAP, and iii) that
-RNAP is bound to $\sigma$ which again is bound to the promoter. The consequence
-of these difference is that the TIC has a reaction pathway that doesn't exist
-during elongation: abortive initiation.
+The key differences between transcription initiation and transcription
+elongation are that i) during initiation the RNA-DNA hybrid lacks its full
+length until +8/9, ii) the DNA-DNA bubble is scrunched and pulled into RNAP,
+and iii) RNAP is bound to sigma which again is bound to the promoter. The
+consequence of these difference is that RNAP has a reaction pathway during
+initiation that does not exist during elongation: abortive initiation.
 
 Based on equation \eqref{eq:rnap_energy_balance} and the above differences, a
 model for transcription initiation was previously published
 \cite{xue_kinetic_2008}. This model attempts to cover explicitly both the
-abortive process and the actual promoter escape event. Although these authors
+abortive process and the actual promoter escape event. Although the authors
 manage to reproduce well the maximum size of abortive transcript and the
 abortive to productive ration of the N25 promoter, they do not explain well the
 abortive probabilities. Some criticism of this study is that it only the N25,
@@ -69,5 +70,5 @@ N25anti and T7A1 promoters were investigated, even though a larger dataset was
 available \cite{hsu_initial_2006}. Further, the T7A1 promoter varies not only
 in the ITS sequence compared to the other two, but also in the core promoter
 sequence. Variation in the core promoter has been shown to affect rates of
-abortive initiation \cite{vo_vitro_2003-1}, yet these authors have not taken
+abortive initiation \cite{vo_vitro_2003-1}, yet the authors have not taken
 this variation into account.
