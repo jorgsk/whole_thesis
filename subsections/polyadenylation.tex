@@ -4,28 +4,28 @@
 % What to include? Background on transcription in eukaryotes, polyadenylation,
 % and rna-seq.
 
-\subsection{Terminology}
-\begin{itemize}
-	\item Read -- sequence fragment from a sequencing machine
-	\item RNA-seq -- high throughput RNA sequencing
-	\item PAS -- Polyadenylation signal, for example AAUAAA
-	\item Poly(A) cluster -- site in the genome where polyadenylated reads
-		cluster together
-\end{itemize}
+%\subsection{Terminology}
+%\begin{itemize}
+	%\item Read -- sequence fragment from a sequencing machine
+	%\item RNA-seq -- high throughput RNA sequencing
+	%\item PAS -- Polyadenylation signal, for example AAUAAA
+	%\item Poly(A) cluster -- site in the genome where polyadenylated reads
+		%cluster together
+%\end{itemize}
 
 \subsection{Eukaryotic transcription termination and polyadenylation}
 
-\subsubsection{Summary of transcription and transcript processing in mammals}
-In eukaryotes there are several different RNA polymerases, each one responsible
-for transcribing different classes of genes. The most abundant polymerase
-called RNAP II and transcribes mostly protein coding genes. RNAP II is larger
-than its bacterial counterpart, with 12 subunits in mammals, but the core
-subunits are structurally and functionally conserved compared to bacterial
-RNAP.
+\subsubsection{Transcription and transcript processing in mammals}
+In eukaryotes there are several RNA polymerases, each one responsible for
+transcribing different classes of genes. The most abundant polymerase is 
+RNAP II and transcribes mostly protein coding genes. RNAP II is larger than its
+bacterial counterpart, with 12 subunits in mammals, but the core subunits are
+structurally and functionally conserved compared to bacterial RNAP
+\cite{ebright_rna_2000}.
 
 As in bacteria, transcription in eukaryotes begins at promoter sites, and
 transcription initiation involves the same steps of open bubble formating and
-abortive cycling, although with many more assisting transcription factors
+abortive cycling, although many more assisting transcription factors are
 involved \cite{wade_transition_2008}. Transcription elongation by RNAP II also
 involves pausing and backtracking, but pausing on eukaryotic DNA is more
 complicated due to the presence of chromatin and its methylation or acetylation
@@ -76,35 +76,52 @@ causes transcription termination \cite{kuehner_unravelling_2011}.
 
 \subsubsection{Usage of alternative polyadenylation sites}
 % 1) For making different 3 UTR
-The 3\p UTR region where polyadenylation happens contains many regulatory
-sequences.
+Each 3\p UTR region of a gene may have several alternative sites where cleavage
+and polyadenylation may happen. By chosing one site or the other, the length of
+the 3\p UTR in the mRNA will be different. This can affect the
+downstream fate of the mRNA as the 3\p UTR region contains many regulatory
+elements, for example for transport and degradation, see
+\cite{lutz_alternative_2011} for a recent review. Genome-wide changes in the
+pattern of usage of polyadenylation sites has been shown during cell
+proliferation \cite{sandberg_proliferating_2008} and for development
+\cite{hilgers_neural-specific_2011, ji_progressive_2009}. This shows that the
+selective usage of polyadenylation sites is part of several cellular programs.
 
-% 2) For making different protein coding regions
+There are also examples of cleavage and polyadenylation sites inside introns.
+The use of such a site would leave out downstream exons, changing the protein
+coding content of the mRNA. A well known example is that the membrane bound or
+secreted versions of immunoglobin in B cells differ depending on whether
+cleavage and polyadenylation occurs in an intron or not.
 
 \subsubsection{High throughput RNA sequencing and genome-wide studies of
 polyadenylation}
 
 From the early 90s onward, more and more human expressed sequence tags (ESTs)
-became available. ESTs are parts of mRNA sequenced by Sanger sequence from
-cDNA. The increasing amount of sequence data facilitated for the first time
-large scale analysis of 3\p UTRs and polyadenylation sites. However, these
-studies were limited in that the ESTs came from different cell lines grown
-under different experimental conditions. Further, the EST data was biased
-toward genes that were found interesting enough to sequence individually.
+and cDNA became available. The increasing amount of sequence data facilitated
+for the first time large scale analysis of 3\p UTRs and polyadenylation sites.
+However, these studies were limited from the fact that the ESTs came from
+different cell lines grown under different experimental conditions. Further,
+the EST data was biased toward genes that were found interesting enough to
+sequence individually. Such studies were nontheless successful in determining
+the frequency of occurrance of the different PAS \cite{beaudoing_patterns_2000}
+and that over half of human genes employ alternative polyadenylation and that
+sites of alternative polyadenylation is conserved between humans and mice.
+\cite{tian_large-scale_2005}.
 
-With the advance of second generation sequencing technologies, this picture has
-changed. These technologies were fast used to study the polyadenylation
-landscape for a single cell culture. These experiments confirmed what had been
-discovered earlier by single-mRNA studies and EST analysis; that AAUAAA is the
-canonical polyadenylation signal and that single genes can be represented
-with multiple sites of polyadenylation. However, they also brought new insight
-that could only be obtained with the genome wide scale. For example, trends
-were found for overall shortening of 3'UTR lengths during certain stages of
-cell proliferation and for cancer cells. Most of these conclusions were reached
-with early studies and must be repeated to have their validity ascertained. For
-example, a recent study did not find evidence for 3'UTR shortening in cancer
-cells, indicating that the early studies may have been a bit too optimistic in
-their conclusions.
+With the advance of second generation sequencing technologies, sequence data
+was no longer scarce. These technologies were fast used to study the
+polyadenylation landscape for a single cells and tissues. These experiments
+confirmed what had been discovered earlier by single-mRNA studies and EST
+analysis; that AAUAAA is the canonical polyadenylation signal and that single
+genes can be represented with multiple sites of polyadenylation. However, they
+also brought new insight that could only be obtained with the genome wide
+scale. Changes during development and proliferation were already mentioned, and
+in addition a trend was found for overall shortening of 3'UTR lengths in for
+cancer cells \cite{mayr_widespread_2009}. Most of these results were
+reached with early studies and must be repeated to have their validity
+ascertained. For example, a recent study did not find evidence for 3'UTR
+shortening in cancer cells \cite{fu_differential_2011}, indicating that the
+results from early studies should be reproduced.
 
 \subsubsection{Preparing a cDNA library for RNA-sequencing}
 The work presented in this thesis and most other high-throughput studies of
