@@ -15,27 +15,64 @@
 
 \subsection{Eukaryotic transcription termination and polyadenylation}
 
-\subsubsection{Eukaryotic transcription termination}
-In eukaryotes transcription happens inside the nucleus, out of reach of
-the ribosomes in the cytoplasm. Therefore, translation in eukaryotes does not
-occur co-transcriptionally like it does in bacteria.
+\subsubsection{Summary of transcription and transcript processing in mammals}
+Similar to bacteria, transcription in eukaryotes begins at promoter sites.
+However, in eukaryotes there are several different RNA polymerases, each one
+responsible for transcribing different classes of genes. The most abundant
+polymerase transcribes protein coding genes and is called RNAP II. In many
+cases, RNAP II does not spend time searching for promoter regions, but instead
+stands poised at transcription start sites waiting for signals to initiate
+transcription. Further more, as RNAP II transcribes a gene it can induce a
+movement in the chromosome that moves the transcription termination part close
+to the promoter, in order to recycle RNAP II at the same gene.
+
+Appart from these differences, many similarities exist between transcription in
+bacteria and eukaryotes. For example, RNAP II also engages in abortive
+initiation, can pause and backtrack during elongation, although the mechanisms
+may be different from that of bacterial RNAP \cite{wade_transition_2008}.
+
+In contrast to bacteria, the mRNA in mammalian cells needs extensive processing
+before it is capable of being translated by ribosomes. Therefore, mRNA in
+eukaryotes is called pre-mRNA until it has gone through the necessary
+processing steps. There are essentialy three main events that make up mRNA
+processing: 5\p cap addition, splicing, and 3\p cleavage and polyadenylation.
+The 5\p cap is a guanine nucleotide variant that is added to the 5\p nucleotide
+of a transcript as soon as it emerges from the RNAP II (RNA polymerase II is
+the polymerase that transcribes protein coding genes in eukaryotes; there are
+several other RNA polymerases as well in eukaryotes that are not present in
+bacteria). The 5\p cap presumably protects against 5\p exonucleases, aids in
+the splicing of the 5\p intron, and if it is not properly formed the mRNA will
+be targeted for degradation by the cellular degradation machinery.
+
+Splicing is the removal of parts of pre-mRNA called introns. Introns are
+non-coding parts of genes that actually make up most of gene sequences in
+mammals. By splicing out the introns and joining the surrounding exons, only
+the protein coding parts of the gene ends up in the final mRNA.
+
+Cleavage and polyadenylation mark the 3\p end of the pre-mRNA. At designated
+terminator positions, the nascent transcript is cleaved while still being
+transcribed by RNAP II. The 3\p end of the pre-mRNA is then extended with a
+poly-adenisone tail of around 250 nucleotides. Soon after cleavage, RNAP II
+terminates transcription.
+
+Here, we will review in more detail the process of cleavage and
+polyadenylation.
 
 \subsubsection{Cleavage and polyadenylation marks the 3' end of messenger RNAs}
 Polyadenylation is the addition of a poly-adenine tail to an RNA molecule by a
-poly(A) polymerase and is pervasive in the kingdom of life. In bacteria,
-poladenylation is used for targeting an mRNA for degradation. In eukaryotes,
-polyadenylation occurs primarily in the nucleus, co-transcriptionally, and
-facilitates transport to the cytoplasm and actually confers protection from
-degradation. Further, polyadenylation is directly linked to transcription
-termination. Unlike in bacteria, in eukaryotes the site of transcription
-termination is not the same as the site of the 3' end of the mRNA. Rather,
-eukaryotes must actively cleave the transcript at a designated site while the
-RNA polymerase continues transcribing downstream. The cleaved 3' end is then
-immediately polyadenylated by the poly(A) polymerase to obtain a poly(A) tail.
-In yeast this poly(A) tail contains about 80 adenines, while the number is
-about 250 in mammals. mRNAs without a poly(A) tail are not transported to the
-cytoplasm but are instead rapidly degraded in the nucleus as part of the
-cellular garbage collection system.
+poly(A) polymerase. In bacteria, poladenylation is used for targeting an mRNA
+for degradation, while in eukaryotes polyadenylation occurs primarily in the
+nucleus, co-transcriptionally, and facilitates transport to the cytoplasm and
+actually confers protection from degradation. Further, polyadenylation is
+directly linked to transcription termination. Unlike in bacteria, in eukaryotes
+the site of transcription termination is not the same as the site of the 3' end
+of the mRNA. Rather, eukaryotes must actively cleave the transcript at a
+designated site while the RNA polymerase continues transcribing downstream. The
+cleaved 3' end is then immediately polyadenylated by the poly(A) polymerase to
+obtain a poly(A) tail.  In yeast this poly(A) tail contains about 80 adenines,
+while the number is about 250 in mammals. mRNAs without a poly(A) tail are not
+transported to the cytoplasm but are instead rapidly degraded in the nucleus as
+part of the cellular garbage collection system.
 
 The cleave site where polyadenylation occurs is generally found in the 3'
 untranslated region (3'UTR) of the mRNA. The 3' UTR of eukaryotic mRNA is often
@@ -70,8 +107,8 @@ and polyadenylation complexes. The exact distance from the PAS to the site of
 cleavage is both sequence dependent and stochastic. In this way, the exact
 cleavage site can vary up to 40 nucleotides for each mRNA.
 
-\subsection{High throughput RNA sequencing}
-\subsubsection{Large scale studies of regulation of polyadenylation}
+\subsubsection{High throughput RNA sequencing and genome-wide studies of
+polyadenylation}
 Several genome-wide studies of polyadenylation patterns have been made. From
 the early 90s onward, more and more human expressed sequence tags (ESTs) became
 available. ESTs are parts of mRNA sequenced by Sanger sequence from cDNA. This
@@ -97,7 +134,8 @@ in their conclusions.
 
 \subsubsection{Preparing a cDNA library for RNA-sequencing}
 The work presented in this thesis and most other high-throughput studies of
-polyadenylation relies on data made with Illumina sequencing technologies.
+polyadenylation rely on sequencing data made with Illumina sequencing
+technologies.
 
 To obtain good sequencing results, fragmented DNA in large concentrations is
 required. To sequence RNA, therefore, it is necessary to both amplify the
