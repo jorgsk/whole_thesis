@@ -1,4 +1,5 @@
-\documentclass[b5paper]{report}
+%\documentclass[b5paper]{report}
+\documentclass[a4crop]{ntnuthesis}
 
 % A new package for bibliography
 % Use biber for bibtex and pdflatex instead of latex
@@ -36,26 +37,35 @@
 % Set the depth of section numbering
 \setcounter{secnumdepth}{0}
 
-\title{PhD Thesis}
+\title{Regulation of gene expression by untranslated regions}
 \author{J\o rgen Skancke}
+\subtitle{The unlikely story of how you got scammed into buying this thesis and
+loved every part of it}
+\degreetype{philosophiae doctor}
+\faculty{The Faculty of Natural Sciences and Technology}
+\department{Department of Chemical Engineering}
+
 \date{August 2012}
 
 \begin{document} 
 
-%\chapter*{Acknowledgements}
-%Thanks to everyone who's been helpful.
+\frontmatter
 
-%\maketitle
+\maketitle
+
+\chapter*{Acknowledgements}
+\input{subsections/acknowledgements.tex}
+
 % Uncomment this when you get to this stage
 %\pagenumbering{roman}
 %\tableofcontents
 %\listoffigures
 %\listoftables
 
-%\part{Regulation of transcription and translation initiation by sequences in
-%the 5` untranslated region}
+\mainmatter
 
-%\chapter{Introduction}
+\chapter{Introduction}
+Hei.
 
 %\input{subsections/gene_expression_general.tex}
 
@@ -71,13 +81,16 @@
 
 %\input{subsections/translation_background.tex}
 
-\section{Transcription termination in eukaryotes}
-\input{subsections/polyadenylation.tex}
+%\section{Transcription termination in eukaryotes}
+%\input{subsections/polyadenylation.tex}
+
+\part{Regulation of transcription and translation initiation in the 5 prime
+untranslated region}
 
 % Abortive initiation
-%\chapter{Abortive transcription initiation is regulated by the free energy of
-%the scrunched DNA bubble and translocation bias in the intially transcribed
-%sequence}
+\chapter{Abortive transcription initiation is regulated by the free energy of
+the scrunched DNA bubble and translocation bias}
+No way!
 
 %\section{The paper you will by this time hopefully have submitted}
 
@@ -87,8 +100,9 @@
 %expression \textit{in vivo}
 
 %% Infa2b expression
-%\chapter{Project with Veronika -- bioinformatic approach to acheive expression
-%of infa2b in \textit{E coli}}
+\chapter{Project with Veronika -- bioinformatic approach to acheive expression
+of infa2b in \textit{E coli}}
+Oh, sure.
 
 %\section{Your contribution to this work}
 
@@ -108,6 +122,10 @@
 %polyadenylation}
 
 %\chapter{Contibution to ENCODE paper}
+
+%\endmatter
+
+%appendices
 
 %\printbibliography
 

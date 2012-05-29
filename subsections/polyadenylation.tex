@@ -1,18 +1,6 @@
 % This is just for letting me cite stuff.
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
-% What to include? Background on transcription in eukaryotes, polyadenylation,
-% and rna-seq.
-
-%\subsection{Terminology}
-%\begin{itemize}
-	%\item Read -- sequence fragment from a sequencing machine
-	%\item RNA-seq -- high throughput RNA sequencing
-	%\item PAS -- Polyadenylation signal, for example AAUAAA
-	%\item Poly(A) cluster -- site in the genome where polyadenylated reads
-		%cluster together
-%\end{itemize}
-
 \subsection{Eukaryotic transcription termination and polyadenylation}
 
 \subsubsection{Transcription and transcript processing in mammals}
@@ -108,6 +96,9 @@ and that over half of human genes employ alternative polyadenylation and that
 sites of alternative polyadenylation is conserved between humans and mice.
 \cite{tian_large-scale_2005}.
 
+Mention microarrays as an intermediate (the cancer and development stuff is
+mostly with microarrays). The proper rna-seq shows different pattern.
+
 With the advance of second generation sequencing technologies, sequence data
 was no longer scarce. These technologies were fast used to study the
 polyadenylation landscape for a single cells and tissues. These experiments
@@ -126,8 +117,8 @@ results from early studies should be reproduced.
 \subsubsection{Preparing a cDNA library for RNA-sequencing}
 The work presented in this thesis and most other high-throughput studies of
 polyadenylation rely on sequencing data made with Illumina sequencing
-technologies. Here we briefly mention the relevant stages of the RNA-seq
-experiment.
+technologies. Here we briefly mention the stages of an RNA-seq
+experiment that are relevant for interpreting subsequent results.
 
 To obtain good sequencing results, fragmented DNA in large concentrations is
 required. To sequence RNA, therefore, it is necessary to both amplify the
@@ -146,7 +137,7 @@ gradually reduce the length of the tail.
 
 \subsubsection{Sequencing errors and biases}
 There are several errors and biases that creep into sequencing that must be
-taken into account during the downstream computational analysis of the output.
+taken into account during the computational analysis of the output.
 
 An example of an error is that sequencing performance degrades during
 sequencing increases over single-nucleotide stretches. This implies that when
@@ -164,189 +155,6 @@ where the fragment length is more than twice the read length, result in
 poly(T) output from the 5'-> 3' end. From now on, we will in general refer to
 the poly(A/T) tail only as the poly(A) tail, even if the sequence in the reads
 will often be poly(T).
-
-\section{Methods - Utail}
-We wanted to obtain information about sites of polyadenylation for RNA-seq
-experiments so that we could rapidly analyze the polyadenylation pattern for
-any RNA-seq experiment. To do that, we developed the tool \textit{Utail} (from
-Untranslated poly(A) tail). If an RNA library has been prepared in a way that
-ensures that the sites of polyadenylation will be included, Utail can use the
-RNA-seq data from that library to locate and quantify the polyadenylation sites
-and provide ready-to-use output.
-
-\subsection{Utail pipeline overview}
-The RNA-seq data is processed in a series of steps to go from raw data to
-polyadenylation sites. The minimum requirements for Utail to run is mapped
-RNA-seq reads. Presently, the reads must be provided either in the output
-format of the GEM mapper CIT or as bed-files (see XXX for input
-specifications). Although not necessary, the Utail output will be improved if a
-genome annotation (in Ensemble or Gencode format) is supplied. The version of
-the reference genome for the annotation must be the same as was used to map the
-reads to in the first place.
-
-Utail takes the mapped RNA-seq data through the following pipeline (each point
-is elaborated on below):
-\begin{enumerate}
-	\item (Only if annotation was supplied) Create a list of all possible
-		3'UTR regions and polyadenylation sites from the genome annotation
-	\item Filter all reads and retain only the unmappable reads
-	\item Keep only the unmappable reads with leading poly(T) or trailing
-		poly(A) stretches
-	\item Remove the poly(T) or poly(A) stretch from the read and remap the
-		remaining part to the genome -- keep the uniquely mapping ones
-	\item Determine the site of polyadenylation depending on poly(A/T) and which
-		strand the read originated from
-	\item Cluster together all reads that map within 40 nt of each other
-	\item For each cluster, get the genomic sequence up to 60 nt downstream
-		from the polyadenylation site. Note any PAS and discard cluster if a
-		genomic poly(A) region is found at the site of the cleaved poly(A)
-		stretch.
-	\item For each poly(A) cluster, write to the output
-\end{enumerate}
-See Figure X for a graphical representation of the pipeline.
-
-\textbf{1.)} By providing an annotation of the transcripts from the genome
-re-map the read back to the genome. If the read maps uniquely (with up to 2
-mismatches), consider this the 3' end of the mapping a putative poly(A) site.
-
-\textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
-use the information from the poly(A) versus poly(T) stretch to find out if the
-read has been reverse transcribed or not. For example, if the read maps to the
-+ strand with a poly(A) tail, the read originated from the + strand. If the
-read maps to the + strand with a poly(T) tail, the read originated from the -
-strand. This allows the strand-specific determination of poly(A) sites.
-
-\textbf{6.)} Since the exact site of cleavage and polyadenylation is stochastic,
-we must cluster the different poly(A) sites. The average of this clustering is
-reported as the cleavage and polyadenylation site for all reads in the cluster.
-
-\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
-one of the several reported PAS sequences as well as for a genomic poly(A)
-stretch that could explain the poly(A) stretch thought to be a result of
-polyadenylation. in
-question, the set of already-annotated polyadenylation sites can be
-constructed. If this step is included, it will be included in the output
-whether a discovered polyadenylation site has already been annotated or not.
-
-\textbf{2.)} With default settings, short-read mappers will not be able to map
-to the genome a read-fragment containing the non-genomic poly(A)
-stretch. Therefore, we are only interested in those reads which were initially
-unmapped. The output format of mappers usually contains a flag which says if
-the read was mapped or not.
-
-\textbf{3.)} Among the unmapped reads, we are only interested in the ones which
-contain a stretch of poly(A) at the 3' end or poly(T) at the 5' end. A minimum
-of 5 poly(A/T) or 5 poly(A/T) in 7 was used.
-
-\textbf{4.)} Once the poly(A) tail has been removed, we use the GEM mapper to
-re-map the read back to the genome. If the read maps uniquely (with up to 2
-mismatches), consider this the 3' end of the mapping a putative poly(A) site.
-
-\textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
-use the information from the poly(A) versus poly(T) stretch to find out if the
-read has been reverse transcribed or not. For example, if the read maps to the
-+ strand with a poly(A) tail, the read originated from the + strand. If the
-read maps to the + strand with a poly(T) tail, the read originated from the -
-strand. This allows the strand-specific determination of poly(A) sites.
-
-\textbf{6.)} Since the exact site of cleavage and polyadenylation is stochastic,
-we must cluster the different poly(A) sites. The average of this clustering is
-reported as the cleavage and polyadenylation site for all reads in the cluster.
-
-\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
-one of the several reported PAS sequences as well as for a genomic poly(A)
-stretch that could explain the poly(A) stretch thought to be a result of
-polyadenylation.
-
-\textbf{8.)} The output for each cluster contains information about the
-chromosome, strand, number of reads in the cluster, if the site has been
-annotated, and if there is a PAS withing 40 nucleotides and the distance to
-this PAS.
-
-\subsection{Requirements and repository}
-Utail can be obtained from its Git repository git@github.com:jorgsk/Utail.git.
-In runs in a Linux/Unix environment and has the following requirements:
-\begin{itemize}
-	\item Python 2.6 ++
-	\item BEDTools, a set of programs for manipulating .bed files
-		\cite{quinlan_bedtools:_2010}
-\end{itemize}
-In addition, the following dependencies come bundled with Utail:
-\begin{itemize}
-	\item pyFasta, a Python module by Brent Pedersen for rapid extraction of
-		genomic sequences from a reference genome
-	\item bedGraphToBigWig, a program that converts bedGraph files to bigWig
-		files, obtained from the ucsc.edu website.
-\end{itemize}
-Before running the program, modify the settings in he $UTR_SETTINGS$ file to your
-preferences. Here you provide links to the RNA-seq data and the annotation and
-set various settings. Run using ``python utail.py''; after completion the
-output will be in the automatically created ``output'' folder.
-
-\subsection{The dataset}
-The datasets used in this study was generated by the ENCODE
-(\textbf{Enc}yclopedia \textbf{O}f \textbf{D}NA \textbf{E}lements) consortium
-and are available from http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/
-
-Table \ref{tab:Datasets} shows the cell lines and compartments used. In total,
-data from 12 human cell lines were used. 23 datasets were from whole cell
-extracts, 11 were from cytoplasmic extracts, and 12 were from nuclear extracts.
-For each cell line and compartment, datasets are available both for the
-poly(A)+ and poly(A)- fraction of the RNA pool). This brings the total to 92
-RNA-seq datasets. Each dataset has been generated with Illumina paired-ended
-sequencing with a read-length of 75 basepairs.
-\begin{table}
-	\centering
-	\begin{tabular}{cccc}
-	  Cell line & Whole Cell & Cytoplasm & Nucleus \\
-	  \midrule
-	  GM12878 & 2 & 2 & 2 \\
-	  K562 & 2 & 2 & 2 \\
-	  HeLa-S3 & 2 & 2 & 2 \\
-	  HUVEC & 2 & 2 & 2 \\
-	  HEPG2 & 2 & 2 & 2 \\
-	  H1Hesc & 1 & 1 & 1 \\
-	  Nhek & 2 & 0 & 1 \\
-	  MCF7 & 2 & 0 & 0 \\
-	  AG04450 & 2 & 0 & 0 \\
-	  HSMM & 2 & 0 & 0 \\
-	  NHLF & 2 & 0 & 0 \\
-	  A549 & 2 & 0 & 0 \\
-	\end{tabular}
-	\caption{Number of replicates of the datasets from the ENCODE consortium}
-	\label{tab:Datasets}
-\end{table}
-
-The RNA library for this protocal was not especially targeted toward the 3' end
-of the RNAs, but since poly(T) primers have been used for amplification and
-cDNA creation, it is possible to find polyadenylated RNA in these data. What
-the data lacks in specificity for the poly(A) sites, it makes up for it in
-quantity, with more than 90 datasets from 12 cell line.
-
-\subsection{The short RNA mapper}
-The short read mapper used in this work is the GEM mapper CIT webpage. The GEM
-mapper is developed in the group of Roderic Guigo and has been used regularly
-in the group the last years, although it has not been published yet.
-
-\subsection{Merging and screening of poly(A) clusters}
-In the results presented here, the poly(A) clusters for all datasets were
-merged. We accepted as a poly(A) site a cluster with support from 3 or more
-reads.
-
-\section{Results}
-We ran Utail on RNA-seq data that was part of the ENCODE consortium. Parts of
-the analysis was published in XXX. Here we outline our contribution
-to the paper, including the parts of the analysis which was not included in the
-final paper.
-
-There is good material in the reports.
-
-You are still not sure: how close to the paper should you present your results?
-You should probably ask Martin about this tomorrow. Now, go to the introduction
-for the other stuff.
-
-\subsection{k}
-
 
 \end{document}
 
