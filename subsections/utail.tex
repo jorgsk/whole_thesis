@@ -1,0 +1,119 @@
+%\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+
+\section{Methods - Utail}
+We wanted to obtain information about sites of polyadenylation for RNA-seq
+experiments so that we could rapidly analyze the polyadenylation pattern for
+any RNA-seq experiment. To do that, we developed the tool \textit{Utail} (from
+Untranslated poly(A) tail). If an RNA library has been prepared in a way that
+ensures that the sites of polyadenylation will be included, Utail can use the
+RNA-seq data from that library to locate and quantify the polyadenylation sites
+and provide ready-to-use output.
+
+\subsection{Utail pipeline overview}
+The RNA-seq data is processed in a series of steps to go from raw data to
+polyadenylation sites. The minimum requirements for Utail to run is mapped
+RNA-seq reads. Presently, the reads must be provided either in the output
+format of the GEM mapper CIT or as bed-files (see XXX for input
+specifications). Although not necessary, the Utail output will be improved if a
+genome annotation (in Ensemble or Gencode format) is supplied. The version of
+the reference genome for the annotation must be the same as was used to map the
+reads to in the first place.
+
+Utail takes the mapped RNA-seq data through the following pipeline (each point
+is elaborated on below):
+\begin{enumerate}
+	\item (Only if annotation was supplied) Create a list of all possible
+		3'UTR regions and polyadenylation sites from the genome annotation
+	\item Filter all reads and retain only the unmappable reads
+	\item Keep only the unmappable reads with leading poly(T) or trailing
+		poly(A) stretches
+	\item Remove the poly(T) or poly(A) stretch from the read and remap the
+		remaining part to the genome -- keep the uniquely mapping ones
+	\item Determine the site of polyadenylation depending on poly(A/T) and which
+		strand the read originated from
+	\item Cluster together all reads that map within 40 nt of each other
+	\item For each cluster, get the genomic sequence up to 60 nt downstream
+		from the polyadenylation site. Note any PAS and discard cluster if a
+		genomic poly(A) region is found at the site of the cleaved poly(A)
+		stretch.
+	\item For each poly(A) cluster, write to the output
+\end{enumerate}
+See Figure X for a graphical representation of the pipeline.
+
+\textbf{1.)} By providing an annotation of the transcripts from the genome
+re-map the read back to the genome. If the read maps uniquely (with up to 2
+mismatches), consider this the 3' end of the mapping a putative poly(A) site.
+
+\textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
+use the information from the poly(A) versus poly(T) stretch to find out if the
+read has been reverse transcribed or not. For example, if the read maps to the
++ strand with a poly(A) tail, the read originated from the + strand. If the
+read maps to the + strand with a poly(T) tail, the read originated from the -
+strand. This allows the strand-specific determination of poly(A) sites.
+
+\textbf{6.)} Since the exact site of cleavage and polyadenylation is stochastic,
+we must cluster the different poly(A) sites. The average of this clustering is
+reported as the cleavage and polyadenylation site for all reads in the cluster.
+
+\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
+one of the several reported PAS sequences as well as for a genomic poly(A)
+stretch that could explain the poly(A) stretch thought to be a result of
+polyadenylation. in
+question, the set of already-annotated polyadenylation sites can be
+constructed. If this step is included, it will be included in the output
+whether a discovered polyadenylation site has already been annotated or not.
+
+\textbf{2.)} With default settings, short-read mappers will not be able to map
+to the genome a read-fragment containing the non-genomic poly(A)
+stretch. Therefore, we are only interested in those reads which were initially
+unmapped. The output format of mappers usually contains a flag which says if
+the read was mapped or not.
+
+\textbf{3.)} Among the unmapped reads, we are only interested in the ones which
+contain a stretch of poly(A) at the 3' end or poly(T) at the 5' end. A minimum
+of 5 poly(A/T) or 5 poly(A/T) in 7 was used.
+
+\textbf{4.)} Once the poly(A) tail has been removed, we use the GEM mapper to
+re-map the read back to the genome. If the read maps uniquely (with up to 2
+mismatches), consider this the 3' end of the mapping a putative poly(A) site.
+
+\textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
+use the information from the poly(A) versus poly(T) stretch to find out if the
+read has been reverse transcribed or not. For example, if the read maps to the
++ strand with a poly(A) tail, the read originated from the + strand. If the
+read maps to the + strand with a poly(T) tail, the read originated from the -
+strand. This allows the strand-specific determination of poly(A) sites.
+
+\textbf{6.)} Since the exact site of cleavage and polyadenylation is stochastic,
+we must cluster the different poly(A) sites. The average of this clustering is
+reported as the cleavage and polyadenylation site for all reads in the cluster.
+
+\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
+one of the several reported PAS sequences as well as for a genomic poly(A)
+stretch that could explain the poly(A) stretch thought to be a result of
+polyadenylation.
+
+\textbf{8.)} The output for each cluster contains information about the
+chromosome, strand, number of reads in the cluster, if the site has been
+annotated, and if there is a PAS withing 40 nucleotides and the distance to
+this PAS.
+
+\subsection{Requirements and repository}
+Utail can be obtained from its Git repository git@github.com:jorgsk/Utail.git.
+In runs in a Linux/Unix environment and has the following requirements:
+\begin{itemize}
+	\item Python 2.6 ++
+	\item BEDTools, a set of programs for manipulating .bed files
+		\cite{quinlan_bedtools:_2010}
+\end{itemize}
+In addition, the following dependencies come bundled with Utail:
+\begin{itemize}
+	\item pyFasta, a Python module by Brent Pedersen for rapid extraction of
+		genomic sequences from a reference genome
+	\item bedGraphToBigWig, a program that converts bedGraph files to bigWig
+		files, obtained from the ucsc.edu website.
+\end{itemize}
+Before running the program, modify the settings in he $UTR_SETTINGS$ file to your
+preferences. Here you provide links to the RNA-seq data and the annotation and
+set various settings. Run using ``python utail.py''; after completion the
+output will be in the automatically created ``output'' folder.
