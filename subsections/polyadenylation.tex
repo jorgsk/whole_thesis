@@ -94,40 +94,104 @@ coding content of the mRNA. A well known example is that the membrane bound or
 secreted versions of immunoglobin in B cells differ depending on whether
 cleavage and polyadenylation occurs in an intron or not.
 
-\subsubsection{High throughput RNA sequencing and genome-wide studies of
-polyadenylation}
+\subsubsection{Genome-wide studies of polyadenylation}
+The study of sites of polyadenylation across the genome has occurred in three
+stages in the last 12 years, each stage resting on a different type of
+technology. The first wave used cDNA and EST sequence data obtained by
+laborious Sanger sequencing. The second wave used microarray and SAGE
+technologies, and the third wave used the RNA-seq next generation sequencing
+technology. We will review key results obtained in these three stages
+chronologically.
 
 From the early 90s onward, more and more human expressed sequence tags (ESTs)
 and cDNA became available. The increasing amount of sequence data facilitated
 for the first time large scale analysis of 3\p UTRs and polyadenylation sites.
-However, these studies were limited from the fact that the ESTs came from
-different cell lines grown under different experimental conditions. Further,
-the EST data was biased toward genes that were found interesting enough to
-sequence individually. Such studies were nontheless successful in determining
-i) the frequency of occurrance of the different PAS
-\cite{beaudoing_patterns_2000}, ii) that over half of human genes employ
-alternative polyadenylation, iii) that sites of alternative polyadenylation is
-conserved between humans and mice \cite{tian_large-scale_2005}, and vi) that
-there is extensive polyadenylation at intronic polyadenylation sites
-\cite{tian_widespread_2007}.
+The polyadenylation site of a cDNA sequence is found by identifying the poly(A)
+or poly(T) extremity which does not correspond to a genomic sequence, trimming
+that extremity, and matching the remainder to template mRNA or genomic sequence
+\cite{beaudoing_patterns_2000, tian_large-scale_2005}.
 
-As the microarray technology matured, it was also applied to studies of
-polyadenylation.
+These early genome-wide studies were successful in determining i) the frequency
+of occurrance of the different PAS \cite{beaudoing_patterns_2000}, ii) that
+over half of human genes employ alternative polyadenylation, iii) that sites of
+alternative polyadenylation is conserved between humans and mice
+\cite{tian_large-scale_2005}, and vi) that there is extensive polyadenylation
+at intronic polyadenylation sites \cite{tian_widespread_2007}.
 
-With the advance of second generation sequencing technologies, sequence data
-was no longer scarce. These technologies were fast used to study the
-polyadenylation landscape for a single cells and tissues. These experiments
-confirmed what had been discovered earlier by single-mRNA studies and EST
-analysis; that AAUAAA is the canonical polyadenylation signal and that single
-genes can be represented with multiple sites of polyadenylation. However, they
-also brought new insight that could only be obtained with the genome wide
-scale. Changes during development and proliferation were already mentioned, and
-in addition a trend was found for overall shortening of 3'UTR lengths in for
-cancer cells \cite{mayr_widespread_2009}. Most of these results were
-reached with early studies and must be repeated to have their validity
-ascertained. For example, a recent study did not find evidence for 3'UTR
-shortening in cancer cells \cite{fu_differential_2011}, indicating that the
-results from early studies should be reproduced.
+However, these studies were limited in the type of questions they could ask.
+Crucially, they could not compare different experimental conditions, since the
+ESTs are from different cell lines grown under different experimental
+conditions. Further, the EST data is biased toward protein coding genes that
+were found interesting enough to sequence individually. Thus many classes of
+polyadenylated RNA, such as long noncoding RNA, were possbily missed by these
+studies. Finally, no information about gene expression levels can be had from
+EST data.
+
+As the microarray technology matured and more full-length genomes became
+available, microarrays were used to study 3\p UTR variation and
+polyadenylation, often in combination with EST data. Now, alternative
+polyadenylation could be investigated between different experimental
+conditions. As well, 3UTR expression levels could be compared across these
+experiments. This allowd for a broader range of hypotheses to be tested. In
+practise, to test for differential 3UTR usage with microarrays, RNA probes
+corresponding to the full length or extended 3UTR were used, and signal
+intensities from the probes under different conditions could be compared to see
+if a 3UTR is longer or shorter under certain conditions
+\cite{sandberg_proliferating_2008, ji_progressive_2009}. The lengthening or
+shortening of a 3\p UTR would correspond to the choice of upstream or
+downstream polyadenylation sites.
+
+Results obtained with microarray and EST data include different patterns of
+polyadenylation in different human tissues \cite{zhang_biased_2005}, and
+wide-spread shortening of 3\p UTR length during immunce cell activeation
+\cite{sandberg_proliferating_2008}. A combination of EST, microarray, and SAGE
+data (SAGE being similar to microarrays) showed a progressive lengthening of
+mouse 3\p UTRs during embryonic development \cite{ji_progressive_2009}.
+
+Microarrays studies, although providing a wealth of insight, are fundamentally
+limited in scope for the study of alternative polyadenylation since one can
+only investigate those genes already suspected to have variation in usage of
+polyadenylation sites. Further, due to the nature of microarray data, the 3UTR
+length differences are only reported as relative differences between
+experiments, making it impossible to compare 3UTR lengths across genes.
+
+With the advance of second generation sequencing technologies in the late 2000s
+in the form of RNA sequencing (RNA-seq), both limitations for EST and
+microarray data seem to have been resolved. RNA-seq combines the best of EST
+and microarray data when studying alternative polyadenylation. Firstly, like
+ESTs, the RNA-seq data is in sequence format, allowing the direct detection
+of poly(A) tails and thereby the site of cleavage and polyadenylation.
+Secondly, like microarrays, RNA-seq can be performed on RNA samples from
+different experimental conditions, allowing direct hypothesis testing. And
+further, unlike both ESTs and microarray, RNA-seq data is quantitative,
+allowing the direct comparison of expression levels of 3\p UTRs across the
+genome.
+
+These technologies were rapidly used to study the polyadenylation landscape for
+a single cells and tissues. The new experiments confirmed what had been
+discovered earlier by single-mRNA studies and EST analysis; that AAUAAA is the
+canonical polyadenylation signal, that single genes can be represented with
+multiple sites of polyadenylation, and that there is frequent polyadenylation
+of intronic sequences. New information were many novel polyadenylation sites
+and that intronic and inter-genic polyadenylation sites are in humans
+associated with a novel TTTTTTTTT motif which does not occur at canonical
+polyadenylation sites at the 3\p end of genes
+\cite{ozsolak_comprehensive_2010}. Further, genome wide annotation of
+polyadenylation sites and antisense transcription was obtained for \textit{C.
+elegans} and \textit{arabidopsis} \cite{mangone_landscape_2010,
+wu_genome-wide_2011}, examples of RNA-seq aiding in the annotation of genomes
+which have had less attention than the human one. Fu et al. compared the
+relative change in 3\p length between two cancer cells and an epithelial cell
+line \cite{fu_differential_2011}. They did not find a consistent pattern of
+widespread shortening of 3\p UTRs in the cancer cell lines, a phenomenon which
+had been previously suggested using a restricted dataset of 23 specifically
+selected genes \cite{mayr_widespread_2009-2}. The most recent number for the
+number of polyadenylation sites in human is over 400.000, and while many of
+them are tissue specific \cite{derti_quantitative_2012}, 70
+\% of genes showed the same usage of alternative polyadenylation across 24
+tissues. The same study found that most of the novel polyadenylation events are
+from lowly expressed transcripts, giving a reason for why they have not been
+detected until deep transcriptome sequencing became available. 
 
 \subsubsection{Preparing a cDNA library for RNA-sequencing}
 The work presented in this thesis and most other high-throughput studies of
@@ -136,40 +200,49 @@ technologies. Here we briefly mention the stages of an RNA-seq
 experiment that are relevant for interpreting subsequent results.
 
 To obtain good sequencing results, fragmented DNA in large concentrations is
-required. To sequence RNA, therefore, it is necessary to both amplify the
-cellular RNA extract and to convert the RNA to cDNA by reverse transcription.
-Both RNA amplification and cDNA conversion can introduce biases depending on
-the choices of methods and the order in which they are performed
-\cite{wang_rna-seq:_2009}. From the point of view of polyadenylation, it is
-necessary that the poly(A) tail is preserved during cDNA library preparation.
-This requires the use of poly(T) primers both for making the cDNA library and
-for PCR amplification.
+required. To reach these concentration, it is generally necessary to both
+amplify the cellular RNA extract and to convert the RNA to cDNA by reverse
+transcription, although some cDNA-free methods have been published
+\cite{ozsolak_comprehensive_2010}. Both RNA amplification and cDNA conversion
+can introduce biases depending on the choices of methods and the order in which
+they are performed \cite{wang_rna-seq:_2009}. From the point of view of
+studying polyadenylation, it is necessary that the poly(A) tail is preserved
+during cDNA library preparation. This requires the use of poly(T) primers both
+for making the cDNA library and for PCR amplification.
 
 After cDNA preparation and several rounds of PCR amplification, most poly(A)
 tails will be reduced in length from the full 250 nt. This is because the
 poly(T) primers will bind randomly in the poly(A) tail, something which will
-gradually reduce the length of the tail.
+gradually reduce the average length of the poly(A) tails.
 
 \subsubsection{Sequencing errors and biases}
 There are several errors and biases that creep into sequencing that must be
-taken into account during the computational analysis of the output.
+taken into account during the computational analysis of the output. Here we
+discuss one error and one bias that is important for analysing Illumina short
+pair ended reads.
 
-An example of an error is that sequencing performance degrades during
-sequencing increases over single-nucleotide stretches. This implies that when
-sequencing the poly(A) sequence, other nucleotides than just A will be
-reported. This means that when looking for poly(A) stretches in the output as
-signatures of poly(A) sites, some variation from the mono-A sequence must be
-expected.
+An error that is particularly important for the study of polyadenylation is
+that sequencing performance degrades over single-nucleotide stretches
+\cite{minoche_evaluation_2011}. This implies that when sequencing the poly(A)
+sequence, other nucleotides than just A will be reported with a relatively high
+frequency.. This means that when looking for poly(A) stretches in the output as
+signatures of poly(A) sites, some variation from the homopolymer sequence must
+be expected.
 
-An example of a bias is that the sequencing reads that cover poly(A) sites will
-almost invariably be from the reverse-transcribed strand of the mRNA. This is
-because sequencing, like transcription, happens in the 5'-> 3' direction, and
-only the ends of the cDNA fragments are sequenced. Therefore, in practise, the
-poly(A) stretches in the sequence output will, at least for Illumina sequencing
-where the fragment length is more than twice the read length, result in
-poly(T) output from the 5'-> 3' end. From now on, we will in general refer to
-the poly(A/T) tail only as the poly(A) tail, even if the sequence in the reads
-will often be poly(T).
+An important bias is that most sequences with poly(A) tails will be output in
+the reverse-transcribed version. That is, 5\p CCCGAAAA 3\p will be output as 5\
+TTTTCGGG 3\p. This is due to the RNA fragmenting and that sequencing
+(performed by a DNA polyermase) happens in the 5\p to 3\p direction and that
+each RNA is present in both its original and reverse transcribed form. During
+sequencing, 50 to 150 nucleotides will be sequenced from each side of the around
+300 nt fragment. If the poly(A) tail is the 50 last nucleotides of the 300 nt
+fragment RNA, sequencing 150 nucleotides will never reach nucleotide 250 where
+the poly(A) site is. However, the reverse transcribed version contains 50 Ts at
+the 5\p end, which ensures that sequencing this version of the RNA gets the
+whole poly(T) tail as well as 100 bases which can be mapped to the genome.
+
+Even though the actual output poly(A) tail is in the reverse transcribed
+poly(T) format, we will often refer to both of them as a poly(A) tail.
 
 \end{document}
 
