@@ -94,7 +94,7 @@ structure depends on the binding strength of that structure.
 How the mRNA folds as it is being transcribed is called the folding pathway of
 the mRNA. The cell has evolved mechanisms to either ensure or prevent certain
 transient secondary structures along the folding pathway. The purpose of this
-is to ensure that a desired final secondary (and in the case of some RNA,
+is to ensure that a desired final secondary (and in the case of e.g tRNA,
 tertiary) state is reached \cite{pan_rna_2006-1}.
 
 \subsubsection{RNA secondary structures in the ribosome binding site} It was
@@ -134,26 +134,40 @@ factors (IF) may unwind secondary structures at the RBS presumably from
 ribosome standby sites \cite{studer_unfolding_2006}. However, the exact
 mechanism for how the ribosome would unwind RNA structures is not clear.
 
-\subsubsection{Modifying RBS secondary structures to increase gene expression}
-Given that secondary structures in the RBS have such a marked impact on
-translation rates, many studies have modified the RBS-sequence for the purpose
-of tuning gene expression \cite{cebe_rapid_2006, park_design_2007,
-berg_expression_2009}. For example, it is often necessary to modify the RBS
-sequence of eukaryotic genes when trying to express them in a prokaryotic host
-\cite{care_translation_2007}.
+\subsubsection{Modifying the RBS to increase gene expression}
+It was early on realized that gene expression could be varied by mutagenizing
+elements in the RBS \cite{warburton_increased_1983}. It has been found that
+mutations upstream the SD sequence as well as in the first coding regions
+affect translation initiation rates \cite{park_design_2007}
+\cite{care_translation_2007}, in general due to modifying the RNA secondary
+structure around the RBS. Making synonymous codon changes in the early codons
+of a gene to reduce secondary structures rates has been suggested as a
+convenient method to enhance the expression of foreign genes in bacteria
+\cite{cebe_rapid_2006}.
 
-In practise when seeking to optimize the expression of a given gene, labs often
+Another approach than altering the already-present RBS of a gene is to
+introduce a new RBS in the form of a 5\p fusion partner
+\cite{lavallie_gene_1995}. The fusion partner is usually the 5\p end of an gene
+(5\p UTR and early coding region) that is known to be well expressed in the
+organism of interest or has other useful properties (such as the His-tag for
+protein purification). The usage of such a tag will add an extra peptide
+sequence to the N-terminus of the protein. This peptide may later be cleaved
+off by specific proteases or left in place if its presence is tolerated
+\cite{esposito_enhancement_2006}.
+
+When seeking to optimize the expression of a given gene, labs in practise often
 turn to commercial providers of gene optimization, such as DNA 2.0 or
-GenScript.  However, there are published alternatives. The most prominent of
-these is the RBS calculator \cite{salis_automated_2009}. This software takes
-into account the match of the 16S RNA to the SD sequence, the distance from the
-SD sequence to the start codon, the folding energy of any RBS structures, the
-start codon, and the folding energy of the ribosome standby site. Of these
-variables, the one that correlated most with gene expression is the folding
-energy of the RBS structures, see \cite{salis_automated_2009} in the
-supplementary materials. By considering the mentioned sequence-specific
-variables, the software will suggest modifications to a given gene sequence to
-set gene expression to a specified level.
+GenScript. However, there are published alternatives. In addition to what has
+been already mentioned about fusion tags and RBS mutagenesis, the most
+comprehensive tool yet published for optimization of translation initiation
+is the RBS calculator \cite{salis_automated_2009}. This software takes into
+account the match of the 16S RNA to the SD sequence, the distance from the SD
+sequence to the start codon, the folding energy of any RBS secondary
+structures, the type of start codon, and the folding energy of the ribosome
+standby site. It should be noted that of these variables, the one that explains
+most of the variation in gene expression is the folding energy of the RBS
+secondary structures, see \cite{salis_automated_2009} in the supplementary
+materials.
 
 \subsubsection{RNA secondary structures affect RNA stability} RNA stability
 means how long it takes from an RNA is produced until it is degraded. The more
@@ -176,14 +190,14 @@ with an unstructured 3\p end for their activity \cite{rauhut_mrna_1999}.
 
 The second way RNA structures affect RNA stability is through their effect on
 ribosome binding. It is well established that actively translated mRNA are more
-stable that untranslated mRNA. The idea was put forward that the narrow
-spacing between between translating ribosomes on the transcript prevented
+stable that untranslated mRNA. The idea was put forward that the narrow spacing
+between between translating ribosomes on the transcript prevented
 endonucleolytic cleavage \cite{deana_lost_2005}. However, it has been shown in
-at least two cases that ribosome binding confers transcript stabilization on its own
-in the absence of translation \cite{wagner_efficient_1994, hambraeus_5_2002}.
-This indicates that narrow spacing between translating ribosomes is not
-necessary for increased stability. The precise mechanism for how ribosome
-binding prevents degradation is not clear \cite{deana_lost_2005}.
+at least two cases that ribosome binding confers transcript stabilization on
+its own in the absence of translation \cite{wagner_efficient_1994,
+hambraeus_5_2002}.  This indicates that narrow spacing between translating
+ribosomes is not necessary for increased stability. The precise mechanism for
+how ribosome binding prevents degradation is not clear \cite{deana_lost_2005}.
 
 \subsubsection{The role of codon bias in gene expression and cellular fitness}
 During translation elongation the ribosome matches incoming amino acids on
