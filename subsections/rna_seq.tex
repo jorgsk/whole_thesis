@@ -1,0 +1,69 @@
+%\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+\subsubsection{RNA-seq and mapping reads to the genome}
+The work presented in this thesis and most other high-throughput studies of
+polyadenylation rely on sequencing data made with Illumina sequencing
+technologies. Here we briefly mention the stages of an RNA-seq
+experiment that are relevant for interpreting subsequent results.
+
+Briefly, RNA-seq is a technique to obtain a quantitative measure of the amount
+of RNA in a sample. Typically, this sample will be all extracted RNA from a
+cell culture. RNA-seq is used to compare the differential expression of
+genes, to discover new genes, and to discover novel isoforms of known genes.
+The output from an RNA-seq experiment are RNA fragments in the length of
+50 to 500 nucleotides. These fragments, called reads, can be mapped back to the
+genome, thereby showing where the RNA originated from. If a genome is not
+available, it is possible to use the reads to assemble the transcriptome
+\textit{de novo}.
+
+The sequencing machines do not work directly on RNA. Therefore, RNA-seq relies
+on the conversion of RNA to cDNA by a reverse transcriptase. To obtain good
+results from a sequencing experiment, fragmented DNA in large concentrations is
+required. To obtain this concentration, the RNA is convered to cDNA and
+amplified with PCR. From the point of view of studying polyadenylation,
+it is necessary that the poly(A) tail is preserved both during cDNA conversion
+and subsequent PCR amplification. Several custom techniques have been developed
+for the purpose of capturing the polyadenylation site with RNA-seq
+\cite{ozsolak_comprehensive_2010, derti_quantitative_2012}, but a minimum
+requirement is that poly(T) primers are used during cDNA conversion and PCR
+amplificaiton.
+
+After cDNA preparation and several rounds of PCR amplification, most poly(A)
+tails will be reduced in length from the full 250 nt. This is because the
+poly(T) primers will bind randomly in the poly(A) tail, something which will
+gradually reduce the average length of the poly(A) tails.
+
+It is common to sequence both ends of an RNA fragment. This is called paired
+end sequencing. Paired end sequencing gives extra information and is
+particularly useful when mapping reads over exon-intron junctions. For example,
+if two reads from the same RNA fragment map over 5000 nucleotides apart, it is
+likely that there was an exon-intron junction on the RNA fragment from which
+they were sequenced.
+
+\subsubsection{Sequencing errors and biases}
+There are several errors and biases that creep into sequencing that must be
+taken into account during the computational analysis of the output. Here we
+discuss one error and one bias that is important for analysing Illumina short
+paired end reads.
+
+An error that is particularly important for the study of polyadenylation is
+that sequencing performance degrades over single-nucleotide stretches
+\cite{minoche_evaluation_2011}. This implies that when sequencing the poly(A)
+sequence, other nucleotides than just A will be reported with a relatively high
+probabilty. This means that when looking for poly(A) stretches in the output as
+signatures of poly(A) sites, some variation from the homopolymer sequence must
+be expected.
+
+An important bias is that most sequences with poly(A) tails will be output in
+the reverse-transcribed version. That is, 5\p CCCGAAAA 3\p will be output as 5\
+TTTTCGGG 3\p. This is due to the RNA fragmenting and that sequencing
+(performed by a DNA polyermase) happens in the 5\p to 3\p direction and that
+each RNA is present in both its original and reverse transcribed form. During
+sequencing, 50 to 150 nucleotides will be sequenced from each side of the around
+300 nt fragment. If the poly(A) tail is the 50 last nucleotides of the 300 nt
+fragment RNA, sequencing 150 nucleotides will never reach nucleotide 250 where
+the poly(A) site is. However, the reverse transcribed version contains 50 Ts at
+the 5\p end, which ensures that sequencing this version of the RNA gets the
+whole poly(T) tail as well as 100 bases which can be mapped to the genome.
+Even though the actual output poly(A) tail is in the reverse transcribed
+poly(T) format, we will generally refer to both of them as a poly(A) tail.
+

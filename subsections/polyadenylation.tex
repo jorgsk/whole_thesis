@@ -8,7 +8,7 @@ mammals, RNAP II is larger than its bacterial counterpart, but the core
 subunits are structurally and functionally conserved compared to bacterial RNAP
 \cite{ebright_rna_2000}.
 
-As in bacteria, transcription in eukaryotes begins when RNAP II is rectruited by
+As in bacteria, transcription in eukaryotes begins when RNAP II is recruited by
 transcription factors to promoter sites, although this recruitment is more
 diversified than in bacteria as no equivalent to the sigma factor system
 exists in eukaryotes. As well, transcription initiation involves the same steps
@@ -70,7 +70,7 @@ up most of gene sequences in mammals. By splicing out the introns and joining
 the surrounding exons, only the coding regions (as well as the 3\p and 5\p
 untranslated regions) of pre-mRNA make up the final mRNA.
 
-Eeach of the steps of pre-mRNA processing are interconnected. The 5\p cap
+Each of the steps of pre-mRNA processing are interconnected. The 5\p cap
 increases the efficiency of the excision of the 5\p proximal intron and the
 efficiency of polyadenylation; and polyadenylation again increases the
 efficiency of the excision of the 3\p terminal intron
@@ -85,7 +85,7 @@ If any of the processing steps are inefficiently executed or not executed at
 all, the pre-mRNA transcript will be targeted for degradation either in the
 nucleus itself or in the cytoplasm after transport \cite{doma_rna_2007}. This
 reduces the risk that errors during transcription and pre-mRNA processing will
-result in unfunctional or possibly harmful protein products.
+result in nonfunctional or possibly harmful protein products.
 
 \subsubsection{Usage of alternative polyadenylation sites}
 % 1) For making different 3 UTR
@@ -102,7 +102,7 @@ host of human diseases and other metabolic processes
 transcript can have wide-spanning consequences.
 
 There are also examples of cleavage and polyadenylation in sites outside the
-3\p UTR. The most promient of these are sites within introns. The use of an
+3\p UTR. The most prominent of these are sites within introns. The use of an
 intronic cleavage and polyadenylation site a site would cause any downstream
 exons to be left out of the transcript. Thus, the site of cleavage and
 polyadenylation can also modulate the protein coding content of the mRNA. A
@@ -128,7 +128,7 @@ that extremity, and matching the remainder to template mRNA or genomic sequence
 \cite{beaudoing_patterns_2000, tian_large-scale_2005}.
 
 These early genome-wide studies were successful in determining i) the frequency
-of occurrance of the different PAS \cite{beaudoing_patterns_2000}, ii) that
+of occurrence of the different PAS \cite{beaudoing_patterns_2000}, ii) that
 over half of human genes employ alternative polyadenylation, iii) that sites of
 alternative polyadenylation is conserved between humans and mice
 \cite{tian_large-scale_2005}, and vi) that there is extensive polyadenylation
@@ -139,7 +139,7 @@ Crucially, they could not compare different experimental conditions, since the
 ESTs are from different cell lines grown under different experimental
 conditions. Further, the EST data is biased toward protein coding genes that
 were found interesting enough to sequence individually. Thus many classes of
-polyadenylated RNA, such as long noncoding RNA, were possbily missed by these
+polyadenylated RNA, such as long noncoding RNA, were possibly missed by these
 studies. Finally, no information about gene expression levels can be had from
 EST data, so was is not possible to find out how alternative polyadenylation
 could affect gene expression.
@@ -149,7 +149,7 @@ available, microarrays were used to study 3\p UTR variation and
 polyadenylation, often in combination with EST data. Now, alternative
 polyadenylation could be investigated between different experimental
 conditions. As well, 3UTR expression levels could be compared across these
-experiments. This allowd for a broader range of hypotheses to be tested. In
+experiments. This allowed for a broader range of hypotheses to be tested. In
 practise, to test for differential 3UTR usage with microarrays, RNA probes
 corresponding to the full length or extended 3UTR were used, and signal
 intensities from the probes under different conditions could be compared to see
@@ -160,7 +160,7 @@ downstream polyadenylation sites.
 
 Results obtained with microarray and EST data include different patterns of
 polyadenylation in different human tissues \cite{zhang_biased_2005}, and
-wide-spread shortening of 3\p UTR length during immunce cell activeation
+wide-spread shortening of 3\p UTR length during immune cell activation
 \cite{sandberg_proliferating_2008}. A combination of EST, microarray, and SAGE
 data (SAGE being similar to microarrays) showed a progressive lengthening of
 mouse 3\p UTRs during embryonic development \cite{ji_progressive_2009}.
@@ -221,71 +221,6 @@ same usage of alternative polyadenylation across 24 tissues
 polyadenylation events are from lowly expressed transcripts, giving a reason
 for why they have not been detected until deep transcriptome sequencing became
 available. 
-
-\subsubsection{Preparing a cDNA library for RNA-sequencing}
-The work presented in this thesis and most other high-throughput studies of
-polyadenylation rely on sequencing data made with Illumina sequencing
-technologies. Here we briefly mention the stages of an RNA-seq
-experiment that are relevant for interpreting subsequent results.
-
-To obtain good sequencing results, fragmented DNA in large concentrations is
-required. To reach these concentration, it is generally necessary to both
-amplify the cellular RNA extract and to convert the RNA to cDNA by reverse
-transcription. Both RNA amplification and cDNA conversion can introduce biases
-depending on the choices of methods and the order in which they are performed
-\cite{wang_rna-seq:_2009}. From the point of view of studying polyadenylation,
-it is necessary that the poly(A) tail is preserved during cDNA library
-preparation. This requires the use of poly(T) primers both for making the cDNA
-library and for PCR amplification.
-
-After cDNA preparation and several rounds of PCR amplification, most poly(A)
-tails will be reduced in length from the full 250 nt. This is because the
-poly(T) primers will bind randomly in the poly(A) tail, something which will
-gradually reduce the average length of the poly(A) tails.
-
-\subsubsection{Sequencing errors and biases}
-There are several errors and biases that creep into sequencing that must be
-taken into account during the computational analysis of the output. Here we
-discuss one error and one bias that is important for analysing Illumina short
-pair ended reads.
-
-An error that is particularly important for the study of polyadenylation is
-that sequencing performance degrades over single-nucleotide stretches
-\cite{minoche_evaluation_2011}. This implies that when sequencing the poly(A)
-sequence, other nucleotides than just A will be reported with a relatively high
-frequency.. This means that when looking for poly(A) stretches in the output as
-signatures of poly(A) sites, some variation from the homopolymer sequence must
-be expected.
-
-An important bias is that most sequences with poly(A) tails will be output in
-the reverse-transcribed version. That is, 5\p CCCGAAAA 3\p will be output as 5\
-TTTTCGGG 3\p. This is due to the RNA fragmenting and that sequencing
-(performed by a DNA polyermase) happens in the 5\p to 3\p direction and that
-each RNA is present in both its original and reverse transcribed form. During
-sequencing, 50 to 150 nucleotides will be sequenced from each side of the around
-300 nt fragment. If the poly(A) tail is the 50 last nucleotides of the 300 nt
-fragment RNA, sequencing 150 nucleotides will never reach nucleotide 250 where
-the poly(A) site is. However, the reverse transcribed version contains 50 Ts at
-the 5\p end, which ensures that sequencing this version of the RNA gets the
-whole poly(T) tail as well as 100 bases which can be mapped to the genome.
-
-Even though the actual output poly(A) tail is in the reverse transcribed
-poly(T) format, we will often refer to both of them as a poly(A) tail.
-
-\subsubsection{Mapping reads to the genome}
-The sequence-snippets that are output from sequencing machines are called
-reads, and generally come in sizes from 30 to 500 basepairs, depending on the
-technology used. If a reference genome exists for the organism from which the
-RNA sample was taken, these reads must be mapped to that genome. Otherwise, it
-is possible to attempt to construct the organisms transcriptome \textit{de
-novo} from the RNA-seq output, although this generally gives poor results.
-
-Mapping read to the genome means trying to find where the RNA-snippet from the
-sequencing machine originated from. Different methods are used for this, but
-what they have in common is that they allow for mismatches between the read and
-the genome to allow for sequencing errors. Extra care is taken to map reads
-spanning the intron-exon junctions, since these reads must necessarily be split
-in two to be mapped, possibly thousands of nucleotides apart.
 
 \end{document}
 
