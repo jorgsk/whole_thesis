@@ -1,13 +1,11 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
-\section{Methods - Utail}
-We wanted to obtain information about sites of polyadenylation for RNA-seq
-experiments so that we could rapidly analyze the polyadenylation pattern for
-any RNA-seq experiment. To do that, we developed the tool \textit{Utail} (from
-Untranslated poly(A) tail). If an RNA library has been prepared in a way that
-ensures that the sites of polyadenylation will be included, Utail can use the
-RNA-seq data from that library to locate and quantify the polyadenylation sites
-and provide ready-to-use output.
+We wanted a quick tool for obtaining information about sites of polyadenylation
+for any RNA-seq experiment. To do that, we developed the tool \textit{Utail}
+(from Untranslated poly(A) tail). If an RNA library has been prepared in a way
+that ensures that the sites of polyadenylation will be included, Utail can use
+the RNA-seq data from that library to locate and quantify the polyadenylation
+sites and provide ready-to-analyse output.
 
 \subsection{Utail pipeline overview}
 The RNA-seq data is processed in a series of steps to go from raw data to
@@ -113,7 +111,8 @@ In addition, the following dependencies come bundled with Utail:
 	\item bedGraphToBigWig, a program that converts bedGraph files to bigWig
 		files, obtained from the ucsc.edu website.
 \end{itemize}
-Before running the program, modify the settings in he $UTR_SETTINGS$ file to your
-preferences. Here you provide links to the RNA-seq data and the annotation and
-set various settings. Run using ``python utail.py''; after completion the
-output will be in the automatically created ``output'' folder.
+Before running the program, modify the settings in the UTR\_SETTINGS file to
+your preferences. In the setting file you provide links to the RNA-seq data and
+the annotation and adjust various options, such as the number of CPU cores to
+use. Run using ``python utail.py''; after completion the output will be in the
+automatically created output folder.
