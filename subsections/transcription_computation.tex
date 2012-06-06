@@ -4,23 +4,29 @@
 The movement of RNAP on DNA is thought to occur by a so called Brownian ratchet
 mechanism. In this model, the backward movement of RNAP is structurally
 prevented by the RNAP F bridge \cite{bar-nahum_ratchet_2005}, while the forward
-motion is free to happen by Brownian motion.
-
-Still, pausing and backtracking can happen. The cause for the backward motion
-and other types of RNAP pausing has been explained by assuming that RNAP is at
-chemical equilibrium between each nucleotide incorporation step. Then, the
-reaction pathway chosen depends on the free energy difference between the
-current state all other possible states, such as a paused state, a backtracked
-state, a terminating state, and a forward moving state
-\cite{greive_thinking_2005}. Two assumed factors where the free energy balance
-is readily calculated is the RNA-DNA hybrid and the DNA-DNA bubble. The total
-free energy difference has been formulated as
-
+motion is free to happen by Brownian motion. Still, pausing and backtracking
+does happen during elongation, and much effort has been devoted to understand
+exactly how RNAP moved on DNA. To analyze RNAP movement, the current model
+assumes that the movement of RNAP is dependent only on the free energy
+difference between the current state and all other possible states, such as a
+paused state, a backtracked state, a terminating state, and a forward moving
+state \cite{greive_thinking_2005}. This assumption relies on RNAP being in
+chemical equilibrium between each step; and while this may not always be the case,
+it does facilitate the formulation of the movement of RNAP as an equation with
+the free energies of the mentioned steps. This equation is given as
+\cite{greive_thinking}
 \begin{equation}
 	\Delta G_{\text{Total}} = \Delta G_{\text{RNA-DNA}} + \Delta
 	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}},
 	\label{eq:rnap_energy_balance}
 \end{equation}
+
+In this equation, $\Delta G_{\text{RNA-DNA}}$
+
+Then, the reaction pathway chosen. Two assumed
+factors where the free energy balance is readily calculated is the RNA-DNA
+hybrid and the DNA-DNA bubble. The total free energy difference has been
+formulated as
 where $\Delta G_{\text{RNAP}}$ is the non-specific energy state of the RNAP at
 a given position on DNA \cite{greive_thinking_2005}.
 

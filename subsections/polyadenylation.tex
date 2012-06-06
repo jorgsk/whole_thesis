@@ -1,24 +1,59 @@
 % This is just for letting me cite stuff.
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-\subsubsection{Transcription and transcript processing in mammals}
+\subsubsection{Overview of transcription in eukaryotes}
 In eukaryotes there are several RNA polymerases, each one responsible for
 transcribing different classes of genes. The most abundant polymerase is 
-RNAP II which transcribes mostly protein coding genes. RNAP II is larger than
-its bacterial counterpart, with 12 subunits in mammals, but the core subunits
-are structurally and functionally conserved compared to bacterial RNAP
+RNAP II which transcribes mostly protein coding genes. With 12 subunits in
+mammals, RNAP II is larger than its bacterial counterpart, but the core
+subunits are structurally and functionally conserved compared to bacterial RNAP
 \cite{ebright_rna_2000}.
 
-As in bacteria, transcription in eukaryotes begins at promoter sites. Also in
-eukaryoites, transcription initiation involves the same steps of open bubble
-formating and abortive cycling, although here assisting transcription factors
-are involved \cite{wade_transition_2008} in this process. Transcription
-elongation by RNAP II also involves pausing and backtracking, but pausing on
-eukaryotic DNA is more complicated due to the presence of chromatin and its
-methylation or acetylation states \cite{sims_elongation_2004}. Transcription
-termination is markedly different between eukaryotes and prokaryotes and will
-be covered more extensively below.
+As in bacteria, transcription in eukaryotes begins when RNAP II is recruited by
+transcription factors to promoter sites, although this recruitment is more
+diversified than in bacteria as no equivalent to the sigma factor system
+exists in eukaryotes. As well, transcription initiation involves the same steps
+of open bubble formating and abortive cycling, although there are more
+assisting transcription factors are involved in this process compared to
+bacteria \cite{wade_transition_2008}. Transcription elongation by RNAP II also
+involves pausing and backtracking, but pausing on eukaryotic DNA is more
+complicated due to wrapping of DNA in nucleosomes and chromatin
+\cite{sims_elongation_2004}.
 
-In contrast to bacterial transcripts, mRNA in mammalian cells needs
+Transcription termination on the other hand is markedly different between
+eukaryotes and bacteria. When RNAP terminates transcription in bacteria, the
+RNA is released and thereby the location of the 3\p end of the RNA is defined.
+In eukaryotes however, transcription termination does not co-occur with mRNA
+release and 3\p end definition. Instead, mRNA is released by a process of
+cleavage and polyadenylation several hundred nucleotides before transcription
+terminates.
+
+\subsubsection{Cleavage and polyadenylation marks the 3' end of mRNA
+and promotes transcription termination}
+There are usually several sites where cleavage and polyadenylation can occur in
+a gene, though these sites are predominantly found in the 3\p UTR. The cleavage
+and polyadenylation sites are identified by the polyadenylation signal (PAS),
+which is a highly conserved AATAAA signal sequence or a close variant like
+ATTAAA, in addition to an enhancing U or GU rich sequence further downstream
+the PAS. The CPSF (cleavage/polyadenylation specificity factor) protein binds
+to the PAS with the help of several other factors and cleaves mRNA 10-30
+nucleotides downstream the PAS. As soon as mRNA has been cleaved, a
+poly(A)-polymerase will add a poly(A) tail (length 250 in mammals) and the tail
+will be covered by poly(A) binding protein (PAB) (see
+\cite{proudfoot_ending_2011} for a comprehensive and historical review of 3\p
+cleavage and polyadenylation).
+
+As cleavage and polyadenylation occur, RNAP II is still transcribing the
+downstream DNA. It is important that RNAP II terminates transcription,
+otherwise it can collide with the polymerases that transcribe downstream
+genes. One characterized method of transcription termination is by a 5\p to 3\p
+exonuclease called XRN2. In what is called the ``torpedo model'', this
+exonuclease degrades the still-transcribed RNA from the 5\p end until it
+reaches RNAP II and causes transcription termination, although the exact
+details of how transcription termination happens is not clear
+\cite{kuehner_unravelling_2011}.
+
+\subsubsection{mRNA processing is necessary step before translation}
+In contrast to bacterial transcripts, eukaryotic mRNA in mammalian cells needs
 extensive processing before it is capable of being translated by ribosomes.
 Therefore, mRNA in eukaryotes is called pre-mRNA until it has gone through the
 necessary processing steps. There are essentially three main events that make
@@ -30,19 +65,12 @@ of a transcript shortly after it emerges from the RNA exit channel of RNAP II.
 The 5\p cap presumably protects against 5\p exonucleases and is necessary for
 the proper export of the mRNA from the nucleus.
 
-Splicing is the removal of introns, the non-coding parts of pre-mRNA that
-actually make up most of gene sequences in mammals. By splicing out the introns
-and joining the surrounding exons, only the coding regions (as well as the 3\p
-and 5\p untranslated regions) of pre-mRNA make up the final mRNA.
+Splicing is the removal of introns, the non-coding parts of pre-mRNA that make
+up most of gene sequences in mammals. By splicing out the introns and joining
+the surrounding exons, only the coding regions (as well as the 3\p and 5\p
+untranslated regions) of pre-mRNA make up the final mRNA.
 
-Cleavage and polyadenylation mark the 3\p end of the pre-mRNA. At designated
-sites, the nascent transcript is cleaved in two while still being transcribed
-by RNAP II. The 3\p end of the pre-mRNA is then catalytically extended with a
-tail of around 250 adenosione nucleotides. This is generally the last step of
-mRNA processing and marks the transition from pre-mRNA to mRNA. Below, we will
-review in more detail the process of cleavage and polyadenylation.
-
-Eeach of the steps of pre-mRNA processing are interconnected. The 5\p cap
+Each of the steps of pre-mRNA processing are interconnected. The 5\p cap
 increases the efficiency of the excision of the 5\p proximal intron and the
 efficiency of polyadenylation; and polyadenylation again increases the
 efficiency of the excision of the 3\p terminal intron
@@ -57,29 +85,7 @@ If any of the processing steps are inefficiently executed or not executed at
 all, the pre-mRNA transcript will be targeted for degradation either in the
 nucleus itself or in the cytoplasm after transport \cite{doma_rna_2007}. This
 reduces the risk that errors during transcription and pre-mRNA processing will
-result in unfunctional or possibly harmful protein products.
-
-\subsubsection{Cleavage and polyadenylation marks the 3' end of messenger RNAs
-and promotes transcription termination}
-Most protein coding genes contain a 3\p untranslated region (3\p
-UTR) which may contain several sites where cleavage and polyadenylation can
-take place. These sites are identified by the polyadenylation signal (PAS),
-which is a highly conserved AAUAAA signal sequence or a close variant like
-AUUAAA. The protein CPSF (cleavage/polyadenylation specificity factor) binds to
-the PAS and with the help of several other factors cleaves pre-mRNA 10-30
-nucleotides downstream the PAS. As soon as pre-mRNA has been cleaved, a
-poly(A)-polymerase will add the poly(A) tail and the tail will be covered by
-poly(A) binding protein (PAB) (see \cite{proudfoot_ending_2011} for a
-comprehensive and historical review of 3\p cleavage and polyadenylation).
-
-While the mRNA is now free to be transported to the nuclear membrane pores
-through which it enters the cytoplasm, RNAP II is still transcribing
-downstream. One characterized method of transcription termination is by a 5\p
-to 3\p exonuclease called XRN2. In what is called the ``torpedo model'', this
-exonuclease degrades the still-transcribed RNA until it reaches RNAP II and
-causes transcription termination, although the exact details of how
-transcription termination happens is not clear
-\cite{kuehner_unravelling_2011}.
+result in nonfunctional or possibly harmful protein products.
 
 \subsubsection{Usage of alternative polyadenylation sites}
 % 1) For making different 3 UTR
@@ -96,7 +102,7 @@ host of human diseases and other metabolic processes
 transcript can have wide-spanning consequences.
 
 There are also examples of cleavage and polyadenylation in sites outside the
-3\p UTR. The most promient of these are sites within introns. The use of an
+3\p UTR. The most prominent of these are sites within introns. The use of an
 intronic cleavage and polyadenylation site a site would cause any downstream
 exons to be left out of the transcript. Thus, the site of cleavage and
 polyadenylation can also modulate the protein coding content of the mRNA. A
@@ -122,7 +128,7 @@ that extremity, and matching the remainder to template mRNA or genomic sequence
 \cite{beaudoing_patterns_2000, tian_large-scale_2005}.
 
 These early genome-wide studies were successful in determining i) the frequency
-of occurrance of the different PAS \cite{beaudoing_patterns_2000}, ii) that
+of occurrence of the different PAS \cite{beaudoing_patterns_2000}, ii) that
 over half of human genes employ alternative polyadenylation, iii) that sites of
 alternative polyadenylation is conserved between humans and mice
 \cite{tian_large-scale_2005}, and vi) that there is extensive polyadenylation
@@ -133,7 +139,7 @@ Crucially, they could not compare different experimental conditions, since the
 ESTs are from different cell lines grown under different experimental
 conditions. Further, the EST data is biased toward protein coding genes that
 were found interesting enough to sequence individually. Thus many classes of
-polyadenylated RNA, such as long noncoding RNA, were possbily missed by these
+polyadenylated RNA, such as long noncoding RNA, were possibly missed by these
 studies. Finally, no information about gene expression levels can be had from
 EST data, so was is not possible to find out how alternative polyadenylation
 could affect gene expression.
@@ -143,7 +149,7 @@ available, microarrays were used to study 3\p UTR variation and
 polyadenylation, often in combination with EST data. Now, alternative
 polyadenylation could be investigated between different experimental
 conditions. As well, 3UTR expression levels could be compared across these
-experiments. This allowd for a broader range of hypotheses to be tested. In
+experiments. This allowed for a broader range of hypotheses to be tested. In
 practise, to test for differential 3UTR usage with microarrays, RNA probes
 corresponding to the full length or extended 3UTR were used, and signal
 intensities from the probes under different conditions could be compared to see
@@ -154,7 +160,7 @@ downstream polyadenylation sites.
 
 Results obtained with microarray and EST data include different patterns of
 polyadenylation in different human tissues \cite{zhang_biased_2005}, and
-wide-spread shortening of 3\p UTR length during immunce cell activeation
+wide-spread shortening of 3\p UTR length during immune cell activation
 \cite{sandberg_proliferating_2008}. A combination of EST, microarray, and SAGE
 data (SAGE being similar to microarrays) showed a progressive lengthening of
 mouse 3\p UTRs during embryonic development \cite{ji_progressive_2009}.

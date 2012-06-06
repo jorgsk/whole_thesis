@@ -15,6 +15,7 @@
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
+\usepackage{verbatim}
 
 % Proper space and font for integral differential term
 \newcommand{\dd}{\; \mathrm{d}} 
@@ -81,8 +82,10 @@ loved every part of it}
 
 %\input{subsections/translation_background.tex}
 
-%\section{Transcription termination in eukaryotes}
-%\input{subsections/polyadenylation.tex}
+\section{Transcription termination in eukaryotes}
+\input{subsections/polyadenylation.tex}
+\section{High throughput RNA sequencing}
+\input{subsections/rna_seq.tex}
 
 %\part{Regulation of transcription and translation initiation in the 5 prime
 %untranslated region}
@@ -124,7 +127,9 @@ loved every part of it}
 
 %\endmatter
 
-%appendices
+\appendix
+\chapter{Utail -- finding poly(A) sites from short read data}
+\input{subsections/utail.tex}
 
 %\printbibliography
 
