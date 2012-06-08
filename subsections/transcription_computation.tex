@@ -1,6 +1,9 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
 \subsubsection{Conceptual model for RNAP movement on DNA}
+
+TODO include a figure of RNAP in all its pride and glory.
+
 The movement of RNAP on DNA is thought to occur by a so called Brownian ratchet
 mechanism. In this model, the backward movement of RNAP is structurally
 prevented by the RNAP F bridge \cite{bar-nahum_ratchet_2005}, while the forward
@@ -11,26 +14,27 @@ assumes that the movement of RNAP is dependent only on the free energy
 difference between the current state and all other possible states, such as a
 paused state, a backtracked state, a terminating state, and a forward moving
 state \cite{greive_thinking_2005}. This assumption relies on RNAP being in
-chemical equilibrium between each step; and while this may not always be the case,
-it does facilitate the formulation of the movement of RNAP as an equation with
-the free energies of the mentioned steps. This equation is given as
-\cite{greive_thinking}
+chemical equilibrium between each step; and while this may not always hold true,
+it does facilitate the formulation of the movement of RNAP as an equation \cite{greive_thinking}
 \begin{equation}
 	\Delta G_{\text{Total}} = \Delta G_{\text{RNA-DNA}} + \Delta
 	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}},
 	\label{eq:rnap_energy_balance}
 \end{equation}
+This equation contains the terms currently believed to play a role in RNAP
+movement, based on the interaction between RNAP and DNA. $\Delta
+G_{\text{RNA-DNA}}$ is the $\sim$ 8-9 bp RNA-DNA helix inside RNAP, $\Delta
+G_{\text{DNA-DNA}}$ is the $\sim$ 14-15 bp DNA-DNA bubble that RNAP keeps open
+around it at all times, and $\Delta G_{\text{RNAP}}$ is the non-specific
+energy state of the RNAP at a given position on DNA
+\cite{greive_thinking_2005}. By calculating these energies for all possible
+reaction pathways for RNAP, one can find the pathway that is most energetically
+favorable.
 
-In this equation, $\Delta G_{\text{RNA-DNA}}$ is the free energy of the $\sim$
-8-9 length RNA-DNA hybrid, and $\Delta G_{\text{DNA-DNA}}$ is the free energy
-of the $\sim$ 14-15 DNA-DNA bubble kept open by RNAP. $\Delta G_{\text{RNAP}}$
-is the non-specific energy state of the RNAP at a given position on DNA
-\cite{greive_thinking_2005}.
-
-While this conceptual model seems orderly, one should consider whether
-historically the RNA-DNA and DNA-DNA variables have been included because they
-fit experimental data or because they simply have been possible to calculate
-compared to the other interactions involved in transcription.
+This conceptual model seems orderly, but one should consider whether
+historically the RNA-DNA and DNA-DNA variables have been included in the model
+because they fit experimental data or because they simply have been possible to
+measure compared to the other interactions involved in transcription elongation.
 
 \subsubsection{Computational models of transcription elongation}
 Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
@@ -41,13 +45,13 @@ transcription elongation have been published
 guajardo_model_1997}. What they have in common is that in some form they
 incorporate the terms from \eqref{eq:rnap_energy_balance}. In the case of
 Tadigotla et al. \cite{tadigotla_thermodynamic_2006-1} the free energy from the
-nascent RNA secondary structure close to the RNA exit channel is used as well.
-This is to aid the prediction of pause sites where a strong hairpin will
-prevent backtracking while RNAP is paused.
+nascent RNA secondary structure close to the RNA exit channel is used as well;
+this is for the purpose of modeling the effect of strong RNA hairpins in
+preventing backtracking of paused RNAP.
 
 These models have had partial predictive power, but more work needs to be done
 before a truly descriptive model of transcription is at hand. The state of the
-current models make it clear that is more to to RNAP processivity than the
+current models makes it clear that there is more to RNAP processivity than the
 thermodynamic variables in equation \eqref{eq:rnap_energy_balance} on which
 these models are based. Indeed, it was recently published that the 3\p
 dinucleotide of the nascent RNA has a strong effect on translocation rates
@@ -56,22 +60,29 @@ been previously suspected.
 
 \subsubsection{A computational model of transcription initiation}
 The key differences between transcription initiation and transcription
-elongation are that i) during initiation the RNA-DNA hybrid lacks its full
-length until +8/9, ii) the DNA-DNA bubble is scrunched and pulled into RNAP,
-and iii) RNAP is bound to sigma which again is bound to the promoter. The
-consequence of these difference is that RNAP has a reaction pathway during
+elongation are that during initiation i) RNAP is bound to the promoter via
+sigma, ii) the DNA-DNA bubble is scrunched and pulled into RNAP, and iii) the
+RNA-DNA hybrid lacks its full length until the active site has reached +8/9.
+The consequence of these difference is that RNAP has a reaction pathway during
 initiation that does not exist during elongation: abortive initiation.
 
 Based on equation \eqref{eq:rnap_energy_balance} and the above differences, a
 model for transcription initiation was previously published
 \cite{xue_kinetic_2008}. This model attempts to cover explicitly both the
 abortive process and the actual promoter escape event. Although the authors
-manage to reproduce well the maximum size of abortive transcript and the
-abortive to productive ration of the N25 promoter, they do not explain well the
-abortive probabilities. Some criticism of this study is that it only the N25,
+manage to predict the maximum size of abortive transcript and the abortive to
+productive ratio (APR) of the N25 promoter, they do not explain well the
+abortive probabilities. Some criticism of this study is that only the N25,
 N25anti and T7A1 promoters were investigated, even though a larger dataset was
 available \cite{hsu_initial_2006}. Further, the T7A1 promoter varies not only
 in the ITS sequence compared to the other two, but also in the core promoter
-sequence. Variation in the core promoter has been shown to affect rates of
-abortive initiation \cite{vo_vitro_2003-1}, yet the authors have not taken
-this variation into account.
+sequence. Variation in the core promoter sequence has been shown to affect
+rates of abortive initiation \cite{vo_vitro_2003-1}, yet the authors have not
+taken this variation into account.
+
+In conclusion, this study gave the first quantitative model for transcription
+initiation, and manages to reproduce some of the experimentally measured
+parameters. However, the model is not used predictively, making it difficult to
+measure how much of transcription initiation it truly captures. In the field of
+transcription initiation, it remains to be published a quantitative model with
+predictive power that gives new insight into the process itself.

@@ -20,12 +20,12 @@ complicated due to wrapping of DNA in nucleosomes and chromatin
 \cite{sims_elongation_2004}.
 
 Transcription termination on the other hand is markedly different between
-eukaryotes and bacteria. When RNAP terminates transcription in bacteria, the
-RNA is released and thereby the location of the 3\p end of the RNA is defined.
-In eukaryotes however, transcription termination does not co-occur with mRNA
+eukaryotes and bacteria. In bacteria, the position where RNAP stops
+transcribing also marks the genomic position of the 3\p end of the mRNA. In
+eukaryotes however, transcription termination does not co-occur with mRNA
 release and 3\p end definition. Instead, mRNA is released by a process of
-cleavage and polyadenylation several hundred nucleotides before transcription
-terminates.
+cleavage and polyadenylation several hundred nucleotides before RNAP terminates
+transcription.
 
 \subsubsection{Cleavage and polyadenylation marks the 3' end of mRNA
 and promotes transcription termination}
@@ -35,17 +35,19 @@ and polyadenylation sites are identified by the polyadenylation signal (PAS),
 which is a highly conserved AATAAA signal sequence or a close variant like
 ATTAAA, in addition to an enhancing U or GU rich sequence further downstream
 the PAS. The CPSF (cleavage/polyadenylation specificity factor) protein binds
-to the PAS with the help of several other factors and cleaves mRNA 10-30
-nucleotides downstream the PAS. As soon as mRNA has been cleaved, a
-poly(A)-polymerase will add a poly(A) tail (length 250 in mammals) and the tail
-will be covered by poly(A) binding protein (PAB) (see
-\cite{proudfoot_ending_2011} for a comprehensive and historical review of 3\p
-cleavage and polyadenylation).
+to the PAS along with several other factors to form a poly(A) binding complex.
+The complex then cleaves mRNA in a stochastic manner 10-30 nucleotides
+downstream the PAS (see \cite{proudfoot_ending_2011} for a comprehensive and
+historical review of 3\p cleavage and polyadenylation). As soon as mRNA has
+been cleaved, a poly(A)-polymerase will add a polyA tail (length 250 in
+mammals) to the 3\p end and the tail will be covered by poly(A) binding protein
+(PAB). The PAB protects the poly(A) tail from degradation and assists in
+transporting the mRNA to the cytoplasm \cite{mangus_poly-binding_2003}.
 
 As cleavage and polyadenylation occur, RNAP II is still transcribing the
 downstream DNA. It is important that RNAP II terminates transcription,
-otherwise it can collide with the polymerases that transcribe downstream
-genes. One characterized method of transcription termination is by a 5\p to 3\p
+otherwise it can collide with the polymerases that transcribe downstream genes.
+One characterized method of transcription termination is by a 5\p to 3\p
 exonuclease called XRN2. In what is called the ``torpedo model'', this
 exonuclease degrades the still-transcribed RNA from the 5\p end until it
 reaches RNAP II and causes transcription termination, although the exact
@@ -110,6 +112,25 @@ well known example is from the immunoglobin protein in B cells. Depending on
 whether a polyadenylation site in an intron is used or not, the membrane bound
 or the secreted version of this protein is made \cite{peterson_regulated_1989}.
 
+\subsubsection{Transient polyadenylation unrelated to mRNA processing}
+In the last decade, it has become clear that there is polyadenylation of
+RNA in eukaryotic cells that is unrelated to mRNA 3\p processing. First, it was
+discovered that short transient polyadenylation occurred in aberrant
+transcripts in the nucleus of yeast by the TRAMP complex. The transcripts
+polyadenylated by TRAMP were found to be targeted for degradation by the
+exosome \cite{lacava_rna_2005, wyers_cryptic_2005}. This is similar to the
+situation in bacteria, where polyadenylation is part of the RNA degradation
+pathway. This new type of polyadenylation however is oposite of the role of
+stable polyadenylation of mRNA in the cytoplasm, where the poly(A) tail
+protects against degradation. It was suggested that degradation-associated
+polyadenylation by TRAMP has been conserved from the original bacterial
+degradation machinery \cite{lacava_rna_2005}. Later, degradation-related
+polyadenylation was found in the nucleus of mammals too, and eventually even in
+the cytoplasm of human cells \cite{slomovic_polyadenylation_2006,
+slomovic_addition_2010}. In summary, there is an emergent role for
+degradation-related transient polyadenylation in eukaryotes that was previously
+only thought to occur in bacteria.
+
 \subsubsection{Genome-wide studies of polyadenylation}
 The study of sites of polyadenylation across the genome has occurred in three
 stages in the last 12 years, with each stage resting on a different type of
@@ -130,7 +151,7 @@ that extremity, and matching the remainder to template mRNA or genomic sequence
 These early genome-wide studies were successful in determining i) the frequency
 of occurrence of the different PAS \cite{beaudoing_patterns_2000}, ii) that
 over half of human genes employ alternative polyadenylation, iii) that sites of
-alternative polyadenylation is conserved between humans and mice
+alternative polyadenylation are evolutionary conserved between humans and mice
 \cite{tian_large-scale_2005}, and vi) that there is extensive polyadenylation
 at intronic polyadenylation sites \cite{tian_widespread_2007}.
 
@@ -165,14 +186,14 @@ wide-spread shortening of 3\p UTR length during immune cell activation
 data (SAGE being similar to microarrays) showed a progressive lengthening of
 mouse 3\p UTRs during embryonic development \cite{ji_progressive_2009}.
 
-Microarrays studies, although providing a wealth of insight, are fundamentally
-limited in scope when the purpose is to study of alternative polyadenylation.
-This is because one can only investigate those annotated genes which are
-already suspected to have variation in usage of polyadenylation sites, since no
-direct evidence of polyadenylation is found with these studies. Further, due to
-the nature of microarray data, 3\p UTR length differences are only reported as
-relative differences between experiments, making it impossible to compare 3\p
-UTR lengths across genes.
+Microarrays studies, although capable of providing a wealth of insight, are
+fundamentally limited in scope when the purpose is to study alternative
+polyadenylation: since no direct evidence of polyadenylation events can be had
+with microarrays, one can only investigate those annotated genes which are
+already suspected or known to be subject to alternative polyadenylation.
+Further, due to the nature of microarray data, 3\p UTR length differences are
+only reported as relative differences between experiments, making it impossible
+to compare 3\p UTR lengths across genes.
 
 With the advance of second generation sequencing technologies in the late 2000s
 in the form of RNA sequencing (RNA-seq), both limitations for EST and
@@ -182,16 +203,16 @@ ESTs, the RNA-seq data is in sequence format, allowing the direct detection
 of poly(A) tails and thereby the site of cleavage and polyadenylation.
 Secondly, like microarrays, RNA-seq can be performed on RNA samples from
 different experimental conditions, allowing direct hypothesis testing. And
-further, unlike both ESTs and microarray, RNA-seq data is quantitative,
+further, unlike both ESTs and microarray, RNA-seq data is truly quantitative,
 allowing the direct comparison of expression levels of 3\p UTRs across the
 genome.
 
-These technologies were rapidly used to study the polyadenylation landscape for
-a single cells and tissues. The new experiments confirmed what had been
-discovered earlier by single-mRNA studies and EST analysis; that AAUAAA is the
-canonical polyadenylation signal, that single genes can be represented with
-multiple sites of polyadenylation, and that there is frequent polyadenylation
-of intronic sequences. Among the new discoveries were first of all many novel
+RNA-seq was rapidly used to study the polyadenylation landscape for cell lines
+and tissues. These experiments confirmed what had been discovered earlier by
+single-mRNA studies and EST analysis; that AAUAAA is the canonical
+polyadenylation signal, that single genes can be represented with multiple
+sites of polyadenylation, and that there is frequent polyadenylation of
+intronic sequences. Among the new discoveries were first of all many novel
 polyadenylation sites scattered across the genome
 \cite{ozsolak_comprehensive_2010, derti_quantitative_2012}. It was also found
 that intronic and intergenic polyadenylation sites are in humans associated
@@ -200,24 +221,95 @@ sites at the 3\p end of genes \cite{ozsolak_comprehensive_2010}. Further,
 genome wide annotation of polyadenylation sites from sense and antisense
 transcription was obtained for the first time in large scale in \textit{C.
 elegans} and \textit{arabidopsis} \cite{mangone_landscape_2010,
-wu_genome-wide_2011}, examples of RNA-seq aiding in the genome annotation. Fu
-et al. compared the relative change in 3\p length between two cancer cells and
-an epithelial cell line \cite{fu_differential_2011}. They did not find a
-consistent pattern of widespread shortening of 3\p UTRs in the cancer cell
-lines, a phenomenon which had been previously suggested using a restricted
-dataset of 23 specifically selected genes \cite{mayr_widespread_2009-2}. An
-unexpected finding with RNA-seq has been the detection of poly(A) tails for
-histone mRNAs in both human and \textit{c. elegans}
-\cite{mangone_landscape_2010-1, shepard_complex_2011}. Histone mRNAs were
-previously thought to be the only mRNAs in metazoans without a poly(A) tail
-\cite{marzluff_metabolism_2008}, even though several of the histone genes had
-been found to contain the AATAAA polyadenylation signal at the 3\p end
-\cite{keall_histone_2007}.
+wu_genome-wide_2011}. The last examples show how RNA-seq is directly used in
+genome annotation. In a follow up to microarray-studies of change in global 3\p
+UTR length in cancer, Fu et al. compared the relative change in 3\p length
+between two cancer cells and an epithelial cell line
+\cite{fu_differential_2011}. They did not find a consistent pattern of
+widespread shortening of 3\p UTRs in the cancer cell lines, a phenomenon which
+had been previously suggested using a restricted dataset of 23 specifically
+selected genes \cite{mayr_widespread_2009-2}. An unexpected finding with
+RNA-seq has been the detection of poly(A) tails for histone mRNAs in both human
+and \textit{c.  elegans} \cite{mangone_landscape_2010-1, shepard_complex_2011}.
+Histone mRNAs were previously thought to be the only mRNAs in metazoans without
+a poly(A) tail \cite{marzluff_metabolism_2008}, even though several of the
+histone genes had been found to contain the AATAAA polyadenylation signal at
+the 3\p end \cite{keall_histone_2007}.
 
-The most recent number for the number of polyadenylation sites in human is over
-400.000, and while many of them are tissue specific, 70 \% of genes showed the
-same usage of alternative polyadenylation across 24 tissues
-\cite{derti_quantitative_2012}. The same study found that most of the novel
-polyadenylation events are from lowly expressed transcripts, giving a reason
-for why they have not been detected until deep transcriptome sequencing became
-available. 
+The most recent and thorough study of genome-wide polyadenylation was done
+using a novel sample-preparation protocol by Derti et al. They used RNA-seq to
+find polyadenylation sites in five mammal species, including human, in 24
+tissues \cite{derti_quantitative_2012}. They found over 400.000 polyadenylation
+sits in the human tissues, compared to 150.000 found previously; although how
+many of these sites correspond to mRNA 3\p stable poly(A) tail or
+degradation-related transient poly(A) tails was not investigated. On reason for
+this very large number of sites could be that they identified most novel
+polyadenylation sites in lowly expressed transcripts, which may not previously
+have been detected. They also found that although many poly(A) sites were
+tissue specific, 70 \% of genes showed the same usage of alternative
+polyadenylation across all tissues.
+
+\subsubsection{Preparing a cDNA library for RNA-sequencing}
+The work presented in this thesis and most other high-throughput studies of
+polyadenylation rely on sequencing data made with Illumina sequencing
+technologies. Here we briefly mention the stages of an RNA-seq
+experiment that are relevant for interpreting subsequent results.
+
+To obtain good sequencing results, fragmented DNA in large concentrations is
+required. To reach these concentration, it is generally necessary to both
+amplify the cellular RNA extract and to convert the RNA to cDNA by reverse
+transcription. Both RNA amplification and cDNA conversion can introduce biases
+depending on the choices of methods and the order in which they are performed
+\cite{wang_rna-seq:_2009}. From the point of view of studying polyadenylation,
+it is necessary that the poly(A) tail is preserved during cDNA library
+preparation. This requires the use of poly(T) primers both for making the cDNA
+library and for PCR amplification.
+
+After cDNA preparation and several rounds of PCR amplification, most poly(A)
+tails will be reduced in length from the full 250 nt. This is because the
+poly(T) primers will bind randomly in the poly(A) tail, something which will
+gradually reduce the average length of the poly(A) tails.
+
+\subsubsection{Sequencing errors and biases}
+There are several errors and biases that creep into sequencing that must be
+taken into account during the computational analysis of the output. Here we
+discuss one error and one bias that is important for analysing Illumina short
+pair ended reads.
+
+An error that is particularly important for the study of polyadenylation is
+that sequencing performance degrades over single-nucleotide stretches
+\cite{minoche_evaluation_2011}. This implies that when sequencing the poly(A)
+sequence, other nucleotides than just A will be reported with a relatively high
+frequency.. This means that when looking for poly(A) stretches in the output as
+signatures of poly(A) sites, some variation from the homopolymer sequence must
+be expected.
+
+An important bias is that most sequences with poly(A) tails will be output in
+the reverse-transcribed version. That is, 5\p CCCGAAAA 3\p will be output as 5\
+TTTTCGGG 3\p. This is due to the RNA fragmenting and that sequencing
+(performed by a DNA polyermase) happens in the 5\p to 3\p direction and that
+each RNA is present in both its original and reverse transcribed form. During
+sequencing, 50 to 150 nucleotides will be sequenced from each side of the around
+300 nt fragment. If the poly(A) tail is the 50 last nucleotides of the 300 nt
+fragment RNA, sequencing 150 nucleotides will never reach nucleotide 250 where
+the poly(A) site is. However, the reverse transcribed version contains 50 Ts at
+the 5\p end, which ensures that sequencing this version of the RNA gets the
+whole poly(T) tail as well as 100 bases which can be mapped to the genome.
+
+Even though the actual output poly(A) tail is in the reverse transcribed
+poly(T) format, we will often refer to both of them as a poly(A) tail.
+
+\subsubsection{Mapping reads to the genome}
+The sequence-snippets that are output from sequencing machines are called
+reads, and generally come in sizes from 30 to 500 basepairs, depending on the
+technology used. If a reference genome exists for the organism from which the
+RNA sample was taken, these reads must be mapped to that genome. Otherwise, it
+is possible to attempt to construct the organisms transcriptome \textit{de
+novo} from the RNA-seq output, although this generally gives poor results.
+
+Mapping read to the genome means trying to find where the RNA-snippet from the
+sequencing machine originated from. Different methods are used for this, but
+what they have in common is that they allow for mismatches between the read and
+the genome to allow for sequencing errors. Extra care is taken to map reads
+spanning the intron-exon junctions, since these reads must necessarily be split
+in two to be mapped, possibly thousands of nucleotides apart.

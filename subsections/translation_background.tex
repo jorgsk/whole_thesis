@@ -1,7 +1,7 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-Chapters X and Y are about gene expression systems in bacteria and how
-these systems are regulated by RNA secondary structures in the ribosome binding
-site (RBS), mRNA stability, and codon usage bias. Here, we review each of those
+Chapters X and Y are about gene expression systems in bacteria and how these
+systems are regulated by codon usage bias, mRNA stability, and RNA secondary
+structures in the ribosome binding site (RBS). Here, we review each of these
 topcis. We begin with a brief account of translation initiation and then talk
 about how this process is regulated by RNA secondary structures, and how this
 again affects RNA stability. We then proceed to translation elongation and how
@@ -10,12 +10,13 @@ this process is affected by condon usage bias.
 \subsubsection{Brief overview of translation}
 Translation is the conversion of the genetic code on an mRNA into an amino acid
 sequence. The molecule responsible for this conversion is the ribosome, a
-macromolecular complex of protein and ribosomal RNA. The ribosome consists of
-two subunits, S30 and S50, which bind at the 5\p region of an mRNA.
-Together, they read the genetic code in the form of nucleotide triplets (eg.
-AAG) called codons. Each codon is matched with an amino acid and the amino
-acids are joined to each other in the ribosome to form the primary protein
-sequence which will fold into a functional confirmation.
+macromolecular complex of ribosomal RNA and protein. The ribosome consists of
+two subunits, S30 and S50, which bind at the 5\p region of an mRNA. Together,
+they read the genetic code in the form of nucleotide triplets (eg. AAG) called
+codons. Each codon is matched with an anticodon in a transfer RNA (tRNA) which
+carries an amino acid. The amino acids from the tRNAs are joined to each other
+in the ribosome to form the primary protein sequence which will fold into a
+functional conformation.
 
 Since bacteria have no nucleus, the ribosome can bind the 5\p end of an mRNA as
 it is being synthesized by the RNA polymerase. The coupling of translation with
@@ -29,56 +30,67 @@ backtracking in this way, ribosomes reduce collisions between RNAP and DNA
 polymerases during chromosome duplication, and that reducing these
 collisions leads to fewer errors during genome duplication
 \cite{dutta_linking_2011}. This study links the seemingly disparate topics of
-transcription elongation and genome integrity and is an example how
-interconnected the cell is.
+translation and genome integrity and is an example how interconnected the cell
+is.
 
 \subsubsection{Translation initiation: binding of the 16S RNA to the
 Shine-Dalgarno sequence} A central ribosomal RNA (rRNA) in translation
 initiation is the 16S RNA which is part of the S30 subunit. It was shown by
 Shine and Dalgarno in 1974 that the last nine bases of the 16S RNA in
 \textit{E. coli} are ACCUCCUUA \cite{shine_3-terminal_1974}. They suggested
-that this sequence could bind to a previously discovered conserved
-complementary motif in the 5\p untranslated region of mRNA to initiate
-translation \cite{shine_3-terminal_1974}. This has later been confirmed and
-although it is the canonical way in which translation initiation occurs in
-prokaryotes \cite{nakagawa_dynamic_2010}, translation initiation can in some
-cases happen without a Shine-Dalgarno sequence on the mRNA
-\cite{skorski_highly_2006, boni_non-canonical_2001}.  The complementary motif
-on mRNA later came to be known as the Shine-Dalgarno sequence, and the
-complementary bases on 16S RNA became known as the anti Shine-Dalgarno
-sequence. The Shine-Dalgarno (SD) sequence is often given as GGAGGA although
-the core motif can be reduced to GGAG; this sequence is conserved across
-bacteria and archaea with very little variation \cite{nakagawa_dynamic_2010}.
-The SD sequence is found in the mRNA 5\p region at a distance of 3 to 10 bases
-from the start codon \cite{chen_determination_1994-1}.
+that this sequence could hybridize to a previously discovered conserved
+complementary motif close to the start codon in the 5\p untranslated region of
+mRNA to initiate translation \cite{shine_3-terminal_1974}. That this happens
+was later confirmed and is now known to be the canonical method of translation
+initiation in prokaryotes \cite{nakagawa_dynamic_2010}. Examples of the
+ribosome binding to mRNA without 16S RNA hybridization have been found, but
+they are exceptions rather than the rule \cite{skorski_highly_2006,
+boni_non-canonical_2001}.
 
-Since the SD sequence directs the ribosome to bind mRNA, the area around the
-Shine-Dalgaro site is called the ribosome binding site (RBS) and occupies
-roughly 30 nucleotides. Mutations in the ribosome binding site can greatly
-affect the rate of translation initiation \cite{shultzaberger_anatomy_2001}.
+The complementary motif on mRNA that 16S RNA hybridizes to later came to be
+known as the Shine-Dalgarno sequence, and the complementary bases on 16S RNA
+became known as the anti Shine-Dalgarno sequence. The Shine-Dalgarno (SD)
+sequence, located 3 to 10 bases downstream the start codon, is often given as
+GGAGGA although the core motif can be reduced to GGAG; this sequence is
+conserved across bacteria and archaea with very little variation
+\cite{nakagawa_dynamic_2010}.
 
 Two things are achieved when the 16S RNA binds the SD site during translation
 initiation. The first is that he S30 subunit becomes physically anchored to the
-transcript through the RNA-RNA bond between the SD and anti-SD sequence.  The
+transcript through the RNA-RNA bond between the SD and anti-SD sequence. The
 second is that the start codon (often AUG) becomes aligned to the peptidyl site
-on S30 at which peptide bond formation occurs. Since the SD sequence aligns the
-ribosome to the start codon, the SD sequence is to the ribosome much like the
-promoter is to RNAP: both sequence regions direct these macromolecules to the
-site of \textit{de novo} synthesis.  Following this analogy, in same the way
-that transcription factors can block transcription initiation by binding to
-promoter regions, other RNA than 16S can bind the SD region to hinder
-translation initiation. Two types of SD-binding non-16S RNA exist. One type are
-small RNAs that bind to the RBS to occlude ribosome biding
-\cite{storz_controlling_2004}. The type other are RNA bases from the mRNA
-itself which have base paired with the SD sequence in a secondary structure
-through RNA folding.
+on S30 where peptide bond formation occurs and ready to accept the initiating
+fMet-tRNA.
 
-\subsubsection{RNA folding} To understand on RNA folding affects in the
-ribosome binding site affects translation initiation, it is necessary to
-understand how RNA folding of mRNA occurs. The basis for RNA folding is that
-RNA, as DNA, can basepair with itself; C pairs with G and A pairs with U. As
-the nascent RNA emerges from the RNA exit channel of RNAP it is immediately
-free to fold into an energetically favorable confirmation. The folding of the
+After the ribosome has bound mRNA, it protects an area +/- 15 nt around the
+start codon from RNAse degradation; this area is called the ribosome binding
+site (RBS) \cite{kozak_regulation_2005}. Translation initiation is sensitive to
+mutations to the entire RBS. In case of the SD sequence and the start codon,
+these mutations affect the binding potential of these sites with the 16S RNA
+and the initiating tRNA.
+
+Since the SD sequence aligns the ribosome to the start codon, the SD sequence
+has the same function for ribosome as the promoter has for RNAP: both sequence
+regions direct these macromolecules to the site of \textit{de novo} synthesis.
+Following this analogy, in same the way that transcription factors can block
+transcription initiation by binding to promoter regions, other RNA than 16S can
+bind the SD region to hinder translation initiation. Two types of SD-binding
+non-16S RNA exist. One type are small RNAs that bind to the RBS to occlude
+ribosome biding \cite{storz_controlling_2004}. The type other are RNA bases
+from the mRNA itself which have base paired with the SD sequence in a secondary
+structure through RNA folding.
+
+\subsubsection{Co-transcriptional RNA folding}
+To understand how RNA folding in the RBS  affects translation initiation, it is
+necessary to understand how the folding of mRNA occurs. The basis for RNA
+folding is that RNA, as DNA, can basepair with itself; C pairs with G and A
+pairs with U. The reason why RNA folds at all is that under physiological
+conditions, base-paired nucleotides are more thermodynamically favorable than
+free nucleotides \cite{onoa_rna_2004}. Folded RNA often looks like a series of
+so called hairpins, with loops on top and bulges on the side.
+
+As the nascent RNA emerges from the RNA exit channel of RNAP it is immediately
+free to fold into an energetically favorable conformation. The folding of the
 mRNA as it emerges is called co-transcriptional folding. A key question in
 co-transcriptional RNA folding has been how comparable the time scales for RNA
 folding and RNA synthesis are \cite{de_smit_translational_2003-1}. Whether or
@@ -88,36 +100,38 @@ are incorporated at a rate of between 20 and 80 ms per nucleotide, while
 formation and dissociation of semi-stable structures like helices occur on the
 10 to 100 $\mu$s timescale \cite{isambert_jerky_2009}. In other words, for each
 nucleotide produced, there is on average time for 1000 refolding events. It
-should be noted that the time needed for the spontaneous refolding of an RNA
-structure depends on the binding strength of that structure.
+should however be noted that the time needed for the spontaneous refolding of
+an RNA structure increases with the binding strength of that structure.
 
-How the mRNA folds as it is being transcribed is called the folding pathway of
-the mRNA. The cell has evolved mechanisms to either ensure or prevent certain
-transient secondary structures along the folding pathway. The purpose of this
-is to ensure that a desired final secondary (and in the case of e.g tRNA,
-tertiary) state is reached \cite{pan_rna_2006-1}.
+The exact sequence of folding steps the mRNA undergoes as it is synthesized is
+called the folding pathway of the mRNA. The cell has evolved mechanisms to
+either ensure or prevent certain transient secondary structures along the
+folding pathway. The purpose of this is to ensure that a desired final
+secondary (and in the case of e.g tRNA, tertiary) structure is reached
+\cite{pan_rna_2006-1}.
 
 \subsubsection{RNA secondary structures in the ribosome binding site} It was
-showed early on that translation rates were strongly affected by secondary
-structures at the RBS \cite{hall_role_1982}. By changing the position and free
-energy of secondary structures in the RBS, Smit and Duin found that protein
-levels could be varied over a range of 500 \cite{de_smit_secondary_1990},
-presumably reflecting varying rates in translation initiation. In particular, a
+shown early on that translation rates are strongly affected by secondary
+structures at the RBS \cite{hall_role_1982}. By changing alternatively the
+location and energy of secondary structures in the RBS, Smit and Duin found
+that protein levels could be varied over a range of 500
+\cite{de_smit_secondary_1990}, presumably reflecting varying rates in
+translation initiation caused by these changes. In particular, they found a
 non-linear relationship between the folding energy of structures in the RBS and
-the translation initiation rate was found. Below a certain free energy value,
-the translation initiation rate did not change with respect to the strength of
-the secondary structure; but above that limit, translation initiation decreased
-exponentially as the secondary structures in the RBS got stronger
+the translation initiation rate: below a certain threshold, the translation
+initiation rate did not change with respect to the strength of the secondary
+structure; but above that limit, translation initiation decreased exponentially
+as the secondary structures in the RBS got stronger
 \cite{de_smit_secondary_1990}.
 
-Not only the Shine-Dalgarno sequence but the entire RBS sequence, including
-sequences downstream the start codon \cite{seo_quantitative_2009} must in
-general be unstructured for translation initiation to occur. It is therefore not
-surprising that lack of strong secondary structures is a hallmark of ribosome
-binding sites in several species \cite{gu_universal_2010}. The folding energy
-of the RBS can even be used to distinguish between active genes and
-pseudogenes, presumably because pseudogenes are no longer under the selection
-pressure to keep the RBS weakly structured \cite{keller_reduced_2012}.
+Not only the Shine-Dalgarno sequence but the entire RBS sequence must in
+general be unstructured for translation initiation to occur
+\cite{seo_quantitative_2009}. It is therefore not surprising that the absence
+of strong secondary structures is a hallmark of ribosome binding sites in
+several species \cite{gu_universal_2010}. The folding energy of the RBS can
+even be used to distinguish between active genes and pseudogenes in \textit{E.
+coli}, presumably because pseudogenes are no longer under selection pressure to
+keep the RBS weakly structured \cite{keller_reduced_2012}.
 
 It should be noted that weak structures do not imply the absence of structures.
 It can in general be expected that the ribosome must deal with structured
@@ -126,13 +140,12 @@ would bind only as the structures in the RBS spontaneously unfolded
 \cite{de_smit_translational_1994}. However, it was later appreciated that the
 time scale for RNA folding and unfolding are orders of magnitude faster than
 the time scale for ribosome binding to RNA. This led to the suggestion that
-ribosomes could bind so called ribosome standby site close to the RBS where
-they could slide into place once the secondary structure opened
-\cite{de_smit_translational_2003-1}. This was later partially supported by a
-study that showed that that the ribosome together with translation initiation
-factors (IF) may unwind secondary structures at the RBS presumably from
-ribosome standby sites \cite{studer_unfolding_2006}. However, the exact
-mechanism for how the ribosome would unwind RNA structures is not clear.
+ribosomes could bind so called ribosome standby sites close to the RBS from
+where they could slide into place when the secondary structure at the RBS
+unfolds \cite{de_smit_translational_2003-1}. This was later partially supported
+by a study that showed that that the ribosome, together with translation
+initiation factors, may unwind secondary structures at the RBS presumably
+from ribosome standby sites \cite{studer_unfolding_2006}.
 
 \subsubsection{Modifying the RBS to increase gene expression}
 It was early on realized that gene expression could be varied by mutagenizing
@@ -143,11 +156,12 @@ affect translation initiation rates \cite{park_design_2007}
 structure around the RBS. Making synonymous codon changes in the early codons
 of a gene to reduce secondary structures rates has been suggested as a
 convenient method to enhance the expression of foreign genes in bacteria
-\cite{cebe_rapid_2006}.
+\cite{cebe_rapid_2006}. The reason for that is that eukaryotic genes will not
+have their 5\p ends optimized for binding by bacterial ribosomes.
 
 Another approach than altering the already-present RBS of a gene is to
 introduce a new RBS in the form of a 5\p fusion partner
-\cite{lavallie_gene_1995}. The fusion partner is usually the 5\p end of an gene
+\cite{lavallie_gene_1995}. The fusion partner is usually the 5\p end of a gene
 (5\p UTR and early coding region) that is known to be well expressed in the
 organism of interest or has other useful properties (such as the His-tag for
 protein purification). The usage of such a tag will add an extra peptide
@@ -161,26 +175,27 @@ GenScript. However, there are published alternatives. In addition to what has
 been already mentioned about fusion tags and RBS mutagenesis, the most
 comprehensive tool yet published for optimization of translation initiation
 is the RBS calculator \cite{salis_automated_2009}. This software takes into
-account the match of the 16S RNA to the SD sequence, the distance from the SD
-sequence to the start codon, the folding energy of any RBS secondary
-structures, the type of start codon, and the folding energy of the ribosome
-standby site. It should be noted that of these variables, the one that explains
-most of the variation in gene expression is the folding energy of the RBS
-secondary structures, see \cite{salis_automated_2009} in the supplementary
-materials.
+account several sequence dependent variables that have been shown to play a
+role in translation initiation: the match of the 16S RNA to the SD sequence,
+the distance from the SD sequence to the start codon, the folding energy of any
+RBS secondary structures, the type of start codon, and the folding energy of
+the ribosome standby site. Importantly, the variable that explained most of the
+variation in gene expression was the folding energy of the RBS secondary
+structures, see \cite{salis_automated_2009} in the supplementary materials.
 
-\subsubsection{RNA secondary structures affect RNA stability} RNA stability
-means how long it takes from an RNA is produced until it is degraded. The more
-stable a transcript is, the more time ribosomes have to translate it to produce
-protein, meaning that more stable transcripts lead to more protein. Also, RNA
-degradation is the final way to stop protein production, making it a way for
-the cell to swiftly control protein production.  For these reasons, RNA
-stability is carefully regulated in the cell.
+\subsubsection{RNA secondary structures affect RNA stability}
+RNA stability is a term used to describe the half-life of RNA in the cell; a
+measure of how long it takes from an RNA is produced until it is degraded. If
+all else is equal, a stable transcript would result in more protein being
+produced from it than an unstable transcript. As well, after an mRNA is
+produced from a gene, RNA degradation is the final way to stop protein
+expression from that gene. For these reasons, RNA stability is carefully
+regulated in the cell.
 
 There are two well-known ways in which RNA secondary structures affect RNA
-stability. The first is by hairpin structures at the 5\p and 3\p ends. The
-hairpin at the 5\p end protects the triphosphate of the 5\p nucleotide against
-attack from the protein RppH. RppH converts 5\p triphosphates to 5\p
+stability. The first is by hairpin structures at the 5\p and 3\p ends of the
+RNA. The hairpin at the 5\p end protects the triphosphate of the 5\p nucleotide
+against attack from the protein RppH. RppH converts 5\p triphosphates to 5\p
 monophosphates \cite{deana_bacterial_2008}, and RNAs with a 5\p monophosphate
 are in turn targets for RNAse E, an endonuclease which can initiate RNA
 degradation \cite{mackie_ribonuclease_1998}. In this way, a 5\p hairpin
@@ -190,25 +205,26 @@ with an unstructured 3\p end for their activity \cite{rauhut_mrna_1999}.
 
 The second way RNA structures affect RNA stability is through their effect on
 ribosome binding. It is well established that actively translated mRNA are more
-stable that untranslated mRNA. The idea was put forward that the narrow spacing
-between between translating ribosomes on the transcript prevented
-endonucleolytic cleavage \cite{deana_lost_2005}. However, it has been shown in
-at least two cases that ribosome binding confers transcript stabilization on
-its own in the absence of translation \cite{wagner_efficient_1994,
-hambraeus_5_2002}.  This indicates that narrow spacing between translating
-ribosomes is not necessary for increased stability. The precise mechanism for
-how ribosome binding prevents degradation is not clear \cite{deana_lost_2005}.
+stable that untranslated mRNA. This led to the idea that the narrow spacing
+between translating ribosomes on the transcript would prevented endonucleolytic
+cleavage \cite{deana_lost_2005}. However, it has been shown in at least two
+cases that ribosome binding confers transcript stability on its own in the
+absence of translation \cite{wagner_efficient_1994, hambraeus_5_2002}. This
+indicates that narrow spacing between translating ribosomes is not necessary
+for increased stability. However, the precise mechanism for how ribosome
+binding prevents degradation is not clear \cite{deana_lost_2005}.
 
 \subsubsection{The role of codon bias in gene expression and cellular fitness}
 During translation elongation the ribosome matches incoming amino acids on
-transfer RNAs (tRNA) to codons on the mRNA. Since there are 61 codons that tRNA
-can bind to ($4^3$ minus three stop codons) but only 20 amino acids, it is
-inevitable that several codons are associated with the same amino acid; this
-fact has been called the redundancy of the genetic code. This redundancy and
-the observation that some iso-coding codons were preferred over others puzzled
-early workers on the genetic code, and still today these observations remain
-partially unanswered (see a great review on the topic by Plotkin and Kudla
-\cite{plotkin_synonymous_2011}).
+transfer RNAs (tRNA) to codons on the mRNA. There are 64 codons, 61 which are
+targets for tRNA and three stop codons, and all organisms generally contain all
+64 codons. On the other hand there are only 20 amino acids which should be
+matched to the 61 codons. Therefore it is inevitable that several codons are
+associated with the same amino acid; this fact has been called the redundancy
+of the genetic code. This redundancy and the observation that some iso-coding
+codons are preferred over others puzzled early workers on the genetic code,
+and still today these observations remain partially unanswered (see a great
+review on the topic by Plotkin and Kudla \cite{plotkin_synonymous_2011}).
 
 Codons that code for the same amino acid are called synonymous codons, and the
 preference of one synonymous codon over another is called codon usage bias.
@@ -221,64 +237,69 @@ translation and that genes with efficient codons are translated more
 rapidly \cite{moriyama_gene_1998}. It was eventually shown that the efficient
 codons are those that have the highest copy numbers of the corresponding tRNA
 genes \cite{reis_solving_2004, elf_selective_2003}. This seems to explain that
-efficient codons are translated more rapidly and perhaps more accurately
-because the corresponding tRNAs are more abundant in the cell.
+efficient codons are translated more rapidly because the corresponding tRNAs
+are more abundant in the cell, shortening the waiting time between tRNA binding
+events in the ribosome.
 
 A commonly used measure for codon bias is the codon adaptation index (CAI). It
 measures how similar a gene's codon content is compared to the codons in highly
 expressed genes in the same organism \cite{sharp_codon_1987}. The CAI has been
 shown to correlate positively with gene expression levels in several species
-\cite{duret_expression_1999, jansen_revisiting_2003}.
-
-A practical consequence of codon bias is that when expressing for example a
-human gene in a bacterial host, it is often necessary to change the codons in
-the gene to the preference of the bacteria (called codon optimization) to
-achieve high expression levels \cite{gustafsson_codon_2004}, because the
-preferred codons between humans and bacteria are different.
+\cite{duret_expression_1999, jansen_revisiting_2003}. The CAI and other tools
+are often used for codon optimization of heterologous genes. Codon optimization
+is often performed to achieve high expression levels when expressing for
+example a human gene in a bacterial host \cite{gustafsson_codon_2004}, since
+the preferred codons between humans and bacteria are different.
 
 Two recent publications have shed light on the effect that codon bias has on
-the rate of translation. In the first, Kudla et al. made random synonymous
-codons changes in the green fluorescent protein (GFP) gene to generate a library
-of 154 GFP genes with on average 114 different codons each
-\cite{kudla_coding-sequence_2009}. They found no correlation between CAI and
-the expression level of the GFP variants. On the other hand, CAI was highly
-correlated with cell growth rates. Expression levels correlated only with the
-RNA folding free energy around the start codon; but RNA folding energy did not
-correlate with growth rates. The authors conclude from this that codon bias
-exists in highly expressed genes not to optimize translation rates, but to
+the rate of translation and cellular fitness. In the first, Kudla et al. made
+random synonymous codons changes in the green fluorescent protein (GFP) gene to
+generate a library of 154 GFP gene variants with on average 114 different
+codons each \cite{kudla_coding-sequence_2009}. The GFP variants displayed a 250
+fold variation in expression in \textit{E. coli}, and caused a marked
+difference in cell culture growth rates. The CAI of the GFP variants did not
+correlate with their expression levels, but instead correlated with the growth
+rate of the cells. The strength of secondary structures around the start codon
+did however correlate strongly with GFP expression, but did not show any
+correlation with cell growth rates. The authors conclude from this that codon
+bias exists in highly expressed genes not to optimize translation rates, but to
 optimize overall cellular fitness. The hypothesis is that if highly expressed
-genes contain codons for which there are few tRNA, ribosomes would pause
-often on these genes, causing fewer ribosomes to be available to the rest of
-the mRNA pool \cite{kudla_coding-sequence_2009}.
+genes contain codons for which there are few tRNA, ribosomes would pause often
+on these genes, causing fewer ribosomes to be available to the rest of the mRNA
+pool, slowing the cellular growth rate \cite{kudla_coding-sequence_2009}
 
 In the second paper, Tuller et al. \cite{tuller_evolutionarily_2010} examined
 the codon bias of 27 organisms from all three domains of life using the tRNA
-adaptation index (tAI). This measure ranks each codon with the copy number of
-the associated tRNA in the genome \cite{tuller_evolutionarily_2010}. They found
-a species-wide trend by which genes tend to have inefficient codons in the early
-coding region (first 30-70 codons), but efficient codons in mid and late coding
-regions. The early inefficient codons were labeled a slowly translating ramp.
-Their hypothesis is that by reducing the speed during early translation,
-ribosomes are more evenly spaced out during elongation, which would reduce
-collisions between them and thereby increase the overall translation efficiency
-in the cell.
+adaptation index (tAI) (briefly, the tAI measure ranks each codon with the copy
+number of the associated tRNA in the genome \cite{tuller_evolutionarily_2010}).
+They found a species-wide trend where genes tend to have inefficient codons in
+the early coding region (first 30-70 codons), but efficient codons in mid and
+late coding regions. The early inefficient codons were labeled a slowly
+translating ``ramp''. Their hypothesis is that by reducing the speed during
+early translation, ribosomes are more evenly spaced out during elongation,
+which reduces collisions between them and thereby increases the overall
+translation efficiency in the cell.
 
-A possible criticism for the Tuller et al. paper is that the
-early codons of mRNA are also under the selective pressure to reduce mRNA
-folding \cite{gu_universal_2010}. This would reduce the degrees of freedom for
+A possible criticism for the Tuller et al. paper is that the early codons of
+mRNA are also under the selective pressure to reduce mRNA folding
+\cite{gu_universal_2010}. This would reduce the degrees of freedom for
 selection of optimal codons in the early codon region, which could partly
 explain the ramp effect \cite{plotkin_synonymous_2011}.
 
-Finally, there are other sources of codon bias. One is the specific order that
-codons appear in \cite{cannarozzi_role_2010}. Another is the avoidance of
-message-bearing motifs like the Shine-Dalgarno element in the coding sequence.
-It was shown in \textit{E. coli} that when Gly-Gly amino acid pairs are coded
-for in a gene, the most common codon pair is GGC-GGC, which out of all possible
-Gly codon pairs has the lowest possible affinity for the anti-Shine Dalgarno
-sequence. On the other hand, the rarest codon pair for Gly-Gly was GGA-GGU,
-which is an exact match to the Shine-Dalgarno sequence
-\cite{li_anti-shine-dalgarno_2012}. In the same study it was shown that
-Shine-Dalgarno sequences inside coding regions could cause rebinding of the
-16SRNA during translation elongation and thereby cause translation pausing.
-Curiously, this rebinding behavior is the same as found for the sigma factor
-during transcription elongation by RNA polymerase \cite{mooney_sigma_2005}.
+Finally, there are other sources of codon bias than have been mentioned so far.
+One is the specific order that codons appear in \cite{cannarozzi_role_2010}.
+Another is the avoidance of message-bearing motifs like the Shine-Dalgarno
+element in the coding sequence.  It was shown in \textit{E. coli} that when
+Gly-Gly amino acid pairs are coded for in a gene, the most common codon pair is
+GGC-GGC, which out of all possible Gly codon pairs has the lowest possible
+affinity for the anti-Shine Dalgarno sequence. On the other hand, the rarest
+codon pair for Gly-Gly was GGA-GGU, which is an exact match to the
+Shine-Dalgarno sequence \cite{li_anti-shine-dalgarno_2012}. In the same study
+it was shown that Shine-Dalgarno sequences inside coding regions could cause
+rebinding of the 16SRNA during translation elongation and thereby cause
+translation pausing.  Interestingly, this rebinding behavior is the same as
+found for the sigma factor during transcription elongation by RNA polymerase
+\cite{mooney_sigma_2005}. This shows that there is a price to be had for the
+strong binding affinities of sigma with the promoter and 16S RNA for the
+Shine-Dalgarno sequence. It remains to be seen if a similar avoidance of
+promoter-like sequences exist in the early coding regions in bacterial genes.
