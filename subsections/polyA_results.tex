@@ -66,7 +66,7 @@ compartmentalized and that both the poly(A)+ and poly(A)- fractions of RNA have
 been sequenced separately; these extra dimensions increase the resolution of
 the data, allowing different hypotheseses to be asked. The poly(A)+ fraction of
 an RNA sample contains all the RNA that is captured by a poly(T) primer column.
-This will include all processes mRNA with a poly(A) tail of more than 20
+This will include all processed mRNA with a poly(A) tail of more than 20
 nucleotides (the length of the poly(T) primer). The poly(A)- fraction is the
 complement of the poly(A)+ fraction and contains mostly noncoding RNA and
 pre-processed mRNA.
@@ -89,11 +89,9 @@ By merging all polyadenylation sites from all poly(A)+ samples, a total of
 shows how the number of new polyadenylation sites saturates as the number of
 datasets increases. The saturation is sharper for polyadenylation sites with a
 downstream PAS, indicating that the number of false positives increases when
-the number of reads becomes very large.
-
-This is simply because each dataset has got falsely marked poly(A) sites, and
-with each added dataset there is a chance that several of them will overlap the
-same place.
+the number of reads becomes very large. This is simply because each dataset
+has got falsely marked poly(A) sites, and with each added dataset there is a
+chance that several of them will overlap the same place.
 
 \subsection{Distribution of polyadenylation sites across the genome}
 We found that most of the polyadenylation sites are in the 3\p UTR exonic
