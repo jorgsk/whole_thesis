@@ -1,34 +1,38 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
-We wanted a quick tool for obtaining information about sites of polyadenylation
-for any RNA-seq experiment. To do that, we developed the tool \textit{Utail}
-(from Untranslated poly(A) tail). If an RNA library has been prepared in a way
-that ensures that the sites of polyadenylation will be included, Utail can use
-the RNA-seq data from that library to locate and quantify the polyadenylation
-sites and provide ready-to-analyse output.
+We wanted a tool for obtaining information about sites of polyadenylation for
+any RNA-seq experiment. To do that, we developed a tool called \textit{Utail}
+(from Untranslated poly(A) tail). Utail will work on an RNA-seq experiment of
+the RNA library for that experiment has been prepared in a way that ensures
+that the sites of polyadenylation will be included. Utail will output a
+tab-delimited list of all the polyadenylation sites in the experiment along
+with other statistics and data relevant for the analysis of those poly(A)
+sites.
+
+Utail processes the RNA-seq data in a series of steps to go from raw data to
+polyadenylation sites. The minimum requirement for Utail is files of mapped
+RNA-seq reads. Presently, the reads must be provided either in the output
+format of the GEM mapper \cite{ribeca_gem_2010} or as Bed-files (see section X
+for input specifications). The output will be improved if a genome annotation
+(in Ensemble or GENCODE format) is supplied, but this is not necessary for
+running Utail. If a reference annotation is used, it is important that the
+annotation is based on the same version of the reference genome that the
+RNA-seq reads were mapped to.
 
 \subsection{Utail pipeline overview}
-The RNA-seq data is processed in a series of steps to go from raw data to
-polyadenylation sites. The minimum requirements for Utail to run is mapped
-RNA-seq reads. Presently, the reads must be provided either in the output
-format of the GEM mapper CIT or as bed-files (see XXX for input
-specifications). Although not necessary, the Utail output will be improved if a
-genome annotation (in Ensemble or Gencode format) is supplied. The version of
-the reference genome for the annotation must be the same as was used to map the
-reads to in the first place.
 
 Utail takes the mapped RNA-seq data through the following pipeline (each point
-is elaborated on below):
+is elaborated below):
 \begin{enumerate}
 	\item (Only if annotation was supplied) Create a list of all possible
 		3'UTR regions and polyadenylation sites from the genome annotation
-	\item Filter all reads and retain only the unmappable reads
-	\item Keep only the unmappable reads with leading poly(T) or trailing
-		poly(A) stretches
+	\item Filter the RNA-seq reads and retain only the unmappable reads
+	\item Further filter the unmappable reads to keep only those with leading
+		poly(T) or trailing poly(A) stretches
 	\item Remove the poly(T) or poly(A) stretch from the read and remap the
-		remaining part to the genome -- keep the uniquely mapping ones
+		remaining part to the genome -- keep those that map uniquely
 	\item Determine the site of polyadenylation depending on poly(A/T) and which
-		strand the read originated from
+		strand the read mapped to
 	\item Cluster together all reads that map within 40 nt of each other
 	\item For each cluster, get the genomic sequence up to 60 nt downstream
 		from the polyadenylation site. Note any PAS and discard cluster if a
