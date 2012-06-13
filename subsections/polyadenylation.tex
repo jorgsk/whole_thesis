@@ -245,40 +245,53 @@ obtained in large scale for the first time in \textit{C. elegans} and
 \textit{Arabidopsis} \cite{mangone_landscape_2010, wu_genome-wide_2011}. The
 last examples show how RNA-seq is directly used in genome annotation.
 
-Hey! fix this. The previous study did not use microarrays.
-In a
-follow up to microarray-studies of change in global 3\p UTR length in cancer,
-Fu et al. compared the relative change in 3\p length between two cancer cells
-and an epithelial cell line \cite{fu_differential_2011}. They did not find a
-consistent pattern of widespread shortening of 3\p UTRs in the cancer cell
-lines, a phenomenon which had been previously suggested using a restricted
-dataset of 23 specifically selected genes \cite{mayr_widespread_2009-2}. An
-unexpected finding with RNA-seq has been the detection of poly(A) tails for
-histone mRNAs in both human and \textit{c.  elegans}
+As mentioned, microarray studies revealed unidirectional changes of 3\p UTR
+length during cell development stages \cite{sandberg_proliferating_2008,
+ji_progressive_2009}, hinting that 3\p UTR lengths can be regulated at a global
+level. A study that did not use high-throughput data identified shortening of
+the 3\p UTR of many transcripts in a cancer cell line, proposing that this was
+a general characteristic in cancer cells \cite{mayr_widespread_2009-2}. As a
+follow up to this study, Fu et al. compared the relative change in 3\p length
+between two cancer cells and an epithelial cell line
+\cite{fu_differential_2011}. They did not find a consistent pattern of
+shortening of 3\p UTRs in the cancer cell lines. Instead, the 3\p UTR lengths
+of one of the cancer cells was shorter and 3\p UTR lengths of the other was
+longer than the epithelial cell. This suggests that there is no clear-cut
+genome-wide trend of short 3\p UTRs in cancer cells, contrary to what had
+previously been concluded.
+
+An unexpected finding with RNA-seq has been the detection of poly(A) tails for
+histone mRNAs in both human, mice, and \textit{C. elegans}
 \cite{mangone_landscape_2010-1, shepard_complex_2011}.  Histone mRNAs were
 previously thought to be the only mRNAs in metazoans without a poly(A) tail
 \cite{marzluff_metabolism_2008}, even though several of the histone genes had
 been found to contain the AATAAA polyadenylation signal at the 3\p end
-\cite{keall_histone_2007}.
+\cite{keall_histone_2007}. A possible explanation for the discovery of histone
+mRNA with poly(A) tails is that the histone transcripts are first cleaved and
+polyadenylated, and subsequently processed to lose their poly(A) tail
+\cite{mangone_landscape_2010-1} (See supplementary materials). Another option
+is that if some histone mRNA are polyadenylated, they avoid degradation at the
+end of the S-phase, and may thus be translated throughout the cell cycle
+\cite{shepard_complex_2011}.
 
 The most recent and thorough study of genome-wide polyadenylation was done
 using a novel sample-preparation protocol by Derti et al. They used RNA-seq to
 find polyadenylation sites in five mammal species, including human, in 24
 tissues \cite{derti_quantitative_2012}. They found over 400.000 polyadenylation
-sits in the human tissues, compared to 150.000 found previously; although how
-many of these sites correspond to mRNA 3\p stable poly(A) tail or
+sits in the human tissues, compared to 150.000 found previously. However, how
+many of these sites correspond to normal mRNA 3\p stable poly(A) tail or
 degradation-related transient poly(A) tails was not investigated. On reason for
 this very large number of sites could be that they identified most novel
 polyadenylation sites in lowly expressed transcripts, which may not previously
-have been detected. They also found that although many poly(A) sites were
-tissue specific, 70 \% of genes showed the same usage of alternative
+have been detected. Derti et al also found that although many poly(A) sites
+were tissue specific, 70 \% of genes showed the same usage of alternative
 polyadenylation across all tissues.
 
 \subsubsection{Preparing a cDNA library for RNA-sequencing}
-The work presented in this thesis and most other high-throughput studies of
-polyadenylation rely on sequencing data made with Illumina sequencing
-technologies. Here we briefly mention the stages of an RNA-seq
-experiment that are relevant for interpreting subsequent results.
+The work presented in this thesis that deals with polyadenylation is based on
+sequencing data made with Illumina sequencing technologies. Here we briefly
+mention the stages of an RNA-seq experiment that are relevant for interpreting
+the subsequent results.
 
 To obtain good sequencing results, fragmented DNA in large concentrations is
 required. To reach these concentration, it is generally necessary to both
