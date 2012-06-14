@@ -1,68 +1,86 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 \subsubsection{Transcriptome sequencing with RNA-seq}
 The work presented in this thesis that deals with polyadenylation is based on
-sequencing data made with Illumina sequencing technologies. Here we briefly
-mention the stages of an RNA-seq experiment that are relevant for interpreting
-the subsequent results.
+sequencing data from RNA (RNA-seq) made with the Illumina GAIIX platform. Se
+http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE30567 for detailed
+information about the data was generated.
 
-Briefly, RNA-seq is a technique to obtain a quantitative measure of the amount
-of RNA in a sample. Typically, this sample will be all extracted RNA from a
-cell culture. RNA-seq is used to compare the differential expression of
-genes, to discover new genes, and to discover novel isoforms of known genes.
-The output from an RNA-seq experiment are RNA fragments in the length of
-50 to 500 nucleotides. These fragments, called reads, can be mapped back to the
-genome, thereby showing where the RNA originated from. If a genome is not
-available, it is possible to use the reads to assemble the transcriptome
-\textit{de novo}.
+RNA-seq is a technique used to obtain a quantitative measure of the relative
+frequencies of the different species of RNA present in a sample. RNA-seq was
+introduced in 2008 and has been used to compare the differential expression of
+genes, to discover new genes, and to discover novel isoforms of known genes by
+finding new splice-sites and new 5\p and 3\p terminals
+\cite{wang_rna-seq:_2009}.
 
-The sequencing machines do not work directly on RNA. Therefore, RNA-seq relies
-on the conversion of RNA to cDNA by a reverse transcriptase. To obtain good
-results from a sequencing experiment, fragmented DNA in large concentrations is
-required. To obtain this concentration, the RNA is convered to cDNA and
-amplified with PCR. From the point of view of studying polyadenylation,
-it is necessary that the poly(A) tail is preserved both during cDNA conversion
-and subsequent PCR amplification. Several custom techniques have been developed
-for the purpose of capturing the polyadenylation site with RNA-seq
-\cite{ozsolak_comprehensive_2010, derti_quantitative_2012}, but a minimum
-requirement is that poly(T) primers are used during cDNA conversion and PCR
-amplificaiton.
+Here we will go through the stages of the RNA-seq experiments that were
+performed to produce the data that was analysed. We will then comment on the
+stages of the experiment where biases can be introduced that affect the final
+result. Finally we will discuss the matter of mapping the output of RNA-seq --
+short RNA sequences called reads -- to the genome.
 
-After cDNA preparation and several rounds of PCR amplification, most poly(A)
-tails will be reduced in length from the full 250 nt. This is because the
-poly(T) primers will bind randomly in the poly(A) tail, something which will
-gradually reduce the average length of the poly(A) tails.
+\subsubsection{RNA-seq and mapping: the method, errors, and biases}
 
-It is common to sequence both ends of an RNA fragment. This is called paired
-end sequencing. Paired end sequencing gives extra information and is
-particularly useful when mapping reads over exon-intron junctions. For example,
-if two reads from the same RNA fragment map over 5000 nucleotides apart, it is
-likely that there was an exon-intron junction on the RNA fragment from which
-they were sequenced.
+\begin{itemize}
+	\item The first step in the RNA-seq experiment is to isolate RNA from a cell sample.
+	\item Second, the RNA is divided into an poly(A)+ and poly(A)- fraction. This is done
+	by using a poly(T) primer that binds to the poly(A) tail. The RNA that bound
+	the poly(T) primer is called the poly(A)+ fraction and the RNA that did not
+	bind the primer is separated and called the poly(A)- fraction.
+	\item Next, the RNA samples are treated to remove ribosomal RNA (rRNA). Since rRNA is
+	by far the most abundant species of RNA in the cell, it will reduce the
+	sensitivity for detecting lowly expressed transcripts if it is not removed.
+	\item Next, the single stranded RNA is converted into double stranded complementary
+	DNA (cDNA). This is required because Illumina sequencers sequence DNA and not
+	RNA. To turn RNA into cDNA it is necessary to use primers -- short sequences
+	that bind RNA and DNA -- that the reverse transcriptase enzyme needs for
+	synthesizing cDNA on the RNA template. At this step, it is important when
+	studying polyadenylation that at least some of the primers are poly(T) primers,
+	otherwise the poly(A) tail will may not be converted into cDNA. Since the
+	poly(T) primers can bind anywhere in the poly(A) tail, the lengths of the
+	poly(A) tails will be reduced after this step.
+	\item After this, the original RNA is degraded so only the double stranded cDNA
+	remains.
+	\item The next step is to fragment the cDNA into smaller pieces, usually by
+	sound waves (sonication), to reach a desired average fragment size (usually
+	around 300 nt)
+	\item Finally, Illumina-patented adapters are added to the 3\p and
+	5\p ends of the cDNA and the cDNA is amplified from these adapters with PCR.
+	PCR amplification is necessary to get the volume of DNA required by the
+	sequencing machines. Now the cDNA is ready for sequencing.
+\end{itemize}
 
-\subsubsection{Sequencing errors and biases}
-There are several errors and biases that creep into sequencing that must be
-taken into account during the computational analysis of the output. Here we
-discuss one error and one bias that is important for analysing Illumina short
-paired end reads.
+During sequencing, the double stranded cDNA is split into single strands, and
+both strands are sequenced. This has the effect that sequencing outputs the
+reverse-transcribed version of the original RNA molecule in addition to the
+original. This is fortunate when studying polyadenylation, since as can be seen
+in Figure X, it is often from the reverse-transcribed version of a transcript
+that the poly(A) tail is sequenced, then in the form of a poly(T) leader. That
+is, 5\p CCCGAAAA 3\p will be output as 5\p TTTTCGGG 3\p. This bias is due to
+the fact that sequencing happens in the 3\p to 5\p direction, and that the read
+length is shorter than the fragment length (76 bp vs 300 bp in Figure X).
 
-An error that is particularly important for the study of polyadenylation is
-that sequencing performance degrades over single-nucleotide stretches
-\cite{minoche_evaluation_2011}. This implies that when sequencing the poly(A)
-sequence, other nucleotides than just A will be reported with a relatively high
-probabilty. This means that when looking for poly(A) stretches in the output as
-signatures of poly(A) sites, some variation from the homopolymer sequence must
-be expected.
+It is important to note that when sequencing homopolymers like poly(A) or
+poly(T) stretches, there is an increase in sequencing error rates with the
+Illumina platform \cite{minoche_evaluation_2011}. This implies that when
+sequencing a poly(A) sequence, other nucleotides than just A will be reported
+with a relatively high probability compared to the rest of the output sequence.
 
-An important bias is that most sequences with poly(A) tails will be output in
-the reverse-transcribed version. That is, 5\p CCCGAAAA 3\p will be output as 5\
-TTTTCGGG 3\p. This is due to the RNA fragmenting and that sequencing
-(performed by a DNA polyermase) happens in the 5\p to 3\p direction and that
-each RNA is present in both its original and reverse transcribed form. During
-sequencing, 50 to 150 nucleotides will be sequenced from each side of the around
-300 nt fragment. If the poly(A) tail is the 50 last nucleotides of the 300 nt
-fragment RNA, sequencing 150 nucleotides will never reach nucleotide 250 where
-the poly(A) site is. However, the reverse transcribed version contains 50 Ts at
-the 5\p end, which ensures that sequencing this version of the RNA gets the
-whole poly(T) tail as well as 100 bases which can be mapped to the genome.
-Even though the actual output poly(A) tail is in the reverse transcribed
-poly(T) format, we will generally refer to both of them as a poly(A) tail.
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{figures/introduction/polyT_sequencing.pdf}
+	\end{center}
+	\caption{When sequencing poly(A) sites it is normally the
+	reverse-transcribed version of the transcript that is actually sequenced}
+	\label{fig:polyT_seq}
+\end{figure}
+
+\subsubsection{Mapping reads to the genome}
+The sequence-snippets that are output from sequencing machines are called
+reads, and generally come in sizes from 30 to 500 basepairs, depending on the
+technology used. For the data used in this study, the read size was 76
+basepairs. If a reference genome exists for the organism from which the RNA
+sample was taken, these reads can be mapped to that genome to find out where
+the RNA originated from. Mapping a read to the genome means trying to find
+where the RNA-snippet from the sequencing machine originated from. All methods
+that do this mapping allow for mismatches between the read and the genome to
+allow for sequencing errors. 
