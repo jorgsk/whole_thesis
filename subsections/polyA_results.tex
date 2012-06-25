@@ -171,6 +171,27 @@ polyadenylation signals (PAS). Finally we intersect the polyadenylation sites
 with the 3\p PET sites and annotated poly(A) sites to see which overlap.
 
 \section{Results}
+<<<<<<< HEAD
+We developed a software called Utail and ran it on the ENCODE RNA-seq data.
+For details on how Utail works, see the Appendix. Parts of the analysis from
+Utail's output was published in Djabeli et al. XXX. Here we describe the parts
+of the analysis that was not included in paper.
+
+\section{Methods}
+The description of the methods we used are found in the supplementary materials
+of the paper by Djabeli et al. and in the Appendix. Briefly, the method
+involves mapping polyadenylation sites onto the genome and clustering them if
+they are within 20 nucleotides of each other, since this is close to the
+maximal range of the stochastic effect of choice of 3\p cleavage site
+\cite{tian_large-scale_2005}. After clustering we search the genomic sequence
+40 nucleotides downstream the polyadenylation site for one of the
+polyadenylation signals (PAS). Finally we intersect the polyadenylation sites
+with the 3\p PET sites to see which overlap. To avoid false positives, we check
+the genomic sequence for poly(A) tracts and discard putative poly(A) reads that
+land at a genomic location that is poly(A) rich. Further we filter out poly(A)
+reads that map to intron-exon junctions, since several false positives were
+found at these locations.
+
 Here we add the results that were not published in the Djabeli et al. study.
 
 \subsection{Total number of polyadenylation sites}
@@ -222,10 +243,10 @@ the poly(A)- and the poly(A)+ fractions, since these sites really belong to
 poly(A)+ transcripts that have accidentally ended up in the poly(A)- fraction.
 Therefore, we filtered out all the poly(A) sites that intersected the poly(A)+
 and poly(A)- fraction and removed these from both fractions. As can be seen in
-in Figure \ref{fig:sidebars_intersect}, almost no poly(A) sites are in the pure
-poly(A)- fraction of the cytoplasm. The nuclear pure poly(A)- fraction has
-fewer polyadenylation sites predominantly in the 3UTR exonic region, while the
-number of sites in the intergenic and intronic regions did not change much.
+in Figure \ref{fig:sidebars_intersect}, almost no poly(A) sites were found in
+the pure poly(A)- fraction of the cytoplasm. The nuclear pure poly(A)- fraction
+has fewer polyadenylation sites predominantly in the 3UTR exonic region, while
+the number of sites in the intergenic and intronic regions did not change much.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -254,13 +275,22 @@ number of sites in the intergenic and intronic regions did not change much.
 \end{figure}
 
 \subsubsection{Discussion}
+By combining over 100 billion sequence fragments from 12 difference cell lines
+in two different cell compartments in the poly(A)+ and poly(A)- fraction of
+RNA, we have found over 150.000 polyadenylation sites in the transcriptome. Of
+these sites, between \ldots XXX continue here!
+
+The polyadenylation in intergenic regions indicate either unannotated long 3\p
+UTR ends or cleavage and polyadenylation sites of novel transcripts.
+
 We believe that the enrichment of the poly(A)- poly(A) sites in the nuclear
 fraction in general is due to degradation-related transient polyadenylation
 that occurs in the nucleus of mammalian cells \cite{lemay_nuclear_2010,
 lacava_rna_2005, wyers_cryptic_2005}. In the nuclear compartment, the intronic
 region stands out, but part of this is due to the fact that introns comprise a
 large part of nuclear RNA, since human pre-mRNA sequences contain over 20 times
-more intronic than exonic sequence \cite{venter_sequence_2001}.
+more intronic than exonic sequence \cite{venter_sequence_2001}. The low number
+of poly(A) clusters in the cytoplasmic poly(A)- fraction is further an
+indication that the number of false positive poly(A) sites is not very large.
 
 TODO more discussion? More results? Alternative poly(A) or poly(A) in the
-intergenic regions? To back up PET and stuff?
