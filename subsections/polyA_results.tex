@@ -94,18 +94,23 @@ coverage of 10 PET reads to accept a site as transcript termination site.
 \section{Results}
 We developed a software called Utail and ran it on the ENCODE RNA-seq data.
 For details on how Utail works, see the Appendix. Parts of the analysis from
-Utail's output was published in Djabeli et al. XXX. The description of the
-methods we used are found in the supplementary materials of the paper by
-Djabeli et al. and in the Appendix. Briefly, the method involves mapping
-polyadenylation sites onto the genome and clustering them if they are within 20
-nucleotides of each other, since this is close to the maximal range of the
-stochastic effect of choice of 3\p cleavage site \cite{tian_large-scale_2005}.
-After clustering we search the genomic sequence 40 nucleotides downstream the
-polyadenylation site for one of the polyadenylation signals (PAS). Finally we
-intersect the polyadenylation sites with the 3\p PET sites to see which
-overlap.
+Utail's output was published in Djabeli et al. XXX. Here we describe the parts
+of the analysis that was not included in paper.
 
-Now we will describe the parts of the analysis that was not included in paper.
+\section{Methods}
+The description of the methods we used are found in the supplementary materials
+of the paper by Djabeli et al. and in the Appendix. Briefly, the method
+involves mapping polyadenylation sites onto the genome and clustering them if
+they are within 20 nucleotides of each other, since this is close to the
+maximal range of the stochastic effect of choice of 3\p cleavage site
+\cite{tian_large-scale_2005}. After clustering we search the genomic sequence
+40 nucleotides downstream the polyadenylation site for one of the
+polyadenylation signals (PAS). Finally we intersect the polyadenylation sites
+with the 3\p PET sites to see which overlap. To avoid false positives, we check
+the genomic sequence for poly(A) tracts and discard putative poly(A) reads that
+land at a genomic location that is poly(A) rich. Further we filter out poly(A)
+reads that map to intron-exon junctions, since several false positives were
+found at these locations.
 
 \subsection{Total number of polyadenylation sites}
 By merging all polyadenylation sites from all datasets, we identified a total
@@ -116,7 +121,7 @@ saturates as the number of datasets increases. The saturation is sharper for
 polyadenylation sites which have are annotated with a downstream PAS. Since a
 downstream PAS is commonly found in polyadenylation sites, this is a signal
 that the number of false positives increases when the number of clustered reads
-becomes very large. 
+becomes very large.
 
 \subsection{Distribution of polyadenylation sites across the genome}
 We found that most of the polyadenylation sites are in the 3\p UTR exonic
@@ -154,14 +159,6 @@ poly(A)- fraction of the cytoplasm. And while the nuclear poly(A)- fraction
 lost many of the polyadenylation sites in the 3UTR exonic region, the number
 sites in intergenic and intronic regions did not change by much.
 
-We believe that the enrichment of the poly(A)- poly(A) sites in the nuclear
-fraction in general is due to degradation-related transient polyadenylation
-that occurs in the nucleus of mammalian cells \cite{lemay_nuclear_2010,
-lacava_rna_2005, wyers_cryptic_2005}. In the nuclear compartment, the intronic
-region stands out, but part of this is due to the fact that introns comprise a
-large part of nuclear RNA, since human pre-mRNA sequences contain over 20 times
-more intronic than exonic sequence \cite{venter_sequence_2001}.
-
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.3]{figures/polyadenylation/Saturation_plot_2+.pdf}
@@ -189,5 +186,20 @@ more intronic than exonic sequence \cite{venter_sequence_2001}.
 \end{figure}
 
 \subsubsection{Discussion}
+By combining over 100 billion sequence fragments from 12 difference cell lines
+in two different cell compartments in the poly(A)+ and poly(A)- fraction of
+RNA, we have found over 150.000 polyadenylation sites in the transcriptome. Of
+these sites, between
+
 The polyadenylation in intergenic regions indicate either unannotated long 3\p
 UTR ends or cleavage and polyadenylation sites of novel transcripts.
+
+We believe that the enrichment of the poly(A)- poly(A) sites in the nuclear
+fraction in general is due to degradation-related transient polyadenylation
+that occurs in the nucleus of mammalian cells \cite{lemay_nuclear_2010,
+lacava_rna_2005, wyers_cryptic_2005}. In the nuclear compartment, the intronic
+region stands out, but part of this is due to the fact that introns comprise a
+large part of nuclear RNA, since human pre-mRNA sequences contain over 20 times
+more intronic than exonic sequence \cite{venter_sequence_2001}. The low number
+of poly(A) clusters in the cytoplasmic poly(A)- fraction is further an
+indication that the number of false positive poly(A) sites is not very large.
