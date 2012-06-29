@@ -1,21 +1,23 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
 \subsubsection{Conceptual model for RNAP movement on DNA}
+As mentioned, RNAP moves on DNA during transcription by the cycle of
+translocation and nucleotide incorporation. The forward -- as opposed to
+backward -- motion of RNAP is thought to occur by a so called Brownian ratchet
+mechanism. In this model, once a nucleotide has been incorporated, the backward
+movement of RNAP (backtracking) is structurally prevented by a feature in RNAP
+called the F bridge \cite{bar-nahum_ratchet_2005}. The forward motion, the
+translocation step, is on the other hand free to happen by Brownian motion.
 
-TODO include a figure of RNAP in all its pride and glory.
-
-The movement of RNAP on DNA is thought to occur by a so called Brownian ratchet
-mechanism. In this model, the backward movement of RNAP is structurally
-prevented by the RNAP F bridge \cite{bar-nahum_ratchet_2005}, while the forward
-motion is free to happen by Brownian motion. Still, pausing and backtracking
-does happen during elongation, and much effort has been devoted to understand
-exactly how RNAP moved on DNA. To analyze RNAP movement, the current model
-assumes that the movement of RNAP is dependent only on the free energy
-difference between the current state and all other possible states, such as a
-paused state, a backtracked state, a terminating state, and a forward moving
-state \cite{greive_thinking_2005}. This assumption relies on RNAP being in
-chemical equilibrium between each step; and while this may not always hold true,
-it does facilitate the formulation of the movement of RNAP as an equation \cite{greive_thinking}
+Nevertheless, pausing and backtracking do happen during elongation. To analyze
+RNAP movement, the current conceptual model assumes that RNAP is in chemical
+equilibrium between each nucleotide incorporation step
+\cite{greive_thinking_2005}. This allows the reduction of RNAP movement into
+the difference in free energy between the current state and all other
+possible states, such as a paused state, a backtracked state, or a forward
+moving state \cite{greive_thinking_2005}. While it is difficult to conclusively
+demonstrate that the equilibrium assumption always holds true, it does
+facilitate the formulation of the movement of RNAP as an equation:
 \begin{equation}
 	\Delta G_{\text{Total}} = \Delta G_{\text{RNA-DNA}} + \Delta
 	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}},
@@ -23,20 +25,25 @@ it does facilitate the formulation of the movement of RNAP as an equation \cite{
 \end{equation}
 This equation contains the terms currently believed to play a role in RNAP
 movement, based on the interaction between RNAP and DNA. $\Delta
-G_{\text{RNA-DNA}}$ is the $\sim$ 8-9 bp RNA-DNA helix inside RNAP, $\Delta
-G_{\text{DNA-DNA}}$ is the $\sim$ 14-15 bp DNA-DNA bubble that RNAP keeps open
-around it at all times, and $\Delta G_{\text{RNAP}}$ is the non-specific
-energy state of the RNAP at a given position on DNA
-\cite{greive_thinking_2005}. By calculating these energies for all possible
-reaction pathways for RNAP, one can find the pathway that is most energetically
-favorable.
+G_{\text{RNA-DNA}}$ is the free energy of the $\sim$ 8-9 bp RNA-DNA helix
+inside RNAP, $\Delta G_{\text{DNA-DNA}}$ is the free energy of the $\sim$ 15 bp
+DNA bubble that RNAP keeps open around it at all times, and $\Delta
+G_{\text{RNAP}}$ is the non-specific free energy of other interactions between
+RNAP, DNA, and RNA \cite{greive_thinking_2005}. By calculating these energies
+for all possible reaction pathways for RNAP, one can presumably find the
+pathway that is most energetically favorable, and thus map out the movement of
+RNAP on DNA.
 
-This conceptual model seems orderly, but one should consider whether
-historically the RNA-DNA and DNA-DNA variables have been included in the model
-because they fit experimental data or because they simply have been possible to
-measure compared to the other interactions involved in transcription elongation.
+This conceptual model of RNAP movement seems orderly: one needs only to
+calculate the change in free energy -- from available data -- to find out if
+RNAP will move forward, backtrack, pause, or terminate at any given location on
+DNA. But one should consider whether historically the RNA-DNA and DNA-DNA
+variables have been included in the model because they fit experimental data or
+because their measured values have simply been available in the literature for
+decades.
 
 \subsubsection{Computational models of transcription elongation}
+% start here kthnx
 Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
 calculated from published energy tables \cite{wu_temperature_2002,
 santalucia_thermodynamics_2004}, several kinetic and thermodynamic models of
