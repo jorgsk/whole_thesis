@@ -1,23 +1,24 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
 \subsubsection{Conceptual model for RNAP movement on DNA}
-As mentioned, RNAP moves on DNA during transcription by the cycle of
-translocation and nucleotide incorporation. The forward -- as opposed to
-backward -- motion of RNAP is thought to occur by a so called Brownian ratchet
-mechanism. In this model, once a nucleotide has been incorporated, the backward
-movement of RNAP (backtracking) is structurally prevented by a feature in RNAP
-called the F bridge \cite{bar-nahum_ratchet_2005}. The forward motion, the
-translocation step, is on the other hand free to happen by Brownian motion.
+As mentioned in the previous section, RNAP moves on DNA during transcription by
+a cycle of translocation and nucleotide incorporation. The fact that RNAP tends
+to move forward and not backward is thought to be the result of a so called
+Brownian ratchet mechanism. In this model, once a nucleotide has been
+incorporated at the active site, the backward movement of RNAP (backtracking)
+is structurally prevented by a feature in RNAP called the F bridge
+\cite{bar-nahum_ratchet_2005}. The forward motion, the translocation step, is
+on the other hand free to happen by Brownian motion. 
 
-Nevertheless, pausing and backtracking do happen during elongation. To analyze
-RNAP movement, the current conceptual model assumes that RNAP is in chemical
+Nevertheless, pausing and backtracking do happen during elongation. As part of
+the effort to understand why, it has been assumed that RNAP is in chemical
 equilibrium between each nucleotide incorporation step
 \cite{greive_thinking_2005}. This allows the reduction of RNAP movement into
-the difference in free energy between the current state and all other
-possible states, such as a paused state, a backtracked state, or a forward
-moving state \cite{greive_thinking_2005}. While it is difficult to conclusively
-demonstrate that the equilibrium assumption always holds true, it does
-facilitate the formulation of the movement of RNAP as an equation:
+the difference in free energy between a given state and all other possible
+states, such as a paused state, a backtracked state, or a forward moving state
+\cite{greive_thinking_2005}. While it is difficult to conclusively demonstrate
+that the equilibrium assumption always holds true, it does facilitate the
+formulation of the movement of RNAP as an equation:
 \begin{equation}
 	\Delta G_{\text{Total}} = \Delta G_{\text{RNA-DNA}} + \Delta
 	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}},
@@ -35,35 +36,34 @@ pathway that is most energetically favorable, and thus map out the movement of
 RNAP on DNA.
 
 This conceptual model of RNAP movement seems orderly: one needs only to
-calculate the change in free energy -- from available data -- to find out if
-RNAP will move forward, backtrack, pause, or terminate at any given location on
-DNA. But one should consider whether historically the RNA-DNA and DNA-DNA
-variables have been included in the model because they fit experimental data or
-because their measured values have simply been available in the literature for
-decades.
+calculate the change in free energy -- from available energy tables -- to find
+out if RNAP will move forward, backtrack, pause, or terminate at any given
+location on DNA. But one should consider whether historically the RNA-DNA and
+DNA-DNA variables have been included in the model because they fit experimental
+data or because their measured values have simply been available in the
+literature for decades.
 
 \subsubsection{Computational models of transcription elongation}
-% start here kthnx
-Since the first two terms of equation \eqref{eq:rnap_energy_balance} can be
-calculated from published energy tables \cite{wu_temperature_2002,
-santalucia_thermodynamics_2004}, several kinetic and thermodynamic models of
-transcription elongation have been published
-\cite{tadigotla_thermodynamic_2006-1, bai_sequence-dependent_2004,
+Several kinetic and thermodynamic models of transcription elongation have been
+published \cite{tadigotla_thermodynamic_2006-1, bai_sequence-dependent_2004,
 guajardo_model_1997}. What they have in common is that in some form they
-incorporate the terms from \eqref{eq:rnap_energy_balance}. In the case of
+incorporate the terms from \eqref{eq:rnap_energy_balance} and calculate the
+$\Delta G_{\text{RNA-DNA}}$ and $\Delta G_{\text{DNA-DNA}}$ terms in the
+equation \eqref{eq:rnap_energy_balance} from published energy tables
+\cite{wu_temperature_2002, santalucia_thermodynamics_2004}. In the case of
 Tadigotla et al. \cite{tadigotla_thermodynamic_2006-1} the free energy from the
 nascent RNA secondary structure close to the RNA exit channel is used as well;
 this is for the purpose of modeling the effect of strong RNA hairpins in
 preventing backtracking of paused RNAP.
 
 These models have had partial predictive power, but more work needs to be done
-before a truly descriptive model of transcription is at hand. The state of the
-current models makes it clear that there is more to RNAP processivity than the
-thermodynamic variables in equation \eqref{eq:rnap_energy_balance} on which
-these models are based. Indeed, it was recently published that the 3\p
-dinucleotide of the nascent RNA has a strong effect on translocation rates
-\cite{hein_rna_2011}, showing that there are other factors at play than have
-been previously suspected.
+before a truly descriptive model of transcription is at hand. Since the models
+do not fully live up to the theory, this means that there is more to RNAP
+processivity than the thermodynamic variables in equation
+\eqref{eq:rnap_energy_balance} on which these models are based. Indeed, it was
+recently published that the 3\p dinucleotide of the nascent RNA has a strong
+effect on translocation rates \cite{hein_rna_2011}, showing that there are
+other factors at play than have been previously suspected.
 
 \subsubsection{A computational model of transcription initiation}
 The key differences between transcription initiation and transcription
@@ -75,21 +75,25 @@ initiation that does not exist during elongation: abortive initiation.
 
 Based on equation \eqref{eq:rnap_energy_balance} and the above differences, a
 model for transcription initiation was previously published
-\cite{xue_kinetic_2008}. This model attempts to cover explicitly both the
-abortive process and the actual promoter escape event. Although the authors
-manage to predict the maximum size of abortive transcript and the abortive to
-productive ratio (APR) of the N25 promoter, they do not explain well the
-abortive probabilities. Some criticism of this study is that only the N25,
-N25anti and T7A1 promoters were investigated, even though a larger dataset was
-available \cite{hsu_initial_2006}. Further, the T7A1 promoter varies not only
-in the ITS sequence compared to the other two, but also in the core promoter
-sequence. Variation in the core promoter sequence has been shown to affect
-rates of abortive initiation \cite{vo_vitro_2003-1}, yet the authors have not
-taken this variation into account.
+\cite{xue_kinetic_2008}. This model takes as input the ITS of a promoter and
+encompasses the rate of transcription in the ITS, the abortion of initiation
+with the accompanying release of nascent RNA, and the actual promoter escape
+event. The authors manage to use the model to predict the maximum size of
+abortive transcript and the abortive to productive ratio of the N25 promoter,
+however they do not explain well the abortive probabilities. Some criticism of
+this study is that only the data from the N25, N25anti and T7A1 promoters from
+an older study were investigated, even though a more comprehensive dataset was
+available \cite{hsu_initial_2006}. Further, the T7A1 promoter varies in the
+core promoter sequence compared to the other two, which only vary in the ITS.
+Variation in core promoter sequence sequence has been shown to affect rates of
+abortive initiation \cite{vo_vitro_2003-1}, yet the authors have not taken this
+variation into account in the model. The variation in core promoter sequence
+between T7A1 and the other two promoters convolutes the overall interpretation
+of the model output for the three promoters.
 
 In conclusion, this study gave the first quantitative model for transcription
 initiation, and manages to reproduce some of the experimentally measured
 parameters. However, the model is not used predictively, making it difficult to
-measure how much of transcription initiation it truly captures. In the field of
-transcription initiation, it remains to be published a quantitative model with
-predictive power that gives new insight into the process itself.
+conclude how much of transcription initiation it truly captures. In the field
+of transcription initiation, it remains to be published a quantitative model
+with predictive power that gives new insight into the process itself.
