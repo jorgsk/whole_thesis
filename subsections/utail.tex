@@ -1,13 +1,12 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-
-We wanted a tool for obtaining information about sites of polyadenylation for
-any RNA-seq experiment. To do that, we developed a tool called \textit{Utail}
-(from Untranslated poly(A) tail). Utail will work on an RNA-seq experiment of
-the RNA library for that experiment has been prepared in a way that ensures
-that the sites of polyadenylation will be included. Utail will output a
-tab-delimited list of all the polyadenylation sites in the experiment along
-with other statistics and data relevant for the analysis of those poly(A)
-sites.
+To date there is no tool for easily obtaining information about sites of
+polyadenylation for any RNA-seq experiment. We developed a tool called
+\textit{Utail} (from Untranslated poly(A) tail) will output a tab-delimited
+list of all the polyadenylation sites in the experiment along with other
+statistics and data relevant for the analysis of those poly(A) sites. Utail
+will work on any Illumina or 454 RNA-seq experiment if the RNA library for that
+experiment has been prepared in a way that ensures that the sites of
+polyadenylation will be included.
 
 Utail processes the RNA-seq data in a series of steps to go from raw data to
 polyadenylation sites. The minimum requirement for Utail is files of mapped
@@ -21,49 +20,38 @@ RNA-seq reads were mapped to.
 
 \subsection{Utail pipeline overview}
 
-Utail takes the mapped RNA-seq data through the following pipeline (each point
-is elaborated below):
+Utail takes the mapped RNA-seq data through the following pipeline:
 \begin{enumerate}
+		%1
 	\item (Only if annotation was supplied) Create a list of all possible
 		3'UTR regions and polyadenylation sites from the genome annotation
+		%2
 	\item Filter the RNA-seq reads and retain only the unmappable reads
+		%3
 	\item Further filter the unmappable reads to keep only those with leading
 		poly(T) or trailing poly(A) stretches
+		%4
 	\item Remove the poly(T) or poly(A) stretch from the read and remap the
 		remaining part to the genome -- keep those that map uniquely
-	\item Determine the site of polyadenylation depending on poly(A/T) and which
-		strand the read mapped to
+		%5
+	\item Determine the site of polyadenylation depending on poly(A/T)
+		including the strand
+		%6
 	\item Cluster together all reads that map within 40 nt of each other
+		%7
 	\item For each cluster, get the genomic sequence up to 60 nt downstream
 		from the polyadenylation site. Note any PAS and discard cluster if a
 		genomic poly(A) region is found at the site of the cleaved poly(A)
 		stretch.
+		%8
 	\item For each poly(A) cluster, write to the output
 \end{enumerate}
-See Figure X for a graphical representation of the pipeline.
+See Figure X for a graphical representation of the pipeline. We will now
+elaborate on the above points.\\
 
 \textbf{1.)} By providing an annotation of the transcripts from the genome
 re-map the read back to the genome. If the read maps uniquely (with up to 2
 mismatches), consider this the 3' end of the mapping a putative poly(A) site.
-
-\textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
-use the information from the poly(A) versus poly(T) stretch to find out if the
-read has been reverse transcribed or not. For example, if the read maps to the
-+ strand with a poly(A) tail, the read originated from the + strand. If the
-read maps to the + strand with a poly(T) tail, the read originated from the -
-strand. This allows the strand-specific determination of poly(A) sites.
-
-\textbf{6.)} Since the exact site of cleavage and polyadenylation is stochastic,
-we must cluster the different poly(A) sites. The average of this clustering is
-reported as the cleavage and polyadenylation site for all reads in the cluster.
-
-\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
-one of the several reported PAS sequences as well as for a genomic poly(A)
-stretch that could explain the poly(A) stretch thought to be a result of
-polyadenylation. in
-question, the set of already-annotated polyadenylation sites can be
-constructed. If this step is included, it will be included in the output
-whether a discovered polyadenylation site has already been annotated or not.
 
 \textbf{2.)} With default settings, short-read mappers will not be able to map
 to the genome a read-fragment containing the non-genomic poly(A)
@@ -71,18 +59,18 @@ stretch. Therefore, we are only interested in those reads which were initially
 unmapped. The output format of mappers usually contains a flag which says if
 the read was mapped or not.
 
-\textbf{3.)} Among the unmapped reads, we are only interested in the ones which
+\textbf{4.)} Among the unmapped reads, we are only interested in the ones which
 contain a stretch of poly(A) at the 3' end or poly(T) at the 5' end. A minimum
 of 5 poly(A/T) or 5 poly(A/T) in 7 was used.
 
-\textbf{4.)} Once the poly(A) tail has been removed, we use the GEM mapper to
-re-map the read back to the genome. If the read maps uniquely (with up to 2
-mismatches), consider this the 3' end of the mapping a putative poly(A) site.
+Once the poly(A) tail has been removed, we use the GEM mapper to re-map the
+read back to the genome. If the read maps uniquely (with up to 2 mismatches),
+consider this the 3' end of the mapping a putative poly(A) site.
 
 \textbf{5.)} Even though the sequencing protocol is not strand-specific, we can
-use the information from the poly(A) versus poly(T) stretch to find out if the
-read has been reverse transcribed or not. For example, if the read maps to the
-+ strand with a poly(A) tail, the read originated from the + strand. If the
+use the information from the poly(A) versus poly(T) stretch to find out which
+genomic strand the read originated from. For example, if the read maps to the
++ strand with a poly(A) tail, the read came from the + strand. If the
 read maps to the + strand with a poly(T) tail, the read originated from the -
 strand. This allows the strand-specific determination of poly(A) sites.
 
@@ -90,10 +78,10 @@ strand. This allows the strand-specific determination of poly(A) sites.
 we must cluster the different poly(A) sites. The average of this clustering is
 reported as the cleavage and polyadenylation site for all reads in the cluster.
 
-\textbf{7.)} The sequence surrounding the putative poly(A) site is searched for
-one of the several reported PAS sequences as well as for a genomic poly(A)
-stretch that could explain the poly(A) stretch thought to be a result of
-polyadenylation.
+\textbf{7.)} The sequence around the putative poly(A) site is obtained for two
+reasons. The first is to find PAS sequences downstream the site. The second is
+to look for pol(A) or poly(T) stretches that could identify this site as a
+false positive.
 
 \textbf{8.)} The output for each cluster contains information about the
 chromosome, strand, number of reads in the cluster, if the site has been

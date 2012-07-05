@@ -18,90 +18,190 @@
 
 %Maybe make a table with some of the numbers from the statistics you output.
 
-We developed a software called Utail and ran it on the ENCODE RNA-seq data to
-characterize polyadenylation sites in 12 human cell lines. Parts of the
-analysis was published in Nature by Djabeli et al. First we summarize the
-findings in the Djabeli et al. study before we go on to adress the findings that
-were not included in the paper.
+We developed a software called Utail and ran it on RNA-seq data to characterize
+polyadenylation sites in 12 human cell lines. Parts of the analysis was
+published as an ENCODE publication in Nature by Djabeli et al. First we briefly
+explain what the ENCODE project is about. Then we summarize the findings in the
+Djabeli et al. study before we go on to adress the findings that were not
+included in the paper.
 
 \subsection{The ENCODE pilot project}
-After the complete human genome was published in 2003, the ENCODE pilot project
-was launched to investigate in detail 1\% of the human genome through a
-collaboration of research labs all over the world. With the then prevalent genome-wide
+The complete human genome was published in 2003. To find out what could be
+learned from the newly available genome, the ENCODE (\textbf{Enc}yclopedia
+\textbf{O}f \textbf{D}NA \textbf{E}lements) pilot project was launched to
+investigate in detail 1\% of the human genome through a collaboration of
+research labs all over the world. With the then prevalent genome-wide
 technologies, which included among others microarrays, CAGE, and ChIP-Chip,
 combined with bioinformatic analysis, the outcome was a wealth of data that
 confirmed previous tentative genome-wide findings, added new knowledge, and was
 used to improve the annotation the human genome. The outcome was published in a
 group paper in Nature \cite{birney_identification_2007} as well as in 28
-companion papers in a special edition of Genome Research. The data generated
-is freely available from http://genome.ucsc.edu/ENCODE/ including important
+companion papers in a special edition of Genome Research. The data generated is
+freely available from http://genome.ucsc.edu/ENCODE/ including important
 metadata about how the experiments were performed.
 
 \subsection{The ENCODE follow-up project}
 The ENCODE pilot was deemed a success and led to a follow-up project that would
 cover 100\% of the genome. This was made possible by the then-emerging
 next-generation DNA sequencing technology which had considerably lowered the
-cost of sequencing while also increasing the throughput. Now the technologies
-from the ENCODE pilot were taken to the next level: microarrays were generally
-substituted for RNA-seq, CAGE could use next-gen sequencers instead of Sanger
-sequencing, and ChIP-Chip was replaced by ChIP-seq.
+cost of sequencing while also increasing the throughput. The technologies from
+the ENCODE pilot were mostly replaced with the next-generation version:
+microarrays were generally substituted for RNA-seq, CAGE could use next-gen
+sequencers instead of Sanger sequencing, and ChIP-Chip was replaced by
+ChIP-seq.
 
 As of mid 2012 the follow-up ENCODE papers are in the process of being
-published. A summary paper has been published / accepted. A paper focusing
-mostly on the transcriptome has been published in XXX and it is to this paper
-that we have made a contribution. This is the hitherto largest genome-wide
-investigation of the width and breath of transcription in human cells.
+published. The paper that is included in this thesis was published by Djabeli
+et al (see the end of this chapter). This study details the hitherto largest
+genome-wide investigation of the width and breath of transcription in human
+cells.
 
-The paper by Djabeli et al. finds that the cumulative coverage for 15 human
+The paper by Djabeli et al. found that the cumulative RNA coverage for 15 human
 cell lines is 62\% for processed transcripts and 75\% for primary transcripts.
-In other words, three quarters of the human genome is transcribed. However, the
-average coverage for each cell line was 22\% and 39\% for processed and primary
+In other words, three quarters of the human genome is transcribed, and most of
+the transcribed RNA is intact after RNAP processing. However, the average
+coverage for each cell line was 22\% and 39\% for processed and primary
 transcripts. This tells us that while most of the genome is capable of being
-transcribed, each cell will express little more than a quarter of it. They
-discovered by using the Cufflinks software 45\% more transcripts than is
-currently annotated, with most of the newly identified transcripts landing in
-intergenic regions. The consequence is that the intergenic regions decreased in
-median length from around 14.000 to 4.000, showing that the human genome is not
-as "barren" as was once thought. They found 22.000 new splice sites,
+transcribed, each cell line will express little more than a quarter of it. They
+discovered 45\% more transcripts than are currently annotated (using the
+Cufflinks software), with most of the newly identified transcripts coming from
+intergenic regions. Thus, there seems to be more intergenic regions, but each
+intergenic region is shorter. The median length of intergenic regions decreased
+from around 14.000 to 4.000, showing that the human genome is not as "barren"
+as was once thought. The study identified around 22.000 new splice sites,
 demonstrating the flexibility of the human genome whereby each gene may express
-multiple RNA isoforms. Even though many genes were found to express up to 12
-alternative isoforms, 30\% of protein coding genes expressed a dominant isoform
+multiple RNA isoforms. Many genes were found to express up to 12 alternative
+isoforms, although 30\% of protein coding genes expressed one dominant isoform
 and three quarters had two or more dominant isoforms. This shows that while
-alternative isoform usage is ubiquitous, mostly one or two isoforms will be
-used per gene. In other words, while the one-gene one-protein model is not
-correct in humans, it is often a decent approximation. Additionally, they
-discovered many new long noncoding RNAs (lncRNA). These RNA appear similar to
-mRNA and undergo processing, but do not code for protein. An over-all
-conclusion is that protein coding transcripts are highly expressed, while
-non-coding transcripts like lncRNA are generally lowly expressed, down to less
-than one transcript estimated per cell. Using PET-data, they discovered roughly
-128.000 transcription start sites (TTS), of which around 30.000 were novel.
-They also discovered around 129.000 cleavage and polyadenylation sites inside
-annotated transcripts, 80\% of which were not previously annotated. This shows
-that transcription start sites are generally better annotated than
-transcription termination sites.
+alternative isoform usage is ubiquitous, in general a few dominating isoforms
+will be used per gene. Additionally, they discovered many new long noncoding
+RNAs (lncRNA). These RNA appear similar to mRNA and undergo processing, but do
+not code for protein. An over-all conclusion is that protein coding transcripts
+are highly expressed, while non-coding transcripts like lncRNA are generally
+lowly expressed, down to less than one transcript estimated per cell. Using
+PET-data, they discovered roughly 128.000 transcription start sites, of
+which around 30.000 were novel. They also discovered around 129.000 cleavage
+and polyadenylation sites inside annotated transcripts, 80\% of which were not
+previously annotated. The last finding suggest that transcription start sites
+are generally better annotated than transcription termination sites.
 
+\section{Results}
+\subsection{Total number of polyadenylation sites}
+By merging all polyadenylation sites from all datasets, we identified a total
+of around 158.000 polyadenylation sites in the genome for the poly(A)+ fraction
+and around 86000 polyadenylation sites for the poly(A)- fraction. Figure
+\ref{fig:saturation} shows how the number of new polyadenylation sites
+saturates as the number of datasets increases. The saturation is sharper for
+polyadenylation sites which we found to have a downstream PAS. We
+consider polyadenylation sites with a downstream PAS to be more likely to be
+true positives. Thus, the different saturation curve for non-PAS and
+PAS-associated polyadenylation sites indicates that the number of false
+positives increases when the number of clustered reads becomes very large. 
+
+\subsection{Distribution of polyadenylation sites across the genome}
+As expected, we found that most of the polyadenylation sites were in the 3\p UTR
+exonic regions, but we located many polyadenylation sites in the intergenic
+and intronic regions as well (Figure \ref{fig:sidebars}). In the poly(A)+
+fraction, there is more intronic poly(A) sites in the nucleus than in the
+cytoplasm. This was to a certain degree expected since there is much more
+intronic RNA in the nucleus compared to the cytoplasm. However, introns do
+naturally exist in the cytoplasm. Some are included as part of the final mRNA
+(called intron inclusion), and some are included if an intron contains an
+active poly(A) site \cite{tian_widespread_2007}. 
+
+We also found evidence for polyadenylated RNA in the poly(A)- fraction, see
+Figure \ref{fig:sidebars} B. This was unexpected, since the poly(A)- fraction
+is by design not supposed to contain RNA with poly(A) tails. We propose that
+the polyadenylated RNA in the poly(A)- fraction have three possible sources.
+The first source (S1) is purely technical: normal poly(A)+ mRNA with full
+length poly(A) may not get adsorbed during the poly(A)+ filtration step and
+thereby end up in the poly(A)- fraction. Source two (S2) and source three (S3)
+are on the other hand of biological origin. S2 is mRNA with poly(A) tails that
+are for some reason shorter than 20nt, which is the the threshold of the
+poly(A)+ filtration step. One possibility is that they have had their polyA
+tails degraded to below 20 nucleotides, which happens during mRNA degradation.
+Another possibility is that they were actively undergoing polyadenylation at
+the time of sampling and did not reach a poly(A) tail length of more than 20
+nucleotides. Source three (S3) on the other hand are distinct from the other
+two since these poly(A) tails do not originate from 3\p processing of pre-mRNA.
+Instead, we propose that S3 are RNA with shorter, degradation-related transient
+poly(A) tails which have been identified in the nucleus of mammalian cells
+\cite{lemay_nuclear_2010}.
+
+\subsection{Isolating polyadenylation sites unique to the poly(A)- and poly(A)+
+fractions}
+We wanted to separate the S3 from the S1 and S2 poly(A) sites. We did this by
+assuming that many of the S1 and S2 sites are likely to be present in both the
+poly(A)- and the poly(A)+ fractions, since these sites by definition really
+belong to poly(A)+ transcripts that have accidentally ended up in the poly(A)-
+fraction.  Therefore, we filtered out all the poly(A) sites that intersected
+the poly(A)+ and poly(A)- fraction and removed these from both fractions. As
+can be seen in in Figure \ref{fig:sidebars_intersect}, almost no poly(A) sites
+were found in the pure poly(A)- fraction of the cytoplasm. The nuclear pure
+poly(A)- fraction has fewer polyadenylation sites in the 3\p UTR exonic region,
+while the number of sites in the intergenic and intronic regions did not change
+much.
+
+\begin{figure}[hb]
+	\begin{center}
+		\includegraphics[scale=0.3]{figures/polyadenylation/Saturation_plot_2+.pdf}
+	\end{center}
+	\caption{Saturation of discovery of polyadenylation sites}
+	\label{fig:saturation}
+\end{figure}
+
+\begin{figure}[hb]
+	\begin{center}
+		\includegraphics[scale=0.3]{figures/polyadenylation/intersected_sidebars_pA_2+.pdf}
+	\end{center}
+	\caption{Polyadenylation across genomic regions for the poly(A)+ and poly(A)-
+	fractions and the sites that overlap the poly(A)+ and poly(A)- fractions}
+	\label{fig:sidebars_intersect}
+\end{figure}
+
+\begin{figure}[hb]
+	\begin{center}
+		\includegraphics[scale=0.4]{figures/polyadenylation/Sidebars_pA_2+.pdf}
+	\end{center}
+	\caption{Polyadenylation across genomic regions for the poly(A)+ and poly(A)-
+	fractions}
+	\label{fig:sidebars}
+\end{figure}
+
+\section{Materials and Methods}
+\subsection{Methods}
+The description of the methods we used are found in the supplementary materials
+of the paper by Djabeli et al. and in the Appendix. Briefly, the method
+involves mapping polyadenylation sites onto the genome and clustering them if
+they are within 20 nucleotides of each other, since this is close to the
+maximal range of the stochastic effect of choice of 3\p cleavage site
+\cite{tian_large-scale_2005}. After clustering we searched the genomic sequence
+40 nucleotides downstream the polyadenylation site for one of the
+polyadenylation signals (PAS). Finally we intersected the polyadenylation sites
+with the 3\p PET sites to see which overlapped. To avoid false positives, we
+checked the genomic sequence for poly(A) tracts and discard putative poly(A)
+reads that land at a genomic location that is poly(A) rich. Further we filtered
+out poly(A) reads that mapped to intron-exon junctions, since several false
+positives were found at these locations.
 
 \subsection{The dataset}
-The datasets used in this study were generated by the ENCODE
-(\textbf{Enc}yclopedia \textbf{O}f \textbf{D}NA \textbf{E}lements) consortium
-and are available from http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/
+The datasets used in this study are available from
+http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/
 
 The data was generated from RNA-seq experiments from 12 human cell lines. Six
 of the cell lines have RNA-seq data from whole cell extracts and the remaining
 six cell lines have RNA-seq data from cytoplasmic and nuclear extracts in
-addition to whole cell extracts. Each cell line is further available in both the
-poly(A)+ and poly(A)- fractions of the RNA pool. Table \ref{tab:Datasets} shows
-the cell lines and compartments used; as can be seen, most experiments were
-available with a biological replicate. In total, 23 datasets were from whole
-cell extracts, 11 were from cytoplasmic extracts, and 12 were from nuclear
-extracts. This brings the total to 92 RNA-seq datasets. The datasets contains
-only RNA-seq from long RNA, defined as RNA over 200 nucleotides in length. Each
-dataset has been generated with Illumina paired-ended sequencing with a
-read-length of 75 basepairs. Each dataset contains between 150 and 250 million
-reads.
+addition to whole cell extracts. Each cell line is further available in both
+the poly(A)+ and poly(A)- fractions of the RNA pool. Table \ref{tab:Datasets}
+shows the cell lines and compartments used and the number of replicates. In
+total, 23 datasets were from whole cell extracts, 11 from cytoplasmic
+extracts, and 12 from nuclear extracts. This brings the total to 92
+RNA-seq datasets. The datasets contains only RNA-seq from long RNA, defined as
+RNA over 200 nucleotides in length. Each dataset has been generated with
+Illumina paired-ended sequencing with a read-length of 75 basepairs and
+contains between 150 and 250 million reads.
 
-\begin{table}
+\begin{table}[hb]
 	\centering
 	\begin{tabular}{cccc}
 	  Cell line & Whole Cell & Cytoplasm & Nucleus \\
@@ -132,13 +232,13 @@ primer. This will include all processed mRNA with a poly(A) tail of more than
 complement of the poly(A)+ fraction and contains mostly noncoding RNA and
 pre-processed mRNA.
 
-The extra dimensions introduced by compartmentalizing the RNA pool and further
+The extra dimensions introduced by com; most experiments were
+available with a biological replicate.partmentalizing the RNA pool and further
 dividing it into poly(A)+ and poly(A)- fractions increase the resolution of the
 data, allowing new questions to be asked. For example, it is now possible to
-identify which transcripts are never transported to the cytoplasm. One could
-also look at the poly(A)- fraction of transcripts in the cytoplasm to
-distinguish between noncoding RNA in the nucleus and the cytoplasm on a
-genome-wide scale.
+identify which transcripts are never transported to the cytoplasm. As well, by
+comparing the transcripts in the poly(A)- fraction in the nucleus and
+cytoplasm, one can compare noncoding RNA in these two fractions independently. 
 
 \subsection{The short RNA mapper}
 The short read mapper used in this work is the GEM mapper
@@ -146,133 +246,16 @@ The short read mapper used in this work is the GEM mapper
 Roderic Guigo and is production ready, although it has not been published yet.
 
 \subsection{The PET data}
-A high-throughput sequencing technique that is specific for locating the 3\p
-end of transcripts is Paired End diTag (PET) Sequencing. This technique
-adds two tags to the 3\p end and the 5\p end of an RNA. Those tags then join
-with each other, forming a circular RNA. Subsequently, only the sequences close
-to the two tags are sequenced. Thereby, one obtains the sequence information
-about both the transcription start site and the transcript termination site of
-the RNA. By mapping those sequences back to the genome, it is possible to find
-out where the RNA began and ended. We have used PET data developed by ENCODE
-which is available from
+Paired End diTag (PET) sequence is a technique that is specific for locating
+the 3\p end of transcripts. This technique adds two tags to the 3\p end and the
+5\p end of an RNA. Those tags then join with each other, forming a circular
+RNA. Subsequently, the sequences close to the two tags (less than 30 nt) are
+sequenced. Thereby, one obtains the sequence information about both the
+transcription start site and the transcript termination site of the RNA. We
+have used PET data which is available from
 http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeGisRnaPet/ to
-compare with the polyadenylation sites we discovered. We demanded a coverage of
-10 PET reads to accept a site as transcript termination site.
-
-\section{Methods}
-The description of the methods we used are found in the supplementary materials
-of the paper by Djabeli et al. and in the section about Utail in the Appendix.
-Briefly, the method involves mapping polyadenylation sites onto the genome and
-clustering them if they are within 20 nucleotides of each other, since this is
-close to the maximal range of the stochastic effect of choice of 3\p cleavage
-site \cite{tian_large-scale_2005}. After clustering we search the genomic
-sequence 40 nucleotides downstream the polyadenylation site for one of the
-polyadenylation signals (PAS). Finally we intersect the polyadenylation sites
-with the 3\p PET sites and annotated poly(A) sites to see which overlap.
-
-\section{Results}
-<<<<<<< HEAD
-We developed a software called Utail and ran it on the ENCODE RNA-seq data.
-For details on how Utail works, see the Appendix. Parts of the analysis from
-Utail's output was published in Djabeli et al. XXX. Here we describe the parts
-of the analysis that was not included in paper.
-
-\section{Methods}
-The description of the methods we used are found in the supplementary materials
-of the paper by Djabeli et al. and in the Appendix. Briefly, the method
-involves mapping polyadenylation sites onto the genome and clustering them if
-they are within 20 nucleotides of each other, since this is close to the
-maximal range of the stochastic effect of choice of 3\p cleavage site
-\cite{tian_large-scale_2005}. After clustering we search the genomic sequence
-40 nucleotides downstream the polyadenylation site for one of the
-polyadenylation signals (PAS). Finally we intersect the polyadenylation sites
-with the 3\p PET sites to see which overlap. To avoid false positives, we check
-the genomic sequence for poly(A) tracts and discard putative poly(A) reads that
-land at a genomic location that is poly(A) rich. Further we filter out poly(A)
-reads that map to intron-exon junctions, since several false positives were
-found at these locations.
-
-Here we add the results that were not published in the Djabeli et al. study.
-
-\subsection{Total number of polyadenylation sites}
-By merging all polyadenylation sites from all datasets, we identified a total
-of around 158.000 polyadenylation sites in the genome for the poly(A)+ fraction
-and around 86000 polyadenylation sites for the poly(A)- fraction. Figure
-\ref{fig:saturation} shows how the number of new polyadenylation sites
-saturates as the number of datasets increases. The saturation is sharper for
-polyadenylation sites which have are annotated with a downstream PAS. Since we
-consider polyadenylation sites with a downstream PAS as more likely to be a
-true positive, the different saturation curve for non-PAS and PAS-associated
-polyadenylation sites is an indication that the number of false positives
-increases when the number of clustered reads becomes very large. 
-
-\subsection{Distribution of polyadenylation sites across the genome}
-As expected, we found that most of the polyadenylation sites are in the 3\p UTR
-exonic regions, but we located many polyadenylation sites in the intergenic
-and intronic regions as well, see Figure \ref{fig:sidebars}. In the poly(A)+
-fraction, there is more intronic poly(A) sites in the nucleus than in the
-cytoplasm. This can partially be expected since most introns are removed in the
-nucleus. Some introns, however, are included in the final mRNA (called intron
-inclusion), and some introns are know to contain poly(A) sites
-\cite{tian_widespread_2007}. 
-
-We also found evidence for polyadenylated RNA in the poly(A)- fraction, see
-Figure \ref{fig:sidebars} B. This was unexpected, since the poly(A)- fraction
-is by design not supposed to contain RNA with poly(A) tails. We propose that
-the polyadenylated RNA in the poly(A)- fraction have three possible sources.
-The first source (S1) is purely technical: normal poly(A)+ mRNA with full
-length poly(A) may not get adsorbed during the poly(A)+ filtration step and
-thereby end up in the poly(A)- fraction. Source two (S2) and source three (S3)
-are on the other hand of biological origin. S2 is mRNA with poly(A) tails that
-are for some reason shorter than 20nt, which is the the threshold of the
-poly(A)+ filtration step. One possibility is that they have had their polyA
-tails degraded to below 20 nucleotides, which happens during mRNA degradation.
-Another possibility is that they were actively undergoing polyadenylation at
-the time of sampling and did not reach a poly(A) tail length of more than 20
-nucleotides. Source three (S3) on the other hand are distinct from the other
-two since these poly(A) tails do not originate from 3\p processing of pre-mRNA.
-Instead, we propose that S3 are RNA with shorter, degradation-related transient
-poly(A) tails which have been identified in the nucleus of mammalian cells
-\cite{lemay_nuclear_2010}.
-
-\subsection{Isolating polyadenylation sites unique to the poly(A)- and poly(A)+
-fractions}
-We wanted to separate the S3 from the S1 and S2 poly(A) sites. We did this by
-recognizing that many of the S1 and S2 sites are likely to be present in both
-the poly(A)- and the poly(A)+ fractions, since these sites really belong to
-poly(A)+ transcripts that have accidentally ended up in the poly(A)- fraction.
-Therefore, we filtered out all the poly(A) sites that intersected the poly(A)+
-and poly(A)- fraction and removed these from both fractions. As can be seen in
-in Figure \ref{fig:sidebars_intersect}, almost no poly(A) sites were found in
-the pure poly(A)- fraction of the cytoplasm. The nuclear pure poly(A)- fraction
-has fewer polyadenylation sites predominantly in the 3UTR exonic region, while
-the number of sites in the intergenic and intronic regions did not change much.
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.3]{figures/polyadenylation/Saturation_plot_2+.pdf}
-	\end{center}
-	\caption{Saturation of discovery of polyadenylation sites}
-	\label{fig:saturation}
-\end{figure}
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.3]{figures/polyadenylation/intersected_sidebars_pA_2+.pdf}
-	\end{center}
-	\caption{Polyadenylation across genomic regions for the poly(A)+ and poly(A)-
-	fractions and the sites that overlap the poly(A)+ and poly(A)- fractions}
-	\label{fig:sidebars_intersect}
-\end{figure}
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale=0.4]{figures/polyadenylation/Sidebars_pA_2+.pdf}
-	\end{center}
-	\caption{Polyadenylation across genomic regions for the poly(A)+ and poly(A)-
-	fractions}
-	\label{fig:sidebars}
-\end{figure}
+compare with the polyadenylation sites we discovered. We used a threshold of 10
+PET reads to accept a site as transcript termination site.
 
 \subsubsection{Discussion}
 By combining over 100 billion sequence fragments from 12 difference cell lines

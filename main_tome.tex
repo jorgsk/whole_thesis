@@ -5,8 +5,10 @@
 % A new package for bibliography
 % Use biber for bibtex and pdflatex instead of latex
 %\usepackage[backend=biber, url=true]{biblatex}
+%\usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
+%url=false, sort=false]{biblatex}
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
-url=false, sort=false]{biblatex}
+url=false, sorting=none]{biblatex}
 % new from biblatex
 \addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
@@ -67,18 +69,18 @@ url=false, sort=false]{biblatex}
 
 \mainmatter
 
-\chapter{Introduction}
+%\chapter{Introduction}
 
-\input{subsections/gene_expression_general.tex}
+%\input{subsections/gene_expression_general.tex}
 
-\section{Transcription initiation in bacteria}
-\subsection{Biochemical background}
-\input{subsections/transcription_background.tex}
-\subsection{Computational models}
-\input{subsections/transcription_computation.tex}
+%\section{Transcription initiation in bacteria}
+%\subsection{Biochemical background}
+%\input{subsections/transcription_background.tex}
+%\subsection{Computational models}
+%\input{subsections/transcription_computation.tex}
 
-\section{Translation initiation in bacteria}
-\input{subsections/translation_background.tex}
+%\section{Translation initiation in bacteria}
+%\input{subsections/translation_background.tex}
 
 %\section{Transcription termination in eukaryotes}
 %\input{subsections/polyadenylation.tex}
@@ -106,8 +108,8 @@ url=false, sort=false]{biblatex}
 %\part{Using RNA-seq for indentification of \textit{de novo} sites of
 %polyadenylation}
 
-%\chapter{Contibution to ENCODE paper}
-%\input{subsections/polyA_results.tex}
+\chapter{Contibution to ENCODE paper}
+\input{subsections/polyA_results.tex}
 
 %\endmatter
 
