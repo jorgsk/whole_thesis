@@ -1,30 +1,66 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
 \subsubsection{Summary of the paper}
-The problem to be solved was to increase the expression of some gene. To do
-that, they ordered a codon optimized version of the same gene. However,
-expression was nearly 10 times worse with the codon optimized version than the
-wild type (wt), and I was employed to find out why.
+The study by Swik et. al focuses on the expression of the xylS gene. The XylS
+gene codes for the XylS protein, which is a transcriptional activator and part
+of the Pm/xylS expression system. The Pm/XylS expression system consists of the
+XylS protein, the Pm promoter, and m-toulic acid as the inducer. When passively
+abosorbed m-toulic acid activates XylS, XylS binds to the Pm promoter and
+activates it by recruiting RNAP \cite{gallegos_arac/xyls_1997,
+inouye_expression_1987}.
 
-To add to the mystery, when expressing the gene with a His-tag, the wt and co
-(codon optimized) versions performed similarly.
-
-Further, when exchanging 5UTR sequence with the 5UTR for T7, the expression of
-both wt and co are high and identical (2000).
+To increase expression of the \textit{Pseudomonas putana} native xylS gene in
+\textit{E. coli}, an \textit{E. coli} codon optimized version of the xylS gene
+was obtained. The codon optimized version was called 'syn' as opposed to the
+wild type 'wt'. Instead of increasing expression, 'syn' had 8-fold lower
+expression than 'wt'. This difference in expression between 'wt' and 'syn'
+persisted when using the T7 5\p UTR instead of the wild type 5\p UTR. The T7
+5\p UTR increased expression for both gene versions, but the fold-difference in
+expression remained the same. However, when both gene versions were fitted with
+a His-tag as a 5\p fusion parter, their expression levels equalized at a high
+level (depending on Rahmi's results). This indicates that the His-tag confers a
+mechanism which completely (partially) mitigates the expression-reducing effect
+of the 'syn' gene variant. The His-tag alone also equalized expression when
+using the xylS wild type 3\p UTR, albeit with lower expression levels than for
+the T7 3\p UTR.
 
 \subsubsection{My contribution}
+My first contribution was to identify a strong and consistent hairpin +12
+downstream the ATG start codon in the codon optimized gene'. This strong
+hairpin did not form in the wild type gene, and thus the hairpin is a result of
+the combination of optimized codons. Strong hairpins proximal to ATG have
+previously been shown to reduce gene expression \cite{seo_quantitative_2009},
+likely by interfering during translation initiation.
 
-My contribution was to identify a strong consistent hairpin in the codon
-optimized gene. This hairpin formed within the ribosome binding site (RBS), +12
-relative to translation start. By adding the His-tag, this strong hairpin would
-effectively be pushed away from the RBS. Based on this, I suggested trying out
-3 versions of the His-CO construct, where the His-tag is gradually increased in
-length. This showed that XXX. Rahmi?
+I proposed three different tests to investigate whether the ATG-proximal
+hairpin was behind the reduction in expression from WT to syn. The first test
+was to weaken the hairpin with synonymous codon changes, and see if the
+constructs with weakened hairpin have increased expression. The original
+hairpin was XXX in strength. I proposed two alternative 'syn' versions, 'syn1'
+with a hairpin of YYY, and 'syn2' with a hairpin of 'XXX'. The expression of
+these were Y and Z, which shows that the hairpin strength was a partial cause
+for the low expression of the 'syn' construct.
 
-I also proposed that the difference between T7 (2000) and His-tag (300/650) is
-due to a poor match whith the Shine-Dalgarno sequence in the wt compared to a
-great SD-match for T7.
+The second test was designed to evaluate the effect of the hairpin on
+translation initiation from a different angle. Since 'syn' was lowly expressed
+with the T7 5\p UTR alone, but highly expressed with the His-tag, I proposed
+that the His-tag increased expression by removing the 'syn' hairpin from the
+translation initiation region. When used as a 5\p fusion, the ATG of the His
+tag becomes the translation start site, effectively putting 64 nucleotides
+between ATG and the hairpin. My proposal was to gradually build the His-tag
+onto the T7+'syn' combination, which should gradually increase expression was
+the hairpin would be moved further and further away from the start codon. The
+result of the experiment was that expression did increase as the distance
+between the ATG and hairpin was increased, although even with 24 nucleotides
+distance the expression was not equivalent to the full His-tag. This indicates
+the the function of this His-tag is only partially because the separation of
+the translation start site and the strong secondary structure formed by the
+'syn' sequence.
 
-The strong hairpin of the codon optimized gene is independent of the 3UTR
-region. The hairpin appears when folding the gene alone. This shows that what
-is codon optimal is not always expression optimal.
+In summary, the tests I proposed showed that the hairpin formed by 'syn' in the
+5\p region of the gene was partially responsible for the decreased expression
+of 'syn' relative to 'wt'. However, there are also clear downstream effects of
+'syn' that are not related to the hairpin. This shows that codon optimization
+is not a universal technique to increase expression, since the new sequence
+formed by optimal codons may cause unwanted effects during gene expression. 
+
