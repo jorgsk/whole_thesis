@@ -17,7 +17,7 @@ $(NAME).pdf : $(NAME).tex
 	then \
 		 xelatex $(NAME);\
 	fi
-	rm -f $(NAME).log
+	# rm -f $(NAME).log
 
 pdf : $(NAME).pdf
 

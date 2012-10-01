@@ -19,6 +19,10 @@ url=false, sorting=none]{biblatex}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
 \usepackage{verbatim}
+\usepackage{import} % understands relative paths for \include! :)
+\usepackage{inconsolata} % monospaced font
+\usepackage{placeins} % stop floats from going everywhere with \FloatBarrier
+\usepackage{pdfpages} % allow the inclusion of PDF papers
 
 % Proper space and font for integral differential term
 \newcommand{\dd}{\; \mathrm{d}} 
@@ -56,7 +60,7 @@ url=false, sorting=none]{biblatex}
 
 \frontmatter
 
-%\maketitle
+\maketitle
 
 \chapter*{Acknowledgements}
 \input{subsections/acknowledgements.tex}
@@ -69,54 +73,62 @@ url=false, sorting=none]{biblatex}
 
 \mainmatter
 
-%\chapter{Introduction}
+\chapter{Introduction}
 
-%\input{subsections/gene_expression_general.tex}
+\input{subsections/gene_expression_general.tex}
 
-%\section{Transcription initiation in bacteria}
-%\subsection{Biochemical background}
-%\input{subsections/transcription_background.tex}
-%\subsection{Computational models}
-%\input{subsections/transcription_computation.tex}
+\section{Transcription initiation in bacteria}
+\subsection{Biochemical background}
+\input{subsections/transcription_background.tex}
+\subsection{Computational models}
+\input{subsections/transcription_computation.tex}
 
-%\section{Translation initiation in bacteria}
-%\input{subsections/translation_background.tex}
+\section{Translation initiation in bacteria}
+\input{subsections/translation_background.tex}
 
-%\section{Transcription termination in eukaryotes}
-%\input{subsections/polyadenylation.tex}
-%\section{High throughput RNA sequencing}
-%\input{subsections/rna_seq.tex}
+\section{Transcription termination in eukaryotes}
+\input{subsections/polyadenylation.tex}
+\section{High throughput RNA sequencing}
+\input{subsections/rna_seq.tex}
 
-%\part{Regulation of transcription and translation initiation in the 5 prime
-%untranslated region}
+\part{Regulation of transcription and translation initiation in the 5\protect\p
+untranslated region}
 
- %Abortive initiation
-%\chapter{Abortive transcription initiation is regulated by the free energy of
-%the scrunched DNA bubble and translocation bias}
+%% Abortive initiation
+\chapter{Abortive transcription initiation is regulated by the free energy of
+the scrunched DNA bubble and translocation bias}
+\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
 
-% Infa2b expression
-%\chapter{Project with Veronika -- bioinformatic approach to acheive expression
-%of infa2b in \textit{E coli}}
-%\input{subsections/celB_pelB_introduction.tex}
+%% Infa2b expression
+\chapter{Project with Veronika -- bioinformatic approach to acheive expression
+of infa2b in \textit{E coli}}
+\input{subsections/celB_pelB_introduction.tex}
 
-% Friedrieke paper -> moving a structure
+%% Friedrieke paper -> moving a structure
 %\chapter{Increasing translation initiation by clearing the ribosome binding
 %site of a strong secondary structure}
-\input{subsections/friederieke_summary.tex}
+%\input{subsections/friederieke_summary.tex}
 
-% Polyadenylation
-%\part{Using RNA-seq for indentification of \textit{de novo} sites of
-%polyadenylation}
+%% Polyadenylation
+\part{Using RNA-seq for indentification of sites of RNA cleavage
+polyadenylation}
 
-%\chapter{Contibution to ENCODE paper}
-%\input{subsections/polyA_results.tex}
+\chapter{Contibution to ENCODE paper}
+\input{subsections/polyA_results.tex}
 
-%\endmatter
+\appendix
+\chapter{Utail -- finding poly(A) sites from short read data}
+\input{subsections/utail.tex}
 
-%\appendix
-%\chapter{Utail -- finding poly(A) sites from short read data}
-%\input{subsections/utail.tex}
+\chapter{Publications}
 
-\printbibliography
+\section{Landscape of Transcription in Human Cells}
+\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+
+\section{5\protect\p fusion partners for heterologous expression in
+\textit{E. coli}}
+\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
+
+%\printbibliography
 
 \end{document}

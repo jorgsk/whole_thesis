@@ -1,33 +1,47 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 \subsubsection{Summary of the paper}
+This section refers to the paper by Kucharova et al. called ``5\p fusion
+partners for recombinant expression in \textit{E. coli}'' which is attached in
+the appendix.
+
 The primary aim of the publication by Kucharova et al. was to express in
 \textit{E. coli} a variant of the human interferon gene interferon-alpha called
-\textit{inf-$\alpha$2b}. The protein product is called INF-$\alpha$2b is used
-among other things as a dug for treating hepatitis C. The expression of a foreign
-gene in a host organism is called heterologous expression, and carries with it
-many challenges \cite{gustafsson_codon_2004}. Since heterologous expression of
-INF-$\alpha$2b is necessary to produce the drug in large quantities, it is
-important to investigate the limitations and mechanisms of
-\textit{inf-$\alpha$2b} in \textit{E. coli}.
+\textit{inf-$\alpha$2b}. The protein product INF-$\alpha$2b is of
+pharmaceutical interest as a dug for treating hepatitis C. The expression of a
+foreign gene in a host organism is called heterologous expression, and carries
+with it many challenges \cite{gustafsson_codon_2004}. Since heterologous
+expression of INF-$\alpha$2b is necessary to produce the drug in large
+quantities, it is important to investigate the limitations and mechanisms of
+\textit{inf-$\alpha$2b} expression in \textit{E. coli}.
 
-The \textit{inf-$\alpha$2b} gene in question is already codon-optimized. That
-is, the native human codons have been replaced with codons that are in high
-usage in \textit{E. coli}. However, despite of codon optimization the gene is
-not expressed. In their paper, Kucharova et al. show that translation
-initiation of the \textit{inf-$\alpha$2b} transcript is a possible reason why
-the gene is not expressed. They find that by reducing RNA secondary structures
-around the ribosome binding site, transcript levels are greatly increased.
-However, the increase in transcript is not followed by an increase in protein.
-This suggests that other barriers than ribome binding lie behind the poor
-expression of \textit{inf-$\alpha$2b}. Having established this, Kucharova et
-al. move on to investigate the effect of 5\p terminal fusion peptides. Fusion
-peptides typically originate from the 5\p end of a natively well-expressed gene
-and facilitate translation initiation of heterologous mRNA. Kucharova et al.
-demonstrate that several short versions of the celB fusion peptide increases
-expression of the \textit{inf-$\alpha$2b} gene and several other genes. In
-conclusion, these fusion peptides proably facilitate translation initiation
-both by having favorable secondary structure and also by some downstream effect
-that could not be achieved with point mutatations of the
+Kucharova et al reports that the \textit{inf-$\alpha$2b} gene is not
+expressed in \textit{E.  coli} in its native form. A codon optimized version of
+\textit{inf-$\alpha$2b} was obtained to investigate if the non-native codon
+usage in the gene was behind the lack of expression. That is, the native human
+codons were replaced with codons that are in high usage in \textit{E. coli}.
+However, in spite of of codon optimization the gene was not expressed. In order
+to detect the gene product with western blot, a 5\p fusion tag needed to be
+added to the \textit{inf-$\alpha$2b} gene. This indicated that events occurring
+in the 5\p region of the gene is involved in regulating the switch between
+expression and nonexpresssion of the \textit{inf-$\alpha$2b} gene.
+
+In their paper, Kucharova et al. suggest that translation initiation of the
+\textit{inf-$\alpha$2b} transcript is a possible reason why the gene is not
+expressed. That prompts them to reduce RNA secondary structures around the
+ribosome binding site. This modification causes transcript levels to be greatly
+increased. However, the increase in transcript level is not followed by an
+increase in protein level. This suggests that further barriers than ribosme
+binding lie behind the poor expression of \textit{inf-$\alpha$2b}. Having
+established this, Kucharova et al. move on to investigate the effect of 5\p
+terminal fusion peptides. Fusion peptides typically originate from the 5\p end
+of a natively well-expressed gene and facilitate translation initiation of
+heterologous mRNA. Kucharova et al. demonstrate that several short versions
+of the celB fusion peptide increases expression of the \textit{inf-$\alpha$2b}
+gene and several other genes. Finally, they improve the expression level with
+the celB leader by screening a random mutagenesis library of celB around the
+ribosome binding site. In conclusion, these fusion peptides probably facilitate
+translation initiation both by having favorable secondary structure and also by
+some downstream effect that could not be achieved with point mutations of the
 \textit{inf-$\alpha$2b} gene alone.
 
 \subsubsection{My contribution}
@@ -35,19 +49,22 @@ My contribution to the paper was to perform the bioinformatic analysis, partake
 in the planning of some of the experiments, and to assist in writing.
 
 Initially, I performed RNA secondary structure analysis for a set of
-\textit{inf-$\alpha$2b} variants with variable expression levels (not included
-in the paper). This analysis could not conclude that secondary structures were
-the reason behind the variation in expression; specifically it could not conclude
-that strong secondary structures were behind the lack of expression of the
-unmodified \textit{inf-$\alpha$2b} gene. Nevertheless, we proceeded to try to
-optimize the secondary structures around the ribosome binding site (RBS) of the
-\textit{inf-$\alpha$2b} mRNA. For this work, I made a combinatorial library of
-synonymous codons for the first eight codons in the \textit{inf-$\alpha$2b}
-coding region after the start codon. I labeled each of the resulting set of
-over 5000 synonymous variants with the rarity of their codons and the folding
-energy of the secondary structure around the RBS. Some selected variants from
-this library were chosen based on their folding energy and rarity of codon
-usage. When they were tested experimentally it was found that several of them
-increased transcript levels but not protein levels. In addition, I calculated
-the folding energy and codon bias of all sequence variants used in the study,
-as found in the tables.
+celB-\textit{inf-$\alpha$2b} variants with variable expression levels (data not
+shown in the paper). This analysis could not conclude that secondary structures
+were the reason behind the variation in expression; specifically it could not
+conclude that strong secondary structures were behind the lack of expression of
+the unmodified \textit{inf-$\alpha$2b} gene.
+
+Nevertheless, we proceeded to try to optimize the secondary structures around
+the ribosome binding site (RBS) of the original \textit{inf-$\alpha$2b} gene
+without celB, because this is an approach that has worked previously for
+heterologous expression \cite{de_smit_secondary_1990}. For this work, I made a
+combinatorial library of synonymous codons for the first nine codons in the
+\textit{inf-$\alpha$2b} coding region. I labeled each of the resulting set of
+over 8000 synonymous variants with an index for the rarity of their codons and
+the folding energy of the secondary structure around the RBS. Some selected
+variants from this library were chosen based on their folding energy and rarity
+of codon usage. When they were tested experimentally it was found that several
+of them increased transcript levels but not protein levels. In addition, I
+calculated the folding energy and codon bias of all sequence variants used in
+the study, as found in the tables.
