@@ -8,7 +8,7 @@
 %\usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
 %url=false, sort=false]{biblatex}
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
-url=false, sorting=none]{biblatex}
+url=false, sorting=none, refsection=section]{biblatex}
 % new from biblatex
 \addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 
@@ -61,13 +61,22 @@ url=false, sorting=none]{biblatex}
 \frontmatter
 
 \maketitle
+\chapter*{Abstract}
+\begin{quotation}
+\noindent
+	\input{subsections/abstract.tex}
+\end{quotation}
+\clearpage
+
+\addcontentsline{toc}{chapter}{Abstract}
 
 \chapter*{Acknowledgements}
 \input{subsections/acknowledgements.tex}
+\addcontentsline{toc}{chapter}{Acknowledgements}
 
 % Uncomment this when you get to this stage
-%\pagenumbering{roman}
-%\tableofcontents
+\pagenumbering{roman}
+\tableofcontents
 %\listoffigures
 %\listoftables
 
@@ -82,14 +91,19 @@ url=false, sorting=none]{biblatex}
 \input{subsections/transcription_background.tex}
 \subsection{Computational models}
 \input{subsections/transcription_computation.tex}
+\printbibliography
 
 \section{Translation initiation in bacteria}
 \input{subsections/translation_background.tex}
+\printbibliography
 
 \section{Transcription termination in eukaryotes}
 \input{subsections/polyadenylation.tex}
+\printbibliography
+
 \section{High throughput RNA sequencing}
 \input{subsections/rna_seq.tex}
+\printbibliography
 
 \part{Regulation of transcription and translation initiation in the 5\protect\p
 untranslated region}
@@ -100,7 +114,7 @@ the scrunched DNA bubble and translocation bias}
 \subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
 
 %% Infa2b expression
-\chapter{Project with Veronika -- bioinformatic approach to acheive expression
+\chapter{Project with Veronika -- bioinformatic approach to achieve expression
 of infa2b in \textit{E coli}}
 \input{subsections/celB_pelB_introduction.tex}
 
@@ -110,25 +124,25 @@ of infa2b in \textit{E coli}}
 %\input{subsections/friederieke_summary.tex}
 
 %% Polyadenylation
-\part{Using RNA-seq for indentification of sites of RNA cleavage
+\part{Using RNA-seq for indentification of sites of RNA cleavage and
 polyadenylation}
 
 \chapter{Contibution to ENCODE paper}
 \input{subsections/polyA_results.tex}
 
-\appendix
-\chapter{Utail -- finding poly(A) sites from short read data}
-\input{subsections/utail.tex}
+%\appendix
+%\chapter{Utail -- finding poly(A) sites from short read data}
+%\input{subsections/utail.tex}
 
-\chapter{Publications}
+%\chapter{Publications}
 
-\section{Landscape of Transcription in Human Cells}
-\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+%\section{Landscape of Transcription in Human Cells}
+%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
 
-\section{5\protect\p fusion partners for heterologous expression in
-\textit{E. coli}}
-\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
+%\section{5\protect\p fusion partners for heterologous expression in
+%\textit{E. coli}}
+%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
 
-%\printbibliography
+\printbibliography
 
 \end{document}
