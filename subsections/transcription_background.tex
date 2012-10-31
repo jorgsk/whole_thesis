@@ -1,40 +1,67 @@
 %\bibliography{/home/jorgsk/phdproject/bibtex/jorgsk}
 Transcription is the synthesis of an RNA molecule from a DNA template. The
 macromolecule that performs transcription is the DNA-dependent RNA polymerase
-(RNAP). In bacteria, RNAP consists of the subunits $\beta$, $\beta^{\prime}$,
-$\omega$, and two $\alpha$ subunits and has a molecular mass of around 400 kDa.
-The bacterial polymerase is conserved in structure and function with those
-found in in archea and eukaryotes \cite{borukhov_rna_2008}, showing that the
-mechanism of RNA synthesis is virtually unchanged in all cell types.
+(RNAP). See Figure \ref{fig:transcription_elongation} for an overview of
+transcription elongation by RNA polymerase.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.6]{illustrations/sysbio/1_normal_transcription.pdf}
+	\end{center}
+	\caption{Transcription elongation by RNA polymerase. The nascent RNA
+	transcript grows at the 3\protect\ppp end where NTP binds and is
+	incorporated into the RNA nucleotide chain. NTP binds in a complementary
+	fashion to bases on the single stranded template DNA which is exposed due
+	to the \sim 14/15 bp DNA transcription bubble.}
+	\label{fig:transcription_elongation}
+\end{figure}
+
+In bacteria, RNAP consists of the subunits $\beta$, $\beta^{\prime}$, $\omega$,
+and two $\alpha$ subunits and has a molecular mass of around 400 kDa. The
+bacterial RNAP is conserved in structure and function with RNAP found in in
+archea and eukaryotes \cite{borukhov_rna_2008}, showing that the mechanism of
+RNA synthesis is virtually unchanged in all cell types.
 
 Here, we will review the role of RNAP in initiation, elongation, and
 termination of transcription in bacteria. Special care will be given to the
-topic of abortive transcription initiation and how RNAP moves along DNA.
+topic of abortive transcription initiation and how RNAP moves along DNA during
+transcription.
 
 \subsubsection{Promoter localization}
-Before RNAP can start transcription it must localize a transcription start site
-(TSS) on DNA which mark the beginning of genes. These sites are advertised by
-promoter elements, which typically stretch from around -80 to +20 relative to
-the TSS, where - indicates downstream (5\p) and + indicates upstream (3\p).
-RNAP cannot bind to the promoters directly, but must first associate with a
-regulatory protein called the $\sigma$ ($\sigma$) factor; the $\sigma$ factor in turn
-only binds strongly to promoters when together with RNAP \cite{paget_70_2003}.
-In \textit{E. coli} there are seven types of $\sigma$ factors, where each $\sigma$
-factor regulates the binding of RNAP to a particular gene family
-\cite{osterberg_regulation_2011}. For example, $\sigma^{70}$ recognizes
+Before RNAP can start transcription of a gene it must localize a transcription
+start site (TSS). These sites are advertised by promoter elements, which
+typically stretch from around -60 to +20 relative to the TSS
+\cite{ross_third_1993,lilian_m_promoter_2002}. RNAP cannot bind strongly to the
+promoters directly, but must first associate with a regulatory protein called
+the sigma ($\sigma$) factor; the $\sigma$ factor in turn only binds strongly to
+promoters when together with RNAP \cite{paget_70_2003}, making the
+RNAP-$\sigma$ complex essential for transcription initiation. In \textit{E.
+coli} there are seven types of $\sigma$ factors, where each $\sigma$ factor
+regulates the binding of RNAP to a particular gene family
+\cite{osterberg_regulation_2011}.  For example, $\sigma^{70}$ recognizes
 promoters for housekeeping genes, while $\sigma^{32}$ recognizes promoters for
 genes that are activated in case of heat shock. Most promoters are of the
-$\sigma^{70}$ type, and we will here focus on this type of promoters. The most
-prominent $\sigma$-binding elements in these promoters are the -35 and -10
-hexamer (six-nucleotide) motifs, with the consensus sequences TTGACA (-35) and
-TATAAT (-10), see Figure X adopted from \cite{haugen_fine_2008}. The major
-determinants for how strongly $\sigma^{70}$ binds to a promoter are how much
-the -35 and -10 motifs vary from the consensus and the distance in nucleotides
-between these elements. Other sequences that affect RNAP-$\sigma^{70}$ binding
-are an AT rich element upstream -35 \cite{ross_third_1993}, the extended -10
-element, and the discriminator sequence between the -10 element and the TSS
-\cite{haugen_fine_2008}, see Figure X. In general, the stronger $\sigma^{70}$
-binds to a promoter the higher the downstream gene will be expressed.
+$\sigma^{70}$ type (meaning that $\sigma^{70}$ binds to them), and we will here
+focus on this type of promoters. The most prominent $\sigma$-binding elements
+in these promoters are the -35 and -10 hexamer (six-nucleotide) motifs, with
+the consensus sequences TTGACA (-35) and TATAAT (-10). The major determinant
+for how strongly $\sigma^{70}$ binds to a promoter is how much the -35 and -10
+motifs vary from the consensus, as well and the distance in nucleotides between
+these elements. A third sequence that affect RNAP-$\sigma^{70}$ binding is an
+AT rich element upstream -35 called the upstream element
+\cite{ross_third_1993,haugen_fine_2008} (see Figure \ref{fig:promoter}). In
+general, the stronger $\sigma^{70}$ binds to a promoter the higher the
+transcription initiation rate will be, which again will in general lead to
+higher expression of the downstream gene.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.5]{illustrations/promoter_its.pdf}
+	\end{center}
+	\caption{RNAP and sigma bound to promoter elements. Positions along the DNA
+	template are indicated relative to the transcription start site.}
+	\label{fig:promoter}
+\end{figure}
 
 \subsubsection{Transcription initiation}
 % nucleotide = base-sugar-phosphate (1 or 3)
@@ -43,127 +70,168 @@ binds to a promoter the higher the downstream gene will be expressed.
 % nucleoside triphosphate.
 Once the RNAP-$\sigma$ complex has bound to a promoter, transcription
 initiation may commence. First, $\sigma$ mediates the opening of the double
-stranded DNA from -11 to +2 relative to the TSS. The single stranded DNA around
-RNAP is referred to as the DNA bubble. In the DNA bubble, bases are exposed and
-ready to be used as a template. RNAP is positioned so that the nucleotide at
-the TSS is at RNAP's active site (the active site is the name for the part of
-RNAP where RNA synthesis occurs). At the active site, the +1 nucleotide is free
-to base-pair with a matching nucleoside triphosphates (NTP) which reaches the
-active site in RNAP from the outside through diffusion through the NTP entry
-channel.  After base-pairing, the +1 DNA nucleotide and the NTP form the first
-basepair of the RNA-DNA hybrid. In order to incorporate the second nucleotide,
-RNAP must first undergo translocation. Translocation is a one-basepair movement
-step on DNA which is necessary to place the active site in the +2 position.
-After an NTP has bound the +2 DNA nucleotide, RNAP catalyzes a bond between the
-+1 NTP and the +2 NTP, a reaction which releases pyrophosphate (PPi). This
-catalysis forms the first two bases of RNA. RNA synthesis continues following
-the steps of translocation, NTP binding, and catalysis. At each translocation
-step, one basepair of the downstream DNA bubble is opened up, and the nascent
-RNA is moved toward the RNA exit channel.  See Figure X for an illustration of
-RNAP during transcription initiation.
+stranded DNA from -11 to +2 \cite{borukhov_rna_2008}. This unwinding of the DNA
+helix is referred to as the DNA bubble, or the transcription bubble. Within the
+DNA bubble, bases on the template DNA strand are exposed and ready to be used
+for base pairing with incoming NTP for RNA synthesis. RNAP is positioned so
+that the nucleotide at the TSS is at RNAP's active site (the active site is the
+part of RNAP where RNA synthesis occurs). When transcription begins, the two
+first nucleotides bind in the active site and a phosphodiester bond is formed
+between them \cite{mcclure_steady_1978}. This constitutes the first
+dinucleotide of the nascent RNA. In order to incorporate the third nucleotide,
+RNAP must first move its active site relative to downstream DNA to make room
+for the incoming NTP. However, RNAP is bound to the promoter, making it
+immobile. It can thus not translocate downsteam as it would during
+transcription elongation. Instead, translocation during initiation results in
+RNAP pulling DNA into itself in a process that has been labeled ``scrunching''
+\cite{kapanidis_initial_2006, revyakin_abortive_2006}. By pulling in downstream
+DNA, RNAP's active site translocates relative to template DNA, making the
+active site available for incoming NTP, even though RNAP remains bound to the
+upstream promoter sequence.
 
-This cycle of translocation and nucleotide incorporation goes on although $\sigma$
-is still bound to the promoter. As a consequence, the polymerase is not free to
-move downstream during translocation, which normally happens during
-transcription elongation. Instead, RNAP pulls DNA into itself in a process
-that has been labeled ``scrunching''. It has been suggested that buildup of
-free energy from the scrunched DNA-bubble eventually leads to the dissociation
-of sigma from the promoter which allows RNAP to escape the promoter and reach
-the elongation phase of transcription \cite{revyakin_abortive_2006}.
+Transcription initiation proceeds in a cycle of scrunching, NTP binding, and
+phosphodiester bond formation. With each step, the DNA bubble grows with one
+basepair and the nascent RNA grows with one nucleotide. When the nascent RNA
+reaches a length of around 10-12 nt, promoter escape may occur of $\sigma$
+dissociates from the promoter \cite{lilian_m_promoter_2002} (see
+Figure \ref{fig:simple_escape}).
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.5]{illustrations/sysbio/7_transcription_initiation.pdf}
+	\end{center}
+	\caption{Promoter escape involves scrunching of DNA within RNAP.}
+	\label{fig:simple_escape}
+\end{figure}
 
 \subsubsection{Abortive initiation}
-Promoter escape is only one out of two possible outcomes for a transcription
-initiation attempt. The other possibility is that the initiation attempt fails;
-then the nascent RNA is released and RNAP must begin synthesis \textit{de novo}
-at the TSS. The term for this is abortive initiation. If RNAP attempts
-promoter escape several times, this is called abortive cycling. Most initiation
-complexes (RNAP, $\sigma$, and DNA) will abort if the promoter-$\sigma$
-contacts are not broken by around the +16 position
-\cite{lilian_m_promoter_2002}. The aborted RNA snippets are generally no longer
+Promoter escape is, however, only one possible outcome of a transcription
+initiation attempt. The other possibility is that the initiation attempt fails,
+which is when the nascent RNA is released prematurely before promoter escape.
+This origin of a failed initiation attempt is when at some point the
+translocation-scrunching reaction becomes reversed, in a step referred to as
+backtracking, and the DNA that was pulled in by RNAP becomes partially released
+again. When backtracking occurs, the ``unschrunching`` of DNA forces the 3\ppp
+end of the nascent RNA into the entry channel for NTP, leading to a shortened
+RNA-DNA hybrid \cite{hsu_initial_2006}. This shortened RNA-DNA hybrid is
+unstable and eventually the nascent RNA is released. RNA release is followed by
+a release of the rest of the scrunched DNA from RNAP which then falls back to
+the open complex formation, where it may restart transcription initiation
+\textit{de novo} \cite{lilian_m_promoter_2002} (see Figure
+\ref{fig:abortive_backtrack}.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.5]{illustrations/sysbio/8_transcription_initiation_backtracking.pdf}
+	\end{center}
+	\caption{Abortive initiation caused by a backtracking-``unscrunching''
+	reaction.}
+	\label{fig:abortive_backtrack}
+\end{figure}
+
+The term for unscrunching and RNA release during transcription initiation is
+abortive initiation. A related term is abortive cycling, which refers to
+repeated initiation attempts that end with abortive RNA release (see Figure
+\ref{fig:abortive_cycling}). The aborted RNA snippets are generally no longer
 than 15 nucleotides, but lengths up to 20 have been observed
 \cite{chander_alternate_2007}. In \textit{in vitro} experiments using
 \textit{E. coli} extracts, abortive initiation is the rule rather than the
 exception. Some promoters have an \textit{in vitro} ratio of aborted to
-successful transcription initiation attempts of more than 300
+successful transcription initiation attempts of over 300
 \cite{hsu_initial_2006}. This indicates that RNAP may on average spend
 considerable time in abortive cycling before achieving promoter escape.
 
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{illustrations/sysbio/9_abortive_cycling.pdf}
+	\end{center}
+	\caption{Repeated abortive RNA release and \textit{de novo} transcription
+	initiation is called abortive cycling.}
+	\label{fig:abortive_cycling}
+\end{figure}
+
 When comparing abortive initiation at different promoters, it became clear that
-both the lengths of the abortive transcripts and the extent of abortive cycling
-were promoter-specific \cite{hsu_vitro_2003}. It was for example shown by
-mutagenesis that the sequence in the core promoter region directly affects the
-rate of promoter escape \cite{vo_vitro_2003}. But the most striking observation
-was that the promoter sequence after +1 had a strong effect on the lengths of
-the abortive transcripts \cite{hsu_vitro_2003}. Hsu et al. investigated the
-abortive properties of a comprehensive library of 43 promoter variants with a
-randomized +1 to +20 initial transcribed sequence (ITS). They showed that
-sequence variation in the ITS could result in a 20-fold difference in the rate
-of productive (as opposed to abortive) promoter escape \cite{hsu_initial_2006}.
-This shows that steps during early RNA synthesis affect whether transcription
-initiation is successful or not.
+both the lengths of the abortive transcripts and the extent of abortive
+cycling, as measured by the amount of abortive product, were promoter-specific
+\cite{hsu_vitro_2003}. An early discovery by Kammerer et al.\
+\cite{kammerer_functional_1986} was that the promoter sequence downstream +1
+had a strong effect on promoter strength.  Kammerer et al.\ found this effect
+by comparing the N25 promoter with a variant constructed by changing C for A, T
+for G and vice versa for the +1 to +20 sequence of N25.  This variant was
+called N25/anti. Later, it was found that the reason for the differnce in
+promoter strength was a large increase in both the amount and the length of
+abortive transcripts produced from N25/anti compared to N25
+\cite{hsu_escherichia_1995,hsu_vitro_2003}. To comprehensively map the effect
+of the +1 to +20 sequence for transcription initiation, Hsu et al.\
+\cite{hsu_initial_2006} investigated the abortive properties of a comprehensive
+library of 43 promoter variants with a randomized +1 to +20 initial transcribed
+sequence (ITS). They showed that the sequence variation in the ITS could result
+in a 20-fold difference in the rate of productive (as opposed to abortive)
+promoter escape.  This showed that steps during early RNA synthesis can have a
+large impact on promoter escape efficiency.
 
 For a while it was speculated that abortive initiation was an \textit{in vitro}
-artefact. However, recently small abortive RNAs have been identified \textit{in
-vivo} \cite{goldman_direct_2009}. Following the discovery that abortive
-transcripts do appear \textit{in vivo}, it was not certain whether the abortive
-transcripts had any cellular function or if they were merely artefacts of the
-transcription initiation process. Yet in the last two years two studies have
-shown two different functions of these short transcripts. In one, aborted
-transcripts from the $\phi$10 promoter were found to deactivate a
-transcriptional terminator hairpin \cite{lee_tiny_2010}. In the other, short
-abortive products of 2 to 4 nucleotides in length were found to act as primers
-for the RNA polymerase \textit{in vivo} \cite{goldman_nanornas_2011};
-previously, it was not known if RNAP, unlike the DNA polymerase, could use
-primers \textit{in vivo}.
+artefact. However, small abortive RNAs have recently been identified \textit{in
+vivo} \cite{goldman_direct_2009}, demonstrating that this process occurs in
+living cells. Following the discovery that abortive transcripts do appear
+\textit{in vivo}, it was not certain whether the abortive transcripts had any
+cellular function or if they were merely artefacts of the transcription
+initiation process. Yet in the last two years two studies have shown two
+different functions of these short transcripts. In one, aborted transcripts
+from the $\phi$10 promoter were found to deactivate a transcriptional
+terminator hairpin \cite{lee_tiny_2010}. In the other, short abortive products
+of 2 to 4 nucleotides in length were found to act as primers for the RNA
+polymerase \textit{in vivo} \cite{goldman_nanornas_2011}; previously, it was
+not known if RNAP, unlike the DNA polymerase, could use primers \textit{in
+vivo}.
 
 It is still not clear if abortive initiation is rate-limiting for natural
 promoters \textit{in vivo}. However, \textit{in vitro} and \textit{in vivo}
 experiments in \textit{E. coli} have shown that the transcription factors GreA
 and GreB greatly reduce the amount of abortive initiation from the
-N25$_{\text{anti}}$ promoter \cite{hsu_escherichia_1995}, suggesting that these
-transcription factors may reduce any promoter-specific variability in abortive
-initiation in the cell.
+N25$_{\text{anti}}$ promoter \cite{hsu_escherichia_1995}. This suggest that
+abortive initiation has the potential to be rate limiting \textit{in vivo}, but
+that this potential is countered by the expression of GreA/B.
 
-GreA and GreB act by stimulating the cleavage of RNA in the active site of
-backtracked RNAP \cite{toulme_grea_2000}. Backtracked RNAP is RNAP that has
-gone backwards on DNA, which has caused the 3\p end of the nascent RNA to
-protrude out the NTP entry channel. This blocks further RNA synthesis by
-putting the RNA 3\p end out of alignment with the active site. GreA and GreB
-can rescue backtracked RNAP by cleaving RNA in the active site, thereby
-realigning the RNA 3\p end at the active site. It is thus possible that
-initially transcribing complexes on the path to abortive initiation \textit{in
-vivo} are frequently targeted by GreA/B and thus avoid extensive abortive
-cycling. In support of an \textit{in vivo} role for GreA in mitigating abortive
-initiation, it was found that GreA resolves promoter-proximal stalling of RNAP
-\cite{kusuya_transcription_2011}. However, more work is still needed to confirm
-the precise role GreA/B play in abortive initiation \textit{in vivo}.
+GreA and GreB  reduce abortive initiation by stimulating the cleavage of RNA in
+the active site of backtracked RNAP \cite{hsu_escherichia_1995}. When GreA and
+GreB stimulate cleavge of RNA in the active site, the misaligned part of RNA
+gets removed, forming a new the RNA 3\ppp end at the active site
+\cite{toulme_grea_2000}. In support of an \textit{in vivo} role for GreA in
+mitigating abortive initiation, it was found that GreA resolves
+promoter-proximal stalling of RNAP \cite{kusuya_transcription_2011}. However,
+more work is still needed to confirm the precise role GreA/B play in promoter
+escape \textit{in vivo}.
 
 \subsubsection{Transcription elongation}
-Once the $\sigma$-promoter bonds are broken, RNAP is free to elongate onto the
-downstream DNA. However, even though $\sigma$ has broken contacts with the
-promoter, it is still in a complex with RNAP which has now initiated
-elongation. There are some steps during early transcription where the nascent
-RNA is thought to weaken the link between RNAP and $\sigma$. After the nascent
-transcript reaches a length of more than 15 nucleotides, it should have
-physically displaced parts of $\sigma^{70}$ \cite{mekler_structural_2002,
-nickels_interaction_2005} in order reach the RNA exit channel. It is thought
-that $\sigma$ is released stochastically from this weakened complex, as
-sometimes $\sigma$ has been found retained with RNAP in far downstream sequences
+Once the $\sigma$-promoter bonds are broken, RNAP is free to elongate on the
+downstream DNA to undergo processive transcription initiation. However, even
+though $\sigma$ has broken contacts with the promoter, it is still in a complex
+with RNAP immediately after promoter escape. The bond between $\sigma$ and RNAP
+has, however, now been weakened as the nascent RNA has displaced parts of the
+RNAP-$\sigma$ interactions on its way to the RNA exit channel of RNAP
+\cite{mekler_structural_2002, nickels_interaction_2005}. It is thought that
+$\sigma$ is released stochastically from this weakened complex, as $\sigma$ is
+intermittently found retained with RNAP in far downstream sequences
 \cite{mooney_sigma_2005}. Several studies have found that as a consequence of
-$\sigma^{70}$ not dissociating, the still-attached sigma can rebind
-promoter-like elements during transcription elongation, causing RNAP to pause
-in its track \cite{ring_function_1996, kapanidis_retention_2005,
-raffaelle_holoenzyme_2005}.
+$\sigma^{70}$ remaining bound to RNAP after promoter escape, the still-attached
+$\sigma$ can rebind promoter-like elements during transcription elongation,
+causing RNAP to pause in its track \cite{ring_function_1996,
+kapanidis_retention_2005, raffaelle_holoenzyme_2005}. Further, to escape from
+these pauses, it has been suggested that RNAP-$\sigma$ must again undergo
+scrunching as if it were bound to a promoter at a transcription start site
+\cite{zhilina_structural_2012}.
 
-Transcription elongation happens with great processivity: RNAP can accurately
-transcribe tens of thousands of nucleotides without dissociating from DNA. In
-spite of this processivity, elongation does not happen at an even pace. RNAP
-will reproducibly pause or backtrack at certain sites
-\cite{herbert_sequence-resolved_2006}. Sometimes this pausing or backtracking
-has a regulatory function, for example to allow time for proper folding of the
-nascent RNA \cite{landick_r_regulatory_2006}. Thus transcription elongation is
-not just a mandatory step in going from gene to RNA, but yet another stage of
-transcription where regulation may take place.
+Transcription elongation (Figure \ref{fig:transcription_elongation}) happens
+with great processivity: RNAP can accurately transcribe tens of thousands of
+nucleotides without dissociating from DNA. In spite of this processivity,
+elongation does not happen at an even pace. RNAP will reproducibly pause or
+backtrack at certain sites \cite{herbert_sequence-resolved_2006}. Sometimes
+this pausing or backtracking has a regulatory function, for example to allow
+time for proper folding of the nascent RNA \cite{landick_r_regulatory_2006}.
+Thus transcription elongation is therefore not just a mandatory step to copy
+DNA sequence to RNA sequence, but also another stage of gene expression where
+regulation may take place.
 
 \subsubsection{Transcription termination}
 Eventually, RNAP will dissociate DNA and release its RNA product. Two distinct
@@ -180,5 +248,5 @@ its hold on the RNA. However, the details of the process are not clear
 \cite{nudler_transcription_2002}.
 
 In both cases, once RNA has been released, the affinity of RNAP to DNA is
-greatly reduced and RNAP itself disengages DNA. It is then free to associate
-with a $\sigma$ factor and begin transcription anew.
+greatly reduced and RNAP itself disengages DNA. When RNAP is released, it is
+free to associate with a $\sigma$ factor and begin transcription anew.
