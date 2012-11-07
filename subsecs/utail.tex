@@ -4,21 +4,20 @@ polyadenylation for any RNA-seq experiment. We developed a tool called
 \textit{Utail} (from Untranslated poly(A) tail) will output a tab-delimited
 list of all the polyadenylation sites in the experiment along with other
 statistics and data relevant for the analysis of those poly(A) sites. Utail
-will work on any Illumina or 454 RNA-seq experiment if the RNA library for that
-experiment has been prepared in a way that ensures that the sites of
-polyadenylation will be included.
+will work with data from Illumina RNA-seq experiments if the RNA library has
+been prepared in a way that ensures that the sites of polyadenylation will be
+included.
 
 Utail processes the RNA-seq data in a series of steps to go from raw data to
 polyadenylation sites. The minimum requirement for Utail is files of mapped
 RNA-seq reads. Presently, the reads must be provided either in the output
-format of the GEM mapper \cite{ribeca_gem_2010} or as Bed-files (see section X
-for input specifications). The output will be improved if a genome annotation
-(in Ensemble or GENCODE format) is supplied, but this is not necessary for
-running Utail. If a reference annotation is used, it is important that the
-annotation is based on the same version of the reference genome that the
-RNA-seq reads were mapped to.
+format of the GEM mapper \cite{ribeca_gem_2010} or as Bed-files. The output
+will be improved if a genome annotation (in Ensemble or GENCODE format) is
+supplied, but this is not necessary for running Utail. If a reference
+annotation is used, it is important that the annotation is based on the same
+version of the reference genome that the RNA-seq reads were mapped to.
 
-\subsection{Utail pipeline overview}
+\section{Utail pipeline overview}
 
 Utail takes the mapped RNA-seq data through the following pipeline:
 \begin{enumerate}
@@ -87,7 +86,7 @@ chromosome, strand, number of reads in the cluster, if the site has been
 annotated, and if there is a PAS withing 40 nucleotides and the distance to
 this PAS.
 
-\subsection{Requirements and repository}
+\section{Requirements and repository}
 Utail can be obtained from its Git repository git@github.com:jorgsk/Utail.git.
 In runs in a Linux/Unix environment and has the following requirements:
 \begin{itemize}

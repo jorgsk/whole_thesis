@@ -1,0 +1,170 @@
+%\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+The three topics that have been investigated in this thesis -- sequence
+dependent abortive initiation, sequence dependent translation initiation, and
+sequence dependent cleavage and polyadenylation -- all center around how the
+genetic code regulates gene expression at these different levels.
+
+When working with these projects we have made use of two distinct bioinformatic
+approaches. For transcription and translation initiation we worked with
+thermodynamic calculations in a gene-centric manner, while for the 3\ppp
+cleavage and polyadenylation study we analyzed next generation sequencing data
+to perform a genome-wide investigation. Having both these approaches in this
+thesis illustrates well the methodological contrast that exists in biology
+today, where ``-omic'' studies are increasingly finding applications in areas
+that were previously only studied with traditional molecular biology
+techniques.
+
+What follows is a discussion of the way these two approaches have been used in
+this thesis to provide new knowledge about gene expression. Additionally, the
+two approaches will be compared in terms of how they facilitate different
+research strategies and how the lead to different kinds of research challenges.
+A summary of this discussion is given in Table \ref{tab:discussion_summary}.
+
+\begin{table}[hb]
+	\begin{center}
+		\begin{tabular}{lcc}
+			\toprule
+			 & Genome-wide & Gene-centric \\
+			\midrule
+			 Experiments &  &  \\
+			 Data type &  &  \\
+			 Interpretation of data &  &  \\
+			 Etc? Scour the text kthnx. &  &  \\
+		\end{tabular}
+	\end{center}
+	\caption{A summary of the discussion.}
+\end{table}
+
+\subsection{Data, research strategies, and challenges}
+What fundamentally separates genome-wide and gene-centric studies in general
+are the underlying data. The data from the transcription initiation study were
+in terms of radioactive intensity of gel-migrating RNA oligonucleotides and was
+generated \textit{in vitro}. This kind of data is straightforward to interpret
+(abortive and full length RNA), and in the controlled, \textit{in vitro}
+experimental set-up it is easy to perturb the input DNA sequence to achieve
+variation in the output for hypothesis testing. The data from the work on
+translation initiation were from western-blots and RT-PCR. Again the
+interpretation of the data is relatively straightforward (relative protein and
+mRNA concentrations).
+
+Since the data from these gene-centric experiments were easy to interpret and
+low in volume, they did not require extensive filtering or heavy computational
+analysis. Importantly, this means that less time was devoted to data management
+and data analysis, and more time was spent on interpretation of the biological
+meaning of the experiments. In other words, for the gene-centric studies the
+challenge was to understand the biological mechanism that was studied. For
+translation initiation we needed to understand which steps during gene
+expression are affected by mutations around the 5\ppp ribosome binding site.
+For transcription initiation we had to combine how RNA polymerase moves
+relative to DNA with abortive RNA synthesis; the challenge was to relate how
+the equilibrium constant of translocation was linked with the abortive release
+of short RNA.
+
+On the other hand, the RNA-seq data underlying the study of 3\ppp cleavage and
+polyadenylation imposed a different strategy for this project. Due to the size
+and complexity of the data, the main challenge for the work was handling,
+filtering, and processing the data. Much time was devoted to constructing the
+analysis pipeline named Utail that was used for data filtering and analysis.
+The datasets from all the different cell lines and compartments were over 1
+terabyte in uncompressed form and took two days to process with the Utail
+pipeline with a powerful, multi-core workstation. As a direct consequence of
+the data-challenge, there was less time devoted to the study of the biological
+mechanism. Perhaps anticipating that this would be the case, the initial goal
+for the project was made general: to characterize polyadenylation in different
+cell compartments for different human cell lines. This is in contrast to the
+more detailed, mechanism-oriented goals for the gene-centric experiments,
+namely the movement of RNAP relative to DNA and the binding of the ribosome to
+mRNA.  Since less time was spent on the computational aspect, the gene-centric
+approach facilitated collaboration with wet-lab biologists about the biological
+problem itself. The direct involvement of wet-lab biologists with the core
+scientific problem is a likely reason why these studies resulted in follow up
+experiments.
+
+To end this part of the discussion, here follows a quote from a recent review
+by N. Proudfoot called ``Ending the message: poly(A) signals then and now''
+\cite{proudfoot_ending_2011}. Using early Sanger-like sequencing techniques in
+1976, Proudfoot was the original discoverer of the AAUAAA hexamer, and deduced
+both that this was the signal for polyadenylation and that the signal was
+conserved across mammals \cite{proudfoot_3_1976}. In this regard, Proudfoot is
+in a good position to comment on the recent surge in genome-wide
+polyadenylation studies. He writes \cite{proudfoot_ending_2011}:
+
+``It is abundantly clear that bioinformatic analysis of genomic data has
+provided invaluable generality to our understanding of PAS [polyadenylation
+signal] function in gene expression. However, current genome-wide analyses
+often only provide bioinformatic correlations and lack direct functional
+experimentation. Genomic analysis will only achieve its full potential when
+bioinformatics can be matched by hypothesis-driven experimental approaches.''
+
+\subsection{Contribution to knowledge about gene expression} Due to their
+differences in underlying data and study approach, the genome-wide and
+gene-centric studies are bound to give rise to different types of biological
+research questions that can be asked and answered. In chapter \ref{chap:celB}
+we were able to point to ribosome binding as a limiting factor for the
+heterologous expression of \textit{inf-$\alpha$2b}. This is a specific type of
+information for a specific gene, but it does verify previous reports that
+translation initiation can be a bottleneck for heterologous expression, thereby
+adding to an existing body of evidence. The study also reinforced the message
+that using RNA-RNA folding energy from secondary structures is a useful
+approach to augments standard techniques in molecular biology like RT-PCR and
+western blot when working with optimization of gene expression.
+
+In chapter \ref{chap:initiation_paper} we solved the puzzle of why abortive
+initiation is sequence dependent: it is because the initial transcribed
+sequence affects RNAP's translocation bias, which we in turn linked to the
+probability of backtracking and abortive RNA release. Even though this study
+used only the N25 promoter, these results are likely to hold for all strong
+promoters that undergo abortive initiation. Crucially, this study linked
+several topics that had not been linked together before. First, it approximated
+equilibrium constants of translocation from those of pyrophosphorolysis;
+thereafter it linked translocation to the efficiency of promoter escape, before
+finally completing the logical circuit by reasoning that backtracking from the
+pre-translocated state is the rate limiting step during transcription
+initiation. When we began the transcription initiation study we used the free
+energies of the RNA-DNA and DNA-DNA duplexes to study transcription initiation.
+These were at that time the known components to regulate translocation by RNAP.
+However, it turned out that the free energy of the interaction between the RNA
+3\ppp dinucleotide and the RNAP active site was the most important variable in
+the study. This is a good example of how one sets out by building on the
+existing knowledge (the RNA-DNA hybrid and DNA-DNA bubble regulate RNAP
+translocation), and ends up adding a new component (free energy associated with
+the 3\ppp dinucleotide matters more).
+
+The main message from the study chapter \ref{chap:polyA} is that
+polyadenylation sites inferred from RNA-seq vary between different genomic
+regions for different cellular compartments. In particular, we found that there
+was a substantial increase in polyadenylation sites from poly(A)- RNA in the
+intergenic regions of nuclear extract that was not present in the poly(A)+ RNA.
+This may be an indication of regulation by gene expression through
+degradation-related polyadenylation of intronic RNA. This contribution to the
+understanding of gene expression is of a different kind than for the
+gene-centric studies. Instead of analyzing a particular aspect of
+polyadenylation, we looked broadly were able to identify general patterns. In
+turn, this result should be used to investigate how intronic RNA is degraded in
+mammalian cells. As such, the outcome of the genome-wide study becomes a
+roadmap from which hypotheses can be formed.
+
+%It is almost 33 years since abortive initiation was first discovered
+%\cite{carpousis_cycling_1980}. After that, it took 6 years to document that the
+%ITS affected promoter escape and abortive initiation
+%\cite{kammerer_functional_1986}. Still after that, it took 10 more years for a
+%comprehensive study to be published about how the sequence in the ITS affects
+%the amount of full length and the amount of abortive product from a promoter
+%\cite{hsu_initial_2006}. Further five years passed before the publication of
+%the parameters for RNAP translocation that were used in this thesis to describe
+%promoter escape efficiencies \cite{hein_rna_2011}.
+
+%After these almost 33 years we have now shown that the \textit{in vitro}
+%promoter escape efficiency for the \textit{E. coli}-infecting N25 phage
+%$\sigma^{70}$-dependent promoter is strongly affected by the equilibrium of
+%translocation during the initial transcription steps, presumably by affecting
+%the probability of backtracking-induced abortive initiation. Now one must ask,
+%how well does this translate to \textit{in vivo} conditions? What about the
+%thousands of other $\sigma^{70}$ promoters? And what about the promoters of
+%other $\sigma$ factors? What about other species that \textit{E. coli}? Does
+%this also apply for eukaryotic cells, for which abortive initiation is also
+%observed \cite{pal_initiationelongation_2003}? Perhaps 30 more years will pass
+%before even the easiest of these questions are elucidated. Until that time,
+%every integrative, complex model of gene expression in \textit{E. coli} must be
+%made without a full understanding of transcription initiation and promoter
+%escape.

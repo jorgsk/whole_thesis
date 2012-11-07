@@ -1,0 +1,154 @@
+%\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+Computational models of transcription can be used alongside wet-lab experiments
+to improve our knowledge of transcription. These models have two main uses: the
+first is to benchmark our existing biological models for transcription by
+fitting to experimental data, and the second is to improve the biological
+models by changing the computational models to see how the fit to experimental
+data changes.
+
+\subsubsection{The nucleotide addition cycle and the equilibrium assumption of
+translocation}
+At the core of any computational model of transcription would lie a
+mathematical description of all or parts of the nucleotide addition cycle (NAC)
+(see Figure \ref{fig:nac_1}). In a two-step description, the NAC consists of a
+reversible translocation step, where the RNAP active site is made available for
+NTP binding, and a synthesis step, where an incoming bound NTP is added to the
+3\ppp end of the growing RNA chain. For most published computational models of
+transcription, a key assumption about the NAC is that the reversible
+translocation step attains equilibrium before NTP synthesis step
+\cite{greive_thinking_2005,bai_mechanochemical_2007,guajardo_model_1997}.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{illustrations/sysbio/nucleotide_addition_cycle_1.pdf}
+	\end{center}
+	\caption{The nucleotide incorporation cycle proceeds through
+	translocation and NTP incorporation. Before NTP binding, RNAP is in the
+	pre-translocated state. RNAP then translocates, putting it in the
+	post-translocated state. In the post-translocated state, NTP can bind.
+	After the incoming NTP has been incorporated onto the 3\protect\ppp end of
+	the RNA, RNAP is once again in the pre-translocated state.}
+	\label{fig:nac_1}
+\end{figure}
+
+While it is difficult to conclusively demonstrate that the equilibrium
+assumption always holds true, it does facilitate the description of
+translocation with an equilibrium equation:
+\begin{equation}
+	Keq = e^{-\frac{\Delta G_{\text{RNA-DNA}} + \Delta
+	G_{\text{DNA-DNA}} + \Delta G_{\text{RNAP}}}{RT}}.
+	\label{eq:rnap_energy_balance}
+\end{equation}
+This equation contains the terms currently believed to play a role in RNAP
+movement, namely the free energy change of the RNA-DNA hybrid ($\Delta
+G_{\text{RNA-DNA}}$), the DNA-DNA transcription bubble ($\Delta
+G_{\text{DNA-DNA}}$) \cite{greive_thinking_2005}. By calculating these energies
+for all possible reaction pathways for RNAP (such as translocation,
+backtracking, or RNA release), one can presumably find the pathway that is most
+energetically favorable, and thus map out the movement of RNAP on DNA.
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{illustrations/sysbio/nucleotide_addition_cycle_2.pdf}
+	\end{center}
+	\caption{Calculating the equilibrium constant of translocation allows
+	modeling of the movement of RNAP along DNA during transcription.}
+	\label{fig:nac_2}
+\end{figure}
+
+This conceptual model of RNAP movement seems orderly: one needs only to
+calculate the change in free energy -- from available energy tables
+\cite{wu_temperature_2002, santalucia_thermodynamics_2004} -- to find out if
+RNAP will move forward, backtrack, pause, or terminate at any given location on
+DNA.
+
+\subsubsection{Computational models of transcription elongation}
+Several kinetic and thermodynamic models of transcription elongation have been
+published \cite{tadigotla_thermodynamic_2006, bai_sequence-dependent_2004,
+guajardo_model_1997, yager_thermodynamic_1991}. What they have in common is
+that in some form they incorporate the terms from
+\eqref{eq:rnap_energy_balance} and calculate the $\Delta G_{\text{RNA-DNA}}$
+and $\Delta G_{\text{DNA-DNA}}$ terms in the equation
+\eqref{eq:rnap_energy_balance}. In the case of Tadigotla et al.\
+\cite{tadigotla_thermodynamic_2006} the free energy from the nascent RNA
+secondary structure close to the RNA exit channel is used as well; this is for
+the purpose of modeling the effect of RNA structures in preventing backtracking
+of RNAP. Since RNA secondary structures form co-transcriptionally, these
+structures provide a barrier to prolonged backtracking of RNAP
+\cite{zamft_nascent_2012}.
+
+The early computational models of transcription had only partial predictive
+power. For example, Tadigotla et al.\ \cite{tadigotla_thermodynamic_2006}
+predict pause sites during transcription elongation. While their best optimized
+model manages to identify 84\% of pauses, only 68 \% of their predicted pause
+sites overlapped with experimentally identified pause sites, indicating a large
+number of false positives. The model of Bai et al.\
+\cite{bai_mechanochemical_2007} was published without any statistical measures,
+making it difficult to interpret. Instead, Tadigotla et al.\ implemented the
+algorithm from Bai et al.\ and found that the Bai et al.\ model performed
+little better than average for detecting pausing
+\cite{tadigotla_thermodynamic_2006}. These models signalled that more work
+needed to be done before a truly descriptive model of transcription would be at
+hand.
+
+Recently, Maoiléidigh et al.\ published a model of transcription elongation
+which fitted well several parameters of transcription measured by
+single-molecule experiments \cite{o_maoileidigh_unified_2011}. To adapt their
+model to the results, they had to include an unobserved intermediary state
+between processive translocation and backtracking
+\cite{o_maoileidigh_unified_2011}. In addition, their model suggests that
+translocation does not occur as an equilibrium reaction, which is counter to
+previous assumptions as already mentioned.
+
+One possible reason why Maoiléidigh et al.\ reach the conclusion that
+translocation does not occur in equilibrium could be because they use only the
+free energy change of the DNA bubble and RNA-DNA hybrid to calculate
+translocation \cite{o_maoileidigh_unified_2011}. After Maoiléidigh et al.\
+published their model, it was found by Hein et al.\ \cite{hein_rna_2011} that
+the 3\ppp dinucleotide of the nascent RNA has a strong effect on translocation
+rates. Hein et al.\ found that if the 3\ppp nucleotide of the RNA was U, RNAP had a
+much stronger preference for the pre-translocated state than if the 3\ppp
+nucleotide was G. This finding was followed up by Malinen et al.\
+\cite{malinen_active_2012} who propose that contacts between the RNA 3\ppp end
+and the RNAP active site determine the preference for the pre-translocated or
+the post-translocates states. The findings by Hein et al.\ and Malinen et al.\
+would partially invalidate previous computational uses of translocation, such
+as those by Maoiléidigh et al.\ which led to the conclusion that translocation
+is not an equilibrium reaction.
+
+\subsubsection{A computational model of transcription initiation}
+In addition to the above described models of transcription elongation, one
+model bye Xue et al.\ \cite{xue_kinetic_2008} has previously been published for
+transcription initiation.
+
+The key differences between transcription initiation and transcription
+elongation for the sake of modeling are that during initiation i) RNAP is bound
+to the promoter via sigma, ii) the DNA-DNA bubble is scrunched and pulled into
+RNAP, and iii) the RNA-DNA hybrid lacks its full length until the active site
+has reached +9/10. By incorporating these changes into equation
+\eqref{eq:rnap_energy_balance}, one can model transcription initiation in a
+similar manner as for elongation.
+
+The model by Xue et al.\ takes as input the ITS of a promoter and predicts
+measurable output such as the probability of abortively release nascent RNA at
+a given position, and the ratio of abortive to successful initiation attempts.
+The model is able to accurately predict the maximum size of abortive transcript
+and the abortive to productive ratio of the N25 promoter, however the model
+does not mange to predict the abortive probabilities in the ITS. Some criticism
+of this study is that only the data from the N25, N25$_{anti}$ and T7A1
+promoters were investigated, even though an equivalent but more comprehensive
+dataset with 43 ITS variants was available \cite{hsu_initial_2006}. Further,
+the T7A1 promoter has sequence variation in the core promoter sequence compared
+to the other two, which only vary in the ITS.  Variation in core promoter
+sequence has been shown to affect rates of abortive initiation
+\cite{vo_vitro_2003-1}, yet the model does not taken this into account in the
+model. This makes it difficult to compare the model output between the three
+promoters.
+
+In conclusion, the study by Xue et al.\ was the first quantitative model for
+transcription initiation, and the model managed to predict some experimentally
+measured parameters. However, the model was not used predictively, making it
+difficult to conclude how much of the dynamics of transcription initiation it
+truly captures. In the field of transcription initiation, it remains to be
+published a quantitative model with predictive power that gives new insight
+into the process itself.

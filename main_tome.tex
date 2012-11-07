@@ -3,21 +3,14 @@
 \documentclass[]{ntnuthesis}
 
 % A new package for bibliography
-% Use biber for bibtex and pdflatex instead of latex
-%\usepackage[backend=biber, url=true]{biblatex}
-%\usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
-%url=false, sort=false]{biblatex}
+% Use biber for biblatex and pdflatex instead of latex
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
 url=false, sorting=none, refsection=section]{biblatex}
+
 \usepackage[font=footnotesize, labelfont=bf, labelsep=endash]{caption}
 % new from biblatex
 \addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-
-\usepackage{fontspec}
-
-% Support for unicode. Should be unnecessary.
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
+\usepackage{fontspec} % must use this one with xelatex
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
@@ -27,33 +20,32 @@ url=false, sorting=none, refsection=section]{biblatex}
 \usepackage{placeins} % stop floats from going everywhere with \FloatBarrier
 \usepackage{pdfpages} % allow the inclusion of PDF papers
 
-% Proper space and font for integral differential term
-\newcommand{\dd}{\; \mathrm{d}} 
-% Shorcut for ODEs with proper font
-\newcommand{\diff}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
-% Shortcut for PDEs with proper font (shortcut: PDB)
-\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pdiffn}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+% get colored code formatting (needs Pygments and manual minted.sty install)
+\usepackage{minted}
 
 \usepackage{rotating} % make your own prime symbol
 \usepackage{adjustbox} % make your own prime symbol
-% make primes
-\newcommand*{\p}{\adjustbox{raise=0.4ex, right=0.56ex}{\scalebox{0.7}{$'$}}\;}
-\newcommand*{\pp}{\adjustbox{raise=0.4ex, right=0.56ex}{\scalebox{0.7}{$'$}}\;\,}
 
-% Absolute value and norm commands.
-% Read the mathtools.pdf to fix these!
-\providecommand{\abs}[1]{\lvert#1\rvert} 
-\providecommand{\norm}[1]{\lVert#1\rVert}
+% make primes
+\newcommand*{\ppp}{\adjustbox{raise=0.4ex, right=0.56ex}{\scalebox{0.7}{$'$}}\;}
+
+% Try to get the dropcap thing for pnas to work
+\usepackage{type1cm} % scalable fonts
+\usepackage{lettrine}
+\newcommand{\dropcap}{\lettrine[lines=2,slope=-4pt,nindent=-4pt]}
+
+% For adding fake sections to the TOC for the .pdf papers at the end
+\providecommand\phantomsection{}
 
 % Set the depth of section numbering
 \setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
 
-\title{Regulation of gene expression by untranslated regions}
-\author{J\o rgen Skancke}
-%\subtitle{The unlikely story of how you got scammed into buying this thesis and
-%loved every part of it}
+\title{The beginning and the end of gene expression}
+\author{Jørgen Skancke}
+
 \degreetype{philosophiae doctor}
+
 \faculty{The Faculty of Natural Sciences and Technology}
 \department{Department of Chemical Engineering}
 
@@ -64,18 +56,16 @@ url=false, sorting=none, refsection=section]{biblatex}
 \frontmatter
 
 \maketitle
-\chapter*{Abstract}
-\begin{quotation}
+\chapter*{Summary}
 \noindent
-	\input{subsections/abstract.tex}
-\end{quotation}
+	\input{subsecs/summary.tex}
 \clearpage
 
-\addcontentsline{toc}{chapter}{Abstract}
+\addcontentsline{toc}{chapter}{Summary}
 
-\chapter*{Acknowledgements}
-\input{subsections/acknowledgements.tex}
-\addcontentsline{toc}{chapter}{Acknowledgements}
+%\chapter*{Acknowledgements}
+%\input{subsecs/acknowledgements.tex}
+%\addcontentsline{toc}{chapter}{Acknowledgements}
 
 % Uncomment this when you get to this stage
 \pagenumbering{roman}
@@ -85,68 +75,97 @@ url=false, sorting=none, refsection=section]{biblatex}
 
 \mainmatter
 
+\chapter{Introduction}
+\section{Overview}
+\input{subsecs/new_introduction.tex}
+\FloatBarrier
+%\printbibliography
+\newpage
+
 %\chapter{Introduction}
 
-%\input{subsections/gene_expression_general.tex}
+\chapter{Computational methods}
+\begin{minted}[fontsize=\scriptsize]{python}
+
+def changelog(x, time='inf'):
+    for x in range(10):
+        if x == 10:
+            break
+        else:
+            print 'NOH!'
+
+\end{minted}
 
 %\section{Transcription initiation in bacteria}
+%\input{subsecs/transcription_forword.tex}
 %\subsection{Biochemical background}
-%\input{subsections/transcription_background.tex}
+%\input{subsecs/transcription_background.tex}
 %\subsection{Computational models}
-%\input{subsections/transcription_computation.tex}
-%\printbibliography
+%\input{subsecs/transcription_computation.tex}
+%%\printbibliography
+\newpage
 
 %\section{Translation initiation in bacteria}
-%\input{subsections/translation_background.tex}
-%\printbibliography
+%\input{subsecs/translation_background.tex}
+%%\printbibliography
+\newpage
 
-%\section{Transcription termination in eukaryotes}
-%\input{subsections/polyadenylation.tex}
-%\printbibliography
+%\section{Transcription termination in eukaryotes and RNA sequencing}
+%\input{subsecs/termination_foreword.tex}
+%\input{subsecs/termination_transcription.tex}
+%\input{subsecs/rna_seq.tex}
+%%\printbibliography
+\newpage
 
-%\section{High throughput RNA sequencing}
-%\input{subsections/rna_seq.tex}
-%\printbibliography
+%%Should you add this to the backtracking paper as a subsection?
+%%\chapter{Backtracking originates from the pre-translocated state}
+%%\subimport{../my_papers/rna-dna-paper/case_for_and_against/}{mechanism_forthesis.tex}
 
-%\part{Regulation of transcription and translation initiation in the 5\protect\p
-%untranslated region}
+%\chapter{Investigating RNA secondary structure as a barrier to protein
+%synthesis}
+%\label{chap:celB}
+%\input{subsecs/celB_pelB_introduction.tex}
 
-%% Abortive initiation
-%\chapter{Abortive transcription initiation is regulated by the free energy of
-%the scrunched DNA bubble and translocation bias}
+%\chapter{RNAP translocation bias determines the efficiency of promoter escape}
+%\label{chap:initiation_paper}
 %\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
-%\subimport{../my_papers/rna-dna-paper/case_for_and_against/}{mechanism_forthesis.tex}
+%\FloatBarrier
 
-%% Infa2b expression
-%\chapter{Project with Veronika -- bioinformatic approach to achieve expression
-%of infa2b in \textit{E coli}}
-%\input{subsections/celB_pelB_introduction.tex}
-
-%% Friedrieke paper -> moving a structure
-%\chapter{Increasing translation initiation by clearing the ribosome binding
-%site of a strong secondary structure}
-%\input{subsections/friederieke_summary.tex}
-
-%% Polyadenylation
-%\part{Using RNA-seq for indentification of sites of RNA cleavage and
+%\chapter{Using RNA-seq to investigate RNA 3\protect\ppp cleave and
 %polyadenylation}
+%\label{chap:polyA}
+%\input{subsecs/polyA_results.tex}
+%%\printbibliography
 
-%\chapter{Contibution to ENCODE paper}
-%\input{subsections/polyA_results.tex}
+%\chapter{Discussion and Conclusion}
+%\section{Discussion}
+%\input{subsecs/discussion.tex}
+%\section{Conclusion}
+%\input{subsecs/conclusion.tex}
+%%\printbibliography
 
 %\appendix
 %\chapter{Utail -- finding poly(A) sites from short read data}
-%\input{subsections/utail.tex}
+%\input{subsecs/utail.tex}
+%\label{utail}
+%%\printbibliography
 
-%\chapter{Publications}
+%\chapter{Attached publications}
 
-%\section{Landscape of Transcription in Human Cells}
-%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+%\clearpage
+%\chapter*{Landscape of transcription in human cells}
+%\label{landscape}
+%\addcontentsline{toc}{chapter}{Landscape of transcription in human cells}
+%%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
 
-%\section{5\protect\p fusion partners for heterologous expression in
-%\textit{E. coli}}
-%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
-
-%\printbibliography
+%\clearpage
+%\chapter*{Testing and optimization of short DNA sequences that can be used as
+%5\protect\ppp fusion partners for high level expression of heterologous genes
+%in \textit{Escherichia coli}}
+%\addcontentsline{toc}{chapter}{Testing and optimization of short DNA sequences
+%that can be used as 5\protect\ppp fusion partners for high level expression of
+%heterologous genes in \textit{Escherichia coli}}
+%\label{vero_paper}
+%%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
 
 \end{document}
