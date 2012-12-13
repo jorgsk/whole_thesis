@@ -1,15 +1,14 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-
-This chapter concerns the investigation of polyadenylation sites from RNA-seq
-data. I developed a software called Utail (detailed in the Appendix on page
-\pageref{utail}) and ran it on RNA-seq data to characterize polyadenylation
-sites in 12 human cell lines. Parts of the analysis was published as part of
-the ENCODE project by Djabeli et al.\ in the paper ``Transcription landscape of
-human cells'', which is attached on page \pageref{landscape} in the Appendix.
+This chapter is about the investigation of polyadenylation sites using RNA-seq
+data. We developed a pipeline, called Utail, for finding polyadenylation sites
+from RNAs-seq, and ran it on RNA-seq data to characterize polyadenylation sites
+in 12 human cell lines. Parts of the analysis was published as part of the
+ENCODE project in the paper ``Transcription landscape of human cells'', which
+is attached on page \pageref{landscape} in the Appendix, by Djabeli et al.\.
 We begin this chapter by briefly explaining what the ENCODE project is about.
-Then I summarize the findings in the Djabeli et al. and my contribution to it.
-Finally I cover the findings from my investigation that were not included in
-the paper.
+Then we summarize the findings in the Djabeli et al.\ paper and the
+contribution from this thesis work to the paper. Finally we cover the findings
+from the investigation that were not included in the paper.
 
 \section{The ENCODE pilot project}
 The complete human genome was published in 2003 (augmenting the working draft
@@ -42,7 +41,7 @@ published \cite{consortium_integrated_2012}.
 The paper by Djabeli et al.\ focuses in on the RNA-seq data from ENCODE in
 order to characterize the transcriptome of human cell lines. They found that
 the cumulative RNA coverage for 15 human cell lines is 62\% for processed
-transcripts and 75\% for primary transcripts (e.g. pre-mRNA). In other words,
+transcripts and 75\% for primary transcripts (e.g.\ pre-RNA). In other words,
 three quarters of the human genome is transcribed. However, the average
 transcript coverage for each cell line was 22\% and 39\% for processed and
 primary transcripts. This tells us that while most of the genome is capable of
@@ -71,27 +70,18 @@ annotated transcripts, 80\% of which were not previously annotated. The last
 finding suggest that transcription start sites are generally better annotated
 than transcript end sites.
 
-\section{My contribution}
-My contribution to the paper was the identification of the 129.000
-polyadenylation sites in annotated regions.
+\section{Contribution}
+Below are presented the results from the investigation of polyadenylation in
+human cell lines using GENCODE RNA-seq data. The parts of the results from this
+investigation that were included in the paper by Djabeli et al.\ was that are
+that around 129.000 polyadenylation sites were identified in annotated regions
+from the GENCODE RNA-seq data, and that 80\% of these sites, although landing
+in annotated regions, were not previously annotated as polyadenylation sites.
+The inclusion of the analysis of polyadenylation sites make up an important
+contrast to the investigation of transcription start sites which also features
+in the paper.
 
 \section{Results}
-When investigating the polyadenylation sites for the Djabeli et al.\ paper,
-many results came up that were not included in the paper due to limitations in
-space. Here follow those results.
-
-\subsection{Dataset}
-The analysis of RNA-seq data has become a successful approach for studying
-genome-wide patterns of polyadenylation \cite{shepard_complex_2011,
-ozsolak_comprehensive_2010}. However, the dataset used in this analysis is
-different from most RNA-seq libraries that have been used to study
-polyadenylation. Prior to sequencing, cells have been separated in to
-cytoplasmic and nuclear fractions. Data is therefore available for whole cell,
-cytoplasmic, an nuclear RNA. Further, all compartments were further separated
-into poly(A)+ and poly(A)- fractions before sequencing. As previously
-mentioned, the poly(A)+ fraction of an RNA sample contains all the RNA that is
-captured by a poly(T) primer. This includes all RNA with a poly(A) tail of more
-than 20 nucleotides (the length of the poly(T) primer).
 
 \subsection{Total number of polyadenylation sites}
 By merging all polyadenylation sites from all datasets (see Table
@@ -99,47 +89,53 @@ By merging all polyadenylation sites from all datasets (see Table
 the genome for the poly(A)+ fraction, around 129.000 of which were in annotated
 regions. 94040 or 58\% of these sites were found with a downstream PAS (within
 40 nt) and 33054 or 20\% were previously annotated in GENCODE or in polyAdb
-\cite{lee_polya_db_2007}. In addition, we found 57.031 polyadenylation sites
-for the poly(A)- fraction, many of which overlapped the polyadenylation sites
-in the poly(A)+ fraction.
-
-Figure \ref{fig:saturation} shows how the number of polyadenylation sites
-saturates as the number of included datasets increases. The saturation is
-sharper both for polyadenylation sites which we found to have a downstream
-PAS and sites supported by PET data. The saturation of polyadenylation sites is
-sharper for the poly(A)- fraction (Figure \ref{fig:saturation}B), and fewer of
-the poly(A)- sites are associated with PAS or PET.
+\cite{lee_polyadb_2007}. In addition, we found 57.031 polyadenylation sites for
+the poly(A)- fraction, many of which overlapped the polyadenylation sites in
+the poly(A)+ fraction. Figure \ref{fig:saturation} shows how the number of
+polyadenylation sites saturates as the number of included datasets increases.
+The saturation is sharper both for polyadenylation sites which we found to have
+a downstream PAS and sites supported by PET data. The saturation of
+polyadenylation sites is sharper for the poly(A)- fraction (Figure
+\ref{fig:saturation}B), and fewer of the poly(A)- sites are associated with PAS
+or PET.
 
 \subsection{Distribution of polyadenylation sites across the genome}
 As expected, we found that most of the polyadenylation sites were in the 3\ppp
 UTR exonic regions, but we located many polyadenylation sites in the intergenic
 and intronic regions as well (Figure \ref{fig:sidebars}). In the poly(A)+
-fraction, there is more intronic polyadenylation sites in the nucleus than in the
-cytoplasm. This was to a certain degree expected since there is much more
+fraction, there were more intronic polyadenylation sites in the nucleus than in
+the cytoplasm. This was to a certain degree expected since there is much more
 intronic RNA in the nucleus compared to the cytoplasm. However, introns do
-naturally exist in the cytoplasm. Some are included as part of the final mRNA
-(called intron inclusion), and some are included if an intron contains an
-active poly(A) site \cite{tian_widespread_2007}. The number of polyadenylation
-sites in the other genomic regions, such as the 5\ppp UTR and 3\ppp UTR
-intronic regions, was low and is not shown in Figure \ref{fig:sidebars}.
+naturally exist in the cytoplasm. Some can be included as part of the final
+mRNA (intron inclusion), and some can be included if an intron contains an
+active polyadenylation site \cite{tian_widespread_2007}. The number of
+polyadenylation sites in the other genomic regions, such as the 5\ppp UTR and
+3\ppp UTR intronic regions, was low and is not shown in Figure
+\ref{fig:sidebars}.
 
 The evidence for polyadenylated RNA in the poly(A)- fraction (Figure
 \ref{fig:sidebars}B) was unexpected, since the poly(A)- fraction is by design
-not supposed to contain RNA with poly(A) tails. We propose that the
-polyadenylated RNA in the poly(A)- fraction have three possible sources (shown
-in Figure \ref{fig:S123}). The first source (S1) is purely technical: normal
-poly(A)+ mRNA with full length poly(A) tails may not get adsorbed during the
-poly(A)+ filtration step and therefore end up in the poly(A)- fraction. Source
-two (S2) and source three (S3) are on the other hand of biological origin. S2
-is RNA with poly(A) tails that are shorter than 20nt, which is the threshold
-length of poly(A) tails that are captured by the poly(A)+ filtration step. One
-type of S2 RNA are mRNA which have had their polyA tails degraded to below 20
-nucleotides, which happens during mRNA degradation, at the time of sampling.
-Another type of S2 RNA are mRNA that were actively undergoing polyadenylation
-at the time of sampling and did not reach a poly(A) tail length of more than 20
-nucleotides. Source three (S3) on the other hand is distinct from S1 and S2. We
-propose that S3 consists of RNA with the short, degradation-related transient
-poly(A) tails that have been identified in the nucleus of mammalian cells
+not supposed to contain RNA with poly(A) tails. We reasoned that the
+polyadenylated RNA in the poly(A)- fraction could have three possible sources
+(shown in Figure \ref{fig:S123}).
+
+The first source (S1) is purely technical: normal poly(A)+ mRNA with full
+length poly(A) tails that were not adsorbed during the poly(A)+ filtration step
+and therefore ended up in the poly(A)- fraction.
+
+Source two (S2) and source three (S3) are on the other hand of biological
+origin. S2 is RNA with poly(A) tails that are shorter than 20nt, which is the
+threshold length of poly(A) tails captured by the poly(A)+ filtration
+step. One type of S2 RNA are mRNA which have had their poly(A) tails degraded to
+below 20 nucleotides at the time of sampling. Poly(A) tail degradation is part
+of the mRNA degradation pathway, and some mRNA are bound to be undergoing
+degradation at the time of sampling. Another type of S2 RNA are mRNA that were
+actively undergoing polyadenylation at the time of sampling and did not reach a
+poly(A) tail length of more than 20 nucleotides.
+
+Source three (S3) on the other hand is distinct from S1 and S2. We propose that
+S3 consists of RNA with the short, degradation-related transient poly(A) tails
+that have been identified in the nucleus of mammalian cells
 \cite{lemay_nuclear_2010}.  These RNA may be aberrant rRNA
 \cite{shcherbik_polyadenylation_2010}, aberrant pre-mRNA
 \cite{west_adenylation_2006}, or possibly intronic RNA undergoing degradation
@@ -149,31 +145,31 @@ poly(A) tails that have been identified in the nucleus of mammalian cells
 	\begin{center}
 		\includegraphics[scale=0.5]{illustrations/S1S2S3.pdf}
 	\end{center}
-	\caption{Different proposed origins of polyadenylation signals in poly(A)-.
-	\textbf{S1} RNA is a result of random error in the technical separation of poly(A)+
-	and poly(A)- RNA. \textbf{S2} RNA is the result of polyadenylated mRNA which have a
-	short poly(A) tail at the moment of sampling, either due to early
-	polyadenylation in the nucleus (upper) or degradation in the cytoplasm
-	(lower). \textbf{S3} RNA are proposed to be RNA undergoing
+    \caption{Different proposed origins of polyadenylation signals in poly(A)-.
+    \textbf{S1} RNA is a result of random error in the technical separation of
+    poly(A)+ and poly(A)- RNA. \textbf{S2} RNA is the result of polyadenylated
+    mRNA which have a short poly(A) tail at the moment of sampling, either due
+    to early polyadenylation in the nucleus (upper) or degradation in the
+    cytoplasm (lower). \textbf{S3} RNA are proposed to be RNA undergoing
 	poly(A)-dependent degradation in the nucleus.}
 	\label{fig:S123}
 \end{figure}
 
 \subsection{Isolating polyadenylation sites unique to the poly(A)- and poly(A)+
 fractions}
-We wanted to separate the S3 from the S1 and S2 polyadenylation sites in the dataset.
-We did this by assuming that many of the S1 and S2 sites are likely to be
-present in both the poly(A)- and the poly(A)+ fractions, since these sites by
-definition are normal polyadenylated RNA that have ended up in the poly(A)-
-fraction. Therefore, we filtered out all the polyadenylation sites that were common to
-the poly(A)+ and poly(A)- fraction and removed these from both fractions. After
-removing the polyadenylation sites common to poly(A)- and poly(A)+, a difference
-emerged in the now ``pure'' fractions. As can be seen in in Figure
-\ref{fig:sidebars_intersect}, almost no polyadenylation sites were found in the pure
-poly(A)- fraction of the cytoplasm. The pure nuclear poly(A)- fraction has
-fewer polyadenylation sites in the 3\ppp UTR exonic region compared to the
-original poly(A)- fraction, while the number of sites in the intergenic and
-intronic regions did not change much.
+We wanted to separate the S3 from the S1 and S2 polyadenylation sites in the
+dataset.  We did this by assuming that many of the S1 and S2 sites are likely
+to be present in both the poly(A)- and the poly(A)+ fractions, since these
+sites by definition are normal polyadenylated RNA that have ended up in the
+poly(A)- fraction. Therefore, we filtered out all the polyadenylation sites
+that were common to the poly(A)+ and poly(A)- fraction and removed these from
+both fractions. After removing the polyadenylation sites common to poly(A)- and
+poly(A)+, a difference emerged in the now ``pure'' fractions. As can be seen in
+in Figure \ref{fig:sidebars_intersect}, almost no polyadenylation sites were
+found in the pure poly(A)- fraction of the cytoplasm. The pure nuclear poly(A)-
+fraction has fewer polyadenylation sites in the 3\ppp UTR exonic region
+compared to the original poly(A)- fraction, while the number of sites in the
+intergenic and intronic regions did not change much.
 
 \begin{figure}[hb]
 	\begin{center}
@@ -189,11 +185,11 @@ intronic regions did not change much.
 	\begin{center}
 		\includegraphics[scale=0.3]{figures/polyadenylation/fixed_intersected_sidebars_pA_2+.pdf}
 	\end{center}
-	\caption{Number of polyadenylation sites across genomic regions for RNA
-	unique and common to poly(A)+ and poly(A)- RNA. The left and right columns
-	show the number of polyadenylation sites after removing the sites common to
+    \caption{Separation of unique and common polyadenylation sites across
+    genomic regions poly(A)+ and poly(A)- RNA. The left and right columns show
+    the number of polyadenylation sites after removing the sites common to
 	the poly(A)+ and poly(A)- fractions. The middle column shows the sites that
-	overlapped. Row one, two, and three show polyadenylation sites in the whole
+	were common. Row one, two, and three show polyadenylation sites in the whole
 	cell, cytoplasm, and nucleus, respectively. The blue line indicates the
 	fraction of sites which had a PAS within 40 basepairs downstream. The green
 	line shows the sites found within 50 nucleotides of a PET signal.}
@@ -219,14 +215,15 @@ eukaryotes \cite{shcherbik_polyadenylation_2010}.
 Here we have investigated sites of polyadenylation in the transcriptome in an
 RNA-seq library that contains data from RNA both in the whole cell and in the
 nuclear and cytoplasmic compartments. Further, the RNA in the library was
-separated in the poly(A)+ and poly(A)- fractions.
+sequenced separately for the poly(A)+ and poly(A)- fractions.
 
-The discovery of polyadenylation sites saturated slowly for all sites, but
-sharply for sites associated with a PAS or supported by PET (Figure
-\ref{fig:saturation}). We consider polyadenylation sites with a downstream PAS
-to be more likely to be true positives. Thus, the different saturation curve
-for non-PAS and PAS-associated polyadenylation sites indicates that the number
-of false positives increases when a large number of datasets are included.
+The discovery of polyadenylation sites saturated slowly for all sites as the
+number of datasets increased, but less slowly for sites associated with a PAS
+or supported by PET (Figure \ref{fig:saturation}). We consider polyadenylation
+sites with a downstream PAS to be more likely to be true positives. Thus, the
+different saturation curve for non-PAS and PAS-associated polyadenylation sites
+indicates that the number of false positives increases when a large number of
+datasets are included.
 
 We found many polyadenylation sites in intergenic regions (Figure
 \ref{fig:sidebars}), which are regions of the genome that do not contain
@@ -240,42 +237,44 @@ cytoplasmic extracts (Figure \ref{fig:sidebars}). This is as expected; the
 nucleus and the cytoplasm make up the whole cell. However, it shows the power
 of studying the individual compartments instead of just the whole cell. All
 studies of polyadenylation to date have used whole cell extracts. These studies
-would only see the top row in Figure \ref{fig:sidebars}. That the intronic
-polyadenylation sites come mainly from the nucleus would be difficult to infer
-without compartmentalized RNA-seq data.
+would only have the information corresponding to the top row in Figure
+\ref{fig:sidebars}. That the intronic polyadenylation sites come mainly from
+the nucleus would be difficult to infer without compartmentalized RNA-seq data.
 
-Before removing ther polyadenylation sits common to the poly(A)+ and poly(A)-
-RNAs, there were few polyadenylation sites in the cytoplasmic poly(A)- RNA,
-and most of then in 3\ppp UTR exonic regions (Figure \ref{fig:sidebars}D).
-However, after removing the polyadenylation sites common to the poly(A)+ and
-poly(A)- RNAs, it became clear that practically all the polyadenylation sites in
-the cytoplasmic poly(A)- RNA were in common with the poly(A)+ RNA
-(compare Figure \ref{fig:sidebars_intersect}E and
-\ref{fig:sidebars_intersect}F). The pure cytoplasmic poly(A)- RNA is
-therefore practically void of polyadenylation sites. This indicates that there
-are very few RNA with short poly(A) tails in the cytoplasm. We propose that the
-signals common to the poly(A)+ and poly(A)- RNAs in the cytoplasm
-originate from normal polyadenylated mRNA that had their poly(A) tails reduced
-to less than 20 nt because they were undergoing degradation (see the lower S2
-RNA in Figure \ref{fig:S123}).
+Before removing the polyadenylation sits common to the poly(A)+ and poly(A)-
+RNAs, there were few polyadenylation sites in the cytoplasmic poly(A)- RNA, and
+most of then in 3\ppp UTR exonic regions (Figure \ref{fig:sidebars}D).
+However, after removing common sites, it became clear that the few
+polyadenylation sites in the cytoplasmic poly(A)- RNA were in common with the
+poly(A)+ RNA (Figure \ref{fig:sidebars_intersect}E and
+\ref{fig:sidebars_intersect}F). The pure cytoplasmic poly(A)- RNA is therefore
+practically void of polyadenylation sites. This indicates that there are very
+few RNA with short poly(A) tails in the cytoplasm. We propose that the signals
+common to the poly(A)+ and poly(A)- RNAs in the cytoplasm originate from normal
+polyadenylated mRNA that had their poly(A) tails reduced to less than 20 nt
+because they were undergoing degradation (see the lower S2 RNA in Figure
+\ref{fig:S123}).
 
 The low number of unique polyadenylation sites in the pure poly(A)- RNA of the
-cytoplasm (Figure \ref{fig:sidebars_intersect}F) may be an indication that the
-number of false positives in the study is not high. Presumably false positives
-are not biased toward any compartment or any of the poly(A)- or poly(A)+
-fractions, so the polyadenylation sites in the poly(A)- RNA in the cytoplasm
-may be an indication of the number of false positives in the study. 
+cytoplasm (Figure \ref{fig:sidebars_intersect}F) reflect partially that there
+is less poly(A)- RNA than poly(A)+ RNA in the cytoplasm. However, it may also
+be an indication that the number of false positives in the study is not high.
+If false positives are not biased toward any compartment or any of the
+poly(A)- or poly(A)+ fractions, the low number of polyadenylation sites in the
+poly(A)- RNA in the cytoplasm may be an indication of the number of false
+positives in the study. 
 
 The nuclear poly(A)- RNA was found to be enriched in polyadenylation sites
-compared to the cytoplasic poly(A)- RNA (Figure \ref{fig:sidebars}F compared to
-Figure \ref{fig:sidebars}D). As was found for cytoplasmic RNA, removing the
-common sites with the poly(A)+ RNA revealed that most polyadenylation sites in
-3\ppp UTR of the nuclear poly(A)- RNA were common with the poly(A)+ RNA (Figure
-\ref{fig:sidebars_intersect}H). We propose that the polyadenylation sites in the 3\ppp
-UTR common to the nuclear poly(A)+ and poly(A)- RNA represent mRNA undergoing
-polyadenylation (see the upper S2 RNA in Figure \ref{fig:S123}).
+compared to the cytoplasmic poly(A)- RNA (Figures \ref{fig:sidebars}F and
+\ref{fig:sidebars}D). Removing the sites common to nuclear poly(A)- and
+poly(A)+ RNA revealed that most polyadenylation sites in the 3\ppp UTR of the
+nuclear poly(A)- RNA were common with the nuclear poly(A)+ RNA (Figure
+\ref{fig:sidebars_intersect}H). We propose that the polyadenylation sites in
+the 3\ppp UTR common to the nuclear poly(A)+ and poly(A)- RNA can represent
+mRNA undergoing polyadenylation (see the upper S2 RNA in Figure
+\ref{fig:S123}).
 
-However, unlike for the cytoplasmic RNA, there is after separation still an
+However, unlike for the cytoplasmic RNA, there was after separation still an
 enrichment of polyadenylation sites in the intergenic and intronic regions of
 the poly(A)- RNA. This enrichment could be partially expected since since
 introns comprise a much larger part of nuclear RNA than cytoplasmic RNA, simply
@@ -286,7 +285,7 @@ poly(A)- fraction (Figure \ref{fig:sidebars_intersect}F) the number of false
 positives in the study may be low. We propose that the general enrichment in
 the poly(A)- sites in the nuclear fraction compared to the cytoplasm may be due
 to degradation-related transient polyadenylation that occurs in the nucleus of
-mammalian cells \cite{lemay_nuclear_2010} (see S3 RNA in Figure \ref{fig:S123}.
+mammalian cells \cite{lemay_nuclear_2010} (see S3 RNA in Figure \ref{fig:S123}).
 The polyadenylated RNA in the nuclear intergenic region may stem from
 degradation of spurious transcripts as found in yeast
 \cite{wyers_cryptic_2005}. The polyadenylation sites in the intronic region may
@@ -299,7 +298,7 @@ cytoplasm, and nucleus in the poly(A)+ and poly(A)- fractions) compared to
 normally just one (whole cell, poly(A)+), we have made observations that would
 otherwise not be possible to make. First of all, the polyadenylation sites in
 whole cell RNA were shown to be the sum of polyadenylation sites the nuclear
-and the cytoplasmic RNA, which verifies the integrety of the datsets. Second,
+and the cytoplasmic RNA, which verifies the integrity of the datasets. Second,
 by separating the polyadenylation sites common to poly(A)+ and poly(A)- RNA, we
 were able to potentially identify between polyadenylation signals from mRNA
 undergoing degradation in the cytoplasm and mRNA undergoing polyadenylation in
@@ -311,31 +310,44 @@ eukaryotic cells.
 
 \section{Materials and Methods}
 \subsection{Methods}
-The full description of the methods we used is found on page \pageref{utail} in
-the Appendix as part of the description of the pipeline we developed for
-analysing poly(A) sites from RNA-seq data. Briefly, the method involves
-identifying poly(A) sites by trimming poly(A/T) stretches of unmappable reads,
-remapping the reads after trimming, and clustering the 3\ppp ends of the mapped
-reads are within 20 nucleotides of each other, since this is close to the
-maximal range of the stochastic effect of choice of 3\ppp cleavage site
-\cite{tian_large-scale_2005}. After clustering we searched the genomic sequence
-40 nucleotides downstream the polyadenylation site for one of the
-polyadenylation signals (PAS). Finally we intersected the polyadenylation sites
-with the 3\ppp PET sites (see below) to see which overlapped. To avoid false
-positives, we checked the genomic sequence for poly(A) tracts and discarded
-putative poly(A) reads that landed at genomic locations that were poly(A) rich.
-Further we filtered out poly(A) reads that mapped to intron-exon junctions,
-since several false positives were found at these locations.
+Since no tool for obtaining information about sites of polyadenylation for an
+RNA-seq experiment had been published, we developed a tool called
+\textit{Utail} (from Untranslated poly(A) tail) for this purpose. Utail takes
+as input mapped RNA-seq reads and outputs a tab-delimited list of all the
+polyadenylation sites in the RNA-seq data along with other statistics and
+relevant information for the analysis of those polyadenylation sites.
+
+The Utail pipeline involves identifying poly(A) reads by trimming poly(A/T)
+stretches of unmappable reads, remapping the poly(A) reads after trimming, and
+clustering the 3\ppp ends of the mapped reads are within 20 nucleotides of each
+other, since this is close to the maximal range of the stochastic effect of
+choice of 3\ppp cleavage site \cite{tian_large-scale_2005}. After clustering
+the genomic sequence 40 nucleotides downstream the polyadenylation site is
+searched for one of the polyadenylation signals (PAS). As well, the
+polyadenylation sites are intersected with the 3\ppp PET sites (see below) to
+look for overlap between poly(A) clusters and PET. To avoid false positives,
+Utail checks the genomic sequence for poly(A) tracts and discarded putative
+poly(A) reads that land at genomic locations that are poly(A) rich. Pseudo code
+for Utails follows later in the Materials and Methods section.
+
+Presently, the input reads to Utail must be provided either in the output
+format of the GEM mapper \cite{marco-sola_gem_2012} or as Bed-files. If a
+genome annotation is provided, the Utail output will include information about
+the proximity of annotated polyadenylation sites to the polyadenylation sites
+Utail detects. If a reference annotation is provided, it is important that the
+annotation is based on the same version of the reference genome that the
+RNA-seq reads were mapped to.
 
 \subsection{The dataset}
-The datasets used in this study are available from
-http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeCshlLongRnaSeq/
+The datasets used in this study are available from \\
+http://hgdownload-test.cse.ucsc.edu/goldenPath/hg19/\\
+encodeDCC/wgEncodeCshlLongRnaSeq/
 
 The data was generated from RNA-seq experiments from 12 human cell lines. Six
 of the cell lines have RNA-seq data from whole cell extracts and the remaining
 six cell lines have RNA-seq data from cytoplasmic and nuclear extracts in
-addition to whole cell extracts. Each cell line is further available in both
-the poly(A)+ and poly(A)- fractions of the RNA pool. Table \ref{tab:Datasets}
+addition to whole cell extracts. RNA-seq data is further available for both the
+poly(A)+ and poly(A)- RNA pools for each cell line. Table \ref{tab:datasets}
 shows the cell lines and compartments used and the number of replicates. In
 total, 23 datasets were from whole cell extracts, 11 from cytoplasmic extracts,
 and 12 from nuclear extracts. This brings the total to 92 RNA-seq datasets. The
@@ -364,22 +376,34 @@ paired-ended sequencing with a read-length of 76 basepairs and contains between
 	\end{tabular}
 	\caption{Number of replicates of the compartmentalzied RNA-seq data from 12
 	different cell lines from the ENCODE consortium.}
-	\label{tab:Datasets}
+	\label{tab:datasets}
 \end{table}
 
 \subsection{The short RNA mapper}
 The short read mapper used in this work is the GEM mapper
-\cite{ribeca_gem_2010}. The GEM mapper is production ready but currently still
-under development.
+\cite{marco-sola_gem_2012}.
 
 \subsection{The PET data}
 Paired End diTag (PET) sequence is a technique that is specific for locating
-the 3\ppp end of transcripts. This technique adds two tags to the 3\ppp end and the
-5\ppp end of an RNA. Those tags then join with each other, forming a circular
-RNA. Subsequently, the sequences close to the two tags (less than 30 nt) are
-sequenced. Thereby, one obtains the sequence information about both the
+the 3\ppp end of transcripts. This technique adds two tags to the 3\ppp end and
+the 5\ppp end of an RNA. Those tags then join with each other, forming a
+circular RNA. Subsequently, the sequences close to the two tags (less than 30
+nt) are sequenced. Thereby, one obtains the sequence information about both the
 transcription start site and the transcript termination site of the RNA. We
 have used PET data which is available from
 http://hgdownload.cse.ucsc.edu/goldenPath/hg19/encodeDCC/wgEncodeGisRnaPet/ to
 compare with the polyadenylation sites we discovered. We used a threshold of 10
 PET reads to accept a site as transcript termination site.
+
+\subsection{Bioinformatic implementation}
+Here follows a pseudo code for the implementation of the Utail. The pseudo
+code gives an accurate overview of the algorithms of the pipeline but does
+change the order of some of the execution steps. This is partially because
+Utail was designed to perform more functions that what it has been used for in
+this study, and we omit the description of those functions to give a relevant
+presentation of the code. The full source code is available as outlined in the
+Appendix on page \pageref{source_code}.
+
+\inputminted[fontsize=\small]{python}{pseudo_code/utail.py}
+
+

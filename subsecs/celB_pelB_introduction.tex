@@ -13,7 +13,7 @@ much used expression host, it is important to investigate the limitations and
 mechanisms of \textit{inf-$\alpha$2b} expression in \textit{E. coli}.
 
 Kucharova et al.\ reports that the \textit{inf-$\alpha$2b} gene is not
-expressed in \textit{E.  coli} in its native form. A codon optimized version of
+expressed in \textit{E. coli} in its native form. A codon optimized version of
 \textit{inf-$\alpha$2b} was obtained to investigate if the non-native codon
 usage in the gene was behind the lack of expression. That is, the native human
 codons were replaced with codons that are in high usage in \textit{E. coli}.
@@ -29,40 +29,45 @@ In their paper, Kucharova et al.\ suggest that translation initiation of the
 expressed. Further, they note that codon usage in first translated codons are
 also known to impact gene expression. That prompts them to investigate variants
 of \textit{inf-$\alpha$2b} that make synonymous codon substitutions to reduce
-RNA secondary structures around the ribosome binding site. Some of these
+RNA secondary structures around the ribosome binding site (RBS). Some of these
 variants result in detectable transcript levels for \textit{inf-$\alpha$2b}.
 However, the increase in transcript level is not followed by an increase in
-protein level. This suggests that further barriers than ribosme binding lie
+protein level. This suggests that further barriers than ribosome binding lie
 behind the poor expression of \textit{inf-$\alpha$2b}. Having established this,
 Kucharova et al.\ move on to investigate the effect of different 5\ppp terminal
 fusion peptides. They show that that several short versions of the celB fusion
 peptide increase expression of the \textit{inf-$\alpha$2b} gene and several
 other genes. Finally, they improve the expression level with the celB leader by
-screening a random mutagenesis library of celB around the ribosome binding
-site. In conclusion, these fusion peptides probably facilitate translation
-initiation both by having favorable secondary structure and also by some
-downstream effect that could not be achieved only by alleviating structures at
-the ribosome binding site.
+screening a random mutagenesis library of celB around the RBS. In conclusion,
+these fusion peptides probably facilitate translation initiation both by having
+favorable secondary structure and also by some downstream effect that could not
+be achieved only by alleviating RNA secondary structures at the RBS.
 
-\section{My contribution to the paper}
-My contribution to the paper was to perform the bioinformatic analysis, partake
-in the planning of the experiments that involved changing codons and secondary
-structure, and to assist in the writing process.
+\section{Bioinformatic contribution}
+As described in the paper by Kucharova et al.\ (see the Materials and Methods
+section of the paper) the bioinformatic contribution to the paper was primarily
+the construction an \textit{in silico} library of \textit{inf-$\alpha$2b}
+variants, and the screening of this library with respect to i) RNA free energy
+around the RBS and ii) a score for the codon usage of the first 8 codon after
+the start codon. See Figure \ref{fig:ensemble} for a graphical representation of
+the library in terms of the free energy and codon score of each variant, where
+the variants that were experimentally tested are indicated.
 
-Initially, I performed RNA secondary structure analysis for a set of
-celB-\textit{inf-$\alpha$2b} variants with variable expression levels (data not
-shown in the paper). This analysis could not conclude that secondary structures
-were the reason behind the variation in expression; specifically it could not
-conclude that strong secondary structures were behind the lack of expression of
-the unmodified \textit{inf-$\alpha$2b} gene.
+\begin{figure}[b]
+	\begin{center}
+		\includegraphics[scale=0.3]{figures/celb/ensemble.pdf}
+	\end{center}
+	\caption{\textit{in silico} library with 7680 synonymous variants of
+	\textit{inf-$\alpha$2b}. The dark red circle at the top is the wild type codon
+	optimized \textit{inf-$\alpha$2b}. In red are shown the variants that were
+	selected for experimental testing.}
+	\label{fig:ensemble}
+\end{figure}
 
-Nevertheless, we proceeded to try to optimize the secondary structures around
-the ribosome binding site (RBS) of the original \textit{inf-$\alpha$2b} gene
-without celB, because this is an approach that has worked previously for
-heterologous expression \cite{de_smit_secondary_1990}. For this work, I made a
-combinatorial library of synonymous codons for the first nine codons in the
-\textit{inf-$\alpha$2b} coding region. I labeled each of the resulting set of
-over 8000 synonymous variants with an index for the rarity of their codons and
-the folding energy of the secondary structure around the RBS. Some selected
-variants from this library were chosen based on their folding energy and rarity
-of codon usage.
+\subsection{Bioinformatic implementation}
+Here, we will outline, in pseudo code, the implementation of the source code
+that was used to produce and process the \textit{in silico}
+\textit{inf-$\alpha$2b} library. The actual implementation is available as
+outlined in the Appendix on page \pageref{source_code}.
+
+\inputminted[fontsize=\small]{python}{pseudo_code/pseudo_code.py}

@@ -1,35 +1,50 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-A requirement for reproducing the results in this thesis is running a
-Unix/Linux variant like Ubuntu. Each project has additional requirements for
-software that must be installed, which is detailed in the README files for each
-project.
+In this section we describe how the computational results in this thesis
+can be reproduced. The source code for the different projects is too
+large to be physically included in the thesis, and as such is stored on
+the source code hosting site Github (\nolinkurl{www.github.com}). The
+source code is being made publicly available on Github as the articles
+from each project are published. At the time of writing, the source
+codes for chapters \ref{chap:initiation_paper} and \ref{chap:celB} are
+not yet publicly available.
 
-The source code necessary to reproduce the computational results from each
-chapter is made available on the hosting site Github.com as the articles
-produced from each project are published. In the time of writing, only the
-Github page for the 3\ppp cleavage and polyadenylation project is unlocked.
-
-To obtain the source code from github.com, the program \textit{git} must be
-installed. Use git from the command line like this:
+To obtain the source code from Github, the program \textit{git} must be
+installed (\nolinkurl{www.git-scm.com}). Use git from the command line
+to obtain the code like this:
 
 \begin{verbatim}
 git clone git@github.com:jorgsk/exampleProject.git
 \end{verbatim}
 
+\noindent
 The Github locations for the different projects are given below:
 
 \begin{itemize}
-	\item Transcription initiation project (chapter X):
+	\item Translation initiation project (chapter \ref{chap:celB}):
 		\begin{itemize}
-			\item git@github.com:jorgsk/transcription_initiation.git
+			\item[] \nolinkurl{git@github.com:jorgsk/translation_initiation.git}
 		\end{itemize}
-	\item Transcription initiation project (chapter X):
+	\item Transcription initiation project (chapter \ref{chap:initiation_paper}):
 		\begin{itemize}
-			\item git@github.com:jorgsk/translation_initiation.git 
+			\item[] \nolinkurl{git@github.com:jorgsk/transcription_initiation.git}
 		\end{itemize}
-	\item 3\ppp cleavage and polyadenylation (chapter X):
+	\item 3\ppp cleavage and polyadenylation (chapter \ref{chap:polyA}):
 		\begin{itemize}
-			\item git@github.com:jorgsk/Utail.git
+			\item[] \nolinkurl{git@github.com:jorgsk/Utail.git}
 		\end{itemize}
 \end{itemize}
 
+After downloading the code for each project, see the readme-file for each
+project for further instructions. The readme-file contains instructions for
+running the source code as well as a list of software dependencies for each
+project. However, all projects have the following common requirements:
+\begin{itemize}
+	\item Modern Linux distribution (i.e. Ubuntu Linux)
+	\item Python version 2.7+
+	\item The Python libraries
+		\begin{itemize}
+			\item[] Numpy (version 1.5+)
+			\item[] Scipy (version 0.9+)
+			\item[] Matplotlib (version 1.0+)
+		\end{itemize}
+\end{itemize}

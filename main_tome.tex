@@ -2,26 +2,26 @@
 %\documentclass[a4crop]{ntnuthesis}
 \documentclass[]{ntnuthesis}
 
+%TODO:
+%# write email to Roderic and Gingeras
+
 % A new package for bibliography
 % Use biber for biblatex and pdflatex instead of latex
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
-url=false, sorting=none, refsection=section]{biblatex}
+url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 
 \usepackage[font=footnotesize, labelfont=bf, labelsep=endash]{caption}
 % new from biblatex
 \addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-\usepackage{fontspec} % must use this one with xelatex
+
+% smaller font for references
+\renewcommand*{\bibfont}{\small}
 
 \usepackage{amsmath,amsfonts,amssymb,amsthm,booktabs,array,mathtools}
 % consider package mhchem for typesetting chemical formulas
-\usepackage{verbatim}
 \usepackage{import} % understands relative paths for \include! :)
-\usepackage{inconsolata} % monospaced font
 \usepackage{placeins} % stop floats from going everywhere with \FloatBarrier
 \usepackage{pdfpages} % allow the inclusion of PDF papers
-
-% get colored code formatting (needs Pygments and manual minted.sty install)
-\usepackage{minted}
 
 \usepackage{rotating} % make your own prime symbol
 \usepackage{adjustbox} % make your own prime symbol
@@ -34,11 +34,18 @@ url=false, sorting=none, refsection=section]{biblatex}
 \usepackage{lettrine}
 \newcommand{\dropcap}{\lettrine[lines=2,slope=-4pt,nindent=-4pt]}
 
-% For adding fake sections to the TOC for the .pdf papers at the end
-\providecommand\phantomsection{}
+% get colored code formatting (needs Pygments and manual minted.sty install)
+\usepackage{minted}
+\usemintedstyle{perldoc} % to avoide italics in the comments; but you can make
+%your own style easily, maybe do it at the end
+
+% typeset urls (hey, that made my links clickable, not my intention)
+%\usepackage{hyperref}
+\usepackage{inconsolata} % monospaced font
+\usepackage{fontspec} % must use this one with xelatex
 
 % Set the depth of section numbering
-\setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{1}
 
 \title{The beginning and the end of gene expression}
@@ -51,114 +58,119 @@ url=false, sorting=none, refsection=section]{biblatex}
 
 \date{August 2012}
 
+
 \begin{document} 
 
 \frontmatter
 
 \maketitle
+
 \chapter*{Summary}
 \noindent
-	\input{subsecs/summary.tex}
+    \input{subsecs/summary.tex}
 \clearpage
 
-\addcontentsline{toc}{chapter}{Summary}
+%\addcontentsline{toc}{chapter}{Summary}
 
 %\chapter*{Acknowledgements}
 %\input{subsecs/acknowledgements.tex}
 %\addcontentsline{toc}{chapter}{Acknowledgements}
 
 % Uncomment this when you get to this stage
-\pagenumbering{roman}
-\tableofcontents
+%\pagenumbering{roman}
+%\tableofcontents
 %\listoffigures
 %\listoftables
 
+%\setcounter{chapter}{1}
 \mainmatter
-
 \chapter{Introduction}
+\begin{refsection}
 \section{Overview}
-\input{subsecs/new_introduction.tex}
+\input{subsecs/introduction.tex}
 \FloatBarrier
-%\printbibliography
+
+% Silly, but the Bibliograhy becomes a 'chapter', so I get ``Bibliography'' in
+% the headings. Changing markboth (don't really know what it is) fixes this.
+% (both takes two arguments -- could it be left and right?
+
+\section{Transcription initiation in bacteria}
+\input{subsecs/transcription_forword.tex}
+\subsection{Biochemical background}
+\input{subsecs/transcription_background.tex}
+\subsection{Computational models}
+\input{subsecs/transcription_computation.tex}
+\printbibliography
+\end{refsection}
 \newpage
 
-%\chapter{Introduction}
-
-\chapter{Computational methods}
-\begin{minted}[fontsize=\scriptsize]{python}
-
-def changelog(x, time='inf'):
-    for x in range(10):
-        if x == 10:
-            break
-        else:
-            print 'NOH!'
-
-\end{minted}
-
-%\section{Transcription initiation in bacteria}
-%\input{subsecs/transcription_forword.tex}
-%\subsection{Biochemical background}
-%\input{subsecs/transcription_background.tex}
-%\subsection{Computational models}
-%\input{subsecs/transcription_computation.tex}
-%%\printbibliography
+\markboth{\textbf{Introduction}}{}
+\section{Translation initiation in bacteria}
+\begin{refsection}
+\input{subsecs/translation_background.tex}
+\printbibliography
+\end{refsection}
 \newpage
 
-%\section{Translation initiation in bacteria}
-%\input{subsecs/translation_background.tex}
-%%\printbibliography
-\newpage
-
+%\markboth{\textbf{Introduction}}{}
+%%\begin{refsection}
 %\section{Transcription termination in eukaryotes and RNA sequencing}
 %\input{subsecs/termination_foreword.tex}
 %\input{subsecs/termination_transcription.tex}
 %\input{subsecs/rna_seq.tex}
-%%\printbibliography
-\newpage
+%\printbibliography
+%%\end{refsection}
+%\newpage
 
-%%Should you add this to the backtracking paper as a subsection?
+%%%Should you add this to the backtracking paper as a subsection?
 %%\chapter{Backtracking originates from the pre-translocated state}
+%%\begin{refsection}
 %%\subimport{../my_papers/rna-dna-paper/case_for_and_against/}{mechanism_forthesis.tex}
+%%\printbibliography
+%%\end{refsection}
 
-%\chapter{Investigating RNA secondary structure as a barrier to protein
-%synthesis}
+%\chapter{RNA secondary structures as barriers to protein synthesis}
+%%\begin{refsection}
 %\label{chap:celB}
 %\input{subsecs/celB_pelB_introduction.tex}
+%%\printbibliography
+%%\end{refsection}
 
 %\chapter{RNAP translocation bias determines the efficiency of promoter escape}
+%%\begin{refsection}
 %\label{chap:initiation_paper}
 %\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
-%\FloatBarrier
+%%\printbibliography
+%%\end{refsection}
 
-%\chapter{Using RNA-seq to investigate RNA 3\protect\ppp cleave and
-%polyadenylation}
+%\chapter{RNA-seq for investigating RNA cleavage and polyadenylation}
+%%\begin{refsection}
 %\label{chap:polyA}
 %\input{subsecs/polyA_results.tex}
 %%\printbibliography
+%%\end{refsection}
 
 %\chapter{Discussion and Conclusion}
+%%\begin{refsection}
 %\section{Discussion}
 %\input{subsecs/discussion.tex}
 %\section{Conclusion}
 %\input{subsecs/conclusion.tex}
-%%\printbibliography
+%\printbibliography
+%%\end{refsection}
 
 %\appendix
-%\chapter{Utail -- finding poly(A) sites from short read data}
-%\input{subsecs/utail.tex}
-%\label{utail}
-%%\printbibliography
+%\chapter{Obtaining the source code}
+%\label{source_code}
+%\input{subsecs/computational_methods.tex}
 
 %\chapter{Attached publications}
 
-%\clearpage
 %\chapter*{Landscape of transcription in human cells}
 %\label{landscape}
 %\addcontentsline{toc}{chapter}{Landscape of transcription in human cells}
-%%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
 
-%\clearpage
 %\chapter*{Testing and optimization of short DNA sequences that can be used as
 %5\protect\ppp fusion partners for high level expression of heterologous genes
 %in \textit{Escherichia coli}}
@@ -166,6 +178,6 @@ def changelog(x, time='inf'):
 %that can be used as 5\protect\ppp fusion partners for high level expression of
 %heterologous genes in \textit{Escherichia coli}}
 %\label{vero_paper}
-%%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
+%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
 
 \end{document}

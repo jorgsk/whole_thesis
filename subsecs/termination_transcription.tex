@@ -1,6 +1,6 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 \subsubsection{Overview of transcription in eukaryotes}
-In this section we will review the process of transcription termination in in
+In this section we will review the process of transcription termination in
 mammalian cells, although we will sometimes reference studies of other
 eukaryote cells if there are commonalities. Since the previous sections covered
 transcription and translation in bacteria, we will in this section often point
@@ -13,26 +13,34 @@ larger than its bacterial counterpart, but the core subunits are structurally
 and functionally conserved compared to bacterial RNAP \cite{ebright_rna_2000}.
 
 As in bacteria, transcription in eukaryotes begins when RNAP is recruited by
-transcription factors to promoter sites. In eukaryotes there is no equivalent
-to the bacterial sigma factor system, and there are more diversified methods
-for recruiting RNAP to promoters. Transcription initiation in eukaryotes
+transcription factors to promoter sites, however in eukaryotes there is no
+equivalent to the $\sigma$ factor system in bacteria; eukaryotes instead rely
+on more diversified methods of promoter recruitment
+\cite{struhl_fundamentally_1999}. Transcription initiation in eukaryotes
 involves the same steps of open bubble formating and abortive cycling as in
 bacteria, although additional assisting transcription factors are involved in
-this process compared to bacterial cells \cite{wade_transition_2008}.
+this process compared to in bacterial cells \cite{wade_transition_2008}.
 Transcription elongation by RNAP also involves pausing and backtracking, but
 pausing on eukaryotic DNA is more complicated due to the wrapping of DNA around
 histones in the chromatin \cite{sims_elongation_2004}.
 
 \subsubsection{3\protect\ppp cleavage and polyadenylation}
 Transcription termination is markedly different between eukaryotes and
-bacteria. In bacteria, the position where RNAP stops transcribing also marks
-the genomic position of the 3\ppp end of the mRNA. In eukaryotes, the 3\ppp
-end of mRNA is defined by cleavage and subsequent polyadenylation of the
-still-transcribed mRNA.
+bacteria. In bacteria, the position where RNAP terminates transcription also
+marks the 3\ppp terminal position of the mRNA. In eukaryotes, however, the
+3\ppp end of transcripts synthesized by RNAP II is created while RNAP II is
+still transcribing. When RNAP II transcribes past a polyadenylation signal
+(PAS), often in the 3\ppp UTR of a gene, a cleavage and polyadenylation complex
+may bind to that PAS and to sequences around it \cite{colgan_mechanism_1997}.
+This complex may then cleave the still-transcribed RNA around 10 to 35 nt
+downstream the PAS \cite{proudfoot_ending_2011}. Right after cleavage, a
+poly(A) polymerase will synthesize around 250 adenosine residues to the newly
+formed 3\ppp end of the pre-mRNA (Figure \ref{fig:cleavage}), forming what is
+known as the poly(A) tail.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.35]{illustrations/cleavage_and_polyA.pdf}
+		\includegraphics[scale=0.50]{illustrations/cleavage_and_polyA.pdf}
 	\end{center}
 	\caption{Cleavage and polyadenylation. \textbf{A}: The cleavage and
 	polyadenylation machinery bound to a polyadenylation signal (PAS) and U/GU
@@ -41,86 +49,85 @@ still-transcribed mRNA.
 	\label{fig:cleavage}
 \end{figure}
 
-Most sites of cleavage and polyadenylation (poly(A) sites for short) are
-defined by a consensus AAUAAA/AUUAAA polyadenylation signal (PAS) 10 to 35 nt
-upstream of the cleavage site itself \cite{proudfoot_ending_2011}. The PAS are
-found in up to 12 variants of the AAUAAA core sequence, but most of the
-variants are rarely used \cite{beaudoing_patterns_2000}. In addition to the
-PAS, a U/GU-rich sequence is sometimes found upstream poly(A) sites. The
-cleavage and polyadenylation machinery consist of several protein complexes.
-The most prominent are the cleavage and polyadenylation specificity factor
-(CPSF) which binds the upstream PAS, the cleavage stimulation factor (CstF)
-which can bind the U/GU rich downstream sequence, and the poly(A) polymerase
-which performs polyadenylation \cite{lutz_alternative_2008}. After the
-polyadenylation machinery has assembled around a poly(A) site, CPSF performs
-the actual cleavage of mRNA, and the poly(A) polymerase immediately adds around
-250 adenosine residues to the mRNA 3\ppp end (see Figure \ref{fig:cleavage}).
+The PAS is a six-nucleotide sequence, most often AAUAAA or AUUAAA, but around
+10 closely related variants have also been found
+\cite{beaudoing_patterns_2000}. In addition to the PAS, a U/GU-rich sequence is
+also sometimes found upstream polyadenylation sites. The cleavage and polyadenylation
+machinery that bind these sequences consist of several protein complexes. The
+most prominent are the cleavage and polyadenylation specificity factor (CPSF)
+which binds the upstream PAS and cleaves the RNA, the cleavage stimulation
+factor (CstF) which can bind the U/GU rich downstream sequence, and the poly(A)
+polymerase which performs polyadenylation \cite{lutz_alternative_2008} (Figure
+\ref{fig:cleavage}).
 
-Cleavage and polyadenylation are part of RNA processing that occurs in
-eukaryote cells. We will now briefly cover RNA processing to put cleavage and
-polyadenylation in perspective as necessary step for eukaryotic gene
-expression.
+RNA 3\ppp end formation of mRNA in eukaryotes is part of pre-mRNA processing,
+which is a necessary step between mRNA synthesis in the nucleus and translation
+of the mRNA in the cytoplasm. Other processing steps are mRNA 5\ppp capping and
+the removal of introns from mRNA, known as splicing. If any of the processing
+steps are inefficiently executed or not executed at all, the pre-mRNA
+transcript will be targeted for degradation either in the nucleus itself or in
+the cytoplasm after transport \cite{doma_rna_2007}. This quality control step
+reduces the risk that errors during transcription and pre-mRNA processing will
+result in nonfunctional or possibly harmful protein products.
 
-\subsubsection{mRNA processing is necessary for transport to the cytoplasm and
-for translation}
-In contrast to bacterial transcripts, eukaryotic mRNA must undergo extensive
-processing. RNA processing is required for the mRNA to be transported to the
-cytoplasm for translation by ribosomes. Therefore, mRNA in eukaryotes is called
-pre-mRNA until it has gone through the necessary processing steps. There are
-essentially three main events that make up pre-mRNA processing: 5\ppp cap
-addition, splicing, and, as already covered, 3\ppp cleavage and
-polyadenylation. We will now briefly review 5\ppp capping and splicing.
+%\subsubsection{mRNA processing is necessary for transport to the cytoplasm and
+%for translation}
+%In contrast to bacterial transcripts, eukaryotic mRNA must undergo extensive
+%processing. RNA processing is required for the mRNA to be transported to the
+%cytoplasm for translation by ribosomes. Therefore, mRNA in eukaryotes is called
+%pre-mRNA until it has gone through the necessary processing steps. There are
+%essentially three main events that make up pre-mRNA processing: 5\ppp cap
+%addition, splicing, and, as already covered, 3\ppp cleavage and
+%polyadenylation. We will now briefly review 5\ppp capping and splicing.
 
-The 5\ppp cap is a guanine nucleotide variant that is added to the 5\ppp nucleotide
-of a transcript shortly after it emerges from the RNA exit channel of RNAP II.
-The 5\ppp cap presumably protects against 5\ppp exonucleases (RNA degrading protein
-that attacks the 5\ppp end) and is necessary for the proper export of the mRNA
-from the nucleus.
+%The 5\ppp cap is a guanine nucleotide variant that is added to the 5\ppp nucleotide
+%of a transcript shortly after it emerges from the RNA exit channel of RNAP II.
+%The 5\ppp cap presumably protects against 5\ppp exonucleases (RNA degrading protein
+%that attacks the 5\ppp end) and is necessary for the proper export of the mRNA
+%from the nucleus.
 
-Splicing is the removal of introns from mRNA. Eukaryotic mRNA is made up of
-genetic regions called introns and exons. Introns are the non-coding parts of
-pre-mRNA, and actually make up most of gene sequences in mammals, while exons
-contain the sequences which are protein coding. By splicing out the introns and
-joining the surrounding exons, only the exons of pre-mRNA make up the final
-mRNA which is transported to the cytoplasm.
+%Splicing is the removal of introns from mRNA. Eukaryotic mRNA is made up of
+%genetic regions called introns and exons. Introns are the non-coding parts of
+%pre-mRNA, and actually make up most of gene sequences in mammals, while exons
+%contain the sequences which are protein coding. By splicing out the introns and
+%joining the surrounding exons, only the exons of pre-mRNA make up the final
+%mRNA which is transported to the cytoplasm.
 
-Several proteins have shared roles across the different pre-mRNA processing
-steps. In other words, there is cross-talk between the processing pathways. For
-example, the presence of the 5\ppp cap increases the efficiency of the excision
-of the 5\ppp proximal intron and increases the efficiency of polyadenylation.
-Polyadenylation on the other hand increases the efficiency of the excision of
-the 3\ppp terminal intron \cite{proudfoot_integrating_2002}. A recently
-discovered example of cross talk during mRNA processing is that the U1
-ribonucleoprotein, previously known for its role in splicing, prevents
-premature cleavage and polyadenylation at cryptic poly(A) sites
-\cite{kaida_u1_2010}.
+%Several proteins have shared roles across the different pre-mRNA processing
+%steps. In other words, there is cross-talk between the processing pathways. For
+%example, the presence of the 5\ppp cap increases the efficiency of the excision
+%of the 5\ppp proximal intron and increases the efficiency of polyadenylation.
+%Polyadenylation on the other hand increases the efficiency of the excision of
+%the 3\ppp terminal intron \cite{proudfoot_integrating_2002}. A recently
+%discovered example of cross talk during mRNA processing is that the U1
+%ribonucleoprotein, previously known for its role in splicing, prevents
+%premature cleavage and polyadenylation at cryptic polyadenylation sites
+%\cite{kaida_u1_2010}.
 
-If any of the processing steps are inefficiently executed or not executed at
-all, the pre-mRNA transcript will be targeted for degradation either in the
-nucleus itself or in the cytoplasm after transport \cite{doma_rna_2007}. This
-quality control step reduces the risk that errors during transcription and
-pre-mRNA processing will result in nonfunctional or possibly harmful protein
-products.
+%If any of the processing steps are inefficiently executed or not executed at
+%all, the pre-mRNA transcript will be targeted for degradation either in the
+%nucleus itself or in the cytoplasm after transport \cite{doma_rna_2007}. This
+%quality control step reduces the risk that errors during transcription and
+%pre-mRNA processing will result in nonfunctional or possibly harmful protein
+%products.
 
-\subsubsection{Usage of alternative poly(A) sites}
+\subsubsection{Usage of alternative polyadenylation sites}
 % 1) For making different 3 UTR
 It is well known that alternative splicing can produce different alternative
 isoforms for a given gene: by splicing out parts of a coding sequence, a
 different mRNA and thereby a different protein will be produced. However,
 alternative isoforms can also be created through what is called alternative
-polyadenylation.
+polyadenylation, which is the usage of alternative polyadenylation sites, all
+of them often in the 3\ppp UTR of the same gene \cite{lutz_alternative_2008}.
 
-It is estimated that half the genes in the genome undergo alternative
-polyadenylation \cite{tian_large-scale_2005}. Often, the different poly(A)
-sites are found in the same 3\ppp UTR region \cite{beaudoing_patterns_2000}.
-Depending on which poly(A) site is used, the length of the 3\ppp UTR in the
-final mRNA will be different. A poly(A) site close to the beginning of
-the 3\ppp UTR will result in a short 3\ppp UTR while a poly(A) site far
-from the beginning of the 3\ppp UTR will result in a long 3\ppp UTR. The
-choice of poly(A) site can have regulatory effects, since the 3\ppp UTR region
-often contains regulatory elements, and a short 3\ppp UTR will in general
-contain fewer regulatory sequences than a long 3\ppp UTR. One of the best
-characterized examples of regulation in the 3\ppp UTR is regulation by microRNA
+Depending on which polyadenylation site is used, the length of the 3\ppp UTR in the
+final mRNA will be different. A polyadenylation site close to the beginning of the
+3\ppp UTR will result in a short 3\ppp UTR while a polyadenylation site far from the
+beginning of the 3\ppp UTR will result in a long 3\ppp UTR. The choice of
+polyadenylation site can have regulatory effects, since the 3\ppp UTR region often
+contains regulatory elements, and a short 3\ppp UTR will in general contain
+fewer regulatory sequences than a long 3\ppp UTR. One of the best characterized
+examples of regulation in the 3\ppp UTR is regulation by microRNA
 \cite{digiammartino_mechanisms_2011}. microRNA are short RNA of around 20
 nucleotides in length that perform regulatory roles by basepairing with other
 RNA molecules. When microRNA binds the 3\ppp UTR region of an mRNA in the
@@ -133,19 +140,20 @@ causing the transcript degradation \cite{huntzinger_gene_2011}. MicroRNA are
 known to regulate a host of metabolic processes and human diseases through
 binding inthe 3\ppp UTR \cite{huang_biological_2010}. Therefore, the choice of
 where to cleave and polyadenylate a transcript can have wide-spanning
-consequences.
+consequences. It is estimated that half the genes in the genome undergo
+alternative polyadenylation \cite{tian_large-scale_2005}.
 
 There are also examples of cleavage and polyadenylation in sites outside the
 3\ppp UTR. The most prominent of these are sites within introns. The use of an
-intronic cleavage and poly(A) site would cause any downstream exons to be left
+intronic cleavage and polyadenylation site will cause any downstream exons to be left
 out of the transcript. In turn, this will result in a shorter peptide sequence
 upon translation of the mRNA. Thus, the site of cleavage and polyadenylation
 can also modulate the protein coding content of the mRNA. A well known example
 is the case of the immunoglobin protein in B cells. Depending on whether a
-poly(A) site in an intron is used or not, the membrane bound or the secreted
+polyadenylation site in an intron is used or not, the membrane bound or the secreted
 version of the immunoglobin protein is made \cite{peterson_regulated_1989}.
 
-\subsubsection{Transient polyadenylation unrelated to mRNA processing}
+\subsubsection{Polyadenylation unrelated to mRNA processing}
 In the last decade it has become clear that there is polyadenylation of RNA in
 eukaryotic cells that is unrelated to mRNA 3\ppp processing. First, it was
 discovered that poly(A) tails were added to aberrant transcripts in the nucleus
@@ -165,27 +173,27 @@ degradation-related polyadenylation of some RNA species in eukaryotes.
 
 \subsubsection{Genome-wide studies of polyadenylation}
 Historically, polyadenylation has been investigated using traditional molecular
-biology techniques, one poly(A) site at a time. However, in the last two
+biology techniques, one polyadenylation site at a time. However, in the last two
 decades, it has become possible to to global studies of polyadenylation due to
 progress in genome-wide assays.
 
 The study of sites of polyadenylation across the genome has occurred in three
 stages in the last 15 years, with each stage resting on a different type of
-technology. The first wave used cDNA and EST sequence data (explained below)
-obtained by laborious Sanger sequencing. The second wave used microarray and
-SAGE technologies, and the third wave used the RNA-seq next generation
-sequencing technology. We will review key results obtained in these three
-stages chronologically.
+technology. The first wave used cDNA and EST sequence data obtained by
+laborious Sanger sequencing. The second wave used microarray and SAGE
+technologies, and the third wave used next generation RNA-sequencing (RNA-seq).
+We will review key results obtained in these three stages chronologically.
 
 From the early 90s onward, more and more human expressed sequence tags (ESTs)
-became available. (An EST is the result of Sanger sequencing a part of cloned
-RNA which has been isolated from a cell sample.) The increasing amount of
-sequence data facilitated for the first time large scale analysis of 3\ppp UTRs
-and poly(A) sites. The poly(A) site of an EST is found by identifying a poly(A)
-or poly(T) extremity which does not correspond to a genomic sequence. By
-trimming that extremity, and matching the remainder to template mRNA or genomic
-sequence, it is possible to identify the genomic location of the poly(A) site
-\cite{beaudoing_patterns_2000, tian_large-scale_2005}.
+became available. (An EST is a part of a cloned RNA which has been isolated and
+sequenced, typically by Sanger sequencing.) The increasing amount of sequence
+data facilitated for the first time large scale analysis of 3\ppp UTRs and
+polyadenylation sites. The polyadenylation site of an EST is found by
+identifying a poly(A) or poly(T) sequence in the extremity of the EST which
+does not correspond to genomic sequence. By trimming that extremity, and
+matching what remains of the EST to databases of sequenced RNA or to a genome
+sequence, it is possible to identify the genomic location of the
+polyadenylation site \cite{beaudoing_patterns_2000, tian_large-scale_2005}.
 
 These early genome-wide studies were successful in determining i) the frequency
 of occurrence of the different PAS variants \cite{beaudoing_patterns_2000}; ii)
@@ -201,78 +209,76 @@ sequencing. Thus, the only practical way to compare alternative polyadenylation
 on a genome-wide scale was to include EST data from different experiments,
 often resulting in a mix of data from different cell lines and tissues. Our
 literature review revealed no studies with \textit{de novo} EST sequencing for
-the purpose of studying polyadenylation; all studies used EST sequences from
-databases. Another limitation of EST data is that it is biased toward protein
-coding genes that were found interesting enough to sequence individually. Thus
-many classes of polyadenylated RNA, such as long noncoding RNA, were possibly
-missed by these studies. Finally, although EST data may be used to give a
-quantitative profile of gene expression, the output data is often normalized so
-that the quantitative profile is lost. It therefore difficult to compare
-expression values across genes with EST data, although some approaches have
-been developed for this purpose \cite{liu_quantitative_2006}. A quantitative
-profile of poly(A) site usage is necessary when studying alternative
-polyadenylation to identify the usage pattern of the different poly(A) sites.
+the purpose of studying polyadenylation sites; all studies used EST sequences
+from databases. Another limitation of EST data is that it is biased toward
+protein coding genes that were found interesting enough to sequence
+individually. Thus many classes of polyadenylated RNA, such as long noncoding
+RNA, were possibly missed by these studies. Finally, although EST data may be
+used to give a quantitative profile of gene expression, the output data is
+often normalized so that the quantitative profile is lost
+\cite{liu_quantitative_2006}. It therefore difficult to compare expression
+values across genes with EST data, although some approaches have been developed
+for this purpose \cite{liu_quantitative_2006}. A quantitative profile of
+polyadenylation site usage is necessary when studying alternative polyadenylation to
+identify the usage pattern of the different polyadenylation sites.
 
 As the microarray technology matured in the early 2000s and more full-length
 genomes became available, microarrays, often in combination with EST data, were
-used to study 3\ppp UTR length variation and polyadenylation. Due to the low
-price and high speed of microarrays, it was possible to use several microarray
-experiments in the same study to compare the usage of alternative 3\ppp ends.
-Microarrays could be used to test for alternative polyadenylation. This was
-achieved by by using probes that would bind to the different 3\ppp UTR variants
+used to study 3\ppp UTR length variation by alternative polyadenylation.  To
+use microarrays to investigate alternative polyadenylation, the probes in the
+microarray were designed to bind to sequences present the different 3\ppp UTRs
 formed by alternative polyadenylation. By comparing the intensities of the
 probes under different conditions, one could compare the usage of different
 polyadenylation sites \cite{sandberg_proliferating_2008, ji_progressive_2009}.
 The lengthening or shortening of a 3\ppp UTR would correspond to the choice of
-upstream or downstream poly(A) sites. Microarrays could thereby be used to
+upstream or downstream polyadenylation sites. Microarrays could thereby be used to
 directly compare 3\ppp UTR length and expression levels in time-series under
 different experimental condition with different cell lines and tissues.
 
-Results obtained with a combination of microarray and EST data include
-different patterns of polyadenylation in different human tissues
+Key results obtained with a combination of microarray and EST data include the
+identification of tissue-specific patterns of polyadenylation in humans
 \cite{zhang_biased_2005}, and wide-spread shortening of 3\ppp UTR length during
 immune cell activation \cite{sandberg_proliferating_2008}. A combination of
-EST, microarray, and SAGE data showed a progressive lengthening of mouse 3\ppp
-UTRs during embryonic development \cite{ji_progressive_2009}. Thus, with
-microarrays, it was now possible to observe the dynamic nature of 3\ppp
-cleavage and polyadenylation.
+EST, microarray, and SAGE (Sanger-based RNA tag sequencing) showed a
+progressive lengthening of mouse 3\ppp UTRs during embryonic development
+\cite{ji_progressive_2009}. Thus, the arrival microarrays enabled the
+observation of the dynamic nature of 3\ppp cleavage and polyadenylation.
 
 The microarray studies provided a wealth of insight, but were still limited in
-one sense when studying alternative polyadenylation. That is that microarray
-experiments cannot identify novel poly(A) sites. Therefore, one can only use
-microarrays to investigate genes which are already annotated with alternative
-poly(A) sites. Further, in terms of quantification, microarray output is
-typically only used to provide relative differences of gene expression for each
-gene between experiments. This makes it difficult to compare poly(A) site usage
-for different genes in the same experiment.
+one sense when studying alternative polyadenylation, since it is difficult to
+use microarray experiments to clearly identify novel polyadenylation sites. Further, in
+terms of quantification, microarray output is typically only used to provide
+relative differences of gene expression for each gene between experiments. This
+makes it difficult to compare polyadenylation site usage for different genes in the
+same experiment.
 
-With the advance of second generation sequencing technology in the form of RNA
-sequencing (RNA-seq) in the late 2000s, many of the limitations of both EST and
-microarray data seemed to be resolved. RNA-seq combines the best of EST and
-microarray data when studying alternative polyadenylation. Firstly, like ESTs,
-the RNA-seq data is in sequence format, allowing the direct detection of
-poly(A) tails and thereby the site of cleavage and polyadenylation. Secondly,
-like microarray data, RNA-seq is quantitative, allowing the direct comparison
-of expression levels of 3\ppp UTRs across the genome. And thirdly, like
-microarrays, RNA-seq can easily be performed on RNA samples in time-series from
-different cell types and tissues, allowing direct hypothesis testing which
-cannot be done when using EST information obtained from databases. 
+With the advance of second generation sequencing technology in the form of
+RNA-seq in the late 2000s, many of the limitations of both EST and microarray
+data seemed to be resolved. RNA-seq combines the best of EST and microarray
+data when studying polyadenylation sites. Firstly, like ESTs, the RNA-seq data
+is in sequence format, allowing the direct detection of poly(A) tails and
+thereby the site of cleavage and polyadenylation. Secondly, like microarray
+data, RNA-seq is quantitative, allowing the direct comparison of expression
+levels of 3\ppp UTRs across the genome. And thirdly, like microarrays, RNA-seq
+can easily be performed on RNA samples in time-series from different cell types
+and tissues, allowing direct hypothesis testing which cannot be done when using
+EST information obtained from databases. 
 
 RNA-seq was rapidly used to study the polyadenylation landscape for cell lines
 and tissues. These experiments first of all confirmed what had been discovered
 earlier by single-mRNA studies and EST analysis; that AAUAAA is the canonical
 polyadenylation signal, that single genes can be represented with multiple
 sites of polyadenylation, and that there is frequent polyadenylation of
-intronic sequences. The new discoveries included many novel polyadenylation
-sites scattered across the genome \cite{ozsolak_comprehensive_2010,
+intronic sequences. New discoveries included many novel polyadenylation sites
+scattered across the genome \cite{ozsolak_comprehensive_2010,
 derti_quantitative_2012}. It was also found that intronic and intergenic
-poly(A) sites are in humans associated with a novel TTTTTTTTT motif which does
-not occur at the normal poly(A) sites in 3\ppp UTRs
+polyadenylation sites are in humans associated with a novel TTTTTTTTT motif which does
+not occur at the normal polyadenylation sites in 3\ppp UTRs
 \cite{ozsolak_comprehensive_2010}. Further, RNA-seq was used for genome-wide
-annotation of poly(A) sites was obtained in large scale for the first time in
+annotation of polyadenylation sites was obtained in large scale for the first time in
 \textit{C. elegans} and \textit{A. thaliana} \cite{mangone_landscape_2010,
 wu_genome-wide_2011}, species for which too little EST data had been available
-for genome-wide poly(A) site annotation.
+for genome-wide polyadenylation site annotation.
 
 RNA-seq was also used to follow up and test the conclusions that had so far
 been made about alternative polyadenylation in earlier publications. One
@@ -282,16 +288,16 @@ characteristic of cancer cells \cite{mayr_widespread_2009}. As a follow up to
 this study, Fu et al.\ compared the relative change in 3\ppp UTR length between
 two cancer cell lines and a non-cancer control cell line
 \cite{fu_differential_2011}. They did not find a consistent pattern of
-shortening of 3\ppp UTRs in the cancer cell lines.  Instead, the 3\ppp UTR
+shortening of 3\ppp UTRs in the cancer cell lines. Instead, the 3\ppp UTR
 lengths of one of the cancer cells was shorter and 3\ppp UTR lengths of the
 other was longer than the control. This suggests that there is no clear-cut
 genome-wide trend of short 3\ppp UTRs in cancer cells, contrary to what had
 previously been concluded.
 
-One unexpected result from RNA-seq data was the finding of poly(A) tails for
-histone mRNA in both human, mice, and \textit{C. elegans}
-\cite{mangone_landscape_2010, shepard_complex_2011}.  Histone mRNA were
-previously thought to be the only mRNA in metazoans without a poly(A) tail
+One unexpected result from using RNA-seq to study polyadenylation sites was the
+finding of poly(A) tails for histone mRNA in both human, mice, and \textit{C.
+elegans} \cite{mangone_landscape_2010, shepard_complex_2011}. Histone mRNA
+were previously thought to be the only mRNA in metazoans without a poly(A) tail
 \cite{marzluff_metabolism_2008}, even though several of the histone genes had
 been found to contain the AATAAA polyadenylation signal at their 3\ppp ends
 \cite{keall_histone_2007}. A possible explanation for why histone mRNA have
@@ -301,16 +307,14 @@ lose their poly(A) tail \cite{mangone_landscape_2010} (supplementary
 materials). This example shows that some discoveries can arrive unexpectedly
 when taking a neutral, genome-wide look at established findings.
 
-The most recent and thorough study of genome-wide polyadenylation was done
-using a novel sample-preparation protocol by Derti et al.\ They used RNA-seq to
-find poly(A) sites in five mammal species, including human, in 24 tissues
-\cite{derti_quantitative_2012}. They found over 400.000 polyadenylation sites
-in the human tissues, compared to 150.000 found previously. However, how many
-of these sites correspond to normal mRNA 3\ppp stable poly(A) tail or
-degradation-related transient poly(A) tails was not investigated. One reason
-why they have found so many sites compared to previous studies could be the
-increased resolution in this study: most novel poly(A) sites were found in
-lowly expressed transcripts, which may not previously have been detected.
-Derti et al.\ also found that although many poly(A) sites were tissue specific,
-70 \% of genes showed the same usage of alternative polyadenylation across all
-tissues.
+One of the most recent and thorough studies of genome-wide polyadenylation was
+performed using a novel sample-preparation protocol by Derti et al.\
+\cite{derti_quantitative_2012} They used RNA-seq to find polyadenylation sites in five
+mammal species, including human, in 24 tissues \cite{derti_quantitative_2012}.
+They found over 400.000 polyadenylation sites in the human tissues, compared to
+150.000 found previously. One reason why they have found so many sites compared
+to previous studies could be the increased resolution in this study: most novel
+polyadenylation sites were found in lowly expressed transcripts, which may not
+previously have been detected. Derti et al.\ also found that although many
+polyadenylation sites were tissue specific, 70 \% of genes showed the same usage of
+alternative polyadenylation across all tissues.

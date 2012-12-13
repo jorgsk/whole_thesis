@@ -22,17 +22,25 @@ A summary of this discussion is given in Table \ref{tab:discussion_summary}.
 
 \begin{table}[hb]
 	\begin{center}
-		\begin{tabular}{lcc}
-			\toprule
+		\scalebox{0.8}{
+		\begin{tabular}{l|ll}
 			 & Genome-wide & Gene-centric \\
 			\midrule
-			 Experiments &  &  \\
-			 Data type &  &  \\
-			 Interpretation of data &  &  \\
-			 Etc? Scour the text kthnx. &  &  \\
+			Experiment type & RNA-seq & RT-PCR, western blot,\\
+							&         & \textit{in vitro} transcription assay  \\
+			 Data amount & 1 terabyte  & 1 megabyte \\
+			 Data processing & Significant  & Minimal \\
+			 Data interpretation & Challenging & Straight forward  \\
+			 Experimental follow-up & No & Yes  \\
+			 Study objective & General  & Specific  \\
+			 Results & Overview, hypothesis  & Mechanistic insight \\
 		\end{tabular}
+		}
 	\end{center}
-	\caption{A summary of the discussion.}
+	\caption{A summary of the discussion. The left column holds different
+	characteristics that differ between the genome-wide and gene-centric
+	studies.}
+	\label{tab:discussion_summary}
 \end{table}
 
 \subsection{Data, research strategies, and challenges}
@@ -66,46 +74,32 @@ and complexity of the data, the main challenge for the work was handling,
 filtering, and processing the data. Much time was devoted to constructing the
 analysis pipeline named Utail that was used for data filtering and analysis.
 The datasets from all the different cell lines and compartments were over 1
-terabyte in uncompressed form and took two days to process with the Utail
-pipeline with a powerful, multi-core workstation. As a direct consequence of
-the data-challenge, there was less time devoted to the study of the biological
-mechanism. Perhaps anticipating that this would be the case, the initial goal
-for the project was made general: to characterize polyadenylation in different
-cell compartments for different human cell lines. This is in contrast to the
-more detailed, mechanism-oriented goals for the gene-centric experiments,
-namely the movement of RNAP relative to DNA and the binding of the ribosome to
-mRNA.  Since less time was spent on the computational aspect, the gene-centric
-approach facilitated collaboration with wet-lab biologists about the biological
-problem itself. The direct involvement of wet-lab biologists with the core
-scientific problem is a likely reason why these studies resulted in follow up
-experiments.
+terabyte in uncompressed form and took two days to process with a powerful,
+multi-core workstation. As a direct consequence of the data-challenge, there
+was less time devoted to the study of the biological mechanism. Perhaps
+anticipating that this would be the case, the initial goal for the project was
+made general: to characterize polyadenylation in different cell compartments
+for different human cell lines. This is in contrast to the more detailed,
+mechanism-oriented goals for the gene-centric experiments, namely the movement
+of RNAP relative to DNA and the binding of the ribosome to mRNA.  Since less
+time was spent on the computational aspect, the gene-centric approach
+facilitated collaboration with wet-lab biologists about the biological problem
+itself. The direct involvement of wet-lab biologists with the core scientific
+problem is a likely reason why these studies resulted in follow up experiments.
+Therefore, by having less computational focus, gene-centric approaches may
+increase the chance of having follow-up experimental work, as they are more
+likely to involve the collaboration of wet-lab biologists.
 
-To end this part of the discussion, here follows a quote from a recent review
-by N. Proudfoot called ``Ending the message: poly(A) signals then and now''
-\cite{proudfoot_ending_2011}. Using early Sanger-like sequencing techniques in
-1976, Proudfoot was the original discoverer of the AAUAAA hexamer, and deduced
-both that this was the signal for polyadenylation and that the signal was
-conserved across mammals \cite{proudfoot_3_1976}. In this regard, Proudfoot is
-in a good position to comment on the recent surge in genome-wide
-polyadenylation studies. He writes \cite{proudfoot_ending_2011}:
-
-``It is abundantly clear that bioinformatic analysis of genomic data has
-provided invaluable generality to our understanding of PAS [polyadenylation
-signal] function in gene expression. However, current genome-wide analyses
-often only provide bioinformatic correlations and lack direct functional
-experimentation. Genomic analysis will only achieve its full potential when
-bioinformatics can be matched by hypothesis-driven experimental approaches.''
-
-\subsection{Contribution to knowledge about gene expression} Due to their
-differences in underlying data and study approach, the genome-wide and
-gene-centric studies are bound to give rise to different types of biological
-research questions that can be asked and answered. In chapter \ref{chap:celB}
-we were able to point to ribosome binding as a limiting factor for the
-heterologous expression of \textit{inf-$\alpha$2b}. This is a specific type of
-information for a specific gene, but it does verify previous reports that
-translation initiation can be a bottleneck for heterologous expression, thereby
-adding to an existing body of evidence. The study also reinforced the message
-that using RNA-RNA folding energy from secondary structures is a useful
+\subsection{Contribution to knowledge about gene expression}
+Due to the differences in underlying data and study approach, the genome-wide
+and gene-centric studies are bound to give rise to different types of
+biological research questions that can be asked and answered. In chapter
+\ref{chap:celB} we were able to point to ribosome binding as a limiting factor
+for the heterologous expression of \textit{inf-$\alpha$2b}. This is a specific
+type of information for a specific gene, but it does verify previous reports
+that translation initiation can be a bottleneck for heterologous expression,
+thereby adding to an existing body of evidence. The study also reinforced the
+message that using RNA-RNA folding energy from secondary structures is a useful
 approach to augments standard techniques in molecular biology like RT-PCR and
 western blot when working with optimization of gene expression.
 
@@ -122,15 +116,15 @@ finally completing the logical circuit by reasoning that backtracking from the
 pre-translocated state is the rate limiting step during transcription
 initiation. When we began the transcription initiation study we used the free
 energies of the RNA-DNA and DNA-DNA duplexes to study transcription initiation.
-These were at that time the known components to regulate translocation by RNAP.
-However, it turned out that the free energy of the interaction between the RNA
-3\ppp dinucleotide and the RNAP active site was the most important variable in
-the study. This is a good example of how one sets out by building on the
-existing knowledge (the RNA-DNA hybrid and DNA-DNA bubble regulate RNAP
-translocation), and ends up adding a new component (free energy associated with
-the 3\ppp dinucleotide matters more).
+These were at that time the known components that contribute energetically to
+translocation by RNAP. However, it turned out that the free energy of the
+interaction between the RNA 3\ppp dinucleotide and the RNAP active site was the
+most important variable in the study. This is a good example of how one sets
+out by building on the existing knowledge (the RNA-DNA hybrid and DNA-DNA
+bubble contribute to RNAP translocation), and ends up adding a new component
+(free energy associated with the 3\ppp dinucleotide matters more).
 
-The main message from the study chapter \ref{chap:polyA} is that
+The main message from the study in chapter \ref{chap:polyA} is that
 polyadenylation sites inferred from RNA-seq vary between different genomic
 regions for different cellular compartments. In particular, we found that there
 was a substantial increase in polyadenylation sites from poly(A)- RNA in the
@@ -143,6 +137,22 @@ polyadenylation, we looked broadly were able to identify general patterns. In
 turn, this result should be used to investigate how intronic RNA is degraded in
 mammalian cells. As such, the outcome of the genome-wide study becomes a
 roadmap from which hypotheses can be formed.
+
+To end the discussion, here follows a quote from a recent review by N.
+Proudfoot called ``Ending the message: poly(A) signals then and now''
+\cite{proudfoot_ending_2011}. Using early Sanger-like sequencing techniques in
+1976, Proudfoot was the original discoverer of the AAUAAA hexamer, and deduced
+both that this was the signal for polyadenylation and that the signal was
+conserved across mammals \cite{proudfoot_3_1976}. In this regard, Proudfoot is
+in a good position to comment on the recent surge in genome-wide
+polyadenylation studies. He writes \cite{proudfoot_ending_2011}:
+
+``It is abundantly clear that bioinformatic analysis of genomic data has
+provided invaluable generality to our understanding of PAS [polyadenylation
+signal] function in gene expression. However, current genome-wide analyses
+often only provide bioinformatic correlations and lack direct functional
+experimentation. Genomic analysis will only achieve its full potential when
+bioinformatics can be matched by hypothesis-driven experimental approaches.''
 
 %It is almost 33 years since abortive initiation was first discovered
 %\cite{carpousis_cycling_1980}. After that, it took 6 years to document that the

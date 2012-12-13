@@ -21,6 +21,10 @@ $(NAME).pdf : $(NAME).tex
 
 pdf : $(NAME).pdf
 
+fast :
+	xelatex -shell-escape $(NAME)
+
 .PHONY : clean
 clean :
 	$(RM) ${CLEAN_FILES}
+
