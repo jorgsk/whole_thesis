@@ -29,12 +29,12 @@ transcription.
 
 \subsubsection{Promoter localization}
 Before RNAP can start transcription of a gene it must localize a transcription
-start site (TSS). These sites are advertised by promoter elements, which
-typically stretch from around -60 to +20 basepairs relative to the TSS
-\cite{ross_third_1993,lilian_m_promoter_2002}. RNAP cannot bind strongly to the
+start site (TSS). These sites are advertised by promoters, stretches of DNA
+which are typically located from around -60 to +20 basepairs relative to the
+TSS \cite{ross_third_1993,lilian_m_promoter_2002}. RNAP cannot bind strongly to
 promoters directly, but must first associate with a regulatory protein called
 sigma ($\sigma$) factor; the $\sigma$ factor in turn only binds strongly to
-promoters when in complex with with RNAP \cite{paget_$sigma^70$_2003}, making
+promoters when in complex with RNAP \cite{paget_$sigma^70$_2003}, making
 the RNAP-$\sigma$ complex essential for transcription initiation. In
 \textit{E.\ coli} there are seven types of $\sigma$ factors, where each
 $\sigma$ factor regulates the binding of RNAP to a particular gene family
@@ -47,15 +47,15 @@ $\sigma^{70}$ promoters are the -35 and -10 hexamer (six-nucleotide) motifs,
 with the consensus sequences TTGACA (-35) and TATAAT (-10)
 \cite{ross_analysis_2009}. The major determinant for how strongly $\sigma^{70}$
 binds to a promoter is how much the -35 and -10 motifs vary from the consensus,
-as well and the distance in nucleotides between these elements. A third
-sequence that affects RNAP-$\sigma^{70}$ binding is an AT rich element upstream
--35 called, simply, the upstream element \cite{ross_third_1993,
+as well as the distance in nucleotides between these elements. A third sequence
+that can affect promoter-RNAP-$\sigma^{70}$ binding is an AT rich element
+upstream -35 called, simply, the upstream element \cite{ross_third_1993,
 haugen_fine_2008} (see Figure \ref{fig:promoter}). In general, the stronger
 $\sigma^{70}$ binds to a promoter the higher the transcription initiation rate
-will be, which again tends to lead to higher expression of the downstream gene.
-However, we will shortly see that the initial transcribed sequence, defined
-from +1 to +20 (Figure \ref{fig:promoter}), may also influence the expression
-from a promoter.
+will be, which again may lead to higher expression of the downstream gene.
+However, we will shortly see that the initial transcribed sequence, defined as
+the region from +1 to +20 realtive to the TSS (Figure \ref{fig:promoter}), may
+also influence the expression from a promoter.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -78,7 +78,7 @@ referred to as the DNA bubble, or the transcription bubble. Within the DNA
 bubble, bases on the template DNA strand are exposed and ready to base pair
 with incoming NTP. After having opened the DNA bubble, RNAP is positioned so that the
 nucleotide at the TSS is at RNAP's active site (the active site is the part of
-RNAP where RNA synthesis occurs).  When transcription begins, the two first
+RNAP where RNA synthesis occurs). When transcription begins, the two first
 nucleotides bind in the active site and a phosphodiester bond is formed between
 them \cite{mcclure_steady_1978}. This constitutes the first dinucleotide of
 the nascent RNA. In order to incorporate the third nucleotide, RNAP must first
@@ -118,14 +118,15 @@ Promoter escape is, however, only one outcome of a transcription initiation
 attempt. Another outcome is that the initiation attempt fails, which means that
 the nascent RNA is released prematurely before promoter escape can occur. The
 starting point of a failed initiation attempt is a reversal of the
-translocation-scrunching reaction, a step which is referred to as backtracking.
-When backtracking occurs, the ``unschrunching`` of DNA forces the 3\ppp end of
-the nascent RNA into the entry channel for NTP, leading to a shortened RNA-DNA
-hybrid \cite{hsu_initial_2006}. This shortened RNA-DNA hybrid is unstable and
-eventually the nascent RNA is released. RNA release is accompanied by a release
-of the rest of the scrunched DNA from RNAP. RNAP then falls back to the open
-complex formation, where it may restart transcription initiation \textit{de
-novo} \cite{lilian_m_promoter_2002} (see Figure \ref{fig:abortive_backtrack}).
+translocation-scrunching reaction, a step which is referred to as backtracking
+\cite{hsu_initial_2006}. When backtracking occurs, the ``unschrunching`` of
+DNA forces the 3\ppp end of the nascent RNA into the entry channel for NTP,
+leading to a shortened RNA-DNA hybrid \cite{hsu_initial_2006}. This shortened
+RNA-DNA hybrid is unstable and eventually the nascent RNA is released. RNA
+release is accompanied by a release of the rest of the scrunched DNA from RNAP.
+RNAP then falls back to the open complex formation, where it may restart
+transcription initiation \textit{de novo} \cite{lilian_m_promoter_2002} (see
+Figure \ref{fig:abortive_backtrack}).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -157,6 +158,27 @@ considerable time in abortive cycling before achieving promoter escape.
 	\label{fig:abortive_cycling}
 \end{figure}
 
+\subsubsection{Experimental detection of abortive initiation}
+% TODO: description of Hsu's experimenta
+To quantify abortive initiation, one must obtain a measure of the molar
+abundance of each abortive RNA. Additionally, abortive RNAs of a given length
+must be quantified separately from any possible cleavage products. A method
+that fulfills these two requirements is radioactive labeling of nucleotide
+\gamma-phosphates \cite{hsu_monitoring_2009}. Each abortive RNA will only
+contain one \gamma-phosphate, namely the one at the 5\ppp end. All other
+\gamma-phosphates are cleaved off during transcription and released in
+phyrophosphate (PPi). By separating abortive RNAs on a single-nucleotide
+resolution gel, one can then use a phosphoimager to quantify the amount of each
+abortive product \cite{hsu_monitoring_2009}.
+
+By quantifying the amount of abortive RNAs of different lengths, one can infer
+at which nucleotide positions abortive initiation is more or less prominent
+\cite{hsu_<i>vitro</i>_2003}. However, when performing this kind of analysis ->
+abortive init -> fewer RNAP reach later stages, so must normalize for this ->
+AP.
+
+When using this approach, one finds that the amount of abortive RNAs of different lenghts 
+
 \subsubsection{Promoter escape and the initial transcribed sequence}
 An early discovery by Kammerer et al.\ \cite{kammerer_functional_1986} was that
 the promoter sequence downstream +1 can have a strong effect on promoter
@@ -164,7 +186,7 @@ strength.  Kammerer et al.\ found this effect by comparing the promoter
 strength of the N25 promoter with a variant of N25 constructed by changing C
 for A, T for G and vice versa for N25's +1 to +20 sequence. This variant was
 called N25/anti, and has later been referred to as N25$_{\text{anti}}$
-\cite{,hsu_vitro_2003}.  Later, it was found that the cause for the difference
+\cite{,hsu_vitro_2003}. Later, it was found that the cause for the difference
 in promoter strength was a due to a large increase in the amount and the length
 of abortive transcripts produced from N25/anti compared to N25
 \cite{hsu_escherichia_1995, hsu_vitro_2003}. To comprehensively map the effect
