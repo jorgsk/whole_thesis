@@ -1,25 +1,26 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-Computational models of transcription can be used alongside wet-lab experiments
-to improve our knowledge of transcription. These models have two main uses: the
-first is to evaluate our existing conceptual models of transcription by fitting
-mathematical descriptions of the conceptual model to experimental data. If the
-mathematical description of the conceptual model cannot fit the data, it is a
-sign that the conceptual model is not complete. The second use of these models
-is for improving the biological models by changing the computational models to
-see how the fit to experimental data can be improved. If a modification to the
-computational model gives an improved fit to experimental data, it could be
-worthwhile to investigate that modification in the wet-lab.
+%\bibliography{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+A computational model of transcription can be used alongside wet-lab experiments
+to improve our knowledge of how RNA synthesis occurs. Such a model has two
+main uses: the first is to evaluate our existing conceptual models of
+transcription by writing that conceptual model in a mathematical language and
+comparing the resulting computational model with the available experimental
+data. If the mathematical description cannot fit the data, it is a sign that
+the conceptual model is incomplete. Another use of such a model is to
+experiment with the computational model: if a modification of the computational
+model gives an improved fit to experimental data, it could be worthwhile to
+investigate if that modification can be validated through wet-lab experiments.
 
 \subsubsection{The nucleotide addition cycle and the equilibrium assumption of
 translocation}
-At the core of the computational models of transcription lie a mathematical
+The core of the computational models of transcription is a mathematical
 description of the nucleotide addition cycle (NAC). In a two-step description,
 the NAC consists of a reversible translocation step, where the RNAP active site
 is made available for NTP binding, and a synthesis step, where an incoming
 bound NTP is added to the 3\ppp end of the growing RNA chain (Figure
 \ref{fig:nac_1}). While the NTP binding-and-synthesis step is reversible
-through pyrophosohorolysis, the reverse reaction is highly unfavorable under
-typical experimental conditions \cite{buc_chapter_2009}.
+through pyrophosohorolysis, this is highly unfavorable under typical
+experimental conditions \cite{buc_chapter_2009}.
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{illustrations/sysbio/nucleotide_addition_cycle_1.pdf}
@@ -56,19 +57,18 @@ bai_sequence-dependent_2004}.
 
 By calculating the equilibrium constant of translocation, one finds the
 equilibrium balance between the pre-translocated and post-translocated states.
-How much relative time RNAP spends in either of the translocation states can in
-the next step be used in a model of transcription to calculate the
-probabilities of NTP binding, pausing, or backtracking
-\cite{greive_thinking_2005, bai_mechanochemical_2007, guajardo_model_1997}. In
-this way, the calculation of translocation is central to the description of the
-movement of RNAP on DNA.
+This constant can in the next step be used in a model of transcription to
+calculate the probabilities of NTP binding, pausing, or backtracking
+\cite{greive_thinking_2005, bai_mechanochemical_2007, guajardo_model_1997}.
+Thus, the calculation of translocation is central to the description of
+transcription.
 
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{illustrations/sysbio/nucleotide_addition_cycle_2.pdf}
 	\end{center}
-	\caption{Calculating the equilibrium constant of translocation allows
-	modeling of the movement of RNAP along DNA during transcription.}
+	\caption{The equilibrium constant of translocation is a simple
+	model of the movement of RNAP along DNA during transcription.}
 	\label{fig:nac_2}
 \end{figure}
 
@@ -94,9 +94,9 @@ that in some form they incorporate the terms from
 and $\Delta G_{\text{DNA-DNA}}$ terms in the equation
 \eqref{eq:rnap_energy_balance}. In the case of Tadigotla et al.\
 \cite{tadigotla_thermodynamic_2006} the free energy from the nascent RNA
-secondary structure close to the RNA exit channel is used as well. Calculating
-of RNA secondary structures is necessary to model the effect RNA structures
-outside RNAP have in preventing backtracking of RNAP \cite{zamft_nascent_2012}.
+secondary structure close to the RNA exit channel is used as well; this
+calculation was used to model the effect RNA structures outside RNAP have in
+preventing backtracking of RNAP \cite{zamft_nascent_2012}.
 
 The early computational models of transcription had only partial predictive
 power. For example, Tadigotla et al.\ \cite{tadigotla_thermodynamic_2006}
@@ -115,18 +115,17 @@ transcription.
 Recently, Maoiléidigh et al.\ published a model of transcription elongation
 which fitted well several transcription parameters that had previously been
 measured by single-molecule experiments \cite{o_maoileidigh_unified_2011}. To
-adapt their model to the results, however, they had to add to the model an
+adapt their model to the results, however, they added to the model an
 intermediary state between processive translocation and backtracking which has
-not been observed experimentally \cite{o_maoileidigh_unified_2011}. In
-addition, their model suggests that translocation does not occur as an
-equilibrium reaction, which contradicts the this previously made assumption.
-One possible reason why Maoiléidigh et al.\ reach the conclusion that
-translocation does not occur in equilibrium is that their implementation of
-translocation relied only on the free energy change of the DNA bubble and
-RNA-DNA hybrid to calculate translocation \cite{o_maoileidigh_unified_2011}.
-As will be discussed below, it is now known that more terms than these
-influence this process, and the exclusion of these terms could have affected
-the conclusions made from the model simulations.
+not been observed experimentally \cite{o_maoileidigh_unified_2011}. Their
+results suggests that translocation does not occur as an equilibrium reaction,
+which contradicts the this previously made assumption. While this is the most
+up to date model of transcription to date, this model still relies only on the
+free energy change of the DNA bubble and RNA-DNA hybrid to calculate
+translocation \cite{o_maoileidigh_unified_2011}. As will be discussed below, it
+is now known that more terms than these influence this process, which
+necessitate an additional free energy variable for the description of
+translocation.
 
 Recently, Hein et al.\ \cite{hein_rna_2011} showed that the sequence of the
 3\ppp dinucleotide of the nascent RNA has a strong effect on translocation
@@ -136,9 +135,9 @@ nucleotide was G. This finding was supported by Malinen et al.\
 \cite{malinen_active_2012} who propose that contacts between the RNA 3\ppp end
 and the RNAP active site determine the preference for the pre-translocated or
 the post-translocates states. The findings by Hein et al.\ and Malinen et al.\
-would partially invalidate previous computational uses of translocation, such
-as the one model of Maoiléidigh et al.\ that led to the conclusion that
-translocation is not an equilibrium reaction.
+have the potential to greatly improve on the existing computational uses of
+translocation, since so far only free energy change of the RNA-DNA hybrid
+and the DNA bubble have been the sole energy variables that drive translocation.
 
 \subsubsection{A computational model of transcription initiation}
 In addition to the above described models of transcription elongation, one
@@ -146,9 +145,9 @@ model bye Xue et al.\ \cite{xue_kinetic_2008} has previously been published for
 transcription initiation.
 
 For the sake of modeling, the key differences between transcription initiation
-and transcription elongation that during initiation is that i) The DNA-DNA
+and transcription elongation is that during initiation i) the DNA-DNA
 bubble grows with scrunching-translocation instead of being constant as for
-base-stepping-translocation, ii) the RNA-DNA hybrid lacks its full length until
+elongation ii) the RNA-DNA hybrid lacks its full length until
 the active site has reached +9/10, and iii) that RNA secondary structures
 outside RNAP do not influence backtracking during initiation since these
 structures cannot form until after promoter escape when a sufficient length of
@@ -168,11 +167,13 @@ equivalent but more comprehensive dataset with 43 ITS variants was available
 \cite{hsu_initial_2006}. Further, the T7A1 promoter has sequence variation in
 the core promoter sequence compared to the other two, which only vary in the
 ITS.  Variation in core promoter sequence has been shown to affect promoter
-escape properties \cite{vo_vitro_2003-1}, yet the model does not take this into
-account. This makes it difficult to compare the conclusions between the three
-different promoters. Finally, the model by Xue et al.\ was not used
-predictively, making it difficult to conclude how much of the dynamics of
-transcription initiation it truly captures.
+escape properties \cite{vo_<i>vitro</i>_2003}, yet the model does not take this
+into account. This makes it difficult to compare the model output for the
+analysis of the three different promoters. Finally, the model by Xue et al.\
+was not used predictively, in the sense that it was not used to predict
+abortive initiation properties of new DNA sequences, making it difficult to
+conclude how much of the dynamics of transcription initiation it truly
+captures.
 
 In conclusion, the study by Xue et al.\ was the first quantitative model for
 transcription initiation, and the model managed to predict some experimentally

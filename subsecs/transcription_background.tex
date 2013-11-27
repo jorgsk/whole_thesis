@@ -18,7 +18,7 @@ overview of transcription elongation by RNA polymerase.
 
 In bacteria, RNAP consists of the subunits $\beta$, $\beta^{\prime}$, $\omega$,
 and two $\alpha$ subunits and has a molecular mass of around 400 kDa. The
-bacterial RNAP is conserved in structure and function with RNAP found in in
+bacterial RNAP is conserved in structure and function with RNAPs found in in
 archaea and eukaryotes \cite{borukhov_rna_2008}, showing that the fundamental
 mechanism of RNA synthesis is the same for all cell types.
 
@@ -31,10 +31,10 @@ transcription.
 Before RNAP can start transcription of a gene it must localize a transcription
 start site (TSS). These sites are advertised by promoters, stretches of DNA
 which are typically located from around -60 to +20 basepairs relative to the
-TSS \cite{ross_third_1993,lilian_m_promoter_2002}. RNAP cannot bind strongly to
+TSS \cite{ross_third_1993,hsu_promoter_2002}. RNAP cannot bind strongly to
 promoters directly, but must first associate with a regulatory protein called
 sigma ($\sigma$) factor; the $\sigma$ factor in turn only binds strongly to
-promoters when in complex with RNAP \cite{paget_$sigma^70$_2003}, making
+promoters when in complex with RNAP \cite{paget_<sup>70</sup>_2003}, making
 the RNAP-$\sigma$ complex essential for transcription initiation. In
 \textit{E.\ coli} there are seven types of $\sigma$ factors, where each
 $\sigma$ factor regulates the binding of RNAP to a particular gene family
@@ -89,20 +89,20 @@ elongation. Instead, translocation during initiation results in RNAP pulling
 DNA into itself in a process that has been labeled ``scrunching''
 \cite{kapanidis_initial_2006, revyakin_abortive_2006}.  By pulling in
 downstream DNA, RNAP's active site translocates relative to template DNA,
-thereby making the active site available for incoming NTP despite RNAP being
+making the active site available for incoming NTP, even though RNAP is still
 bound to the upstream promoter sequence. A consequence of scrunching is that
 the DNA bubble increases in size with 1bp for each scrunching step, since one
 basepair of DNA is opened downstream without the complementary closing of an
 upstream basepair as for transcription elongation. The increasingly large DNA
 bubble that results from scrunching has been suggested to play a role for both
-promoter escape and abortive RNA release \cite{lilian_m_promoter_2002,
+promoter escape and abortive RNA release \cite{hsu_promoter_2002,
 kapanidis_initial_2006}.
 
 Transcription initiation proceeds in a cycle of scrunching, NTP binding, and
 phosphodiester bond formation. With each step, the DNA bubble grows with one
 basepair and the nascent RNA grows with one nucleotide. When the nascent RNA
-reaches a length of around 10-12 nt, promoter escape may occur of $\sigma$
-dissociates from the promoter \cite{lilian_m_promoter_2002} (see
+reaches a length of around 10-12 nt, promoter escape may occur if $\sigma$
+dissociates from the promoter \cite{hsu_promoter_2002} (see
 Figure \ref{fig:simple_escape}).
 
 \begin{figure}[htb]
@@ -123,10 +123,11 @@ translocation-scrunching reaction, a step which is referred to as backtracking
 DNA forces the 3\ppp end of the nascent RNA into the entry channel for NTP,
 leading to a shortened RNA-DNA hybrid \cite{hsu_initial_2006}. This shortened
 RNA-DNA hybrid is unstable and eventually the nascent RNA is released. RNA
-release is accompanied by a release of the rest of the scrunched DNA from RNAP.
-RNAP then falls back to the open complex formation, where it may restart
-transcription initiation \textit{de novo} \cite{lilian_m_promoter_2002} (see
-Figure \ref{fig:abortive_backtrack}).
+release is assumed to be accompanied by a release of the rest of the scrunched
+DNA from RNAP, since it is known that after an abortive RNA release RNAP can
+fall back to the open complex formation, where it may restart transcription
+initiation \textit{de novo} \cite{hsu_promoter_2002} (see Figure
+\ref{fig:abortive_backtrack}).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -143,9 +144,9 @@ repeated initiation attempts that end with abortive RNA release (see Figure
 \ref{fig:abortive_cycling}). The aborted RNA fragments are generally no longer
 than 15 nucleotides, but lengths up to 20 have been observed
 \cite{chander_alternate_2007}. In \textit{in vitro} experiments abortive
-initiation is the rule rather than the exception \cite{lilian_m_promoter_2002}.
-Some promoters have a calculated \textit{in vitro} ratio of aborted to
-successful transcription initiation attempts of over 300
+initiation is the rule rather than the exception for many promoters
+\cite{hsu_promoter_2002}. Some promoters have a calculated \textit{in vitro}
+ratio of aborted to successful transcription initiation attempts of over 300
 \cite{hsu_initial_2006}. This indicates that RNAP may on average spend
 considerable time in abortive cycling before achieving promoter escape.
 
@@ -159,46 +160,42 @@ considerable time in abortive cycling before achieving promoter escape.
 \end{figure}
 
 \subsubsection{Experimental detection of abortive initiation}
-% TODO: description of Hsu's experimenta
 To quantify abortive initiation, one must obtain a measure of the molar
-abundance of each abortive RNA. Additionally, abortive RNAs of a given length
-must be quantified separately from any possible cleavage products. A method
-that fulfills these two requirements is radioactive labeling of nucleotide
-\gamma-phosphates \cite{hsu_monitoring_2009}. Each abortive RNA will only
-contain one \gamma-phosphate, namely the one at the 5\ppp end. All other
-\gamma-phosphates are cleaved off during transcription and released in
+abundance of each abortive RNA while ensuring that abortive RNAs of a given
+length are quantified separately from any possible cleavage product of the same
+length (since a backtracked RNA can be cleaved at the RNAP active site before
+abortive release occurs). A method that fulfills these two requirements is
+radioactive labeling of nucleotide $\gamma$-phosphates
+\cite{hsu_monitoring_2009}. Each abortive RNA will only contain one
+$\gamma$-phosphate, namely the one at the 5\ppp end. All other
+$\gamma$-phosphates are cleaved off during transcription and released in
 phyrophosphate (PPi). By separating abortive RNAs on a single-nucleotide
 resolution gel, one can then use a phosphoimager to quantify the amount of each
-abortive product \cite{hsu_monitoring_2009}.
-
-By quantifying the amount of abortive RNAs of different lengths, one can infer
-at which nucleotide positions abortive initiation is more or less prominent
-\cite{hsu_<i>vitro</i>_2003}. However, when performing this kind of analysis ->
-abortive init -> fewer RNAP reach later stages, so must normalize for this ->
-AP.
-
-When using this approach, one finds that the amount of abortive RNAs of different lenghts 
+abortive product \cite{hsu_monitoring_2009}. By finally quantifying the amount
+of abortive RNAs of different lengths, one can infer at which nucleotide
+positions abortive initiation occurs and to what extent
+\cite{hsu_<i>vitro</i>_2003}.
 
 \subsubsection{Promoter escape and the initial transcribed sequence}
 An early discovery by Kammerer et al.\ \cite{kammerer_functional_1986} was that
 the promoter sequence downstream +1 can have a strong effect on promoter
 strength.  Kammerer et al.\ found this effect by comparing the promoter
-strength of the N25 promoter with a variant of N25 constructed by changing C
+strength of the N25 phage promoter with a variant of N25 constructed by changing C
 for A, T for G and vice versa for N25's +1 to +20 sequence. This variant was
 called N25/anti, and has later been referred to as N25$_{\text{anti}}$
-\cite{,hsu_vitro_2003}. Later, it was found that the cause for the difference
-in promoter strength was a due to a large increase in the amount and the length
+\cite{hsu_<i>vitro</i>_2003}. Later, it was found that the cause for the difference
+in promoter strength was due to a large increase in both the amount the length
 of abortive transcripts produced from N25/anti compared to N25
-\cite{hsu_escherichia_1995, hsu_vitro_2003}. To comprehensively map the effect
-of the +1 to +20 sequence on promoter escape, Hsu et al.\
+\cite{hsu_<i>escherichia_1995, hsu_<i>vitro</i>_2003}. To comprehensively map
+the effect of the +1 to +20 sequence on promoter escape, Hsu et al.\
 \cite{hsu_initial_2006} investigated \textit{in vitro} the abortive properties
-of a comprehensive library of 43 promoter variants which had randomized +1 to
-+20 initial transcribed sequences (ITSs).  They showed that the sequence
-variation in the ITS could result in a 20-fold difference in promoter escape
-efficiencies. In the study by Hsu et al.\, the promoter escape efficiency is
-defined as the fraction of full length transcript to the total amount of
-transcript (full length and abortive) produced from a promoter; this quantity
-is also referred to as the productive yield (PY).
+of a library of 43 promoter variants which had randomized +1 to +20 initial
+transcribed sequences (ITSs).  They showed that sequence variation in the ITS
+could result in a 20-fold difference in promoter escape efficiencies. In the
+study by Hsu et al.\, promoter escape efficiency is defined as the fraction
+of full length transcript (i.e., not abortive) to the total amount of transcript
+(full length and abortive) produced from a promoter; this quantity is also
+referred to as the productive yield (PY).
 
 For a while it was speculated that abortive initiation was an \textit{in vitro}
 artefact. However, small abortive RNAs have recently been identified \textit{in
@@ -206,28 +203,28 @@ vivo} \cite{goldman_direct_2009}, demonstrating that this process occurs in
 living cells. Following the discovery that abortive transcripts appear
 \textit{in vivo}, it was not certain whether the abortive transcripts had any
 cellular function or if they were merely artefacts of the transcription
-initiation process. Yet in the last two years two studies have shown two
-different functions of these short transcripts. In one, aborted transcripts
-from the $\phi$10 promoter were found to deactivate a transcriptional
-terminator hairpin \cite{lee_tiny_2010}. In the other, short abortive products
-of 2 to 4 nucleotides in length were found to act as primers for the RNA
-polymerase \textit{in vivo} \cite{goldman_nanornas_2011}; previously, it was
-not known if RNAP, unlike the DNA polymerase, could use primers \textit{in
-vivo}.
+initiation process. Yet recently two studies have shown two different functions
+of these short transcripts. In one, aborted transcripts from the $\phi$10
+promoter were found to deactivate a transcriptional terminator hairpin
+\cite{lee_tiny_2010}. In the other, short abortive products of 2 to 4
+nucleotides in length were found to act as primers for the RNA polymerase
+\textit{in vivo} \cite{goldman_nanornas_2011}; previously, it was not known if
+RNAP, unlike the DNA polymerase, could use primers \textit{in vivo}.
 
 It is still not clear if abortive initiation is rate-limiting for natural
 promoters \textit{in vivo}. However, \textit{in vitro} and \textit{in vivo}
 experiments in \textit{E. coli} have shown that the transcription factors GreA
 and GreB greatly reduce the amount of abortive initiation from the
-N25$_{\text{anti}}$ promoter \cite{hsu_escherichia_1995}, which they do by
-restoring backtracked RNAP to productive RNAP by cleaving the backtracked RNA
-\cite{hsu_initial_2006, toulme_grea_2000}. This suggests that abortive
-initiation has the potential to be rate limiting \textit{in vivo}, but that
-this potential is countered by the expression of GreA/B. In support of an
-\textit{in vivo} role for GreA in mitigating abortive initiation, it was found
-that GreA resolves promoter-proximal stalling of RNAP
-\cite{kusuya_transcription_2011}. However, more work is still needed to confirm
-the precise role GreA/B play in promoter escape \textit{in vivo}.
+N25$_{\text{anti}}$ promoter \cite{hsu_<i>escherichia_1995}, which they do by
+restoring backtracked RNAP to productive RNAP by stimulating RNAP's intrinsic
+mechanism for cleaving backtracked RNA \cite{hsu_initial_2006,
+toulme_grea_2000}. This suggests that abortive initiation has the potential to
+be rate limiting \textit{in vivo}, but that this potential is countered by the
+expression of GreA/B. In support of an \textit{in vivo} role for GreA in
+mitigating abortive initiation, it was found that GreA resolves
+promoter-proximal stalling of RNAP \cite{kusuya_transcription_2011}. However,
+more work is still needed to confirm the precise role GreA/B play in promoter
+escape \textit{in vivo}.
 
 \subsubsection{Transcription elongation}
 Once the $\sigma$-promoter bonds are broken, RNAP is free to undergo processive
@@ -246,7 +243,7 @@ causing RNAP to pause in its track \cite{ring_function_1996,
 kapanidis_retention_2005, raffaelle_holoenzyme_2005}. To escape from these
 pauses, it has been suggested that RNAP-$\sigma$ must again undergo scrunching
 as if it were bound to a promoter at a transcription start site
-\cite{zhilina_structural_2012}.
+\cite{zhilina_structural_2012}. \label{sigma_rebinding}
 
 Transcription elongation (Figure \ref{fig:transcription_elongation}) happens
 with great processivity: RNAP can accurately transcribe tens of thousands of
@@ -255,9 +252,8 @@ elongation does not occur at a constant rate. RNAP will reproducibly pause or
 backtrack at certain sites \cite{herbert_sequence-resolved_2006}. Sometimes
 this pausing or backtracking has a regulatory function, for example to allow
 time for proper folding of the nascent RNA \cite{landick_regulatory_2006}.
-Transcription elongation is in other words not just a mandatory step for
-copying DNA to RNA, but also another stage of gene expression where regulation
-may take place.
+Transcription elongation is therefore not just a mandatory step for copying DNA
+to RNA, but also another stage of gene expression where regulation takes place.
 
 \subsubsection{Transcription termination}
 Eventually, RNAP will dissociate DNA and release its RNA product. Two distinct

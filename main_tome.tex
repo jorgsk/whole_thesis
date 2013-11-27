@@ -69,57 +69,57 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
     \input{subsecs/summary.tex}
 \clearpage
 
-%\addcontentsline{toc}{chapter}{Summary}
+\addcontentsline{toc}{chapter}{Summary}
 
-%\chapter*{Acknowledgements}
-%\input{subsecs/acknowledgements.tex}
-%\addcontentsline{toc}{chapter}{Acknowledgements}
+\chapter*{Acknowledgements}
+\input{subsecs/acknowledgements.tex}
+\addcontentsline{toc}{chapter}{Acknowledgements}
 
-% Uncomment this when you get to this stage
+%%Uncomment this when you get to this stage
 %\pagenumbering{roman}
 %\tableofcontents
 %\listoffigures
 %\listoftables
 
-%\setcounter{chapter}{1}
-%\mainmatter
-%\chapter{Introduction}
+\setcounter{chapter}{1}
+\mainmatter
+\chapter{Introduction}
+\begin{refsection}
+\section{Overview}
+\input{subsecs/introduction.tex}
+\FloatBarrier
+
+%% Silly, but the Bibliograhy becomes a 'chapter', so I get ``Bibliography'' in
+%% the headings. Changing markboth (don't really know what it is) fixes this.
+%% (both takes two arguments -- could it be left and right?
+
+\section{Transcription initiation in bacteria}
+\input{subsecs/transcription_forword.tex}
+\subsection{Biochemical background}
+\input{subsecs/transcription_background.tex}
+\subsection{Computational models}
+\input{subsecs/transcription_computation.tex}
+\printbibliography
+\end{refsection}
+\newpage
+
+\markboth{\textbf{Introduction}}{}
+\section{Translation initiation in bacteria}
+\begin{refsection}
+\input{subsecs/translation_background.tex}
+\printbibliography
+\end{refsection}
+\newpage
+
+\markboth{\textbf{Introduction}}{}
 %\begin{refsection}
-%\section{Overview}
-%\input{subsecs/introduction.tex}
-%\FloatBarrier
-
-% Silly, but the Bibliograhy becomes a 'chapter', so I get ``Bibliography'' in
-% the headings. Changing markboth (don't really know what it is) fixes this.
-% (both takes two arguments -- could it be left and right?
-
-%\section{Transcription initiation in bacteria}
-%\input{subsecs/transcription_forword.tex}
-%\subsection{Biochemical background}
-%\input{subsecs/transcription_background.tex}
-%\subsection{Computational models}
-%\input{subsecs/transcription_computation.tex}
-%\printbibliography
+\section{Transcription termination in eukaryotes and RNA sequencing}
+\input{subsecs/termination_foreword.tex}
+\input{subsecs/termination_transcription.tex}
+\input{subsecs/rna_seq.tex}
+\printbibliography  % XXX what happened here; wrong bibliography printed?
 %\end{refsection}
-%\newpage
-
-%\markboth{\textbf{Introduction}}{}
-%\section{Translation initiation in bacteria}
-%\begin{refsection}
-%\input{subsecs/translation_background.tex}
-%\printbibliography
-%\end{refsection}
-%\newpage
-
-%\markboth{\textbf{Introduction}}{}
-%%\begin{refsection}
-%\section{Transcription termination in eukaryotes and RNA sequencing}
-%\input{subsecs/termination_foreword.tex}
-%\input{subsecs/termination_transcription.tex}
-%\input{subsecs/rna_seq.tex}
-%\printbibliography
-%%\end{refsection}
-%\newpage
+\newpage
 
 %%%Should you add this to the backtracking paper as a subsection?
 %%\chapter{Backtracking originates from the pre-translocated state}
@@ -129,54 +129,54 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 %%\end{refsection}
 
 \chapter{RNA secondary structures as barriers to protein synthesis}
-%\begin{refsection}
+\begin{refsection}
 \label{chap:celB}
 \input{subsecs/celB_pelB_introduction.tex}
+\printbibliography
+\end{refsection}
+
+\chapter{RNAP translocation bias determines the efficiency of promoter escape}
+%\begin{refsection}
+\label{chap:initiation_paper}
+\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
 %\printbibliography
 %\end{refsection}
 
-%\chapter{RNAP translocation bias determines the efficiency of promoter escape}
-%%\begin{refsection}
-%\label{chap:initiation_paper}
-%\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
-%%\printbibliography
-%%\end{refsection}
-
-%\chapter{RNA-seq for investigating RNA cleavage and polyadenylation}
-%%\begin{refsection}
-%\label{chap:polyA}
-%\input{subsecs/polyA_results.tex}
-%%\printbibliography
-%%\end{refsection}
-
-%\chapter{Discussion and Conclusion}
-%%\begin{refsection}
-%\section{Discussion}
-%\input{subsecs/discussion.tex}
-%\section{Conclusion}
-%\input{subsecs/conclusion.tex}
+\chapter{Investigating RNA cleavage and polyadenylation with RNA-seq data}
+%\begin{refsection}
+\label{chap:polyA}
+\input{subsecs/polyA_results.tex}
 %\printbibliography
-%%\end{refsection}
+%\end{refsection}
 
-%\appendix
-%\chapter{Obtaining the source code}
-%\label{source_code}
-%\input{subsecs/computational_methods.tex}
+\chapter{Discussion and Conclusion}
+%\begin{refsection}
+\section{Discussion}
+\input{subsecs/discussion.tex}
+\section{Conclusion}
+\input{subsecs/conclusion.tex}
+\printbibliography
+%\end{refsection}
 
-%\chapter{Attached publications}
+\appendix
+\chapter{Obtaining the source code}
+\label{source_code}
+\input{subsecs/computational_methods.tex}
 
-%\chapter*{Landscape of transcription in human cells}
-%\label{landscape}
-%\addcontentsline{toc}{chapter}{Landscape of transcription in human cells}
-%\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+\chapter{Attached publications}
 
-%\chapter*{Testing and optimization of short DNA sequences that can be used as
-%5\protect\ppp fusion partners for high level expression of heterologous genes
-%in \textit{Escherichia coli}}
-%\addcontentsline{toc}{chapter}{Testing and optimization of short DNA sequences
-%that can be used as 5\protect\ppp fusion partners for high level expression of
-%heterologous genes in \textit{Escherichia coli}}
-%\label{vero_paper}
-%\includepdf[pages={-}]{../my_papers/vero/vero_14.pdf}
+\chapter*{Landscape of transcription in human cells}
+\label{landscape}
+\addcontentsline{toc}{chapter}{Landscape of transcription in human cells}
+\includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
+
+\chapter*{Design and Optimization of Short DNA Sequences That Can Be Used as
+5\protect\ppp Fusion Partners for High-Level Expression of Heterologous Genes
+in \textit{Escherichia coli}}
+\addcontentsline{toc}{chapter}{Design and Optimization of Short DNA Sequences
+    That Can Be Used as 5\protect\ppp Fusion Partners for High-Level Expression
+    of Heterologous Genes in \textit{Escherichia coli}}
+\label{vero_paper}
+\includepdf[pages={-}]{../my_papers/vero/CelBfusion.pdf}
 
 \end{document}
