@@ -2,9 +2,6 @@
 %\documentclass[a4crop]{ntnuthesis}
 \documentclass[]{ntnuthesis}
 
-%TODO:
-%# write email to Roderic and Gingeras
-
 % A new package for bibliography
 % Use biber for biblatex and pdflatex instead of latex
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
@@ -44,6 +41,13 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \usepackage{inconsolata} % monospaced font
 \usepackage{fontspec} % must use this one with xelatex
 
+% A way to set authors for chapters
+\newcommand{\chapterauthor}[1]{%
+  {\parindent0pt\vspace*{-25pt}%
+  \linespread{1.1}\large\scshape#1%
+  \par\nobreak\vspace*{25pt}}
+}
+
 % Set the depth of section numbering
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{1}
@@ -56,7 +60,10 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \faculty{The Faculty of Natural Sciences and Technology}
 \department{Department of Chemical Engineering}
 
-\date{August 2012}
+\date{August 2014}
+
+\isbnelectronic{978-82-326-0364-0}
+\serialnumber{222}
 
 \begin{document} 
 
@@ -74,12 +81,16 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \chapter*{Acknowledgements}
 \input{subsecs/acknowledgements.tex}
 \addcontentsline{toc}{chapter}{Acknowledgements}
+\chapter*{List of papers}
+\input{subsecs/list_of_papers.tex}
+\addcontentsline{toc}{chapter}{List of papers}
 
 %%Uncomment this when you get to this stage
-%\pagenumbering{roman}
-%\tableofcontents
-%\listoffigures
-%\listoftables
+\pagenumbering{roman}
+\tableofcontents
+%%
+\listoffigures
+\listoftables
 
 \setcounter{chapter}{1}
 \mainmatter
@@ -112,13 +123,13 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \newpage
 
 \markboth{\textbf{Introduction}}{}
-%\begin{refsection}
+\begin{refsection}
 \section{Transcription termination in eukaryotes and RNA sequencing}
 \input{subsecs/termination_foreword.tex}
 \input{subsecs/termination_transcription.tex}
 \input{subsecs/rna_seq.tex}
-\printbibliography  % XXX what happened here; wrong bibliography printed?
-%\end{refsection}
+\printbibliography
+\end{refsection}
 \newpage
 
 %%%Should you add this to the backtracking paper as a subsection?
@@ -135,28 +146,29 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \printbibliography
 \end{refsection}
 
-\chapter{RNAP translocation bias determines the efficiency of promoter escape}
-%\begin{refsection}
+\chapter{Thermodynamic modeling of initial transcription elucidates the sequence dependence of promoter escape efficiency}
+\begin{refsection}
+\input{subsecs/authors_rnadna.tex}
 \label{chap:initiation_paper}
 \subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
-%\printbibliography
-%\end{refsection}
+\printbibliography
+\end{refsection}
 
 \chapter{Investigating RNA cleavage and polyadenylation with RNA-seq data}
-%\begin{refsection}
+\begin{refsection}
 \label{chap:polyA}
 \input{subsecs/polyA_results.tex}
-%\printbibliography
-%\end{refsection}
+\printbibliography
+\end{refsection}
 
 \chapter{Discussion and Conclusion}
-%\begin{refsection}
+\begin{refsection}
 \section{Discussion}
 \input{subsecs/discussion.tex}
 \section{Conclusion}
 \input{subsecs/conclusion.tex}
 \printbibliography
-%\end{refsection}
+\end{refsection}
 
 \appendix
 \chapter{Obtaining the source code}

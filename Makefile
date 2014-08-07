@@ -1,5 +1,5 @@
 NAME=main_tome
-CLEAN_FILES = *.log *.aux *.toc *.bbl *.blg ${NAME}.pdf *.xml *.bcf
+CLEAN_FILES = *.log *.aux *.toc *.bbl *.blg ${NAME}.pdf *.xml *.bcf *.lof *.lot
 
 RM = rm -f
 
