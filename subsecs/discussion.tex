@@ -4,15 +4,15 @@ dependent abortive initiation, sequence dependent translation initiation, and
 sequence dependent cleavage and polyadenylation -- all center around how the
 genetic code regulates gene expression at these different levels.
 
-When working with these projects we have made use of two distinct bioinformatic
-approaches. For transcription and translation initiation we worked with
-thermodynamic calculations in a gene-centric manner, while for the 3\ppp
-cleavage and polyadenylation study we analyzed next generation sequencing data
-to perform a genome-wide investigation. Having both these approaches in this
-thesis illustrates well the methodological contrast that exists in biology
-today, where ``-omic'' studies are increasingly finding applications in areas
-that were previously only studied with traditional molecular biology
-techniques.
+When working with these projects we have made use of two distinct
+bioinformatic approaches. For transcription and translation initiation we
+worked with kinetics and thermodynamic calculations in a gene-centric manner,
+while for the 3\ppp cleavage and polyadenylation study we analyzed next
+generation sequencing data to perform a genome-wide investigation. Having both
+these approaches in this thesis illustrates well the methodological contrast
+that exists in biology today, where ``-omic'' studies are increasingly finding
+applications in areas that were previously only studied with traditional
+molecular biology techniques.
 
 What follows is a discussion of the way these two approaches have been used in
 this thesis to provide new knowledge about gene expression. Additionally, the
@@ -45,13 +45,13 @@ A summary of this discussion is given in Table \ref{tab:discussion_summary}.
 
 \subsection{Data, research strategies, and challenges}
 What fundamentally separates genome-wide and gene-centric studies in general
-are the underlying data. The data from the transcription initiation study were
-in terms of radioactive intensity of gel-migrating RNA oligonucleotides and was
-generated \textit{in vitro}. This kind of data is straightforward to interpret
-(abortive and full length RNA), and in the controlled, \textit{in vitro}
-experimental set-up it is easy to perturb the input DNA sequence to achieve
-variation in the output for hypothesis testing. The data from the work on
-translation initiation were from western-blots and RT-PCR. Again the
+are the underlying data. The data from the transcription initiation studies
+were in terms of radioactive intensity of gel-migrating RNA oligonucleotides
+and was generated \textit{in vitro}. This kind of data is straightforward to
+interpret (abortive and full length RNA), and in the controlled, \textit{in
+vitro} experimental set-up it is easy to perturb the input DNA sequence to
+achieve variation in the output for hypothesis testing. The data from the work
+on translation initiation were from western-blots and RT-PCR. Again the
 interpretation of the data is relatively straightforward (relative protein and
 mRNA concentrations).
 
@@ -103,26 +103,27 @@ message that using RNA-RNA folding energy from secondary structures is a useful
 approach to augments standard techniques in molecular biology like RT-PCR and
 western blot when working with optimization of gene expression.
 
-In chapter \ref{chap:initiation_paper} we solved the puzzle of why abortive
-initiation is sequence dependent: it is because the initial transcribed
-sequence affects RNAP's translocation bias, which we in turn linked to the
-probability of backtracking and abortive RNA release. Even though this study
-used only the N25 promoter, these results are likely to hold for all strong
-promoters that undergo abortive initiation. Crucially, this study linked
-several topics that had not been linked together before. First, it approximated
-equilibrium constants of translocation from those of pyrophosphorolysis;
-thereafter it linked translocation to the efficiency of promoter escape, before
-finally completing the logical circuit by reasoning that backtracking from the
-pre-translocated state is the rate limiting step during transcription
-initiation. When we began the transcription initiation study we used the free
-energies of the RNA-DNA and DNA-DNA duplexes to study transcription initiation.
-These were at that time the known components that contribute energetically to
-translocation by RNAP. However, it turned out that the free energy of the
-interaction between the RNA 3\ppp dinucleotide and the RNAP active site was the
-most important variable in the study. This is a good example of how one sets
-out by building on the existing knowledge (the RNA-DNA hybrid and DNA-DNA
-bubble contribute to RNAP translocation), and ends up adding a new component
-(free energy associated with the 3\ppp dinucleotide matters more).
+In chapter \ref{chap:initiation_paper} we propose an answer to the puzzle of
+why abortive initiation is sequence dependent: it is because the initial
+transcribed sequence affects RNAP's translocation bias, which we in turn
+linked to the probability of backtracking and abortive RNA release. Even
+though this study used only the N25 promoter, these results are likely to hold
+for all strong promoters that undergo abortive initiation. Crucially, this
+study linked several topics that had not been linked together before. First,
+it approximated equilibrium constants of translocation from those of
+pyrophosphorolysis; thereafter it linked translocation to the efficiency of
+promoter escape, before finally completing the logical circuit by reasoning
+that backtracking from the pre-translocated state is the rate limiting step
+during transcription initiation. When we began the transcription initiation
+study we used the free energies of the RNA-DNA and DNA-DNA duplexes to study
+transcription initiation.  These were at that time the known components that
+contribute energetically to translocation by RNAP. However, it turned out that
+the free energy of the interaction between the RNA 3\ppp dinucleotide and the
+RNAP active site was the most important variable in the study. This is a good
+example of how one sets out by building on the existing knowledge (the RNA-DNA
+hybrid and DNA-DNA bubble contribute to RNAP translocation), and ends up
+adding a new component (free energy associated with the 3\ppp dinucleotide
+matters more).
 
 The main message from the study in chapter \ref{chap:polyA} is that
 polyadenylation sites inferred from RNA-seq vary between different genomic

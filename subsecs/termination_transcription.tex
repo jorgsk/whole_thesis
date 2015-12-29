@@ -34,9 +34,9 @@ still transcribing. When RNAP II transcribes past a polyadenylation signal
 may bind to that PAS and to sequences around it \cite{colgan_mechanism_1997}.
 This complex may then cleave the still-transcribed RNA around 10 to 35 nt
 downstream the PAS \cite{proudfoot_ending_2011}. Right after cleavage, a
-poly(A) polymerase will synthesize around 250 adenosine residues onto the newly
-formed 3\ppp end of the pre-mRNA (Figure \ref{fig:cleavage}), forming what is
-known as the poly(A) tail.
+specialized poly(A) polymerase will synthesize around 250 adenosine residues
+onto the newly formed 3\ppp end of the pre-mRNA (Figure \ref{fig:cleavage}),
+forming what is known as the poly(A) tail.
 
 \begin{figure}[h]
 	\begin{center}
@@ -138,7 +138,7 @@ transcript degradation or simply by blocking translation. Recently, it was
 established that at least in mammals microRNA in the 3\ppp UTR decrease
 expression by causing transcript degradation \cite{huntzinger_gene_2011}.
 MicroRNA binding in the 3\ppp UTR are known to regulate a host of metabolic
-processes and human diseases through\cite{huang_biological_2010}. Therefore,
+processes and human diseases \cite{huang_biological_2010}. Therefore,
 the choice of where to cleave and polyadenylate a transcript can have
 wide-spanning consequences. It is estimated that half the genes in the genome
 undergo alternative polyadenylation \cite{tian_large-scale_2005}.
@@ -190,7 +190,7 @@ sequenced, typically by Sanger sequencing.) The increasing amount of sequence
 data facilitated for the first time large scale analysis of 3\ppp UTRs and
 polyadenylation sites. The polyadenylation site of an EST is found by
 identifying a poly(A) or poly(T) sequence in the extremity of the EST which
-does not correspond to genomic sequence. By trimming that extremity, and
+does not correspond to any genomic sequence. By trimming that extremity, and
 matching what remains of the EST to databases of sequenced RNA or to a genome
 sequence, it is possible to identify the genomic location of the
 polyadenylation site \cite{beaudoing_patterns_2000, tian_large-scale_2005}.
@@ -215,11 +215,11 @@ individually. Thus many classes of polyadenylated RNA, such as long noncoding
 RNA, were possibly missed by these studies. Finally, although EST data may be
 used to give a quantitative profile of gene expression, the output data is
 often normalized so that the quantitative profile is lost
-\cite{liu_quantitative_2006}. It therefore difficult to compare expression
+\cite{liu_quantitative_2006}. It is therefore difficult to compare expression
 values across genes with EST data, although some approaches have been developed
 for this purpose \cite{liu_quantitative_2006}. A quantitative profile of
 polyadenylation site usage is desirable when studying alternative
-polyadenylation as one can identify the usage pattern of the different
+polyadenylation as one can identify the usage frequency of the different
 polyadenylation sites for a given mRNA.
 
 As the microarray technology matured in the early 2000s and more full-length
@@ -253,15 +253,19 @@ the same experiment.
 
 With the advance of second generation sequencing technology in the form of
 RNA-seq in the late 2000s, many of the limitations of both EST and microarray
-data seemed to be resolved. RNA-seq combines the best of EST and microarray
-data when studying polyadenylation sites. Firstly, like ESTs, the RNA-seq data
-is in sequence format, allowing the direct detection of poly(A) tails and
-thereby the site of cleavage and polyadenylation. Secondly, like microarray
-data, RNA-seq is quantitative, allowing the direct comparison of expression
-levels of 3\ppp UTRs across the genome. And thirdly, like microarrays, RNA-seq
-can easily be performed on RNA samples in time-series from different cell types
-and tissues, allowing direct hypothesis testing which cannot be done when using
-EST information obtained from databases. 
+data seemed to be resolved. RNA-seq was introduced in 2008
+\cite{nagalakshmi_transcriptional_2008} and has been used to compare the
+differential expression of genes, to discover new genes, and to discover novel
+isoforms of known genes by finding new splice-sites and new 5\ppp and 3\ppp
+terminals \cite{wang_rna-seq:_2009}. RNA-seq combines the best of EST and
+microarray data when studying polyadenylation sites. Firstly, like ESTs, the
+RNA-seq data is in sequence format, allowing the direct detection of poly(A)
+tails and thereby the site of cleavage and polyadenylation. Secondly, like
+microarray data, RNA-seq is quantitative, allowing the direct comparison of
+expression levels of 3\ppp UTRs across the genome. And thirdly, like
+microarrays, RNA-seq can easily be performed on RNA samples in time-series
+from different cell types and tissues, allowing direct hypothesis testing
+which cannot be done when using EST information obtained from databases. 
 
 RNA-seq was rapidly used to study the polyadenylation landscape for cell lines
 and tissues. These experiments first of all confirmed what had been discovered
