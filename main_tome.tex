@@ -132,13 +132,6 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \end{refsection}
 \newpage
 
-%%%Should you add this to the backtracking paper as a subsection?
-%%\chapter{Backtracking originates from the pre-translocated state}
-%%\begin{refsection}
-%%\subimport{../my_papers/rna-dna-paper/case_for_and_against/}{mechanism_forthesis.tex}
-%%\printbibliography
-%%\end{refsection}
-
 \chapter{RNA secondary structures as barriers to protein synthesis}
 \begin{refsection}
 \label{chap:celB}
@@ -152,6 +145,14 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \input{subsecs/authors_rnadna.tex}
 \label{chap:initiation_paper}
 \subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
+\printbibliography
+\end{refsection}
+
+\chapter{Kinetics of initial transcription}
+\begin{refsection}
+\input{subsecs/authors_rnadna.tex}
+\label{chap:kinetics_paper}
+\subimport{../my_papers/kinetics_paper/}{for_thesis_wrapper.tex}
 \printbibliography
 \end{refsection}
 
