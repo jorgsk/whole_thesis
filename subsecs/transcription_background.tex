@@ -18,7 +18,7 @@ overview of transcription elongation by RNA polymerase.
 
 In bacteria, RNAP consists of the subunits $\beta$, $\beta^{\prime}$, $\omega$,
 and two $\alpha$ subunits and has a molecular mass of around 400 kDa. The
-bacterial RNAP is conserved in structure and function with RNAPs found in in
+structure and function of bacterial RNAPs are conserved in comparison with
 archaea and eukaryotes \cite{borukhov_rna_2008}, showing that the fundamental
 mechanism of RNA synthesis is the same for all cell types.
 
@@ -37,25 +37,26 @@ sigma ($\sigma$) factor; the $\sigma$ factor in turn only binds strongly to
 promoters when in complex with RNAP \cite{paget_<sup>70</sup>_2003}, making
 the RNAP-$\sigma$ complex essential for transcription initiation. In
 \textit{E.\ coli} there are seven types of $\sigma$ factors, where each
-$\sigma$ factor regulates the binding of RNAP to a particular gene family
-\cite{osterberg_regulation_2011}. For example, $\sigma^{70}$ recognizes
-promoters for housekeeping genes, while $\sigma^{32}$ recognizes promoters for
-genes that are activated in conditions of heat shock. Most promoters are of the
-$\sigma^{70}$ type (meaning that $\sigma^{70}$ binds to them), and we will here
-focus on this type of promoter. The most prominent $\sigma$-binding elements in
-$\sigma^{70}$ promoters are the -35 and -10 hexamer (six-nucleotide) motifs,
-with the consensus sequences TTGACA (-35) and TATAAT (-10)
-\cite{ross_analysis_2009}. The major determinant for how strongly $\sigma^{70}$
-binds to a promoter is how much the -35 and -10 motifs vary from the consensus,
-as well as the distance in nucleotides between these elements. A third sequence
-that can affect promoter-RNAP-$\sigma^{70}$ binding is an AT rich element
-upstream -35 called, simply, the upstream element \cite{ross_third_1993,
-haugen_fine_2008} (see Figure \ref{fig:promoter}). In general, the stronger
-$\sigma^{70}$ binds to a promoter the higher the transcription initiation rate
-will be, which again may lead to higher expression of the downstream gene.
-However, we will shortly see that the initial transcribed sequence, defined as
-the region from +1 to +20 realtive to the TSS (Figure \ref{fig:promoter}), may
-also influence the expression from a promoter.
+$\sigma$ factor regulates the binding of RNAP to promoters associated with a
+particular gene family \cite{osterberg_regulation_2011}. For example,
+$\sigma^{70}$ recognizes promoters for housekeeping genes, while $\sigma^{32}$
+recognizes promoters for genes that are activated in conditions of heat shock.
+Most promoters are of the $\sigma^{70}$ type (meaning that $\sigma^{70}$ binds
+to them), and we will here focus on this type of promoter. The most prominent
+$\sigma$-binding elements in $\sigma^{70}$ promoters are the -35 and -10
+hexamer (six-nucleotide) motifs, with the consensus sequences TTGACA (-35) and
+TATAAT (-10) \cite{ross_analysis_2009}. The major determinant for how strongly
+$\sigma^{70}$ binds to a promoter is how much the -35 and -10 motifs vary from
+the consensus, as well as the distance in nucleotides between these elements.
+A third sequence that can affect promoter-RNAP-$\sigma^{70}$ binding is an AT
+rich element upstream -35 called, simply, the upstream element
+\cite{ross_third_1993, haugen_fine_2008} (see Figure \ref{fig:promoter}). In
+general, the stronger $\sigma^{70}$ binds to a promoter the higher the
+transcription initiation rate will be, which again may lead to higher
+expression of the downstream gene.  However, we will shortly see that the
+initial transcribed sequence, defined as the region from +1 to +20 realtive to
+the TSS (Figure \ref{fig:promoter}), may also influence the expression from a
+promoter.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -116,18 +117,19 @@ Figure \ref{fig:simple_escape}).
 \subsubsection{Abortive initiation}
 Promoter escape is, however, only one outcome of a transcription initiation
 attempt. Another outcome is that the initiation attempt fails, which means that
-the nascent RNA is released prematurely before promoter escape can occur. The
+the nascent RNA is released prematurely before promoter escape can occur
+\cite{early_cycling_paper_1982}. The
 starting point of a failed initiation attempt is a reversal of the
 translocation-scrunching reaction, a step which is referred to as backtracking
 \cite{hsu_initial_2006}. When backtracking occurs, the ``unschrunching`` of
 DNA forces the 3\ppp end of the nascent RNA into the entry channel for NTP,
-leading to a shortened RNA-DNA hybrid \cite{hsu_initial_2006}. This shortened
-RNA-DNA hybrid is unstable and eventually the nascent RNA is released. RNA
-release is assumed to be accompanied by a release of the rest of the scrunched
-DNA from RNAP, since it is known that after an abortive RNA release RNAP can
-fall back to the open complex formation, where it may restart transcription
-initiation \textit{de novo} \cite{hsu_promoter_2002} (see Figure
-\ref{fig:abortive_backtrack}).
+leading to a shortened RNA-DNA hybrid \cite{hsu_initial_2006}. Eventually the
+nascent RNA is released from this complex, possibly because the shortened
+RNA-DNA hybrid is unstable. RNA release is assumed to be accompanied by a
+release of the rest of the scrunched DNA from RNAP, since it is known that
+after an abortive RNA release RNAP can fall back to the open complex
+formation, where it may restart transcription initiation \textit{de novo}
+\cite{hsu_promoter_2002} (see Figure \ref{fig:abortive_backtrack}).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -176,6 +178,37 @@ one can infer at which nucleotide positions abortive initiation occurs and to
 what extent \cite{hsu_<i>vitro</i>_2003}. Although cleaved RNA is contained in
 the gel, the lack of a radioactive phosphate means it will not affect the
 quantification of abortive RNAs.
+
+\subsubsection{Calculation of abortive probability}
+The quantification of abortive RNAs of different lengths permits the
+calculation of abortive probability (AP) at each template position, as
+described by Hsu \cite{Lilian_AP_note_95}. Briefly, the probability to abort a
+transcript of length $i$ is given as 
+\begin{equation*}
+    \frac{R_i}{P_i},
+\end{equation*}
+where $R_i$ is the number of abortive RNAs of length $i$ and $P_i$ is the
+number of polymerases that transcribe to reach an RNA of length $i$. This can
+be written as
+\begin{equation*}
+    \frac{R_i}{P_i} = \frac{r_iR}{p_iP}.
+\end{equation*}
+Here, $r_i$ is the fraction of RNAs of length $i$ in terms of total RNA ($R$),
+and $p_i$ is the fraction of RNAPs transcribing an RNA of length $i$ in terms
+of total RNAPs ($P$). We assume that each observed aborted RNA corresponds to
+one transcribing RNAP, so that $R = P$. Therefore, we find the abortive
+probability as 
+\begin{equation*}
+    AP_i = \frac{r_i}{p_i}.
+\end{equation*}
+
+The fraction of abortive RNA is found directly from the phosphoimaging
+quantification. The fraction of RNAP obtaining an RNA of length $i$ is found
+iteratively in the following way: 100\% of RNAPs obtain an RNA of length 2; if
+for example 40\% of all abortive RNA is of length 2, then we know that 60\% of
+RNAPs obtain an RNA of length 3; if for example 15\% of all abortive RNA is of
+length 3, then we know that 45\% of RNAPs obtain an RNA of length 4; and so
+on.
 
 \subsubsection{Promoter escape and the initial transcribed sequence}
 An early discovery by Kammerer et al.\ \cite{kammerer_functional_1986} was that
