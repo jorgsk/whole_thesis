@@ -125,6 +125,32 @@ hybrid and DNA-DNA bubble contribute to RNAP translocation), and ends up
 adding a new component (free energy associated with the 3\ppp dinucleotide
 matters more).
 
+Chapter \ref{chap:initiation_paper} focused on modelling translocation during
+initial transcription, but the equilibrium model used there is not capable of
+describing the kinetics of the process. To therefore investigate the kinetics
+of initial transcription, we introduced in chapter \ref{chap:kinetic_paper} a
+model that covers the nucleotide addition cycle (which includes
+translocation), backtracking, and unscrunching and abortive RNA release. This
+model has a sequence-dependence in that it uses sequence-dependent abortive
+probability profiles to infer the rate of backtracking. By fitting this model
+to a published kinetic profile of abortive cycling, we were able to pin down
+key rate constants for the process. We showed that that backtracking and
+abortive RNA release are slow steps compared to forward transcription,
+confirming previous results that had indicated this. Having identified the key
+rate constants, we then showed how the median time to reach promoter escape
+increases strongly when initial transcription is performed in the absence of
+GreB. Most interestingly, we showed that the speed of promoter-bound
+transcription, indicated by the rate constant of the nucleotide addition
+cycle, is highly similar to that of promoter-free transcription. This result
+is important, as it shows that being bound to a promoter does not slow down
+transcription. Taken as a whole, the kinetic evidence points to that the only
+difference between promoter-bound and promoter-free transcription is that
+promoter-bound transcription has a comparatively higher rate of backtracking.
+To date, there is no published data of experiments being able to follow the
+rapid kinetics of initial transcription. Our work shows how a computational
+model, aided with the right experimental findings, is able to fill this gap in
+the literature.
+
 The main message from the study in chapter \ref{chap:polyA} is that
 polyadenylation sites inferred from RNA-seq vary between different genomic
 regions for different cellular compartments. In particular, we found that there
@@ -137,7 +163,8 @@ gene-centric studies. Instead of analyzing a particular aspect of
 polyadenylation, we looked broadly were able to identify general patterns. In
 turn, this result should be used to investigate how intronic RNA is degraded in
 mammalian cells. As such, the outcome of the genome-wide study becomes a
-roadmap from which hypotheses can be formed.
+roadmap from which hypotheses can be formed. Our results show the importance
+of studying the transcriptome separately for different cell compartments.
 
 To end the discussion, here follows a quote from a recent review by N.
 Proudfoot called ``Ending the message: poly(A) signals then and now''
