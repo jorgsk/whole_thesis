@@ -1,15 +1,16 @@
 %\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
 %\bibliography{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
-A computational model of transcription can be used alongside wet-lab experiments
-to improve our knowledge of how RNA synthesis occurs. Such a model has two
-main uses: the first is to evaluate our existing conceptual models of
+A computational model of transcription can be used alongside wet-lab
+experiments to improve our knowledge of how RNA synthesis occurs. Such a model
+has two main uses: the first is to evaluate our existing conceptual models of
 transcription by writing that conceptual model in a mathematical language and
 comparing the resulting computational model with the available experimental
 data. If the mathematical description cannot fit the data, it is a sign that
-the conceptual model is incomplete. Another use of such a model is to
-experiment with the computational model: if a modification of the computational
-model gives an improved fit to experimental data, it could be worthwhile to
-investigate if that modification can be validated through wet-lab experiments.
+the conceptual model may be incomplete. Another use of such a model is to
+experiment with the computational model: if a modification of the
+computational model gives an improved fit to experimental data, it could be
+worthwhile to investigate if that modification can be validated through
+wet-lab experiments.
 
 \subsubsection{The nucleotide addition cycle and the equilibrium assumption of
 translocation}
@@ -91,8 +92,8 @@ published \cite{tadigotla_thermodynamic_2006, bai_sequence-dependent_2004,
 guajardo_model_1997, yager_thermodynamic_1991}. What they have in common is
 that in some form they incorporate the terms from
 \eqref{eq:rnap_energy_balance} and calculate the $\Delta G_{\text{RNA-DNA}}$
-and $\Delta G_{\text{DNA-DNA}}$ terms in the equation
-\eqref{eq:rnap_energy_balance}. In the case of Tadigotla et al.\
+and $\Delta G_{\text{DNA-DNA}}$ terms from published tables of these values
+for different dinucleotide combinations. In the case of Tadigotla et al.\
 \cite{tadigotla_thermodynamic_2006} the free energy from the nascent RNA
 secondary structure close to the RNA exit channel is used as well; this
 calculation was used to model the effect RNA structures outside RNAP have in
@@ -104,10 +105,10 @@ predict pause sites during transcription elongation. While their best optimized
 model manages to identify 84\% of pauses, only 68 \% of their predicted pause
 sites overlapped with experimentally identified pause sites, indicating that
 there were a number of false positives. The model of Bai et al.\
-\cite{bai_mechanochemical_2007} was published without any statistical measures,
-making it difficult to interpret. Instead, Tadigotla et al.\ implemented the
-algorithm from Bai et al.\ and found that the Bai et al.\ model performed
-little better than average for detecting pausing
+\cite{bai_mechanochemical_2007} was published without any statistical
+measures, making it difficult to interpret. Instead, Tadigotla et al.\
+implemented the algorithm from Bai et al.\ and found that the Bai et al.\
+model performed only little better than random for detecting pausing
 \cite{tadigotla_thermodynamic_2006}. The performance of these models signalled
 that more work was needed to reach a mature and accurate model for
 transcription.
@@ -132,7 +133,7 @@ Recently, Hein et al.\ \cite{hein_rna_2011} showed that the sequence of the
 rates.  Hein et al.\ found that if the 3\ppp nucleotide of the RNA was U, RNAP
 had a much stronger preference for the pre-translocated state than if the 3\ppp
 nucleotide was G. This finding was supported by Malinen et al.\
-\cite{malinen_active_2012} who propose that contacts between the RNA 3\ppp end
+\cite{malinen_active_2012} who proposed that contacts between the RNA 3\ppp end
 and the RNAP active site determine the preference for the pre-translocated or
 the post-translocates states. The findings by Hein et al.\ and Malinen et al.\
 have the potential to greatly improve on the existing computational uses of
@@ -179,5 +180,5 @@ In conclusion, the study by Xue et al.\ was the first quantitative model for
 transcription initiation, and the model managed to predict some experimentally
 measured parameters, although the lack of predictive usage of the model makes
 it difficult to evaluate. Therefore, in the field of transcription initiation,
-it remains to be published a quantitative model with predictive power that
-gives new insight into the process itself.
+it remains to be published quantitative models with predictive power that
+provide new insight into the process itself.
