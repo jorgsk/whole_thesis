@@ -1,15 +1,20 @@
 %\documentclass[b5paper]{report}
 %\documentclass[a4crop]{ntnuthesis}
 \documentclass[]{ntnuthesis}
+% Dependencies: Bieber: 2.5, biblatex: 3.6 
 
 % A new package for bibliography
 % Use biber for biblatex and pdflatex instead of latex
 \usepackage[backend=biber, citestyle=numeric-comp, doi=false, isbn=false,
-url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
+url=false, sorting=none, bibstyle=mybibstyle, natbib=true]{biblatex}
+% added natbib=true because of \citep[squares] in kinetic paper
 
-\usepackage[font=footnotesize, labelfont=bf, labelsep=endash]{caption}
+\usepackage[font=footnotesize, labelfont=bf, labelsep=endash, skip=8pt]{caption}
 % new from biblatex
-\addbibresource{/home/jorgsk/phdproject/bibtex/jorgsk.bib}
+\addbibresource{/home/jorgsk/Dropbox/phdproject/bibtex/jorgsk.bib}
+
+% was recommended for dealing with captions that have cite in them.
+%\usepackage{notoccite}
 
 % smaller font for references
 \renewcommand*{\bibfont}{\small}
@@ -23,13 +28,16 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \usepackage{rotating} % make your own prime symbol
 \usepackage{adjustbox} % make your own prime symbol
 
+\usepackage{commath}
+\usepackage[lined,ruled]{algorithm2e}
+
 % make primes
 \newcommand*{\ppp}{\adjustbox{raise=0.4ex, right=0.56ex}{\scalebox{0.7}{$'$}}\;}
 
-% Try to get the dropcap thing for pnas to work
-\usepackage{type1cm} % scalable fonts
-\usepackage{lettrine}
-\newcommand{\dropcap}{\lettrine[lines=2,slope=-4pt,nindent=-4pt]}
+% This varies from journal to journal
+\newcommand{\FIG}{{Fig.}}
+\newcommand{\FIGS}{{Figs.}}
+\newcommand{\SUBSECTION}{\subsection*}
 
 % get colored code formatting (needs Pygments and manual minted.sty install)
 \usepackage{minted}
@@ -49,7 +57,7 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 }
 
 % Set the depth of section numbering
-\setcounter{secnumdepth}{3}
+\setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{1}
 
 \title{The beginning and the end of gene expression}
@@ -60,10 +68,11 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \faculty{The Faculty of Natural Sciences and Technology}
 \department{Department of Chemical Engineering}
 
-\date{August 2014}
+\date{May 2016}
 
-\isbnelectronic{978-82-326-0364-0}
-\serialnumber{222}
+\isbnelectronic{978-82-326-0391-6}
+\isbnprinted{978-82-326-0390-9}
+\serialnumber{2016:8}
 
 \begin{document} 
 
@@ -139,23 +148,21 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 \printbibliography
 \end{refsection}
 
-\chapter{Thermodynamic modeling of initial transcription elucidates the sequence dependence of promoter escape efficiency}
+\chapter{Thermodynamic model of initial transcription}
 \begin{refsection}
-\input{subsecs/authors_rnadna.tex}
 \label{chap:initiation_paper}
-\subimport{../my_papers/rna-dna-paper/}{for_thesis_wrapper.tex}
+\input{subsecs/thermodynamic_introduction.tex}
 \printbibliography
 \end{refsection}
 
-\chapter{Kinetics of initial transcription}
+\chapter{Kinetic model of initial transcription}
 \begin{refsection}
-\input{subsecs/authors_rnadna.tex}
-\label{chap:kinetics_paper}
-\subimport{../my_papers/kinetics_paper/}{for_thesis_wrapper.tex}
+\label{chap:kinetic_paper_chapter}
+\input{subsecs/kinetic_introduction.tex}
 \printbibliography
 \end{refsection}
 
-\chapter{Investigating RNA cleavage and polyadenylation with RNA-seq data}
+\chapter{RNA cleavage and polyadenylation in human cell lines}
 \begin{refsection}
 \label{chap:polyA}
 \input{subsecs/polyA_results.tex}
@@ -178,17 +185,15 @@ url=false, sorting=none, bibstyle=mybibstyle]{biblatex}
 
 \chapter{Attached publications}
 
-\chapter*{Design and Optimization of Short DNA Sequences That Can Be Used as
-5\protect\ppp Fusion Partners for High-Level Expression of Heterologous Genes
-in \textit{Escherichia coli}}
-\addcontentsline{toc}{chapter}{Design and Optimization of Short DNA Sequences
-    That Can Be Used as 5\protect\ppp Fusion Partners for High-Level Expression
-    of Heterologous Genes in \textit{Escherichia coli}}
-\label{vero_paper}
-\includepdf[pages={-}]{../my_papers/vero/CelBfusion.pdf}
+\chapter*{Sequence-Dependent Promoter Escape Efficiency Is Strongly Influenced
+by Bias for the Pretranslocated State during Initial Transcription}
+\addcontentsline{toc}{chapter}{Sequence-Dependent Promoter Escape Efficiency Is Strongly Influenced
+by Bias for the Pretranslocated State during Initial Transcription}
+\label{skancke_paper_attached}
+\includepdf[pages={-}]{../my_papers/rna-dna-paper/Skancke_et_al_2015.pdf}
 
 \chapter*{Landscape of transcription in human cells}
-\label{landscape}
+\label{landscape_attached}
 \addcontentsline{toc}{chapter}{Landscape of transcription in human cells}
 \includepdf[pages={-}]{../my_papers/encode/encode_14.pdf}
 
@@ -198,7 +203,12 @@ in \textit{Escherichia coli}}
 \addcontentsline{toc}{chapter}{Design and Optimization of Short DNA Sequences
     That Can Be Used as 5\protect\ppp Fusion Partners for High-Level Expression
     of Heterologous Genes in \textit{Escherichia coli}}
-\label{vero_paper}
+\label{vero_paper_attached}
 \includepdf[pages={-}]{../my_papers/vero/CelBfusion.pdf}
+
+\chapter*{Kinetic Model of Initial Transcription Suggests the Same Aveage Speed for Promoter Bound and Elongating RNA Polymerase}
+\addcontentsline{toc}{chapter}{Kinetic Model of Initial Transcription Suggests the Same Aveage Speed for Promoter Bound and Elongating RNA Polymerase}
+\label{kinetic_paper_attached}
+\includepdf[pages={-}]{../my_papers/kinetic_initiation/bmc_submitted.pdf}
 
 \end{document}

@@ -103,27 +103,29 @@ message that using RNA-RNA folding energy from secondary structures is a useful
 approach to augments standard techniques in molecular biology like RT-PCR and
 western blot when working with optimization of gene expression.
 
-In chapter \ref{chap:initiation_paper} we propose an answer to the puzzle of
-why abortive initiation is sequence dependent: it is because the initial
-transcribed sequence affects RNAP's translocation bias, which we in turn
-linked to the probability of backtracking and abortive RNA release. Even
-though this study used only the N25 promoter, these results are likely to hold
-for all strong promoters that undergo abortive initiation. Crucially, this
-study linked several topics that had not been linked together before. First,
-it approximated equilibrium constants of translocation from those of
-pyrophosphorolysis; thereafter it linked translocation to the efficiency of
-promoter escape, before finally completing the logical circuit by reasoning
-that backtracking from the pre-translocated state is the rate limiting step
-during transcription initiation. When we began the transcription initiation
-study we used the free energies of the RNA-DNA and DNA-DNA duplexes to study
-transcription initiation.  These were at that time the known components that
-contribute energetically to translocation by RNAP. However, it turned out that
-the free energy of the interaction between the RNA 3\ppp dinucleotide and the
-RNAP active site was the most important variable in the study. This is a good
-example of how one sets out by building on the existing knowledge (the RNA-DNA
-hybrid and DNA-DNA bubble contribute to RNAP translocation), and ends up
-adding a new component (free energy associated with the 3\ppp dinucleotide
-matters more).
+In chapter \ref{chap:initiation_paper} we propose an answer to the question of
+why abortive initiation varies with the initial transcribed sequence. We found
+that sequences which were predicted to bias RNAP toward the pre-translocated
+state were also those sequences associated with the lowest productive yields.
+As an explanation, we linked the bias toward the pre-translocated state toward
+RNAP having a higher probability of backtracking, which leads to abortive RNA
+release. Even though this study used only the N25 promoter, these results are
+likely to hold for all strong promoters that undergo abortive initiation.
+Crucially, this study linked several topics that had not been linked together
+before. First, it approximated equilibrium constants of translocation from
+those of pyrophosphorolysis; thereafter it linked translocation to the
+efficiency of promoter escape, before finally completing the logical circuit by
+reasoning that backtracking from the pre-translocated state is the rate
+limiting step during transcription initiation. When we began the transcription
+initiation study we used the free energies of the RNA-DNA and DNA-DNA duplexes
+to study transcription initiation.  These were at that time the known
+components that contribute energetically to translocation by RNAP. However, it
+turned out that the free energy of the interaction between the RNA 3\ppp
+dinucleotide and the RNAP active site was the most important variable in the
+study. This is a good example of how one sets out by building on the existing
+knowledge (the RNA-DNA hybrid and DNA-DNA bubble contribute to RNAP
+translocation), and ends up adding a new component (free energy associated with
+the 3\ppp dinucleotide matters more).
 
 Chapter \ref{chap:initiation_paper} focused on modelling translocation during
 initial transcription, but the equilibrium model used there is not capable of
@@ -133,7 +135,7 @@ model that covers the nucleotide addition cycle (which includes
 translocation), backtracking, and unscrunching and abortive RNA release. This
 model has a sequence-dependence in that it uses sequence-dependent abortive
 probability profiles to infer the rate of backtracking. By fitting this model
-to a published kinetic profile of abortive cycling, we were able to pin down
+to published kinetic data of abortive cycling, we were able to pin down
 key rate constants for the process. We showed that that backtracking and
 abortive RNA release are slow steps compared to forward transcription,
 confirming previous results that had indicated this. Having identified the key
@@ -165,22 +167,6 @@ turn, this result should be used to investigate how intronic RNA is degraded in
 mammalian cells. As such, the outcome of the genome-wide study becomes a
 roadmap from which hypotheses can be formed. Our results show the importance
 of studying the transcriptome separately for different cell compartments.
-
-To end the discussion, here follows a quote from a recent review by N.
-Proudfoot called ``Ending the message: poly(A) signals then and now''
-\cite{proudfoot_ending_2011}. Using early Sanger-like sequencing techniques in
-1976, Proudfoot was the original discoverer of the AAUAAA hexamer, and deduced
-both that this was the signal for polyadenylation and that the signal was
-conserved across mammals \cite{proudfoot_3_1976}. In this regard, Proudfoot is
-in a good position to comment on the recent surge in genome-wide
-polyadenylation studies. He writes \cite{proudfoot_ending_2011}:
-
-``It is abundantly clear that bioinformatic analysis of genomic data has
-provided invaluable generality to our understanding of PAS [polyadenylation
-signal] function in gene expression. However, current genome-wide analyses
-often only provide bioinformatic correlations and lack direct functional
-experimentation. Genomic analysis will only achieve its full potential when
-bioinformatics can be matched by hypothesis-driven experimental approaches.''
 
 %It is almost 33 years since abortive initiation was first discovered
 %\cite{carpousis_cycling_1980}. After that, it took 6 years to document that the
